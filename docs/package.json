@@ -1,0 +1,12 @@
+{
+  "private": true,
+  "name": "pressify-docs",
+  "scripts": {
+    "dev": "pressify dev",
+    "build": "pressify build",
+    "serve": "pressify serve"
+  },
+  "dependencies": {
+    "pressify": "workspace:*"
+  }
+}

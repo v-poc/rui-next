@@ -1,0 +1,248 @@
+# 默认主题
+
+Pressify 自带了一个默认主题（就是你现在看到的这个），很多样式参考了 VuePress。
+
+## logo
+
+`string`
+
+配置文档站的图标。
+
+## title
+
+`string`，默认为 `Pressify`
+
+配置文档站的标题，会显示在导航栏上，也会设置为 html 的 `<title>` 标签，即：
+
+```html
+<html>
+  <head>
+    <title>{YOUR_TITLE}</title>
+  </head>
+</html>
+```
+
+## description
+
+`string`
+
+配置文档站的描述，会设置为 html 的 `description` meta ，即：
+
+```html
+<html>
+  <head>
+    <meta name="description" content="{YOUR_DESCRIPTION}" />
+  </head>
+</html>
+```
+
+## head
+
+类型：
+
+```ts
+type HeadConfig =
+  | [string, Record<string, string>]
+  | [string, Record<string, string>, string];
+
+head?: HeadConfig[];
+```
+
+可以通过该字段更大程度地配置 `<head>` 内容，例如：
+
+```js
+export default {
+  themeConfig: {
+    head: [
+      ['meta', { name: 'keywords', content: 'vite,react' }],
+      ['link', { rel: 'icon', href: '/logo.png' }],
+      ['script', {}, 'document.write("Hello World")'],
+    ],
+  },
+};
+```
+
+## nav
+
+类型：
+
+```ts
+interface NavItem {
+  [key: string]: any;
+  text: string;
+  link?: string;
+  items?: NavItem[];
+}
+
+nav?: NavItem[];
+```
+
+配置顶部导航栏。例如：
+
+```js
+export default {
+  themeConfig: {
+    nav: [
+      {
+        text: '指南',
+        link: '/zh/guide',
+      },
+    ],
+  },
+};
+```
+
+## sidebar
+
+类型：
+
+```ts
+interface SidebarItem {
+  [key: string]: any;
+  text: string;
+  link?: string;
+  items?: SidebarItem[];
+}
+
+sidebar?: SidebarItem[] | Record<string, SidebarItem[]>;
+```
+
+配置左侧菜单栏，例如：
+
+```js
+export default {
+  themeConfig: {
+    sidebar: [
+      {
+        text: '快速上手',
+        link: '/zh/guide/getting-started',
+      },
+    ],
+  },
+};
+```
+
+如果需要多个不同的左侧菜单栏，可以修改 `sidebar` 为以路径作为 key，`SidebarItem[]` 作为 value 的形式。
+下面的例子就是，当进入 `/foo/a` 页面时会展示 `/foo` 菜单栏，而当进入 `/bar/a` 时则会展示 `/bar` 菜单栏：
+
+```js
+export default {
+  themeConfig: {
+    sidebar: {
+      '/foo': [
+        {
+          text: '关于 foo 的 a',
+          link: '/foo/a',
+        },
+        {
+          text: '关于 foo 的 b',
+          link: '/foo/b',
+        },
+      ],
+      '/bar': [
+        {
+          text: '关于 bar 的 a',
+          link: '/bar/a',
+        },
+        {
+          text: '关于 bar 的 b',
+          link: '/bar/b',
+        },
+      ],
+    },
+  },
+};
+```
+
+## repo
+
+`string`
+
+配置 git 地址，如 `https://github.com/Codpoe/pressify`。
+如果是 GitHub 仓库，那这个字段还可以简写为 `Codpoe/pressify`，Pressify 会自动补全链接。
+
+当配置了仓库地址后，顶部导航栏会自动增加该 git 仓库地址的导航项。
+
+## repoText
+
+`string`，默认 `GitHub`。
+
+## docsRepo
+
+`string`，默认同 `repo` 字段。
+
+如果你的文档 git 地址跟项目的不一样，可以通过 `docsRepo` 字段单独指定文档 git 仓库地址。
+该字段会用于拼接文档编辑按钮的链接。
+
+## docsDir
+
+`string`，默认 `/`
+
+文档目录。该字段会用于拼接文档编辑按钮的链接。
+
+## docsBranch
+
+`string`，默认 `master`
+
+文档分支。该字段会用于拼接文档编辑按钮的链接。
+
+## editLink
+
+`boolean | string`，默认 `false`
+
+是否在文档底部展示编辑按钮。
+
+- 当传递 `true` 时，编辑按钮的文字默认为 `Edit this page`
+- 当传递 `string` 时，会作为编辑按钮的文字来展示。
+
+## lastUpdated
+
+`boolean | string`，默认 `false`
+
+是否在文档底部展示上次更新的时间。
+
+- 当传递 `true` 时，上次更新时间的前缀文字默认为 `Last updated`
+- 当传递 `string` 时，会作为上次更新时间的前缀文字来展示。
+
+## algolia
+
+> WIP
+
+配置 Algolia 的 [DocSearch](https://docsearch.algolia.com) 服务。
+
+## locale
+
+`string`
+
+配置站点的语言，会被设置到 `<html>` 的 `lang` 属性上。
+
+当配置了语言后，顶部导航栏会自动增加语言切换的功能。
+
+## localeText
+
+`string`，默认同 `locale`
+
+配置站点语言对应的文案，用于顶部导航栏的语言切换。
+
+## themeConfigByPaths
+
+`Record<string, ThemeConfig>`
+
+不同的前置路径使用不同的主题配置。可用于配置多语言、多版本等场景。例如：
+
+```js
+export default {
+  themeConfig: {
+    locale: 'en',
+    localeText: 'English',
+    themeConfigByPaths: {
+      '/zh': {
+        locale: 'zh',
+        localeText: '中文',
+      },
+    },
+  },
+};
+```
+
+如上配置，默认情况下语言会是 `English`，而当进入 `/zh/xxx` 页面后，语言会变为 `中文`。

@@ -1,0 +1,51 @@
+# 自定义主题
+
+如果要自定义主题，可以新建主题入口文件 `.pressify/theme/index.js`，然后在这里面导出你的主题。
+
+Pressify 主题实质只是一个包含一些属性的对象：
+
+```ts
+interface Theme {
+  Layout: ComponentType<any>; // React Component
+  NotFound?: ComponentType<any>;
+  mdxComponents?: Record<string, ComponentType<any>>; // mdx 组件，用于自定义 mdx 的渲染
+}
+```
+
+在你的主题入口需要默认导出这个对象：
+
+```js title=".pressify/theme/index.js"
+import { Layout } from './components/Layout';
+import { NotFound } from './components/NotFound';
+import { mdxComponents } from './components/Mdx';
+
+export default {
+  Layout,
+  NotFound,
+  mdxComponents,
+};
+```
+
+## 使用已有主题
+
+如果想使用 pressify 主题的 npm 包，可以在 `.pressify/theme/index.js` 中直接导出该包的主题对象：
+
+```
+import theme from 'awesome-pressify-theme';
+export default theme;
+```
+
+当然，你也可以扩展已有的主题：
+
+```js
+import theme from 'awesome-pressify-theme';
+
+export default {
+  ...theme,
+  NotFound: () => 'Custom 404 Page',
+  mdxComponents: {
+    ...theme?.mdxComponents,
+    h1: () => 'Custom Heading 1',
+  },
+};
+```

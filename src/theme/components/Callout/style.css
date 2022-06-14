@@ -1,0 +1,39 @@
+.callout-tip {
+  border-color: var(--c-callout-tip);
+
+  & .callout-icon {
+    color: var(--c-callout-tip);
+  }
+}
+
+.callout-info {
+  border-color: var(--c-callout-info);
+
+  & .callout-icon {
+    color: var(--c-callout-info);
+  }
+}
+
+.callout-warning {
+  border-color: var(--c-callout-warning);
+
+  & .callout-icon {
+    color: var(--c-callout-warning);
+  }
+}
+
+.callout-danger {
+  border-color: var(--c-callout-danger);
+
+  & .callout-icon {
+    color: var(--c-callout-danger);
+  }
+}
+
+.callout-content > *:first-child {
+  margin-top: 0 !important;
+}
+
+.callout-content > *:last-child {
+  margin-bottom: 0 !important;
+}

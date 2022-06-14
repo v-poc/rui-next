@@ -1,0 +1,44 @@
+---
+home: true
+title: Home
+heroImage: 🧼
+heroText: Pressify
+tagline: Vite & React powered Static Site Generator
+actions:
+  - text: cn docs
+    link: /zh/guide/getting-started
+features:
+  - title: ⚡️ Vite-Powered
+    details: Vite is a front-end development build tool based on the ES Module and is known for its speed.
+  - title: 📘 MDX
+    details: We can write JSX directly in the markdown file, or even import components.
+  - title: ✨ Tailwind CSS
+    details: We can tweak the style in the document using the classes provided by Tailwind CSS.
+  - title: unplugin-icons
+    details: It’s very simple to use a huge amount of icons in the document on demand.
+  - title: Theme
+    details: Pressify itself does not render the content and needs to perform the rendering with the help of a theme.
+  - title: And, uh..
+footer: Copyright © 2021-present Codpoe. Built with Vite & React.
+---
+
+import IconMountain from '~icons/carbon/lightning';
+
+> 🚧 This is early WIP! The English document is not ready yet. <IconMountain className="text-[1.3em] text-amber-500" />
+
+### Like VuePress，easy to use
+
+```shell
+# install in your project
+yarn add -D pressify
+
+# create a markdown file in your docs directory
+mkdir docs && cd docs
+echo '# Hello Pressify' > README.md
+
+# start writing
+yarn pressify dev
+
+# build to static files
+yarn pressify build
+```

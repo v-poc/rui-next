@@ -1,0 +1,42 @@
+# 使用 Demo 组件进行演示
+
+Pressify 的默认主题实现了简单的 `<Demo />` 组件演示功能，具体而言就是长这样：
+
+<Demo src="/demo/Button.tsx" />
+
+这对于演示组件效果是比较有帮助的。而要实现这样的效果，只需在我们的 mdx 文档中使用内置的 `Demo` 组件，
+把组件的路径传给 `src` 属性，类似这样：
+
+```mdx title="my-demo.mdx"
+<Demo src="/demoComponents/Button.tsx" />
+```
+
+## 自定义 Demo 组件
+
+如果要自定义 Demo 组件，可以考虑[自定义主题或者扩展主题](/zh/guide/custom-theme)，
+然后在主题的 `mdxComponents` 中传入自定义的 Demo 组件。
+
+举个例子，可以通过下面的方法替换默认主题的 Demo 组件：
+
+```js hl="16"
+import theme from 'pressify/theme';
+
+function CustomDemo({ children, code }) {
+  return (
+    <>
+      <div>渲染结果：{children}</div>
+      <div>源代码：{code}</div>
+    </>
+  );
+}
+
+export default {
+  ...theme,
+  mdxComponents: {
+    ...theme.mdxComponents,
+    Demo: CustomDemo,
+  },
+};
+```
+
+Demo 组件 props 的 `children` 属性是 `src` 指定的组件的渲染结果，`code` 属性是源代码内容。
