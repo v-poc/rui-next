@@ -1,6 +1,6 @@
 {
   "private": true,
-  "name": "pressify-docs",
+  "name": "rui-docs",
   "scripts": {
     "dev": "pressify dev",
     "build": "pressify build",

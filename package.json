@@ -1,7 +1,7 @@
 {
   "name": "rui-playground",
-  "version": "0.0.1",
-  "description": "The RUI playground",
+  "version": "0.0.3",
+  "description": "The rui playground based on pressify",
   "keywords": [
     "vite",
     "react",
@@ -50,7 +50,10 @@
     "build:node": "tsc -p src/node",
     "build:client": "tsc -p src/client",
     "build:theme": "node scripts/copyTheme.js",
-    "release": "node scripts/release.js"
+    "release": "node scripts/release.js",
+    "start": "pnpm run build && cd docs && pnpm run dev",
+    "build-lib": "vite build --config vite.config.ts",
+    "build-docs": "cd docs && pnpm run build"
   },
   "lint-staged": {
     "*.{js,jsx,ts,tsx}": "eslint --fix"
@@ -73,6 +76,7 @@
     "@types/unist": "^2.0.6",
     "eslint": "^8.17.0",
     "husky": "^8.0.1",
+    "less": "^4.1.3",
     "lint-staged": "^13.0.0",
     "mdast-util-mdx-jsx": "^2.0.1",
     "mdast-util-mdxjs-esm": "^1.2.0",
@@ -142,7 +146,7 @@
     "unplugin-icons": "^0.14.3",
     "upath": "^2.0.1",
     "valtio": "^1.6.1",
-    "vite": "^2.9.9",
+    "vite": "^2.9.12",
     "vite-plugin-conventional-entries": "^0.1.10-beta.2",
     "vite-plugin-conventional-routes": "^0.1.12-beta.4"
   }

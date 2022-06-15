@@ -4,91 +4,88 @@ import type { ThemeConfig } from 'pressify/theme';
 export default defineConfig<ThemeConfig>({
   pages: 'src',
   themeConfig: {
-    locale: 'zh-CN',
-    localeText: '中文',
-    title: 'Pressify',
-    description: 'A Pressify App',
+    locale: 'en-US',
+    localeText: 'English',
+    title: 'RUI playground',
+    description: 'The Vite based PoC playground.',
     banner: [
       'WIP！',
       [
         'a',
         {
-          href: 'http://t.tt/',
+          href: 'https://patreon.com/nikoni',
           target: '_blank',
           style: { marginLeft: '24px' },
         },
-        '查看详情',
+        'Sponsor this project',
       ],
     ],
-    repo: 'codpoe/pressify',
+    repo: 'v-poc/rui-playground',
     editLink: true,
-    algolia: {
-      apiKey: 'x',
-      appId: 'x',
-      indexName: 'x',
-    },
+    // algolia: {
+    //   apiKey: 'x',
+    //   appId: 'x',
+    //   indexName: 'x',
+    // },
     themeConfigByPaths: {
-      '/zh': {
-        locale: 'zh',
-        localeText: '中文',
+      '/en': {
+        locale: 'en-US',
+        localeText: 'English',
         nav: [
           {
-            text: '文档',
-            activeMatch: `^/(guide|style-guide|cookbook|examples)/`,
+            text: 'Documentation',
+            // activeMatch: `^/(guide|style-guide|cookbook|examples)/`,
             items: [
-              { text: '指引', link: '/guide/introduction' },
-              { text: '教程', link: '/tutorial/' },
-              { text: '范例', link: '/examples/' },
-              { text: '快速开始', link: '/guide/quick-start' },
-              { text: '风格指南', link: '/style-guide/' },
-              {
-                text: '从 Vue 2 迁移',
-                link: 'https://v3-migration.vuejs.org/',
-              },
+              { text: 'Organization', link: 'https://github.com/v-poc' },
+              { text: 'Tutorial', link: 'https://nikoni.top/rui-next/docs/' },
+              { text: 'Examples', link: 'https://nikoni.top/rui-next/docs/' },
             ],
           },
           {
             text: 'API',
             icon: 'tabler:cloud-storm',
-            activeMatch: `^/api/`,
-            link: '/api/',
+            // activeMatch: `^/api/`,
+            link: 'https://nikoni.top/rui-next/docs/',
           },
           {
             text: 'Playground',
-            link: 'https://sfc.vuejs.org',
+            link: 'https://nikoni.top/rui-next/docs/playground.html',
           },
           {
-            text: '指南',
-            link: '/zh/guide',
-          },
-          {
-            text: '关于',
+            text: 'Links',
             icon: 'tabler:mood-smile',
-            activeMatch: `^/about/`,
+            // activeMatch: `^/about/`,
             items: [
-              { text: 'FAQ', icon: 'tabler:question-mark', link: '/about/faq' },
-              { text: '团队', icon: 'tabler:users', link: '/about/team' },
               {
-                text: '版本发布',
+                text: 'Changelog',
+                icon: 'tabler:ghost',
+                link: 'https://github.com/v-poc/rui-next/blob/main/CHANGELOG.md',
+              },
+              {
+                text: 'Team',
+                icon: 'tabler:users',
+                link: 'https://github.com/orgs/v-poc/people',
+              },
+              {
+                text: 'Vite',
                 icon: 'tabler:battery-automotive',
-                link: '/about/releases',
+                link: 'https://vitejs.dev/',
               },
               {
-                text: '社区指南',
+                text: 'Vitepress',
                 icon: 'tabler:adjustments-horizontal',
-                link: '/about/community-guide',
+                link: 'https://vitepress.vuejs.org/',
               },
-              { text: '行为准则', icon: 'tabler:ghost', link: '/about/coc' },
               {
-                text: '纪录片',
-                icon: 'tabler:video',
-                link: 'https://www.youtube.com/watch?v=OrxmtDw4pVI',
+                text: 'RuiPOC',
+                icon: 'tabler:ghost',
+                link: 'https://github.com/v-poc/rui-poc',
               },
             ],
           },
           {
             icon: 'uiw/github',
-            link: 'https://github.com/codpoe/pressify',
+            link: 'https://github.com/v-poc/rui-next',
           },
         ],
         sidebar: [
@@ -99,7 +96,7 @@ export default defineConfig<ThemeConfig>({
           },
           {
             text: '快速上手',
-            link: '/zh/guide/getting-started',
+            link: '/en/one-piece/getting-started',
           },
           {
             text: '配置',
@@ -123,92 +120,7 @@ export default defineConfig<ThemeConfig>({
               },
               {
                 text: '使用 Demo 组件进行演示',
-                link: '/zh/guide/demo',
-              },
-            ],
-          },
-          {
-            text: '主题',
-            items: [
-              {
-                text: '默认主题',
-                link: '/zh/guide/default-theme',
-              },
-              {
-                text: '自定义主题',
-                link: '/zh/guide/custom-theme',
-              },
-              {
-                text: '使用 Demo 组件进行演示',
-                link: '/zh/guide/demo',
-              },
-            ],
-          },
-          {
-            text: '主题',
-            items: [
-              {
-                text: '默认主题',
-                link: '/zh/guide/default-theme',
-              },
-              {
-                text: '自定义主题',
-                link: '/zh/guide/custom-theme',
-              },
-              {
-                text: '使用 Demo 组件进行演示',
-                link: '/zh/guide/demo',
-              },
-            ],
-          },
-          {
-            text: '主题',
-            items: [
-              {
-                text: '默认主题',
-                link: '/zh/guide/default-theme',
-              },
-              {
-                text: '自定义主题',
-                link: '/zh/guide/custom-theme',
-              },
-              {
-                text: '使用 Demo 组件进行演示',
-                link: '/zh/guide/demo',
-              },
-            ],
-          },
-          {
-            text: '主题',
-            items: [
-              {
-                text: '默认主题',
-                link: '/zh/guide/default-theme',
-              },
-              {
-                text: '自定义主题',
-                link: '/zh/guide/custom-theme',
-              },
-              {
-                text: '使用 Demo 组件进行演示',
-                link: '/zh/guide/demo',
-              },
-            ],
-          },
-          {
-            text: '主题',
-            items: [
-              {
-                text: '默认主题',
-                link: '/zh/guide/default-theme',
-              },
-              {
-                text: '自定义主题',
-                link: '/zh/guide/custom-theme',
-              },
-              {
-                text: '使用 Demo 组件进行演示',
-                link: '/zh/guide/demo',
+                link: '/en/one-piece/demo',
               },
             ],
           },
