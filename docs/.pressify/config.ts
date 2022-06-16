@@ -77,7 +77,7 @@ export default defineConfig<ThemeConfig>({
                 link: 'https://vitepress.vuejs.org/',
               },
               {
-                text: 'RuiPOC',
+                text: 'RUI(POC)',
                 icon: 'tabler:ghost',
                 link: 'https://github.com/v-poc/rui-poc',
               },
@@ -90,47 +90,23 @@ export default defineConfig<ThemeConfig>({
         ],
         sidebar: [
           {
-            text: '项目介绍',
+            text: 'RUI',
             icon: 'openmoji:rocket',
-            link: '/zh/guide',
+            link: '/en/getting-started',
           },
           {
-            text: '快速上手',
-            link: '/en/one-piece/getting-started',
+            text: 'Quick start',
+            link: '/en/getting-started',
           },
           {
-            text: '配置',
-            link: '/zh/guide/config',
-          },
-          {
-            text: '路由规则',
-            link: '/zh/guide/routes',
-          },
-          {
-            text: '主题',
+            text: 'Components',
             icon: 'lucide:home',
             items: [
               {
-                text: '默认主题',
-                link: '/zh/guide/default-theme',
-              },
-              {
-                text: '自定义主题',
-                link: '/zh/guide/custom-theme',
-              },
-              {
-                text: '使用 Demo 组件进行演示',
+                text: 'One Piece',
                 link: '/en/one-piece/demo',
               },
             ],
-          },
-          {
-            text: '路由规则',
-            link: '/zh/guide/routes',
-          },
-          {
-            text: '路由规则',
-            link: '/zh/guide/routes',
           },
         ],
       },

@@ -1,13 +1,12 @@
 ---
 home: true
 title: 首页
-heroText: Pressify
-tagline: Vite & React 驱动的静态网站生成器
+heroImage:
+heroText: RUI
+tagline: 基于 Vite 和 React 的移动端UI组件库
 actions:
   - text: 快速上手
-    link: /zh/guide/getting-started
-  - text: 项目介绍
-    link: /zh/guide
+    link: /en/getting-started
 features:
   - title: ⚡️ Vite 驱动
     details: Vite 是基于 ES Module 的前端开发构建工具，以快著称。
@@ -18,8 +17,8 @@ features:
   - title: 内置 unplugin-icons
     details: 可以非常简单地在文档中按需使用海量的图标。
   - title: 主题
-    details: Pressify 本身并不渲染内容，需要借助主题来执行渲染
-footer: Copyright © 2022-present Niko Ni. Built with Vite & React.
+    details: RUI 本身并不渲染内容，需要借助主题来执行渲染
+footer: Copyright © 2021-present Niko Ni. Built with Vite & React.
 ---
 
 import IconMountain from '~icons/carbon/lightning';
@@ -28,19 +27,12 @@ import IconMountain from '~icons/carbon/lightning';
 🚧 施工中 <IconMountain className="text-amber-500" />
 :::
 
-### 类似 VuePress，容易上手
+### 类似 VitePress，容易上手
 
 ```shell
 # 在你的项目中安装
-yarn add -D pressify
+yarn add -D rui-next
 
-# 在 docs 目录下新建一个 markdown 文件
-mkdir docs && cd docs
-echo '# Hello Pressify' > README.md
-
-# 开始写作
-yarn pressify dev
-
-# 构建静态文件
-yarn pressify build
+# 在线参考
+# https://nikoni.top/rui-next/docs/
 ```
