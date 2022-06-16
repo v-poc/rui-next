@@ -1,6 +1,6 @@
 # rui-playground
 
-> The Vite based PoC playground.
+> The Vite & RUI based PoC playground.
 
 ## Preview
 
