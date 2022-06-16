@@ -6,7 +6,7 @@
 
 Try [QR code playground](https://nikoni.top/rui-next/docs/components/qr-code/index.html) to scan to access the examples on mobile/tablet device.
 
-> react-hooks `docs+demos` playground based on [vitepress-rc](https://github.com/cvnine/vitepress-rc).
+> react-hooks `docs+demos` playground based on [vite](https://vitejs.dev/config/).
 
 ## Status
 

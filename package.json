@@ -53,7 +53,7 @@
     "release": "node scripts/release.js",
     "start": "pnpm run build && cd docs && pnpm run dev",
     "build-lib": "vite build --config vite.config.ts",
-    "build-docs": "cd docs && pnpm run build"
+    "build-docs": "pnpm run build && cd docs && pnpm run build"
   },
   "lint-staged": {
     "*.{js,jsx,ts,tsx}": "eslint --fix"

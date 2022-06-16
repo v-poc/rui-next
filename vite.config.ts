@@ -1,6 +1,7 @@
+import path from 'path';
 import reachRefresh from '@vitejs/plugin-react';
 
-const path = require('path');
+// const path = require('path');
 
 export default {
   plugins: [
