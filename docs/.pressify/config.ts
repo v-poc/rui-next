@@ -9,7 +9,7 @@ export default defineConfig<ThemeConfig>({
     title: 'RUI playground',
     description: 'The Vite based PoC playground.',
     banner: [
-      'WIP！',
+      'WIP!',
       [
         'a',
         {
@@ -99,12 +99,22 @@ export default defineConfig<ThemeConfig>({
             link: '/en/getting-started',
           },
           {
-            text: 'Components',
-            icon: 'lucide:home',
+            text: 'Navigation-Layout',
+            icon: 'lucide:layout',
+            items: [
+              {
+                text: 'AutoJustifyContent',
+                link: '/en/auto-justify-content/doc',
+              },
+            ],
+          },
+          {
+            text: 'Experimental',
+            icon: 'lucide:slack',
             items: [
               {
                 text: 'One Piece',
-                link: '/en/one-piece/demo',
+                link: '/en/one-piece/doc',
               },
             ],
           },

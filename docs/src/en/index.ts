@@ -1,8 +1,8 @@
 /**
  * Components
  */
-// OnePiece
-export { default as OnePiece } from './one-piece/index';
+// AutoJustifyContent
+export { default as AutoJustifyContent } from './auto-justify-content/index';
 
 /**
  * hooks

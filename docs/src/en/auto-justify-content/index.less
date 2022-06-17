@@ -1,0 +1,13 @@
+// @import '../_styles/mixins';
+// @import '../_styles/themes/default';
+
+@autoJustifyContentPrefixClass: r-auto-justify-content;
+
+.@{autoJustifyContentPrefixClass} {
+  display: flex;
+  justify-content: center;
+  
+  &-content {
+    flex: 0 1 auto;
+  }
+}
