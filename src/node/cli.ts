@@ -32,6 +32,7 @@ cli
 
 cli
   .command('build [root]')
+  .option('--mode <mode>', 'Specify build mode (default: production)')
   .allowUnknownOptions()
   .action(async (root?: string, opts?: any) => {
     try {
@@ -44,7 +45,7 @@ cli
 
 cli
   .command('serve [root]')
-  .option('--port, -p', 'specify port')
+  .option('--port, -p', 'Specify port')
   .allowUnknownOptions()
   .action(async (root?: string, opts?: any) => {
     try {

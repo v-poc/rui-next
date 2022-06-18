@@ -8,12 +8,12 @@ import { SSR_ENTRY_FILE } from '../common/constants.js';
 
 export async function bundle(
   siteConfig: SiteConfig,
-  buildOptions: BuildOptions
+  buildOptions: BuildOptions,
+  mode = 'production'
 ) {
   const resolveViteConfig = (ssr: boolean): InlineConfig => {
     return {
-      // TODO: mode
-      mode: 'development',
+      mode,
       configFile: false,
       root: siteConfig.root,
       base: siteConfig.base,
@@ -39,8 +39,7 @@ export async function bundle(
         emptyOutDir: false,
         outDir: ssr ? siteConfig.tempDir : siteConfig.outDir,
         cssCodeSplit: false,
-        // TODO: minify
-        minify: false,
+        minify: mode !== 'development',
         ssrManifest: !ssr,
         rollupOptions: {
           ...buildOptions.rollupOptions,
