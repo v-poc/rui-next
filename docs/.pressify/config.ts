@@ -92,7 +92,7 @@ export default defineConfig<ThemeConfig>({
           {
             text: "RUI",
             icon: "openmoji:rocket",
-            link: "/en/getting-started",
+            link: "/",
           },
           {
             text: "Quick start",
