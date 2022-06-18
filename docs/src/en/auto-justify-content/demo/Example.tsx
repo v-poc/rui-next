@@ -1,18 +1,17 @@
 import React from 'react';
-import { AutoJustifyContent } from '../../index';
-
-const titleStyle = {
-  color: '#888',
-  fontSize: '90%',
-};
+import { AutoJustifyContent, Divider } from '../../index';
 
 // Example FC
 const Example = () => (
   <div>
-    <p style={titleStyle}>Justify `center` for content within single line</p>
+    <Divider contentAlign="left">
+      Justify `center` for content within single line
+    </Divider>
     <AutoJustifyContent>Vjdptgki xvxidnkpw mfbs.</AutoJustifyContent>
 
-    <p style={titleStyle}>Justify `left` for content with multiple lines</p>
+    <Divider contentAlign="left">
+      Justify `left` for content with multiple lines
+    </Divider>
     <AutoJustifyContent>
       Vjdptgki xvxidnkpw yqjukhufb mwqiiy pykugxp jgift htm asuol cgrrudemh
       gelmsq mfbs yphdic pwqquwwm. Pgur vvuqrbxd rqteofr mdrvomqiv sncwjuoi mjim
