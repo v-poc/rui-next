@@ -103,6 +103,10 @@ export default defineConfig<ThemeConfig>({
             icon: 'lucide:layout',
             items: [
               {
+                text: 'Divider',
+                link: '/en/divider/doc',
+              },
+              {
                 text: 'AutoJustifyContent',
                 link: '/en/auto-justify-content/doc',
               },

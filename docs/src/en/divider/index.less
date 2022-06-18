@@ -1,0 +1,51 @@
+// @import '../_styles/mixins';
+// @import '../_styles/themes/default';
+
+@dividerPrefixClass: r-divider;
+
+.@{dividerPrefixClass} {
+  &-horizontal {
+    margin: 16px 0;
+    display: flex;
+    align-items: center;
+    color: #999;
+    font-size: 14px;
+    border-width: 0;
+    border-color: #EEE;
+    border-style: solid;
+
+    &::after,
+    &::before {
+      flex: auto;
+      display: block;
+      content: "";
+      border-style: inherit;
+      border-color: inherit;
+      border-width: 1px 0 0;
+    }
+  }
+
+  &-left&::before {
+    max-width: 10%;
+  }
+
+  &-right&::after {
+    max-width: 10%;
+  }
+
+  &-content {
+    flex: none;
+    padding: 0 16px;
+  }
+
+  &-vertical {
+    position: relative;
+    display: inline-block;
+    top: -0.06em;
+    margin: 0 16px;
+    height: 0.9em;
+    vertical-align: middle;
+    border-top: 0;
+    border-left: 1px solid #EEE;
+  }
+}
