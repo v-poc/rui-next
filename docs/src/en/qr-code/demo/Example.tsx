@@ -8,13 +8,23 @@ const textfieldStyle = {
   border: "1px solid #000",
 };
 
+type RefType = any;
+
+type ParamsType = {
+  value: string;
+  num: number;
+  level: "L" | "M" | "Q" | "H";
+  mode: "image" | "table" | "svg" | "dataurl";
+  border: boolean;
+};
+
 // Example FC
 const Example = () => {
-  const selectModeRef = useRef<any>();
-  const selectWrapperRef = useRef<any>();
-  const selectTypeNumberRef = useRef<any>();
-  const selectLevelRef = useRef<any>();
-  const [params, setParams] = useState({
+  const selectModeRef = useRef<RefType>();
+  const selectWrapperRef = useRef<RefType>();
+  const selectTypeNumberRef = useRef<RefType>();
+  const selectLevelRef = useRef<RefType>();
+  const [params, setParams] = useState<ParamsType>({
     value: "",
     num: 8,
     level: "L",
