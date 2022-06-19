@@ -1,7 +1,5 @@
-import path from 'path';
-import reachRefresh from '@vitejs/plugin-react';
-
-// const path = require('path');
+import path from "path";
+import reachRefresh from "@vitejs/plugin-react";
 
 export default {
   plugins: [
@@ -9,20 +7,21 @@ export default {
   ],
   build: {
     lib: {
-      entry: path.resolve(__dirname, './docs/src/en/index.ts'),
-      name: 'RuiNext',
+      entry: path.resolve(__dirname, "./docs/src/en/index.ts"),
+      name: "RuiNext",
+      fileName: (format: string) => `rui-next.${format}.js`,
     },
     // outDir: 'dist',
     rollupOptions: {
       // make sure to externalize deps that shouldn't be bundled
       // into your library
-      external: ['react', 'reactdom'],
+      external: ["react", "reactdom"],
       output: {
         // Provide global variables to use in the UMD build
         // for externalized deps
         globals: {
-          react: 'React',
-          reactdom: 'ReactDOM',
+          react: "React",
+          reactdom: "ReactDOM",
         },
       },
     },
