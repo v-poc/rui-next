@@ -1,0 +1,18 @@
+// @import "../_styles/mixins";
+// @import "../_styles/themes/default";
+
+@qrcodePrefixClass: r-qr-code;
+
+.@{qrcodePrefixClass} {
+  &-wrapper {
+    display: inline-block;
+    border: 1px solid #999;
+    border-radius: 5px;
+    box-shadow: 3px 3px 6px #CCC;
+    overflow: hidden;
+
+    img {
+      margin: 0;
+    }
+  }
+}

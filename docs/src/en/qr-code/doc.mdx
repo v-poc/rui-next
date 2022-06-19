@@ -1,0 +1,23 @@
+# QRCode
+
+`QRCode` is the React qr-code generator.
+
+```jsx
+<QRCode mode="image" value="Hello RUI!" />
+```
+
+## Example
+
+Basic usage of QRCode component.
+
+<Demo src="/src/en/qr-code/demo/Example.tsx" />
+
+## API
+
+Properties | Description | Type | Default
+-----------|------------|------|--------
+| value | the value of qr-code, mandatory | string | - |
+| num | the type number, optional | number | 8 |
+| level | the error Correction Level, optional value: `L`, `M`, `Q`, `H` | string | `L` |
+| mode | the render mode of qr-code, optional value: `image`, `svg`, `table`, `dataurl` | string | `image` |
+| border | whether to show the border wrapper, optional | boolean | `false` |

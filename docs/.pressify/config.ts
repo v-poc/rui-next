@@ -113,6 +113,16 @@ export default defineConfig<ThemeConfig>({
             ],
           },
           {
+            text: "Misc",
+            icon: "lucide:grid",
+            items: [
+              {
+                text: "QRCode",
+                link: "/en/qr-code/doc",
+              },
+            ],
+          },
+          {
             text: "Experimental",
             icon: "lucide:slack",
             items: [
