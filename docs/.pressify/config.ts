@@ -23,7 +23,8 @@ export default defineConfig<ThemeConfig>({
         "Sponsor this project",
       ],
     ],
-    repo: "v-poc/rui-playground",
+    docsRepo: "v-poc/rui-playground",
+    docsBranch: "main",
     editLink: true,
     // algolia: {
     //   apiKey: "x",
