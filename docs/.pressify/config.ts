@@ -95,11 +95,12 @@ export default defineConfig<ThemeConfig>({
         sidebar: [
           {
             text: "RUI",
-            icon: "openmoji:rocket",
+            icon: "lucide:aperture",
             link: "/",
           },
           {
             text: "Quick start",
+            icon: "lucide:puzzle",
             link: "/en/getting-started",
           },
           {
@@ -118,7 +119,7 @@ export default defineConfig<ThemeConfig>({
           },
           {
             text: "Misc",
-            icon: "lucide:grid",
+            icon: "lucide:qr-code",
             items: [
               {
                 text: "QRCode",
