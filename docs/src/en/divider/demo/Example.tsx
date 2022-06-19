@@ -26,9 +26,7 @@ const Example = () => (
     <p style={titleStyle}>Divider with content</p>
     <Divider>center content</Divider>
     <br />
-    <br />
     <Divider contentAlign="left">left content</Divider>
-    <br />
     <br />
     <Divider contentAlign="right">right content</Divider>
 
