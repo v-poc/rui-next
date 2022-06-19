@@ -1,5 +1,5 @@
-import React, { CSSProperties, ReactNode } from 'react';
-import classnames from 'classnames';
+import React, { CSSProperties, ReactNode } from "react";
+import classnames from "classnames";
 
 // DividerProps type
 export type DividerProps = {
@@ -7,7 +7,7 @@ export type DividerProps = {
   className?: string;
   children?: ReactNode;
   style?: CSSProperties;
-  contentAlign?: 'center' | 'left' | 'right'; // takes effect when vertical: false
+  contentAlign?: "center" | "left" | "right"; // takes effect when vertical: false
   vertical?: boolean; // vertical or horizontal
 };
 
@@ -19,7 +19,7 @@ export const Divider: React.FC<DividerProps> = props => {
   const wrapCls = classnames(
     prefixCls,
     className,
-    `${prefixCls}-${vertical ? 'vertical' : 'horizontal'}`,
+    `${prefixCls}-${vertical ? "vertical" : "horizontal"}`,
     `${prefixCls}-${contentAlign}`
   );
 
@@ -31,7 +31,7 @@ export const Divider: React.FC<DividerProps> = props => {
 };
 
 Divider.defaultProps = {
-  prefixCls: 'r-divider',
-  contentAlign: 'center',
+  prefixCls: "r-divider",
+  contentAlign: "center",
   vertical: false,
 };

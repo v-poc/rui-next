@@ -1,8 +1,8 @@
-import { OnePiece } from './OnePiece';
+import { OnePiece } from "./OnePiece";
 
 // import "../_styles/index";
-import './index.less';
+import "./index.less";
 
-export type { OnePieceProps } from './OnePiece';
+export type { OnePieceProps } from "./OnePiece";
 
 export default OnePiece;

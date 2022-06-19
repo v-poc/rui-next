@@ -1,4 +1,4 @@
-import React from 'react';
+import React from "react";
 
 // OnePieceProps type
 export type OnePieceProps = {
@@ -34,5 +34,5 @@ export const OnePiece: React.FC<OnePieceProps> = props => {
 };
 
 OnePiece.defaultProps = {
-  prefixCls: 'r-op',
+  prefixCls: "r-op",
 };

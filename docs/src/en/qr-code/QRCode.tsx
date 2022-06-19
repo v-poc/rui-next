@@ -1,6 +1,6 @@
-import React from 'react';
-import classnames from 'classnames';
-import qrcode from 'v-qr-code-next';
+import React from "react";
+import classnames from "classnames";
+import qrcode from "v-qr-code-next";
 
 // QRCodeProps Type
 export type QRCodeProps = {
@@ -8,8 +8,8 @@ export type QRCodeProps = {
   className?: string;
   value: string; // the value of qr-code
   num?: number; // the type number
-  level?: 'L' | 'M' | 'Q' | 'H'; // the error Correction Level
-  mode?: 'image' | 'svg' | 'table' | 'dataurl';
+  level?: "L" | "M" | "Q" | "H"; // the error Correction Level
+  mode?: "image" | "svg" | "table" | "dataurl";
   border?: boolean;
 };
 
@@ -23,12 +23,12 @@ export const QRCode: React.FC<QRCodeProps> = props => {
   );
   qr.addData(value).make();
 
-  let res = '';
-  if (mode === 'svg') {
+  let res = "";
+  if (mode === "svg") {
     res = qr.createSvgTag();
-  } else if (mode === 'table') {
+  } else if (mode === "table") {
     res = qr.createTableTag();
-  } else if (mode === 'dataurl') {
+  } else if (mode === "dataurl") {
     res = `<img src="${qr.createDataURL()}" />`;
   } else {
     res = qr.createImgTag();
@@ -44,9 +44,9 @@ export const QRCode: React.FC<QRCodeProps> = props => {
 };
 
 QRCode.defaultProps = {
-  prefixCls: 'r-qr-code',
+  prefixCls: "r-qr-code",
   num: 8,
-  level: 'L',
-  mode: 'image',
+  level: "L",
+  mode: "image",
   border: false,
 };

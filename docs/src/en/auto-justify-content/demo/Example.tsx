@@ -1,5 +1,5 @@
-import React from 'react';
-import { AutoJustifyContent, Divider } from '../../index';
+import React from "react";
+import { AutoJustifyContent, Divider } from "../../index";
 
 // Example FC
 const Example = () => (

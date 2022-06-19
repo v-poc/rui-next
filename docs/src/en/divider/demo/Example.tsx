@@ -1,9 +1,9 @@
-import React from 'react';
-import { Divider } from '../../index';
+import React from "react";
+import { Divider } from "../../index";
 
 const titleStyle = {
-  color: '#888',
-  fontSize: '90%',
+  color: "#888",
+  fontSize: "90%",
 };
 
 // Example FC
@@ -35,9 +35,9 @@ const Example = () => (
     <p style={titleStyle}>Divider with customized styles</p>
     <Divider
       style={{
-        color: 'orange',
-        borderColor: '#36C',
-        borderStyle: 'dashed',
+        color: "orange",
+        borderColor: "#36C",
+        borderStyle: "dashed",
       }}
     >
       some content

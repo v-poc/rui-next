@@ -1,11 +1,11 @@
-import React, { useRef, useState } from 'react';
-import { QRCode, Divider } from '../../index';
+import React, { useRef, useState } from "react";
+import { QRCode, Divider } from "../../index";
 
 const textfieldStyle = {
-  margin: '15px 0',
-  width: '100%',
-  height: '24px',
-  border: '1px solid #000',
+  margin: "15px 0",
+  width: "100%",
+  height: "24px",
+  border: "1px solid #000",
 };
 
 // Example FC
@@ -15,10 +15,10 @@ const Example = () => {
   const selectTypeNumberRef = useRef<any>();
   const selectLevelRef = useRef<any>();
   const [params, setParams] = useState({
-    value: '',
+    value: "",
     num: 8,
-    level: 'L',
-    mode: 'image',
+    level: "L",
+    mode: "image",
     border: false,
   });
 
@@ -69,7 +69,7 @@ const Example = () => {
   const handleSelectWrapper = () =>
     setParams({
       ...params,
-      border: selectWrapperRef.current!.value === '1',
+      border: selectWrapperRef.current!.value === "1",
     });
 
   return (
@@ -87,7 +87,7 @@ const Example = () => {
         value={params.num}
         onChange={() => handleSelectTypeNumber()}
       >
-        {new Array(40).fill('').map((item, i) => (
+        {new Array(40).fill("").map((item, i) => (
           <option key={`num${i}`} value={i + 1}>
             {i + 1}
           </option>

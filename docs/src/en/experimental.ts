@@ -2,7 +2,7 @@
  * experimental
  */
 // OnePiece
-export { default as OnePiece } from './one-piece/index';
+export { default as OnePiece } from "./one-piece/index";
 
 /**
  * Utils

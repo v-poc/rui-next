@@ -1,10 +1,10 @@
-import React from 'react';
-import { OnePiece } from '../../experimental';
+import React from "react";
+import { OnePiece } from "../../experimental";
 
 const wrapStyle = {
-  display: 'flex',
-  alignItems: 'center',
-  justifyContent: 'space-between',
+  display: "flex",
+  alignItems: "center",
+  justifyContent: "space-between",
 };
 
 // Example FC

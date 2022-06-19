@@ -1,4 +1,4 @@
-import React, { ReactNode } from 'react';
+import React, { ReactNode } from "react";
 
 // AutoJustifyContentProps type
 export type AutoJustifyContentProps = {
@@ -18,5 +18,5 @@ export const AutoJustifyContent: React.FC<AutoJustifyContentProps> = props => {
 };
 
 AutoJustifyContent.defaultProps = {
-  prefixCls: 'r-auto-justify-content',
+  prefixCls: "r-auto-justify-content",
 };

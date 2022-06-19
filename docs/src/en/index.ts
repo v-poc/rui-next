@@ -2,11 +2,11 @@
  * Components
  */
 // AutoJustifyContent
-export { default as AutoJustifyContent } from './auto-justify-content/index';
+export { default as AutoJustifyContent } from "./auto-justify-content/index";
 // Divider
-export { default as Divider } from './divider/index';
+export { default as Divider } from "./divider/index";
 // QRCode
-export { default as QRCode } from './qr-code/index';
+export { default as QRCode } from "./qr-code/index";
 
 /**
  * hooks
