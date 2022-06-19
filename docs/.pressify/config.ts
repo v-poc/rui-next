@@ -2,6 +2,9 @@ import { defineConfig } from "pressify";
 import type { ThemeConfig } from "pressify/theme";
 
 export default defineConfig<ThemeConfig>({
+  vite: {
+    base: '/rui-next/docs/',
+  },
   pages: "src",
   themeConfig: {
     locale: "en-US",
