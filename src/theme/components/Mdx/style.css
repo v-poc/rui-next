@@ -6,6 +6,10 @@
   margin-bottom: 0 !important;
 }
 
+.markdown-body > .py-code-light:nth-last-child(2) {
+  margin-bottom: 0;
+}
+
 .markdown-body .header-anchor {
   float: left;
   margin-left: -0.87em;
@@ -31,6 +35,10 @@
   width: max-content;
   min-width: 100%;
   padding: 0.86em 1.14em;
+}
+
+.prose :where(h3 + .py-code-light + .py-code-dark):not(:where([class~="not-prose"] *)) {
+  margin-top: 0;
 }
 
 /*

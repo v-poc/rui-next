@@ -1,9 +1,9 @@
-import React from 'react';
-import { Bolt, Info, AlertCircle, AlertTriangle } from '../Icons';
+import React from "react";
+import { Bolt, Info, AlertCircle, AlertTriangle } from "../Icons";
 
-import './style.css';
+import "./style.css";
 
-export type CalloutType = 'tip' | 'info' | 'warning' | 'danger';
+export type CalloutType = "tip" | "info" | "warning" | "danger";
 
 const typeToIconMap: Record<CalloutType, React.ComponentType<any>> = {
   tip: Bolt,
@@ -27,12 +27,13 @@ export function Callout({
 }: CalloutProps) {
   return (
     <div
-      className={`callout-${type} relative my-5 py-4 pl-11 pr-5 rounded-lg bg-c-bg-1 border font-medium`}
+      className={`callout callout-${type} relative my-5 py-4 pl-11 pr-5 rounded-lg border font-medium`}
     >
+      <div className="callout-bg absolute top-0 bottom-0 left-0 right-0 rounded-lg"></div>
       <span className="callout-icon absolute top-5 left-4 flex items-center h-[1.2em] text-[15px]">
-        {typeof icon === 'string'
+        {typeof icon === "string"
           ? icon
-          : React.createElement(icon, { className: 'text-[1.2em]' })}
+          : React.createElement(icon, { className: "text-[1.2em]" })}
       </span>
       <div className="callout-title mb-1 text-[15px] text-c-text-0">
         {title}
