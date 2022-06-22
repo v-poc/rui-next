@@ -28,8 +28,8 @@ export function Callout({
   return (
     <div className={`callout callout-${type} relative my-5 p-4 rounded-lg`}>
       <div className="callout-bg absolute top-0 bottom-0 left-0 right-0 rounded-lg"></div>
-      <div className="callout-header flex items-center space-x-2 text-base font-bold">
-        <span className="flex items-center">
+      <div className="callout-header flex items-start space-x-2 text-base font-bold">
+        <span className="flex items-center h-6">
           {typeof icon === "string"
             ? icon
             : React.createElement(icon, { className: "text-[1.2em]" })}

@@ -54,8 +54,7 @@ function createEditLink(
 export const UpdateInfo: React.FC = () => {
   const { pagePath, pageData } = useAppState();
   const {
-    repo,
-    docsRepo = repo,
+    docsRepo,
     docsBranch = "master",
     docsDir = "/",
     editLink = false,

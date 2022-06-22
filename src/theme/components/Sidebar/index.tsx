@@ -1,12 +1,12 @@
-import { useEffect } from 'react';
-import { CSSTransition } from 'react-transition-group';
-import { useAppState } from 'pressify/client';
-import { SidebarItem } from '../../types';
-import { Link } from '../Link';
-import { TextWithIcon } from '../TextWithIcon';
-import { CaretRight, ChevronRight } from '../Icons';
+import { useEffect } from "react";
+import { CSSTransition } from "react-transition-group";
+import { useAppState } from "pressify/client";
+import { SidebarItem } from "../../types";
+import { Link } from "../Link";
+import { TextWithIcon } from "../TextWithIcon";
+import { CaretRight, ChevronRight } from "../Icons";
 
-import './style.css';
+import "./style.css";
 
 export interface SidebarIndicatorProps {
   activeItems: SidebarItem[];
@@ -80,7 +80,7 @@ export function Sidebar({
         fixed z-[var(--z-index-sidebar)] top-0 right-full bottom-0 w-[75vw] max-w-[320px] px-6
         lg:top-[calc(var(--header-height)+var(--banner-height))] lg:right-auto lg:w-[var(--left-aside-width)] lg:px-0
         transition-transform duration-300 pt-8 pb-24 overflow-y-auto bg-c-bg-0 border-r border-c-border-1
-        ${open ? 'translate-x-full lg:translate-x-0' : ''}`}
+        ${open ? "translate-x-full lg:translate-x-0" : ""}`}
       >
         {items.map((item, index) => {
           if (item.items) {
@@ -95,11 +95,11 @@ export function Sidebar({
                       key={subIndex}
                       to={subItem.link}
                       color={false}
-                      className={`flex items-center min-h-[30px] px-[1em] -ml-px border-l text-sm hover:text-c-brand transition-colors
+                      className={`flex items-center min-h-[34px] px-[1em] -ml-px border-l text-sm hover:text-c-brand transition-colors
                       ${
                         activeItems.includes(subItem)
-                          ? 'text-c-brand border-c-brand'
-                          : 'text-c-text-1 border-l-transparent'
+                          ? "text-c-brand border-c-brand"
+                          : "text-c-text-1 border-l-transparent"
                       }`}
                     >
                       <TextWithIcon
@@ -119,8 +119,8 @@ export function Sidebar({
               key={index}
               to={item.link}
               color={false}
-              className={`flex items-center min-h-[30px] text-sm hover:text-c-brand transition-colors
-              ${activeItems.includes(item) ? 'text-c-brand' : 'text-c-text-1'}`}
+              className={`flex items-center min-h-[34px] text-sm hover:text-c-brand transition-colors
+              ${activeItems.includes(item) ? "text-c-brand" : "text-c-text-1"}`}
             >
               <TextWithIcon text={item.text} icon={item.icon} space="8px" />
             </Link>
