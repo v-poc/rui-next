@@ -1,8 +1,8 @@
-import React, { useState, useEffect, useCallback, useRef } from 'react';
-import { useAppState } from 'pressify/client';
-import throttle from 'lodash-es/throttle';
-import { useScroll } from '../../hooks/useScroll';
-import { Link } from '../Link';
+import React, { useState, useEffect, useCallback, useRef } from "react";
+import { useAppState } from "pressify/client";
+import throttle from "lodash-es/throttle";
+import { useScroll } from "../../hooks/useScroll";
+import { Link } from "../Link";
 
 interface TocItem {
   id: string;
@@ -65,27 +65,23 @@ export const Toc: React.FC = () => {
   // scroll -> active
   useScroll(handleScroll);
 
-  if (!toc?.length) {
-    return null;
-  }
-
   return (
-    <div ref={elRef} className="w-[var(--right-aside-width)] pl-3 -ml-3">
+    <div ref={elRef} className="pl-3 -ml-3">
       <div className="mb-2 text-xs text-c-text-0 font-medium">ON THIS PAGE</div>
       <div className="relative">
         <div
           className={`absolute -left-3 w-1 h-5 rounded bg-c-brand transition-all
-          ${activeIndex >= 0 ? 'opacity-100' : 'opacity-0'}`}
+          ${activeIndex >= 0 ? "opacity-100" : "opacity-0"}`}
           style={{ top: `${Math.max(activeIndex * 28, 0) + 4}px` }}
         />
-        {toc.map((item, index) => (
+        {toc?.map((item, index) => (
           <Link
             key={index}
             className={`block truncate text-sm leading-7 transition-colors
               ${
                 index === activeIndex
-                  ? 'text-c-brand'
-                  : 'text-c-text-2 hover:text-c-text-1'
+                  ? "text-c-brand"
+                  : "text-c-text-2 hover:text-c-text-1"
               }`}
             to={`#${item.id}`}
             color={false}

@@ -1,17 +1,17 @@
-import React, { useMemo, useState } from 'react';
-import { matchPath, Page, useAppState } from 'pressify/client';
-import { Sidebar, SidebarIndicator } from '../Sidebar';
-import { Mdx } from '../Mdx';
-import { UpdateInfo } from '../UpdateInfo';
-import { PrevNext } from '../PrevNext';
-import { Toc } from '../Toc';
-import { Loading } from '../Loading';
-import './style.css';
-import { useSidebar } from '../../hooks/useSidebar';
-import { SidebarItem } from '../../types';
+import React, { useMemo, useState } from "react";
+import { matchPath, Page, useAppState } from "pressify/client";
+import { Sidebar, SidebarIndicator } from "../Sidebar";
+import { Mdx } from "../Mdx";
+import { UpdateInfo } from "../UpdateInfo";
+import { PrevNext } from "../PrevNext";
+import { Toc } from "../Toc";
+import { Loading } from "../Loading";
+import "./style.css";
+import { useSidebar } from "../../hooks/useSidebar";
+import { SidebarItem } from "../../types";
 
 export const DocLayout: React.FC = () => {
-  const { pagePath } = useAppState();
+  const { pagePath, pageModule } = useAppState();
   const [sidebarOpen, setSidebarOpen] = useState(false);
 
   const sidebar = useSidebar();
@@ -51,6 +51,7 @@ export const DocLayout: React.FC = () => {
   }, [pagePath, sidebar]);
 
   const hasSidebar = sidebar && sidebar?.length > 0 && activeSidebar.length > 0;
+  const hasToc = !__HASH_ROUTER__ && Boolean(pageModule?.toc?.length);
 
   return (
     <>
@@ -73,15 +74,11 @@ export const DocLayout: React.FC = () => {
           key={pagePath}
           className={`w-full flex justify-center items-start ${
             hasSidebar
-              ? 'lg:pl-[var(--left-aside-width)] space-x-8'
-              : 'space-x-16'
+              ? "lg:pl-[calc(var(--left-aside-width)+32px)] xl:pl-[var(--left-aside-width)]"
+              : ""
           }`}
         >
-          <div
-            className={`flex-auto w-full min-w-0 ${
-              hasSidebar ? 'lg:pl-16 lg:pr-8' : ''
-            }`}
-          >
+          <div className={`flex-auto w-full min-w-0 lg:mx-8 xl:mx-16`}>
             <div className="max-w-[736px] mx-auto pt-8 pb-24">
               <Mdx className="mb-16">
                 <Page fallback={<Loading className="text-xl" />} />
@@ -90,13 +87,12 @@ export const DocLayout: React.FC = () => {
               <PrevNext />
             </div>
           </div>
-          {/* FIXME: move width to toc inner */}
-          {/* disable toc while using hash router */}
-          {!__HASH_ROUTER__ && (
+          {(hasSidebar || hasToc) && (
             <div
               className="hidden xl:block
             sticky top-[calc(var(--header-height)+var(--banner-height))]
-            shrink-0 pt-8 pb-24"
+            w-[var(--right-aside-width)] shrink-0
+            pt-8 pb-24"
             >
               <Toc />
             </div>
