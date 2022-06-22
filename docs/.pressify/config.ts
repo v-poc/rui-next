@@ -135,6 +135,10 @@ export default defineConfig<ThemeConfig>({
                 text: "One Piece",
                 link: "/en/one-piece/doc",
               },
+              {
+                text: "Like Button",
+                link: "/en/like-button/doc",
+              },
             ],
           },
         ],
