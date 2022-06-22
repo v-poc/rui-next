@@ -1,8 +1,9 @@
-import { createContext, useContext } from 'react';
-import { proxy, ref, snapshot, subscribe, useSnapshot } from 'valtio';
-import _theme from '/@pressify/theme';
-import _routes from 'virtual:conventional-routes';
-import { AppState } from './types';
+import { createContext, useContext } from "react";
+import { proxy, ref, snapshot, subscribe, useSnapshot } from "valtio";
+import _theme from "/@pressify/theme";
+import _routes from "virtual:conventional-routes";
+import pagesData from "virtual:conventional-pages-data";
+import { AppState } from "./types";
 
 const theme = {
   NotFound: () => <>404 Not Found</>,
@@ -10,14 +11,14 @@ const theme = {
 };
 
 const routes = _routes.concat({
-  path: '*',
+  path: "*",
   component: theme.NotFound,
   element: <theme.NotFound />,
 });
 
 // pressify build will inject global variable: `__PRESSIFY_SSR_DATA__`
 export const ssrData =
-  typeof window !== 'undefined' ? window.__PRESSIFY_SSR_DATA__ : undefined;
+  typeof window !== "undefined" ? window.__PRESSIFY_SSR_DATA__ : undefined;
 
 export const appContext = createContext<AppState>(null as any);
 
@@ -25,6 +26,7 @@ export function createAppState() {
   const appState = proxy<AppState>({
     theme: ref(theme),
     routes: ref(routes),
+    pagesData: ref(pagesData),
     pageLoading: false,
     pageError: null,
   });
@@ -37,7 +39,7 @@ export function createAppState() {
     subscribe(appState, () => {
       if (appState) {
         // eslint-disable-next-line no-console
-        console.log('[pressify:appState]', snapshot(appState));
+        console.log("[pressify:appState]", snapshot(appState));
       }
     });
   }

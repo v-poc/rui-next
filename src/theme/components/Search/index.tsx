@@ -1,14 +1,14 @@
 /**
  * Based on @docusaurus/theme-search-algolia
  */
-import React, { useCallback, useMemo, useRef, useState } from 'react';
-import { createPortal } from 'react-dom';
-import { Link, Helmet, useNavigate } from 'pressify/client';
-import { useDocSearchKeyboardEvents } from '@docsearch/react';
-import { IN_BROWSER } from '../../constants';
-import { Search as IconSearch, Command as IconCommand } from '../Icons';
-import { useThemeContext } from '../../context';
-import { removeTailSlash } from '../../utils';
+import React, { useCallback, useMemo, useRef, useState } from "react";
+import { createPortal } from "react-dom";
+import { Link, Helmet, useNavigate } from "pressify/client";
+import { useDocSearchKeyboardEvents } from "@docsearch/react";
+import { IN_BROWSER } from "../../constants";
+import { Search as IconSearch, Command as IconCommand } from "../Icons";
+import { useThemeContext } from "../../context";
+import { removeTailSlash } from "../../utils";
 
 let DocSearchModal: React.ComponentType<any> | null = null;
 
@@ -19,8 +19,8 @@ async function ensureDocSearchModal() {
 
   [{ DocSearchModal }] = await Promise.all([
     // @ts-ignore
-    import('@docsearch/react/modal'),
-    import('@docsearch/css/dist/style.css'),
+    import("@docsearch/react/modal"),
+    import("@docsearch/css/dist/style.css"),
   ]);
 }
 
@@ -67,7 +67,7 @@ export const Search: React.FC<{ iconOnly?: boolean }> = ({ iconOnly }) => {
   const facetFilters = useMemo(() => {
     let userFacetFilters = algolia?.searchParameters?.facetFilters || [];
     userFacetFilters =
-      typeof userFacetFilters === 'string'
+      typeof userFacetFilters === "string"
         ? [userFacetFilters]
         : userFacetFilters;
 
@@ -94,7 +94,7 @@ export const Search: React.FC<{ iconOnly?: boolean }> = ({ iconOnly }) => {
         query faster, especially on mobile. */}
         <link
           rel="preconnect"
-          href={`https://${algolia.appId || 'BH4D9OD16A'}-dsn.algolia.net`}
+          href={`https://${algolia.appId || "BH4D9OD16A"}-dsn.algolia.net`}
           crossOrigin=""
         />
       </Helmet>
@@ -113,13 +113,15 @@ export const Search: React.FC<{ iconOnly?: boolean }> = ({ iconOnly }) => {
             <IconSearch className="text-xl text-c-text-0 group-hover:text-c-brand transition-colors" />
           </div>
         ) : (
-          <div className="flex items-center space-x-2 text-c-text-0 opacity-60 hover:opacity-100 transition-opacity">
-            <IconSearch className="text-base" />
-            <span className="text-[13px]">Search</span>
-            <div className="flex items-center h-4.5 px-0.5 border border-current rounded text-xs opacity-50 group-hover:opacity-100 group-hover:text-c-brand transition-all">
+          <>
+            <div className="flex items-center space-x-1.5 mr-1.5 text-c-text-2 group-hover:text-c-text-0 transition-colors">
+              <IconSearch className="text-[15px]" />
+              <span className="text-[13px]">Search</span>
+            </div>
+            <div className="flex items-center h-4.5 px-0.5 border border-current rounded text-xs text-c-text-3 group-hover:text-c-brand transition-colors">
               <IconCommand />K
             </div>
-          </div>
+          </>
         )}
       </button>
 

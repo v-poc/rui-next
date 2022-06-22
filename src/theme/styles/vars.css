@@ -21,10 +21,10 @@
   --c-border-1: theme('colors.gray.200');
   --c-border-2: theme('colors.gray.300');
 
-  --c-callout-tip: theme('colors.emerald.500');
-  --c-callout-info: theme('colors.blue.500');
-  --c-callout-warning: theme('colors.amber.500');
-  --c-callout-danger: theme('colors.red.500');
+  --c-callout-tip: theme('colors.emerald.600');
+  --c-callout-info: theme('colors.sky.600');
+  --c-callout-warning: theme('colors.amber.600');
+  --c-callout-danger: theme('colors.red.600');
 
   /* size */
   --header-height: 56px;

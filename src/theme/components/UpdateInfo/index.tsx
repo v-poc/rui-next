@@ -1,8 +1,8 @@
-import React from 'react';
-import { useAppState } from 'pressify/client';
-import { useThemeContext } from '../../context';
-import { Link } from '../Link';
-import { Pencil } from '../Icons';
+import React from "react";
+import { useAppState } from "pressify/client";
+import { useThemeContext } from "../../context";
+import { Link } from "../Link";
+import { Pencil } from "../Icons";
 
 /**
  * Based on https://github.com/vuejs/vuepress/blob/master/packages/%40vuepress/theme-default/components/PageEdit.vue
@@ -13,27 +13,27 @@ function createEditLink(
   docsDir: string,
   path: string
 ) {
-  docsRepo = docsRepo.replace(/\/$/, '');
-  docsDir = docsDir.replace(/\/$/, '');
+  docsRepo = docsRepo.replace(/\/$/, "");
+  docsDir = docsDir.replace(/\/$/, "");
   path = `/${path}`;
 
-  if (docsRepo.includes('bitbucket.org')) {
+  if (docsRepo.includes("bitbucket.org")) {
     return (
       docsRepo +
       `/src` +
       `/${docsBranch}` +
-      `${docsDir ? '/' + docsDir : ''}` +
+      `${docsDir ? "/" + docsDir : ""}` +
       path +
       `?mode=edit&spa=0&at=${docsBranch}&fileviewer=file-view-default`
     );
   }
 
-  if (docsRepo.includes('gitlab.com')) {
+  if (docsRepo.includes("gitlab.com")) {
     return (
       docsRepo +
       `/-/edit` +
       `/${docsBranch}` +
-      (docsDir ? '/' + docsDir : '') +
+      (docsDir ? "/" + docsDir : "") +
       path
     );
   }
@@ -44,39 +44,38 @@ function createEditLink(
 
   return (
     docsRepo +
-    '/edit' +
+    "/edit" +
     `/${docsBranch}` +
-    `${docsDir ? '/' + docsDir : ''}` +
+    `${docsDir ? "/" + docsDir : ""}` +
     path
   );
 }
 
 export const UpdateInfo: React.FC = () => {
-  const { pagePath } = useAppState();
+  const { pagePath, pageData } = useAppState();
   const {
-    currentPageData,
     repo,
     docsRepo = repo,
-    docsBranch = 'master',
-    docsDir = '/',
+    docsBranch = "master",
+    docsDir = "/",
     editLink = false,
     lastUpdated = false,
   } = useThemeContext();
 
   const editLinkText =
-    typeof editLink === 'string' ? editLink : 'Edit this page on GitHub';
+    typeof editLink === "string" ? editLink : "Edit this page on GitHub";
   const lastUpdatedText =
-    typeof lastUpdated === 'string' ? lastUpdated : 'Last updated';
+    typeof lastUpdated === "string" ? lastUpdated : "Last updated";
 
   const finalEditLink =
-    editLink && docsRepo && currentPageData?.filePath
-      ? createEditLink(docsRepo, docsBranch, docsDir, currentPageData.filePath)
-      : '';
+    editLink && docsRepo && pageData?.filePath
+      ? createEditLink(docsRepo, docsBranch, docsDir, pageData.filePath)
+      : "";
 
   const finalLastUpdated =
-    lastUpdated && currentPageData?.meta.updatedTime
-      ? new Date(currentPageData.meta.updatedTime).toLocaleString()
-      : '';
+    lastUpdated && pageData?.meta?.updatedTime
+      ? new Date(pageData.meta.updatedTime).toLocaleString()
+      : "";
 
   if (!pagePath || (!finalEditLink && !finalLastUpdated)) {
     return null;

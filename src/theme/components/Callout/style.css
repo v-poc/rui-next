@@ -3,54 +3,46 @@
 }
 
 .callout-bg {
-  opacity: 0.05;
+  opacity: 0.1;
   z-index: -1;
 }
 
 .callout-tip {
-  border-color: var(--c-callout-tip);
-
   & .callout-bg {
     background-color: var(--c-callout-tip);
   }
 
-  & .callout-icon {
+  & .callout-header {
     color: var(--c-callout-tip);
   }
 }
 
 .callout-info {
-  border-color: var(--c-callout-info);
-
   & .callout-bg {
     background-color: var(--c-callout-info);
   }
 
-  & .callout-icon {
+  & .callout-header {
     color: var(--c-callout-info);
   }
 }
 
 .callout-warning {
-  border-color: var(--c-callout-warning);
-
   & .callout-bg {
     background-color: var(--c-callout-warning);
   }
 
-  & .callout-icon {
+  & .callout-header {
     color: var(--c-callout-warning);
   }
 }
 
 .callout-danger {
-  border-color: var(--c-callout-danger);
-
   & .callout-bg {
     background-color: var(--c-callout-danger);
   }
 
-  & .callout-icon {
+  & .callout-header {
     color: var(--c-callout-danger);
   }
 }

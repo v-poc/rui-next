@@ -26,21 +26,19 @@ export function Callout({
   children,
 }: CalloutProps) {
   return (
-    <div
-      className={`callout callout-${type} relative my-5 py-4 pl-11 pr-5 rounded-lg border font-medium`}
-    >
+    <div className={`callout callout-${type} relative my-5 p-4 rounded-lg`}>
       <div className="callout-bg absolute top-0 bottom-0 left-0 right-0 rounded-lg"></div>
-      <span className="callout-icon absolute top-5 left-4 flex items-center h-[1.2em] text-[15px]">
-        {typeof icon === "string"
-          ? icon
-          : React.createElement(icon, { className: "text-[1.2em]" })}
-      </span>
-      <div className="callout-title mb-1 text-[15px] text-c-text-0">
-        {title}
+      <div className="callout-header flex items-center space-x-2 text-base font-bold">
+        <span className="flex items-center">
+          {typeof icon === "string"
+            ? icon
+            : React.createElement(icon, { className: "text-[1.2em]" })}
+        </span>
+        <div>{title}</div>
       </div>
-      <div className="callout-content text-[14px] text-c-text-2">
-        {children}
-      </div>
+      {children && (
+        <div className="callout-content mt-1 ml-0.5">{children}</div>
+      )}
     </div>
   );
 }

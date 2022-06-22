@@ -1,10 +1,10 @@
-import { renderToString } from 'react-dom/server';
-import { StaticRouter } from 'react-router-dom/server';
-import { HelmetProvider } from 'react-helmet-async';
-import { App, waitForPageReady } from './main';
-import { createAppState } from './state';
+import { renderToString } from "react-dom/server";
+import { StaticRouter } from "react-router-dom/server";
+import { HelmetProvider } from "react-helmet-async";
+import { App, waitForPageReady } from "./main";
+import { createAppState } from "./state";
 
-const basename = import.meta.env.BASE_URL?.replace(/\/$/, '');
+const basename = import.meta.env.BASE_URL?.replace(/\/$/, "");
 
 export async function render(
   url: string,
@@ -24,4 +24,4 @@ export async function render(
   );
 }
 
-export { default as pagesData } from '/@pressify/pages-data';
+export { default as pagesData } from "virtual:conventional-pages-data";

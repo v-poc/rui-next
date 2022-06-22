@@ -1,9 +1,8 @@
-import React from 'react';
-import { Page, Link } from 'pressify/client';
-import { Mdx } from '../Mdx';
-import { Footer } from '../Footer';
-import { useThemeContext } from '../../context';
-import { Button } from '../Button';
+import React from "react";
+import { Page, Link, useAppState } from "pressify/client";
+import { Mdx } from "../Mdx";
+import { Footer } from "../Footer";
+import { Button } from "../Button";
 
 interface HomePageMeta {
   heroImage?: string;
@@ -15,16 +14,16 @@ interface HomePageMeta {
 }
 
 export const HomeLayout: React.FC = () => {
-  const { currentPageData } = useThemeContext();
+  const { pageData } = useAppState();
   const { heroImage, heroText, tagline, actions, features, footer } =
-    (currentPageData?.meta || {}) as HomePageMeta;
+    (pageData?.meta || {}) as HomePageMeta;
 
   return (
     <div className="max-w-screen-lg px-6 md:px-8 mx-auto h-full flex flex-col">
       <div className="flex-1 divide-y divide-c-border-1">
         <header className="py-12 md:pt-20 md:pb-16 text-center">
           {heroImage &&
-            (heroImage.includes('/') ? (
+            (heroImage.includes("/") ? (
               <img
                 src={heroImage}
                 alt="hero"
@@ -51,7 +50,7 @@ export const HomeLayout: React.FC = () => {
             <div className="mt-8 flex justify-center space-x-4 md:space-x-5">
               {actions.map((action, index) => (
                 <Link key={index} to={action.link}>
-                  <Button type={index === 0 ? 'primary' : 'secondary'}>
+                  <Button type={index === 0 ? "primary" : "secondary"}>
                     {action.text}
                   </Button>
                 </Link>

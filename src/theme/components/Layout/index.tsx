@@ -1,51 +1,44 @@
-import React, { useCallback, useEffect, useMemo, useState } from 'react';
-import {
-  useThemeConfig,
-  usePagesData,
-  useAppState,
-  Helmet,
-  matchPath,
-} from 'pressify/client';
-import { ThemeContext, useThemeContext } from '../../context';
-import { ThemeConfig, NavItem } from '../../types';
-import { IN_BROWSER, THEME_MODE_STORAGE_KEY } from '../../constants';
-import { getLocales, getThemeMode, mergeThemeConfig } from '../../utils';
-import { useScrollToTop } from '../../hooks/useScrollToTop';
-import { Header } from '../Header';
-import { DocLayout } from '../DocLayout';
-import { HomeLayout } from '../HomeLayout';
+import React, { useCallback, useEffect, useMemo, useState } from "react";
+import { useThemeConfig, useAppState, Helmet } from "pressify/client";
+import { ThemeContext } from "../../context";
+import { ThemeConfig, NavItem } from "../../types";
+import { IN_BROWSER, THEME_MODE_STORAGE_KEY } from "../../constants";
+import { getLocales, getThemeMode, mergeThemeConfig } from "../../utils";
+import { useScrollToTop } from "../../hooks/useScrollToTop";
+import { Header } from "../Header";
+import { DocLayout } from "../DocLayout";
+import { HomeLayout } from "../HomeLayout";
 
 if (IN_BROWSER) {
   const themeMode = getThemeMode();
   const doc = document.documentElement;
 
-  if (themeMode === 'dark') {
-    doc.classList.add('dark');
+  if (themeMode === "dark") {
+    doc.classList.add("dark");
   } else {
-    doc.classList.remove('dark');
+    doc.classList.remove("dark");
   }
 }
 
 const InternalLayout: React.FC = () => {
-  const { currentPageData } = useThemeContext();
+  const { pageData } = useAppState();
 
   return (
     <>
       <Header />
-      {currentPageData?.meta.home ? <HomeLayout /> : <DocLayout />}
+      {pageData?.meta?.home ? <HomeLayout /> : <DocLayout />}
     </>
   );
 };
 
 export const Layout: React.FC = () => {
   const themeConfig = useThemeConfig<ThemeConfig>();
-  const pagesData = usePagesData();
-  const { pagePath } = useAppState();
+  const { pagePath, pagesData, pageData } = useAppState();
 
   const [themeMode, setThemeMode] = useState(() => getThemeMode());
 
   const toggleThemeMode = useCallback(() => {
-    setThemeMode(prev => (prev === 'light' ? 'dark' : 'light'));
+    setThemeMode(prev => (prev === "light" ? "dark" : "light"));
   }, []);
 
   useEffect(() => {
@@ -56,15 +49,6 @@ export const Layout: React.FC = () => {
     () => mergeThemeConfig(themeConfig, pagePath),
     [themeConfig, pagePath]
   );
-
-  const currentPageData = useMemo(() => {
-    const found =
-      pagePath &&
-      Object.keys(pagesData)
-        .sort((a, b) => b.length - a.length)
-        .find(item => matchPath(item, pagePath));
-    return found ? pagesData[found] : undefined;
-  }, [pagesData, pagePath]);
 
   const locales = useMemo(() => getLocales(themeConfig), [themeConfig]);
 
@@ -102,11 +86,11 @@ export const Layout: React.FC = () => {
 
   const htmlClassName = useMemo(() => {
     return [
-      themeMode === 'dark' && 'dark',
-      finalThemeConfig.banner && 'has-banner',
+      themeMode === "dark" && "dark",
+      finalThemeConfig.banner && "has-banner",
     ]
       .filter(Boolean)
-      .join(' ');
+      .join(" ");
   }, [themeMode, finalThemeConfig.banner]);
 
   useScrollToTop();
@@ -119,12 +103,12 @@ export const Layout: React.FC = () => {
     <>
       <Helmet
         titleTemplate={
-          finalThemeConfig.title ? `%s | ${finalThemeConfig.title}` : ''
+          finalThemeConfig.title ? `%s | ${finalThemeConfig.title}` : ""
         }
         defaultTitle={finalThemeConfig.title}
       >
         <html lang={currentLocale?.locale} className={htmlClassName} />
-        <title>{currentPageData?.meta?.title}</title>
+        <title>{pageData?.meta?.title}</title>
         {finalThemeConfig.description && (
           <meta name="description" content={finalThemeConfig.description} />
         )}
@@ -137,8 +121,6 @@ export const Layout: React.FC = () => {
           ...finalThemeConfig,
           textNav,
           iconNav,
-          pagesData,
-          currentPageData,
           locales,
           currentLocale,
           homePath,

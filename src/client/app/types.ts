@@ -1,13 +1,9 @@
-import { ComponentType } from 'react';
-import { Components } from '@mdx-js/react/lib';
-import { Route } from 'virtual:conventional-routes';
+import { ComponentType } from "react";
+import { Components } from "@mdx-js/react/lib";
+import type { Route } from "virtual:conventional-routes";
+import type { PageData } from "virtual:conventional-pages-data";
 
-export interface PageData {
-  basePath: string;
-  routePath: string;
-  filePath: string;
-  meta: Record<string, any>;
-}
+export type { PageData };
 
 export interface Theme {
   Layout: ComponentType<any>;
@@ -18,7 +14,9 @@ export interface Theme {
 export interface AppState {
   theme: Theme;
   routes: Route[];
+  pagesData: Record<string, PageData>;
   pagePath?: string;
+  pageData?: PageData;
   pageModule?: any;
   pageLoading: boolean;
   pageError: Error | null;

@@ -92,8 +92,8 @@ importers:
       v-qr-code-next: ^0.1.9
       valtio: ^1.6.1
       vite: ^2.9.12
-      vite-plugin-conventional-entries: 0.1.10-beta.3
-      vite-plugin-conventional-routes: 0.1.12-beta.6
+      vite-plugin-conventional-entries: 0.1.10-beta.4
+      vite-plugin-conventional-routes: 0.1.12-beta.8
     dependencies:
       '@docsearch/css': 3.1.0
       '@docsearch/react': 3.1.0_zvt3kh6vtxobxb4gmt75nlt57a
@@ -155,8 +155,8 @@ importers:
       upath: 2.0.1
       valtio: 1.6.1_react@18.1.0+vite@2.9.12
       vite: 2.9.12_less@4.1.3
-      vite-plugin-conventional-entries: 0.1.10-beta.3
-      vite-plugin-conventional-routes: 0.1.12-beta.6
+      vite-plugin-conventional-entries: 0.1.10-beta.4
+      vite-plugin-conventional-routes: 0.1.12-beta.8
     devDependencies:
       '@codpoe/eslint-config': 0.1.3_fbjqqrcmu5kf5fxbq7jfq7ql3a
       '@types/compression': 1.7.2
@@ -6567,8 +6567,8 @@ packages:
       unist-util-stringify-position: 3.0.2
       vfile-message: 3.1.2
 
-  /vite-plugin-conventional-entries/0.1.10-beta.3:
-    resolution: {integrity: sha512-tglaQzJ6VHeVtZMMIIE1Tqdufyy02v8+RLnXrSgOtvuv8TjHNXr2YNucrSOc3nx+REZym241RjuI58xlgGnACw==}
+  /vite-plugin-conventional-entries/0.1.10-beta.4:
+    resolution: {integrity: sha512-jB+1CJYdAS6FhSG3Cfz8Pe6fPfg7l8mEVJXeZ1cun9aicuMrmVXROkKOTY4hNvuBRVaLcpmgj9t/emSAVmEwOg==}
     dependencies:
       chokidar: 3.5.3
       connect-history-api-fallback: 1.6.0
@@ -6584,8 +6584,8 @@ packages:
       upath: 2.0.1
     dev: false
 
-  /vite-plugin-conventional-routes/0.1.12-beta.6:
-    resolution: {integrity: sha512-h78ffSCqGMAln3ETZj5uwPtYEop7fkd1lvRCyntYQb613/+pqz9V2JeyRGZ8WmU4ZIoy0bYaIprdQ+xN/9qgOw==}
+  /vite-plugin-conventional-routes/0.1.12-beta.8:
+    resolution: {integrity: sha512-ejJxPwV7Ydwvy24kg//CKdwvrx90n+wZ0+Fz0RjsxNlrO9U4+0WOOmIbOtuUzSzyZ4/gY7d8BXc/gCq0sHed1w==}
     dependencies:
       chokidar: 3.5.3
       fast-glob: 3.2.11

@@ -1,9 +1,8 @@
-import React, { useMemo, useRef } from 'react';
-import { useNavigate, useLocation } from 'pressify/client';
-import { useThemeContext } from '../../context';
-import { useElementSize } from '../../hooks/useElementSize';
-import { useKeyDown } from '../../hooks/useKeyDown';
-import { Mdx } from '../Mdx';
+import React, { useMemo, useRef } from "react";
+import { useNavigate, useLocation, useAppState } from "pressify/client";
+import { useElementSize } from "../../hooks/useElementSize";
+import { useKeyDown } from "../../hooks/useKeyDown";
+import { Mdx } from "../Mdx";
 
 const RATIO = 16 / 9;
 const SLIDE_WIDTH = 1024;
@@ -28,7 +27,7 @@ function useScale() {
 
 function useGenerateSlidePath() {
   const { pathname } = useLocation();
-  return (page: number) => `${pathname.replace(/\/\d+$/, '')}/${page}`;
+  return (page: number) => `${pathname.replace(/\/\d+$/, "")}/${page}`;
 }
 
 function usePage() {
@@ -46,8 +45,8 @@ export const SlideLayout: React.FC = () => {
   const pageRef = useRef(page);
   pageRef.current = page;
 
-  const { currentPageData } = useThemeContext();
-  const { slideCount } = currentPageData?.meta || {};
+  const { pageData } = useAppState();
+  const { slideCount } = pageData?.meta || {};
 
   // TODO: slide modules
   const slideModule = {} as any;
@@ -60,12 +59,12 @@ export const SlideLayout: React.FC = () => {
   const { ref: elRef, scale } = useScale();
 
   useKeyDown(ev => {
-    if ((ev.key === 'ArrowUp' || ev.keyCode === 38) && pageRef.current > 1) {
+    if ((ev.key === "ArrowUp" || ev.keyCode === 38) && pageRef.current > 1) {
       navigate(generateSlidePath(pageRef.current - 1));
     }
 
     if (
-      (ev.key === 'ArrowDown' || ev.keyCode === 40) &&
+      (ev.key === "ArrowDown" || ev.keyCode === 40) &&
       pageRef.current <= slideCount
     ) {
       navigate(generateSlidePath(pageRef.current + 1));
@@ -78,7 +77,7 @@ export const SlideLayout: React.FC = () => {
       className="w-screen h-screen flex flex-col justify-center items-center bg-black"
     >
       <div
-        className={`overflow-hidden ${SlideComponent ? 'bg-c-bg' : ''}`}
+        className={`overflow-hidden ${SlideComponent ? "bg-c-bg" : ""}`}
         style={{
           width: SLIDE_WIDTH,
           height: SLIDE_HEIGHT,
