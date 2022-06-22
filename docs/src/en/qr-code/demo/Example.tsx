@@ -134,13 +134,15 @@ const Example = () => {
         onChange={e => handleInputContent(e)}
       />
       {params.value && (
-        <QRCode
-          value={params.value}
-          num={params.num}
-          level={params.level}
-          mode={params.mode}
-          border={params.border}
-        />
+        <div style={{ display: "flex" }}>
+          <QRCode
+            value={params.value}
+            num={params.num}
+            level={params.level}
+            mode={params.mode}
+            border={params.border}
+          />
+        </div>
       )}
     </>
   );
