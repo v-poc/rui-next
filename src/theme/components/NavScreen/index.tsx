@@ -1,16 +1,16 @@
-import { createContext, useContext, useEffect, useState } from 'react';
-import { CSSTransition } from 'react-transition-group';
-import { useAppState } from 'pressify/client';
-import { NavItem as INavItem } from '../../types';
-import { useThemeContext } from '../../context';
-import { useActiveMatch } from '../../hooks/useActiveMatch';
-import { ChevronRight } from '../Icons';
-import { Link } from '../Link';
-import { ThemeModeSwitch } from '../ThemeModeSwitch';
-import { IconNav } from '../Nav';
-import { TextWithIcon } from '../TextWithIcon';
+import { createContext, useContext, useEffect, useState } from "react";
+import { CSSTransition } from "react-transition-group";
+import { useAppState } from "pressify/client";
+import { NavItem as INavItem } from "../../types";
+import { useThemeContext } from "../../context";
+import { useActiveMatch } from "../../hooks/useActiveMatch";
+import { ChevronRight } from "../Icons";
+import { Link } from "../Link";
+import { ThemeModeSwitch } from "../ThemeModeSwitch";
+import { IconNav } from "../Nav";
+import { TextWithIcon } from "../TextWithIcon";
 
-import './style.css';
+import "./style.css";
 
 const navScreenContext = createContext<{
   screenOpen: boolean;
@@ -23,7 +23,7 @@ function Hamburger() {
   const { screenOpen, toggleScreen } = useNavScreenContext();
 
   const className =
-    'w-full h-0.5 bg-c-text-0 rounded-full absolute left-0 transition-all';
+    "w-full h-0.5 bg-c-text-0 rounded-full absolute left-0 transition-all";
 
   return (
     <button
@@ -35,23 +35,23 @@ function Hamburger() {
           className={`${className} top-0
             ${
               screenOpen
-                ? 'translate-y-1.5 -rotate-45'
-                : 'group-hover:translate-x-1'
+                ? "translate-y-1.5 -rotate-45"
+                : "group-hover:translate-x-1"
             }
           `}
         />
         <div
           className={`${className} top-1.5 translate-x-2
             ${
-              screenOpen ? 'opacity-0' : 'opacity-100 group-hover:translate-x-0'
+              screenOpen ? "opacity-0" : "opacity-100 group-hover:translate-x-0"
             }
           `}
         />
         <div
           className={`${className} bottom-0 translate-x-1 ${
             screenOpen
-              ? 'translate-x-0 -translate-y-1.5 rotate-45'
-              : 'group-hover:translate-x-2'
+              ? "translate-x-0 -translate-y-1.5 rotate-45"
+              : "group-hover:translate-x-2"
           }`}
         />
       </div>
@@ -70,7 +70,7 @@ function NavItem({ item }: { item: INavItem }) {
     <div className="flex justify-between items-center h-12 cursor-pointer">
       <span
         className={`flex items-center font-medium
-          ${active ? 'text-c-brand' : 'text-c-text-0'}
+          ${active ? "text-c-brand" : "text-c-text-0"}
         `}
       >
         <TextWithIcon text={item.text} icon={item.icon} space="8px" />
@@ -78,7 +78,7 @@ function NavItem({ item }: { item: INavItem }) {
       {hasItems && (
         <ChevronRight
           className={`text-c-text-2 transition-transform ${
-            expanded ? 'rotate-90' : ''
+            expanded ? "rotate-90" : ""
           }`}
         />
       )}
@@ -111,8 +111,8 @@ function SubNavItem({ item }: { item: INavItem }) {
 
   return (
     <Link
-      className={`flex items-center h-8 px-4 text-c-text-0 ${
-        active ? 'text-c-brand' : ''
+      className={`flex items-center h-8 px-4 ${
+        active ? "text-c-brand" : "text-c-text-0"
       }`}
       to={item.link}
       color={false}

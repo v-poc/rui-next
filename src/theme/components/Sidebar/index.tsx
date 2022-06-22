@@ -21,7 +21,7 @@ export function SidebarIndicator({
     <div
       className="sticky z-[var(--z-index-sidebar-indicator)] top-[calc(var(--header-height)+var(--banner-height))] w-full h-[var(--sidebar-indicator-height)]
       bg-c-bg-0 border-b border-b-c-border-1
-      flex lg:hidden items-center px-6 md:px-8"
+      flex lg:hidden items-center px-6"
     >
       <div
         className="h-full flex items-center text-xs text-c-text-1 font-medium cursor-pointer"
@@ -77,37 +77,25 @@ export function Sidebar({
       </CSSTransition>
       <div
         className={`
-        fixed z-[var(--z-index-sidebar)] top-0 right-full bottom-0 w-[75vw] max-w-[320px] px-6
-        lg:top-[calc(var(--header-height)+var(--banner-height))] lg:right-auto lg:w-[var(--left-aside-width)] lg:px-0
-        transition-transform duration-300 pt-8 pb-24 overflow-y-auto bg-c-bg-0 border-r border-c-border-1
+        fixed z-[var(--z-index-sidebar)] top-0 right-full bottom-0 w-[75vw] max-w-[320px] px-4
+        lg:top-[calc(var(--header-height)+var(--banner-height))] lg:right-auto lg:w-[var(--left-aside-width)]
+        transition-transform duration-300 pt-8 pb-24 overflow-y-auto bg-c-bg-0
         ${open ? "translate-x-full lg:translate-x-0" : ""}`}
       >
         {items.map((item, index) => {
           if (item.items) {
             return (
               <div key={index} className="my-7">
-                <h2 className="mb-2 flex items-center text-base font-bold text-c-text-1">
+                <h2 className="mb-2 px-2 flex items-center text-[13px] font-bold text-c-text-2">
                   <TextWithIcon text={item.text} icon={item.icon} space="8px" />
                 </h2>
-                <div className="border-l border-l-c-border-1">
+                <div className="ml-2 pl-[3px] border-l border-l-c-border-1">
                   {item.items.map((subItem, subIndex) => (
-                    <Link
+                    <SidebarLink
                       key={subIndex}
-                      to={subItem.link}
-                      color={false}
-                      className={`flex items-center min-h-[34px] px-[1em] -ml-px border-l text-sm hover:text-c-brand transition-colors
-                      ${
-                        activeItems.includes(subItem)
-                          ? "text-c-brand border-c-brand"
-                          : "text-c-text-1 border-l-transparent"
-                      }`}
-                    >
-                      <TextWithIcon
-                        text={subItem.text}
-                        icon={subItem.icon}
-                        space="8px"
-                      />
-                    </Link>
+                      item={subItem}
+                      active={activeItems.includes(subItem)}
+                    />
                   ))}
                 </div>
               </div>
@@ -115,18 +103,32 @@ export function Sidebar({
           }
 
           return (
-            <Link
+            <SidebarLink
               key={index}
-              to={item.link}
-              color={false}
-              className={`flex items-center min-h-[34px] text-sm hover:text-c-brand transition-colors
-              ${activeItems.includes(item) ? "text-c-brand" : "text-c-text-1"}`}
-            >
-              <TextWithIcon text={item.text} icon={item.icon} space="8px" />
-            </Link>
+              item={item}
+              active={activeItems.includes(item)}
+            />
           );
         })}
       </div>
     </>
+  );
+}
+
+function SidebarLink({ item, active }: { item: SidebarItem; active: boolean }) {
+  return (
+    <Link
+      to={item.link}
+      color={false}
+      className={`relative flex items-center min-h-[34px] mb-[3px] px-2 py-1.5 text-sm transition-all
+      ${
+        active
+          ? "text-c-brand font-medium before:opacity-[0.12]"
+          : "text-c-text-1 before:opacity-0 hover:before:opacity-[0.06]"
+      }
+      before:absolute before:top-0 before:bottom-0 before:left-0 before:right-0 before:rounded-md before:bg-current before:z-[-1] before:transition-opacity`}
+    >
+      <TextWithIcon text={item.text} icon={item.icon} space="8px" />
+    </Link>
   );
 }

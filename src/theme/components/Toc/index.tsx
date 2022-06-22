@@ -66,7 +66,7 @@ export const Toc: React.FC = () => {
   useScroll(handleScroll);
 
   return (
-    <div ref={elRef} className="pl-3 -ml-3">
+    <div ref={elRef} className="pl-3">
       <div className="mb-2 text-xs text-c-text-0 font-medium">ON THIS PAGE</div>
       <div className="relative">
         <div
@@ -77,6 +77,7 @@ export const Toc: React.FC = () => {
         {toc?.map((item, index) => (
           <Link
             key={index}
+            id={getTocItemId(index)}
             className={`block truncate text-sm leading-7 transition-colors
               ${
                 index === activeIndex
@@ -94,3 +95,7 @@ export const Toc: React.FC = () => {
     </div>
   );
 };
+
+function getTocItemId(index: number) {
+  return `py-toc-item-${index}`;
+}

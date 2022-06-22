@@ -1,11 +1,11 @@
-import React from 'react';
-import { useThemeContext } from '../../context';
-import { useActiveMatch } from '../../hooks/useActiveMatch';
-import { NavItem } from '../../types';
-import { Link } from '../Link';
-import { ChevronDown } from '../Icons';
-import { Popup } from '../Popup';
-import { TextWithIcon } from '../TextWithIcon';
+import React from "react";
+import { useThemeContext } from "../../context";
+import { useActiveMatch } from "../../hooks/useActiveMatch";
+import { NavItem } from "../../types";
+import { Link } from "../Link";
+import { ChevronDown } from "../Icons";
+import { Popup } from "../Popup";
+import { TextWithIcon } from "../TextWithIcon";
 
 function SubTextNavItem({ item }: { item: NavItem }) {
   const active = useActiveMatch(item);
@@ -14,9 +14,13 @@ function SubTextNavItem({ item }: { item: NavItem }) {
     <Link
       to={item.link}
       color={false}
-      className={`flex items-center h-8 px-4 whitespace-nowrap transition-colors
-        hover:text-c-brand
-        ${active ? 'text-c-brand' : ''}
+      className={`relative z-0 flex items-center min-h-[32px] px-2 py-1.5 whitespace-nowrap transition-all
+        before:absolute before:top-0 before:bottom-0 before:left-0 before:right-0 before:rounded before:bg-current before:z-[-1] before:transition-opacity
+        ${
+          active
+            ? "text-c-brand font-medium before:opacity-[0.12]"
+            : "before:opacity-0 hover:before:opacity-[0.06]"
+        }
       `}
     >
       <TextWithIcon text={item.text} icon={item.icon} space="8px" />
@@ -47,7 +51,7 @@ function TextNavItem({ item }: { item: NavItem }) {
       to={item.link}
       color={false}
       className={`${className} hover:text-c-brand
-        ${active ? 'border-c-brand' : 'border-transparent'}
+        ${active ? "border-c-brand" : "border-transparent"}
       `}
     >
       <TextWithIcon text={item.text} icon={item.icon} space="6px" />
@@ -69,9 +73,13 @@ export function TextNav() {
           <Popup
             key={index}
             className="h-full"
-            content={item.items.map((subItem, index) => (
-              <SubTextNavItem key={index} item={subItem} />
-            ))}
+            content={
+              <div className="px-1 space-y-[3px]">
+                {item.items.map((subItem, index) => (
+                  <SubTextNavItem key={index} item={subItem} />
+                ))}
+              </div>
+            }
           >
             <TextNavItem item={item} />
           </Popup>
@@ -87,7 +95,7 @@ export function IconNav({
   size,
   className,
 }: {
-  size: 'small' | 'medium';
+  size: "small" | "medium";
   className?: string;
 }) {
   const { iconNav } = useThemeContext();
@@ -106,8 +114,8 @@ export function IconNav({
               to={item.link}
               color={false}
               className={`flex justify-center items-center text-c-text-2 transition-colors hover:text-c-brand
-              ${size === 'small' ? 'w-9 h-9 text-[17px]' : ''}
-              ${size === 'medium' ? 'w-12 h-12 text-xl' : ''}`}
+              ${size === "small" ? "w-9 h-9 text-[17px]" : ""}
+              ${size === "medium" ? "w-12 h-12 text-xl" : ""}`}
             >
               {React.createElement(item.icon)}
             </Link>

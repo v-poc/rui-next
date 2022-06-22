@@ -1,7 +1,7 @@
-import React, { useEffect, useRef, useState } from 'react';
-import { CSSTransition } from 'react-transition-group';
+import React, { useEffect, useRef, useState } from "react";
+import { CSSTransition } from "react-transition-group";
 
-import './style.css';
+import "./style.css";
 
 export interface PopupProps {
   content: React.ReactNode;
@@ -10,7 +10,7 @@ export interface PopupProps {
 }
 
 export const Popup: React.FC<PopupProps> = ({
-  className = '',
+  className = "",
   content,
   children,
 }) => {
@@ -32,12 +32,12 @@ export const Popup: React.FC<PopupProps> = ({
 
     const el = elRef.current;
 
-    el.addEventListener('mouseenter', enterCallback);
-    el.addEventListener('mouseleave', leaveCallback);
+    el.addEventListener("mouseenter", enterCallback);
+    el.addEventListener("mouseleave", leaveCallback);
 
     return () => {
-      el.removeEventListener('mouseenter', enterCallback);
-      el.removeEventListener('mouseleave', leaveCallback);
+      el.removeEventListener("mouseenter", enterCallback);
+      el.removeEventListener("mouseleave", leaveCallback);
     };
   }, []);
 
@@ -51,7 +51,7 @@ export const Popup: React.FC<PopupProps> = ({
         mountOnEnter
         unmountOnExit
       >
-        <div className="origin-top-right absolute top-3/4 right-0 w-max min-w-[100px] bg-c-bg-0 py-2 overflow-y-auto rounded-lg border border-c-border-1 border-opacity-5 shadow-md">
+        <div className="origin-top-right absolute top-3/4 right-0 w-max min-w-[100px] bg-c-bg-0 py-1 overflow-y-auto rounded-md border border-c-border-1 border-opacity-5 shadow-md">
           {content}
         </div>
       </CSSTransition>
