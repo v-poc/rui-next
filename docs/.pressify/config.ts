@@ -128,6 +128,16 @@ export default defineConfig<ThemeConfig>({
             ],
           },
           {
+            text: "Hooks",
+            icon: "lucide:layout-template",
+            items: [
+              {
+                text: "useNetwork",
+                link: "/en/hooks/useNetwork/doc",
+              },
+            ],
+          },
+          {
             text: "Experimental",
             icon: "lucide:slack",
             items: [

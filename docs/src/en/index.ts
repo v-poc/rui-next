@@ -11,3 +11,5 @@ export { default as QRCode } from "./qr-code/index";
 /**
  * hooks
  */
+// useNetwork
+export { default as useNetwork } from "./hooks/useNetwork/index";
