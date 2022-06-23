@@ -9,3 +9,4 @@ export { default as LikeButton } from "./like-button/index";
 /**
  * Utils
  */
+export { canUseDOM, logInfo } from "./utils/index";
