@@ -1,9 +1,8 @@
-/* eslint-disable no-console */
 import React from "react";
 import { Divider } from "../../index";
-import { LikeButton } from "../../experimental";
+import { LikeButton, logInfo } from "../../experimental";
 
-const handleClick = () => console.info("So cool, nice feeling!");
+const handleClick = () => logInfo("So cool, nice feeling!");
 
 // Example FC
 const Example = () => (
