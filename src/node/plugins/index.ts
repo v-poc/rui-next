@@ -199,7 +199,7 @@ export function createPressifyPlugin(
     userVitePlugins,
     react(siteConfig.react),
     icons(siteConfig.icons),
-    entries({ src: DIST_APP_DIR }),
+    entries({ entries: DIST_APP_DIR }),
     routes({
       pages: siteConfig.pages,
       ignore: siteConfig.ignore,
