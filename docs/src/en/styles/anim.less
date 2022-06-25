@@ -1,0 +1,201 @@
+// Do not import this file as this one is only needed by components/_styles/index.less
+.r {
+  .effect() {
+    animation-duration: .2s;
+    animation-fill-mode: both;
+    animation-timing-function: cubic-bezier(.55, 0, .55, .2);
+  }
+
+  &-fade-enter,
+  &-fade-appear {
+    opacity: 0;
+    .effect();
+
+    animation-play-state: paused;
+  }
+
+  &-fade-leave {
+    .effect();
+
+    animation-play-state: paused;
+  }
+
+  &-fade-enter&-fade-enter-active,
+  &-fade-appear&-fade-appear-active {
+    animation-name: rFadeIn;
+    animation-play-state: running;
+  }
+
+  &-fade-leave&-fade-leave-active {
+    animation-name: rFadeOut;
+    animation-play-state: running;
+  }
+
+  @keyframes rFadeIn {
+    0% {
+      opacity: 0;
+    }
+
+    100% {
+      opacity: 1;
+    }
+  }
+
+  @keyframes rFadeOut {
+    0% {
+      opacity: 1;
+    }
+
+    100% {
+      opacity: 0;
+    }
+  }
+
+  &-slide-up-enter,
+  &-slide-up-appear {
+    transform: translate(0, 100%);
+  }
+
+  &-slide-up-enter,
+  &-slide-up-appear,
+  &-slide-up-leave {
+    .effect();
+
+    animation-play-state: paused;
+  }
+
+  &-slide-up-enter&-slide-up-enter-active,
+  &-slide-up-appear&-slide-up-appear-active {
+    animation-name: rSlideUpIn;
+    animation-play-state: running;
+  }
+
+  &-slide-up-leave&-slide-up-leave-active {
+    animation-name: rSlideUpOut;
+    animation-play-state: running;
+  }
+
+  @keyframes rSlideUpIn {
+    0% {
+      transform: translate(0, 100%);
+    }
+
+    100% {
+      transform: translate(0, 0);
+    }
+  }
+
+  @keyframes rSlideUpOut {
+    0% {
+      transform: translate(0, 0);
+    }
+
+    100% {
+      transform: translate(0, 100%);
+    }
+  }
+
+  &&-zoom-enter,
+  &&-zoom-leave {
+    display: block;
+  }
+
+  &-zoom-enter,
+  &-zoom-appear {
+    opacity: 0;
+    .effect();
+
+    animation-timing-function: cubic-bezier(0.18, 0.89, 0.32, 1.28);
+    animation-play-state: paused;
+  }
+
+  &-zoom-leave {
+    .effect();
+
+    animation-timing-function: cubic-bezier(0.6, -0.3, 0.74, 0.05);
+    animation-play-state: paused;
+  }
+
+  &-zoom-enter&-zoom-enter-active,
+  &-zoom-appear&-zoom-appear-active {
+    animation-name: rZoomIn;
+    animation-play-state: running;
+  }
+
+  &-zoom-leave&-zoom-leave-active {
+    animation-name: rZoomOut;
+    animation-play-state: running;
+  }
+
+  @keyframes rZoomIn {
+    0% {
+      opacity: 0;
+      transform-origin: 50% 50%;
+      transform: scale(0, 0);
+    }
+
+    100% {
+      opacity: 1;
+      transform-origin: 50% 50%;
+      transform: scale(1, 1);
+    }
+  }
+
+  @keyframes rZoomOut {
+    0% {
+      opacity: 1;
+      transform-origin: 50% 50%;
+      transform: scale(1, 1);
+    }
+
+    100% {
+      opacity: 0;
+      transform-origin: 50% 50%;
+      transform: scale(0, 0);
+    }
+  }
+
+  &-slide-down-enter,
+  &-slide-down-appear {
+    transform: translate(0, -100%);
+  }
+
+  &-slide-down-enter,
+  &-slide-down-appear,
+  &-slide-down-leave {
+    .effect();
+
+    animation-play-state: paused;
+  }
+
+  &-slide-down-enter&-slide-down-enter-active,
+  &-slide-down-appear&-slide-down-appear-active {
+    animation-name: rSlideDownIn;
+    animation-play-state: running;
+  }
+
+  &-slide-down-leave&-slide-down-leave-active {
+    animation-name: rSlideDownOut;
+    animation-play-state: running;
+  }
+
+  @keyframes rSlideDownIn {
+    0% {
+      transform: translate(0, -100%);
+    }
+
+    100% {
+      transform: translate(0, 0);
+    }
+  }
+
+  @keyframes rSlideDownOut {
+    0% {
+      transform: translate(0, 0);
+    }
+
+    100% {
+      transform: translate(0, -100%);
+    }
+  }
+}

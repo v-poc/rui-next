@@ -1,0 +1,199 @@
+@hd: 1px; // base unit
+
+// Default Theme
+
+// Colors
+// ---
+// text color
+@color-text-base: #000;                  // base
+@color-text-base-inverse: #fff;          // base - inverse
+@color-text-secondary: #a4a9b0;          // secondary
+@color-text-placeholder: #bbb;           // text input placeholder
+@color-text-disabled: #bbb;              // text input disabled
+@color-text-caption: #888;               // text caption
+@color-text-paragraph: #333;             // paragraph
+@color-link: @brand-primary;               // link
+
+// background color
+@fill-base: #fff;                        // component default background
+@fill-body: #f5f5f9;                     // page background
+@fill-tap: #ddd;                         // component default background - tap state
+@fill-disabled: #ddd;                    // common disabled background
+@fill-mask: rgba(0, 0, 0, 0.4);          // mask background
+@color-icon-base: #ccc;                  // for icons background, for example: dots, plus/minus symbols
+@fill-grey: #f7f7f7;
+
+// opacity
+@opacity-disabled: 0.3;   // the opacity of disabled switch, checkbox, radio, etc.
+
+// global/brand color
+@brand-primary: #2196F3;
+@brand-primary-tap: #2A78DC;
+@brand-success: #6abf47;
+@brand-warning: #ffc600;
+@brand-error: #E9424F;
+@brand-important: #ff5b05;  // for dots of badge
+@brand-wait: #108ee9;
+
+// border color
+@border-color-base: #ddd;
+
+// font size
+@font-size-icontext: 10 * @hd;
+@font-size-caption-sm: 12 * @hd;
+@font-size-base: 14 * @hd;
+@font-size-subhead: 15 * @hd;
+@font-size-caption: 16 * @hd;
+@font-size-heading: 17 * @hd;
+
+// radius
+@radius-xs: 2 * @hd;
+@radius-sm: 3 * @hd;
+@radius-md: 5 * @hd;
+@radius-lg: 7 * @hd;
+@radius-circle: 50%;
+
+// border width
+@border-width-sm: 1PX;
+@border-width-md: 1PX;
+@border-width-lg: 2 * @hd;
+
+// Spacing
+// ---
+// horizontal spacing
+@h-spacing-sm: 5 * @hd;
+@h-spacing-md: 8 * @hd;
+@h-spacing-lg: 15 * @hd;
+
+// vertical spacing
+@v-spacing-xs: 3 * @hd;
+@v-spacing-sm: 6 * @hd;
+@v-spacing-md: 9 * @hd;
+@v-spacing-lg: 15 * @hd;
+@v-spacing-xl: 21 * @hd;
+
+// height
+// ---
+@line-height-base: 1;        // one line height
+@line-height-paragraph: 1.5; // multiple line height
+
+// icon size
+@icon-size-xxs: 15 * @hd;
+@icon-size-xs: 18 * @hd;
+@icon-size-sm: 21 * @hd;
+@icon-size-md: 22 * @hd; // for icon size of navbar, grid
+@icon-size-lg: 36 * @hd;
+
+// for animation effects
+// ---
+@ease-in-out-quint: cubic-bezier(.86, 0, .07, 1);
+
+// Component variables
+// ---
+// actionsheet
+@actionsheet-item-height: 50 * @hd;
+@actionsheet-item-font-size: 18 * @hd;
+
+// button
+@button-height: 47 * @hd;
+@button-font-size: 18 * @hd;
+
+@button-height-sm: 30 * @hd;
+@button-font-size-sm: 13 * @hd;
+
+@primary-button-fill: @brand-primary;
+@primary-button-fill-tap: @brand-primary-tap;
+
+@ghost-button-color: @brand-primary; // also be used for background, text color, border color
+@ghost-button-fill-tap: fade(@brand-primary, 60%);
+
+@warning-button-fill: #e94f4f;
+@warning-button-fill-tap: #d24747;
+
+@link-button-fill-tap: #ddd;
+@link-button-font-size: 16 * @hd;
+
+// menu
+@menu-multi-select-btns-height: @button-height;
+
+// modal
+@modal-font-size-heading: 18 * @hd;
+@modal-button-font-size: 18 * @hd; // button font size
+@modal-button-height: 50 * @hd; // button height
+
+// list
+@list-title-height: 30 * @hd;
+@list-item-height-sm: 35 * @hd;
+@list-item-height: 44 * @hd;
+
+// input
+@input-label-width: 17 * @hd; // text width base value of InputItem, TextareaItem
+@input-font-size: 17 * @hd;
+@input-color-icon: #ccc; // background color of input clear icon
+@input-color-icon-tap: @brand-primary;
+
+// tabs
+@tabs-color: @brand-primary;
+@tabs-height: 43.5 * @hd;
+@tabs-font-size-heading: 15 * @hd;
+@tabs-ink-bar-height: @border-width-lg;
+
+// segmented-control
+@segmented-control-color: @brand-primary; // also be used for background, text color, border color
+@segmented-control-height: 27 * @hd;
+@segmented-control-fill-tap: fade(@brand-primary, 0.1);
+
+// tab-bar
+@tab-bar-fill: #ebeeef;
+@tab-bar-height: 50 * @hd;
+
+// toast
+@toast-fill: rgba(58, 58, 58, 0.9); // background color of toast, activity-indicator
+
+// search-bar
+@search-bar-fill: #efeff4;
+@search-bar-height: 44 * @hd;
+@search-bar-input-height: 28 * @hd;
+@search-bar-font-size: 15 * @hd;
+@search-color-icon: #bbb; // background color of input search icon
+
+// notice-bar
+@notice-bar-fill: #fefcec;
+@notice-bar-height: 36 * @hd;
+@notice-bar-color: #f76a24;
+
+// switch
+@switch-fill: #4dd865;
+@switch-fill-android: @brand-primary;
+
+// tag
+@tag-height: 25 * @hd;
+@tag-height-sm: 15 * @hd;
+@tag-color: @brand-primary;
+
+// keyboard
+@keyboard-confirm-color: @brand-primary;
+@keyboard-confirm-tap-color: @brand-primary-tap;
+
+// picker
+@option-height: 42 * @hd; // picker title height
+
+// chart
+@chart-line-color: #CCC;
+@chart-path-color: @brand-primary;
+@chart-text-color: #666f83;
+@chart-label-size: 2 * @hd;
+@chart-value-size: 2 * @hd;
+
+// z-index
+@progress-zindex: 2000;
+@popover-zindex: 1999;
+@toast-zindex: 1999;
+@action-sheet-zindex: 1000; // actonsheet may be put into popup / modal
+@picker-zindex: 1000;
+@popup-zindex: 999;
+@modal-zindex: 999; // modal.alert should be biggest, others should be smaller
+@tabs-pagination-zindex: 999;
+
+// font-family
+@font-family: -apple-system, blinkmacsystemfont, "Helvetica Neue", helvetica, segoe ui, arial, roboto, "PingFang SC", "miui", "Hiragino Sans GB", "Microsoft Yahei", sans-serif;

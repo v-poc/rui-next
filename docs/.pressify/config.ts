@@ -118,6 +118,16 @@ export default defineConfig<ThemeConfig>({
             ],
           },
           {
+            text: "Data-Display",
+            icon: "lucide:box",
+            items: [
+              {
+                text: "Badge",
+                link: "/en/badge/doc",
+              },
+            ],
+          },
+          {
             text: "Misc",
             icon: "lucide:qr-code",
             items: [
