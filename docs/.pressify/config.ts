@@ -89,7 +89,7 @@ export default defineConfig<ThemeConfig>({
           },
           {
             icon: "uiw/github",
-            link: "https://github.com/v-poc/rui-next",
+            link: "https://github.com/v-poc/rui-playground",
           },
         ],
         sidebar: [
