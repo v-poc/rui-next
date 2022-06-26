@@ -45,14 +45,15 @@ export default defineConfig<ThemeConfig>({
               { text: "Examples", link: "https://nikoni.top/rui-next/docs/" },
             ],
           },
-          {
-            text: "API",
-            icon: "tabler:cloud-storm",
-            // activeMatch: `^/api/`,
-            link: "https://nikoni.top/rui-next/docs/",
-          },
+          // {
+          //   text: "API",
+          //   icon: "tabler:cloud-storm",
+          //   // activeMatch: `^/api/`,
+          //   link: "https://nikoni.top/rui-next/docs/",
+          // },
           {
             text: "Playground",
+            icon: "tabler:ghost",
             link: "https://nikoni.top/rui-next/docs/playground.html",
           },
           {
@@ -62,7 +63,7 @@ export default defineConfig<ThemeConfig>({
             items: [
               {
                 text: "Changelog",
-                icon: "tabler:ghost",
+                icon: "tabler:clipboard",
                 link: "https://github.com/v-poc/rui-next/blob/main/CHANGELOG.md",
               },
               {
@@ -72,7 +73,7 @@ export default defineConfig<ThemeConfig>({
               },
               {
                 text: "Vite",
-                icon: "tabler:battery-automotive",
+                icon: "tabler:bolt",
                 link: "https://vitejs.dev/",
               },
               // {
@@ -81,8 +82,13 @@ export default defineConfig<ThemeConfig>({
               //   link: "https://vitepress.vuejs.org/",
               // },
               {
-                text: "RUI(POC)",
-                icon: "tabler:ghost",
+                text: "RUI-next",
+                icon: "tabler:git-branch",
+                link: "https://github.com/v-poc/rui-next",
+              },
+              {
+                text: "RUI-poc",
+                icon: "tabler:git-branch",
                 link: "https://github.com/v-poc/rui-poc",
               },
             ],
