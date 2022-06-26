@@ -99,7 +99,7 @@ export default defineConfig<ThemeConfig>({
             link: "/",
           },
           {
-            text: "Quick start",
+            text: "Getting Started",
             icon: "lucide:puzzle",
             link: "/en/getting-started",
           },

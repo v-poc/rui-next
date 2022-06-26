@@ -48,7 +48,7 @@ $ pnpm run build-docs
 
 ## Customize configuration
 
-About vite and vitepress, please check Configuration Reference - [vite](https://vitejs.dev/config/), [vitepress](https://vitepress.vuejs.org).
+About vite, please check Configuration Reference - [vite](https://vitejs.dev/config/).
 
 ## License
 
