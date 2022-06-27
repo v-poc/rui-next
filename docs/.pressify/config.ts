@@ -134,6 +134,16 @@ export default defineConfig<ThemeConfig>({
             ],
           },
           {
+            text: "Feedback",
+            icon: "lucide:trello",
+            items: [
+              {
+                text: "Progress",
+                link: "/en/progress/doc",
+              },
+            ],
+          },
+          {
             text: "Misc",
             icon: "lucide:qr-code",
             items: [

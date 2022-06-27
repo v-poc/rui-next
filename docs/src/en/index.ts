@@ -9,6 +9,8 @@ export { default as Divider } from "./divider/index";
 export { default as QRCode } from "./qr-code/index";
 // Badge
 export { default as Badge } from "./badge/index";
+// Progress
+export { default as Progress } from "./progress/index";
 
 /**
  * hooks
