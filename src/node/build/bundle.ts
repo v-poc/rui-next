@@ -1,15 +1,15 @@
-import fs from 'fs-extra';
-import ora from 'ora';
-import { build as viteBuild, BuildOptions, InlineConfig } from 'vite';
-import { RollupOutput } from 'rollup';
-import { createPressifyPlugin } from '../plugins/index.js';
-import { SiteConfig } from '../common/types.js';
-import { SSR_ENTRY_FILE } from '../common/constants.js';
+import fs from "fs-extra";
+import ora from "ora";
+import { build as viteBuild, BuildOptions, InlineConfig } from "vite";
+import { RollupOutput } from "rollup";
+import { createPressifyPlugin } from "../plugins/index.js";
+import { SiteConfig } from "../common/types.js";
+import { SSR_ENTRY_FILE } from "../common/constants.js";
 
 export async function bundle(
   siteConfig: SiteConfig,
   buildOptions: BuildOptions,
-  mode = 'production'
+  mode = "production"
 ) {
   const resolveViteConfig = (ssr: boolean): InlineConfig => {
     return {
@@ -18,18 +18,15 @@ export async function bundle(
       root: siteConfig.root,
       base: siteConfig.base,
       plugins: createPressifyPlugin(siteConfig, ssr),
-      logLevel: 'warn',
+      logLevel: "warn",
       // @ts-ignore
       ssr: {
-        // set react-helmet to external so that we can use the same instance of react-helmet.
-        // see: https://github.com/nfl/react-helmet#note-use-the-same-instance
-        // external: ['react-helmet'],
         noExternal: [
-          'pressify',
+          "pressify",
           /pressify-theme-/,
-          '@mdx-js/react',
-          'react-syntax-highlighter',
-          'lodash-es',
+          "@mdx-js/react",
+          "react-syntax-highlighter",
+          "lodash-es",
         ],
       },
       build: {
@@ -39,7 +36,7 @@ export async function bundle(
         emptyOutDir: false,
         outDir: ssr ? siteConfig.tempDir : siteConfig.outDir,
         cssCodeSplit: false,
-        minify: mode !== 'development',
+        minify: mode !== "development",
         ssrManifest: !ssr,
         rollupOptions: {
           ...buildOptions.rollupOptions,
@@ -49,7 +46,7 @@ export async function bundle(
     };
   };
 
-  const spinner = ora('build client + server bundles...').start();
+  const spinner = ora("build client + server bundles...").start();
   let clientResult: RollupOutput;
 
   // empty outDir before build
