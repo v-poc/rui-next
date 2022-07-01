@@ -51,6 +51,8 @@
     "build:client": "tsc -p src/client",
     "build:theme": "node scripts/copyTheme.js",
     "release": "node scripts/release.js",
+    "ci:docs": "pnpm run build && pnpm --filter rui-docs run build",
+    "lint": "eslint --ext .js,.jsx,.ts,.tsx src",
     "start": "pnpm run build && pnpm --filter rui-docs run dev",
     "build-lib": "vite build --config vite.config.ts",
     "build-docs": "pnpm run build && pnpm --filter rui-docs run build"
