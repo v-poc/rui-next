@@ -1,13 +1,14 @@
+// @ts-ignore
 import path from "path";
-import reachRefresh from "@vitejs/plugin-react";
+// import reachRefresh from "@vitejs/plugin-react";
 
 export default {
-  plugins: [
-    reachRefresh(), // for react-refresh plugin
-  ],
+  // plugins: [
+  //   reachRefresh(), // for react-refresh plugin
+  // ],
   build: {
-    lib: {
-      entry: path.resolve(__dirname, "./docs/src/en/index.ts"),
+    lib: { // @ts-ignore
+      entry: path.resolve(__dirname, "./src/en/index.ts"),
       name: "RuiNext",
       fileName: (format: string) => `rui-next.${format}.js`,
     },

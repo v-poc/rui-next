@@ -25,25 +25,25 @@ Try [QR code playground](https://nikoni.top/rui-next/docs/components/qr-code/ind
 Install dependencies
 
 ```bash
-$ pnpm i
+$ npm i
 ```
 
 Start the dev server for `docs-dev`
 
 ```bash
-$ pnpm start
+$ npm start
 ```
 
 Build UI library
 
 ```bash
-$ pnpm run build-lib
+$ npm run build-lib
 ```
 
 Build documentation (docs+demos)
 
 ```bash
-$ pnpm run build-docs
+$ npm run build-docs
 ```
 
 ## Customize configuration
