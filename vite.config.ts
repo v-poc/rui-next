@@ -1,17 +1,12 @@
 import path from "path";
-// import reachRefresh from "@vitejs/plugin-react";
 
 export default {
-  // plugins: [
-  //   reachRefresh(), // for react-refresh plugin
-  // ],
   build: {
     lib: {
       entry: path.resolve(__dirname, "./src/en/index.ts"),
       name: "RuiNext",
       fileName: (format: string) => `rui-next.${format}.js`,
     },
-    // outDir: 'dist',
     rollupOptions: {
       // make sure to externalize deps that shouldn't be bundled
       // into your library
