@@ -2,8 +2,7 @@
 // Log info
 export const logInfo = (content: any, type = "info"): void => {
   // @ts-ignore
-  console[type] &&
-    console[type]("[RUI-log] %c%s", "background: #69C;color: #FFF", content);
+  console[type] && console[type]("[RUI-log] %c%s", "background: #69C;color: #FFF", content);
 };
 
 // Check if we can use DOM
