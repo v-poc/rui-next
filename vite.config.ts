@@ -3,7 +3,7 @@ import path from "path";
 export default {
   build: {
     lib: {
-      entry: path.resolve(__dirname, "./src/en/index.ts"),
+      entry: path.resolve(__dirname, "./src/components/index.ts"),
       name: "RuiNext",
       fileName: (format: string) => `rui-next.${format}.js`,
     },

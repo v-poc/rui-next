@@ -2,10 +2,10 @@ import { defineConfig } from "pressify";
 import type { ThemeConfig } from "pressify/theme";
 
 export default defineConfig<ThemeConfig>({
+  pages: "src/docs",
   vite: {
-    base: '/rui-next/docs/',
+    base: "/rui-next/docs/",
   },
-  pages: "src",
   themeConfig: {
     locale: "en-US",
     localeText: "English",
@@ -115,11 +115,11 @@ export default defineConfig<ThemeConfig>({
             items: [
               {
                 text: "Divider",
-                link: "/en/divider/doc",
+                link: "/en/divider",
               },
               {
                 text: "AutoJustifyContent",
-                link: "/en/auto-justify-content/doc",
+                link: "/en/auto-justify-content",
               },
             ],
           },
@@ -129,7 +129,7 @@ export default defineConfig<ThemeConfig>({
             items: [
               {
                 text: "Badge",
-                link: "/en/badge/doc",
+                link: "/en/badge",
               },
             ],
           },
@@ -139,7 +139,7 @@ export default defineConfig<ThemeConfig>({
             items: [
               {
                 text: "Progress",
-                link: "/en/progress/doc",
+                link: "/en/progress",
               },
             ],
           },
@@ -149,7 +149,7 @@ export default defineConfig<ThemeConfig>({
             items: [
               {
                 text: "QRCode",
-                link: "/en/qr-code/doc",
+                link: "/en/qr-code",
               },
             ],
           },
@@ -159,7 +159,7 @@ export default defineConfig<ThemeConfig>({
             items: [
               {
                 text: "useNetwork",
-                link: "/en/hooks/useNetwork/doc",
+                link: "/en/useNetwork",
               },
             ],
           },
@@ -169,11 +169,11 @@ export default defineConfig<ThemeConfig>({
             items: [
               {
                 text: "One Piece",
-                link: "/en/one-piece/doc",
+                link: "/en/one-piece",
               },
               {
                 text: "Like Button",
-                link: "/en/like-button/doc",
+                link: "/en/like-button",
               },
             ],
           },

@@ -1,18 +1,14 @@
 import React from "react";
 import { Divider } from "../../index";
-
-const titleStyle = {
-  color: "#888",
-  fontSize: "90%",
-};
+import "./index.less";
 
 // Example FC
 const Example = () => (
   <>
-    <p style={titleStyle}>Basic Divider with pure line (horizontal mode)</p>
+    <p className="example-title">Basic Divider with pure line (horizontal mode)</p>
     <Divider />
 
-    <p style={titleStyle}>Basic Divider (vertical mode)</p>
+    <p className="example-title">Basic Divider (vertical mode)</p>
     <>
       one
       <Divider vertical />
@@ -23,14 +19,14 @@ const Example = () => (
       four
     </>
 
-    <p style={titleStyle}>Divider with content</p>
+    <p className="example-title">Divider with content</p>
     <Divider>center content</Divider>
     <br />
     <Divider contentAlign="left">left content</Divider>
     <br />
     <Divider contentAlign="right">right content</Divider>
 
-    <p style={titleStyle}>Divider with customized styles</p>
+    <p className="example-title">Divider with customized styles</p>
     <Divider
       style={{
         color: "orange",

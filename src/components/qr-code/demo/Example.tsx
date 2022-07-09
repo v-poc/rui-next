@@ -1,12 +1,6 @@
 import React, { useRef, useState } from "react";
 import { QRCode, Divider } from "../../index";
-
-const textfieldStyle = {
-  margin: "15px 0",
-  width: "100%",
-  height: "24px",
-  border: "1px solid #000",
-};
+import "../index.less";
 
 type RefType = any;
 
@@ -129,7 +123,7 @@ const Example = () => {
       <input
         type="text"
         placeholder="Please input content"
-        style={textfieldStyle}
+        className="example-input"
         value={params.value}
         onChange={e => handleInputContent(e)}
       />
