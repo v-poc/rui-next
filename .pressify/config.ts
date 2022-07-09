@@ -160,7 +160,7 @@ export default defineConfig<ThemeConfig>({
             items: [
               {
                 text: "useNetwork",
-                link: "/en/useNetwork",
+                link: "/en/use-network",
               },
             ],
           },
