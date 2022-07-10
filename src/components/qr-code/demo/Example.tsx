@@ -1,6 +1,6 @@
 import React, { useRef, useState } from "react";
 import { QRCode, Divider } from "../../index";
-import "../index.less";
+import "./index.less";
 
 type RefType = any;
 
@@ -128,15 +128,13 @@ const Example = () => {
         onChange={e => handleInputContent(e)}
       />
       {params.value && (
-        <div style={{ display: "flex" }}>
-          <QRCode
-            value={params.value}
-            num={params.num}
-            level={params.level}
-            mode={params.mode}
-            border={params.border}
-          />
-        </div>
+        <QRCode
+          value={params.value}
+          num={params.num}
+          level={params.level}
+          mode={params.mode}
+          border={params.border}
+        />
       )}
     </>
   );
