@@ -40,7 +40,6 @@ export default defineConfig<ThemeConfig>({
             text: "Documentation",
             // activeMatch: `^/(guide|style-guide|cookbook|examples)/`,
             items: [
-              { text: "Organization", link: "https://github.com/v-poc" },
               { text: "Tutorial", link: "https://nikoni.top/rui-next/docs/" },
               { text: "Examples", link: "https://nikoni.top/rui-next/docs/" },
             ],
@@ -65,6 +64,11 @@ export default defineConfig<ThemeConfig>({
                 text: "Changelog",
                 icon: "tabler:clipboard",
                 link: "https://github.com/v-poc/rui-next/blob/main/CHANGELOG.md",
+              },
+              {
+                text: "Organization",
+                icon: "tabler:world",
+                link: "https://github.com/v-poc",
               },
               {
                 text: "Team",
