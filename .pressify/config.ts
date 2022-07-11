@@ -179,6 +179,10 @@ export default defineConfig<ThemeConfig>({
                 text: "Like Button",
                 link: "/en/like-button",
               },
+              {
+                text: "XButton",
+                link: "/en/x-button"
+              },
             ],
           },
         ],
