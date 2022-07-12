@@ -135,6 +135,10 @@ export default defineConfig<ThemeConfig>({
                 text: "Badge",
                 link: "/en/badge",
               },
+              {
+                text: "Watermark",
+                link: "/en/watermark",
+              },
             ],
           },
           {

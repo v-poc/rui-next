@@ -11,6 +11,9 @@ export { default as QRCode } from "./qr-code/index";
 export { default as Badge } from "./badge/index";
 // Progress
 export { default as Progress } from "./progress/index";
+// Watermark
+export { default as Watermark } from "./watermark/index";
+
 
 /**
  * hooks
