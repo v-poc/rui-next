@@ -1,0 +1,184 @@
+// @import '../styles/mixins';
+// @import '../styles/themes/default';
+
+@stepsPrefixClass: r-steps;
+@stepPrefixClass: r-step;
+
+// Steps styles
+.@{stepsPrefixClass} {
+  width: 100%;
+  box-sizing: border-box;
+
+  &-horizontal {
+    display: flex;
+    justify-content: space-around;
+    padding: 8px 0;
+
+    .@{stepPrefixClass} {
+      flex: 1;
+
+      .@{stepPrefixClass}-indicator {
+        width: 100%;
+        height: 24px;
+
+        &::after {
+          left: 50%;
+          top: 50%;
+          height: 1px;
+          transform: translateY(-50%);
+          width: 100%;
+        }
+
+        .@{stepPrefixClass}-icon-container {
+          left: 50%;
+          top: 50%;
+          transform: translate(-50%, -50%);
+        }
+      }
+    }
+
+    .@{stepPrefixClass}-content {
+      text-align: center;
+      font-size: 12px;
+      padding: 2px 8px 0;
+
+      .@{stepPrefixClass}-title {
+        font-size: 13px;
+      }
+
+      .@{stepPrefixClass}-description {
+        margin-top: 4px;
+        color: #999;
+      }
+    }
+  }
+
+  &-vertical {
+    padding: 8px 16px;
+
+    .@{stepPrefixClass} {
+      display: flex;
+      align-items: stretch;
+
+      .@{stepPrefixClass}-indicator {
+        flex: none;
+        margin-right: 0;
+        width: 24px;
+
+        &::after {
+          left: 50%;
+          top: calc(13px * 1.5 / 2);
+          width: 1px;
+          height: 100%;
+          transform: translateX(-50%);
+        }
+
+        .@{stepPrefixClass}-icon-container {
+          top: calc(13px * 1.5 / 2);
+          left: 50%;
+          transform: translate(-50%, -50%);
+        }
+      }
+
+      &:last-child {
+        .@{stepPrefixClass}-content {
+          padding-bottom: 0;
+        }
+      }
+
+      .@{stepPrefixClass}-content {
+        flex: auto;
+        padding-bottom: 24px;
+
+        .@{stepPrefixClass}-title {
+          font-size: 13px;
+          line-height: 1.5;
+        }
+
+        .@{stepPrefixClass}-description {
+          padding-top: 4px;
+          font-size: 12px;
+          color: #999;
+        }
+      }
+    }
+  }
+}
+
+// Step styles
+.@{stepPrefixClass} {
+  --line-to-next-color: #E5E5E5;
+  --icon-color: #E5E5E5;
+
+  .@{stepPrefixClass}-indicator {
+    position: relative;
+
+    &::after {
+      content: "";
+      position: absolute;
+      z-index: 0;
+      background-color: var(--line-to-next-color);
+    }
+
+    .@{stepPrefixClass}-icon-container {
+      position: absolute;
+      z-index: 1;
+      background: #FFF;
+      color: var(--icon-color);
+
+      > .r-icon {
+        display: block;
+      }
+    }
+  }
+
+  &:last-child {
+    .@{stepPrefixClass}-indicator::after {
+      display: none;
+    }
+  }
+
+  &-status-finish {
+    --line-to-next-color: #1677FF;
+  }
+
+  &-status-wait {
+    --icon-color: #E5E5E5;
+
+    .r-step-title {
+      color: #999;
+    }
+  }
+
+  &-status-process {
+    --icon-color: #1677FF;
+
+    .@{stepPrefixClass}-title {
+      color: #1677FF;
+    }
+  }
+
+  &-status-finish {
+    --icon-color: #1677FF;
+  }
+
+  &-status-error {
+    --icon-color: #FF3141;
+
+    .@{stepPrefixClass}-title {
+      color: #FF3141;
+    }
+  }
+
+  &-icon-container {
+    font-size: 18px;
+  }
+  
+  &-icon-dot {
+    display: block;
+    width: 8px;
+    height: 8px;
+    background: currentColor;
+    border-radius: 4px;
+  }  
+}

@@ -12,3 +12,20 @@ export const canUseDOM = !!(
   window.document &&
   window.document.createElement
 );
+
+// Attach props to component
+export function attachPropsToComp<
+  C,
+  P extends Record<string, any>
+>(
+  comp: C,
+  props: P
+): C & P {
+  const ret = comp as any;
+  for (const k in props) {
+    if (props.hasOwnProperty(k)) {
+      ret[k] = props[k];
+    }
+  }
+  return ret;
+};

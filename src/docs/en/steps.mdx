@@ -1,0 +1,34 @@
+# Steps
+
+`Steps` is a wrap of step-items.
+
+```jsx
+<Steps>
+  <Steps.Item><PlaceHolder /></Steps.Item>
+  <Steps.Item><PlaceHolder /></Steps.Item>
+</Steps>
+```
+
+## Example
+
+Basic usage of Steps component.
+
+<Demo src="../../components/steps/demo/Example.tsx" />
+
+## API
+
+### Steps
+
+Properties | Description | Type | Default
+-----------|------------|------|--------
+| currentIndex | The specified current step counting from 0. In the child Step element, the status can be overridden by the `status` attribute | `number` | `0` |
+| vertical | Whether the direction mode is vertical | `boolean` | `false` |
+
+### Steps.Item
+
+Properties | Description | Type | Default
+-----------|------------|------|--------
+| title | The step title | `ReactNode` | - |
+| description | The detailed description of the steps, optional | `ReactNode` | - |
+| icon | The icon of the steps | `ReactNode` | - |
+| status | The specified status | `error \| finish \| process \| wait` | `wait` |

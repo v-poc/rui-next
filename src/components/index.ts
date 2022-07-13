@@ -13,6 +13,8 @@ export { default as Badge } from "./badge/index";
 export { default as Progress } from "./progress/index";
 // Watermark
 export { default as Watermark } from "./watermark/index";
+// Steps
+export { default as Steps } from "./steps/index";
 
 
 /**
