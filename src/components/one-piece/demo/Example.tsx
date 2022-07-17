@@ -4,7 +4,7 @@ import "./index.less";
 
 // Example FC
 const Example = () => (
-  <div className="example-container">
+  <div className="example-op-container">
     <OnePiece scale={0.5} />
     <OnePiece />
     <OnePiece scale={0.5} />
