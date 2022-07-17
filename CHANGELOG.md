@@ -1,3 +1,7 @@
+# 0.35.6 (2022-07-13)
+
+Refactor: attach props to component.
+
 # 0.35.4 (2022-06-25)
 
 Updated styles for `Badge` component.
