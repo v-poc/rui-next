@@ -37,13 +37,13 @@ const Example = () => {
       <button
         onClick={() => setProps(txtProps)}
       >
-        Test Text Watermark
+        [Test Text Watermark]
       </button>
       <br />
       <button
         onClick={() => setProps(imgProps)}
       >
-        Test Image Watermark
+        [Test Image Watermark]
       </button>
       <br />
       <div className="watermark-wrapper">

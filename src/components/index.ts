@@ -3,6 +3,8 @@
  */
 // AutoJustifyContent
 export { default as AutoJustifyContent } from "./auto-justify-content/index";
+// ActivityIndicator
+export { default as ActivityIndicator } from "./activity-indicator/index";
 // Divider
 export { default as Divider } from "./divider/index";
 // QRCode

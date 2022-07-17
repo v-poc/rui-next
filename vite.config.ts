@@ -21,12 +21,4 @@ export default {
       },
     },
   },
-  css: {
-    preprocessorOptions: {
-      less: {
-        // Inline JavaScript should be enabled.
-        javascriptEnabled: true,
-      },
-    },
-  },
 };

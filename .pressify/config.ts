@@ -5,6 +5,14 @@ export default defineConfig<ThemeConfig>({
   pages: "src/docs",
   vite: {
     base: "/rui-next/",
+    css: {
+      preprocessorOptions: {
+        less: {
+          // Inline JavaScript should be enabled.
+          javascriptEnabled: true,
+        },
+      },
+    },
   },
   themeConfig: {
     locale: "en-US",
@@ -149,6 +157,10 @@ export default defineConfig<ThemeConfig>({
             text: "Feedback",
             icon: "lucide:trello",
             items: [
+              {
+                text: "ActivityIndicator",
+                link: "/en/activity-indicator",
+              },
               {
                 text: "Progress",
                 link: "/en/progress",

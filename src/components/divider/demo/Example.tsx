@@ -18,7 +18,7 @@ const Example = () => (
       <Divider vertical />
       four
     </>
-
+    <br /><br />
     <p className="example-title">Divider with content</p>
     <Divider>center content</Divider>
     <br />
