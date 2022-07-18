@@ -35,9 +35,9 @@ export default defineConfig<ThemeConfig>({
     docsBranch: "main",
     editLink: true,
     // algolia: {
-    //   apiKey: "x",
-    //   appId: "x",
-    //   indexName: "x",
+    //   appId: 'P8DCJAPIC4',
+    //   apiKey: '1983eee4fd011adb67085f1f5c4ed255',
+    //   indexName: 'rui',
     // },
     themeConfigByPaths: {
       "/en": {
@@ -46,18 +46,11 @@ export default defineConfig<ThemeConfig>({
         nav: [
           {
             text: "Documentation",
-            // activeMatch: `^/(guide|style-guide|cookbook|examples)/`,
             items: [
               { text: "Tutorial", link: "https://nikoni.top/rui-next/docs/" },
               { text: "Examples", link: "https://nikoni.top/rui-next/docs/" },
             ],
           },
-          // {
-          //   text: "API",
-          //   icon: "tabler:cloud-storm",
-          //   // activeMatch: `^/api/`,
-          //   link: "https://nikoni.top/rui-next/docs/",
-          // },
           {
             text: "Playground",
             icon: "tabler:ghost",
@@ -66,7 +59,6 @@ export default defineConfig<ThemeConfig>({
           {
             text: "Links",
             icon: "tabler:mood-smile",
-            // activeMatch: `^/about/`,
             items: [
               {
                 text: "Changelog",
@@ -88,11 +80,6 @@ export default defineConfig<ThemeConfig>({
                 icon: "tabler:bolt",
                 link: "https://vitejs.dev/",
               },
-              // {
-              //   text: "Vitepress",
-              //   icon: "tabler:adjustments-horizontal",
-              //   link: "https://vitepress.vuejs.org/",
-              // },
               {
                 text: "RUI-next",
                 icon: "tabler:git-branch",
