@@ -28,7 +28,7 @@ Install dependencies
 $ npm i
 ```
 
-Start the dev server for `docs-dev`
+Start the dev server for [`docs-dev`](http://127.0.0.1:5173/rui-next/)
 
 ```bash
 $ npm start
