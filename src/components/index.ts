@@ -17,6 +17,8 @@ export { default as Progress } from "./progress/index";
 export { default as Watermark } from "./watermark/index";
 // Steps
 export { default as Steps } from "./steps/index";
+// Card
+export { default as Card } from "./card/index";
 
 
 /**

@@ -127,6 +127,10 @@ export default defineConfig<ThemeConfig>({
             icon: "lucide:box",
             items: [
               {
+                text: "Card",
+                link: "/en/card",
+              },
+              {
                 text: "Badge",
                 link: "/en/badge",
               },
