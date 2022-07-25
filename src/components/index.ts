@@ -19,6 +19,8 @@ export { default as Watermark } from "./watermark/index";
 export { default as Steps } from "./steps/index";
 // Card
 export { default as Card } from "./card/index";
+// Icon
+export { default as Icon } from "./icon/index";
 
 
 /**
