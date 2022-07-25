@@ -19,7 +19,7 @@ const Example = () => (
     <Divider contentAlign="left">
       Basic Icons
     </Divider>
-    <div className="example-container">
+    <div className="example-icon-wrapper">
       {defaultList.map((type, index) => (
         <div key={`iconWrapper${index}`} className="item-wrapper">
           <Icon key={`icon${index}`} type={type} size="lg" />
@@ -31,7 +31,7 @@ const Example = () => (
     <Divider contentAlign="left">
       Icon Size
     </Divider>
-    <div className="example-container">
+    <div className="example-icon-wrapper">
       {sizeList.map((size, i) => (
         <div key={`sizeWrapper${i}`} className="item-wrapper">
           <Icon key={`size${i}`} type="search" color="orange" size={size} />

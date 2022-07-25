@@ -33,7 +33,7 @@ const Example = () => {
   const [props, setProps] = useState<TxtType | ImgType>(txtProps);
 
   return (
-    <div className="example-container">
+    <div className="example-watermark-wrapper">
       <button
         onClick={() => setProps(txtProps)}
       >
