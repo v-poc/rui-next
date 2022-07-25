@@ -1,3 +1,7 @@
+# 0.35.9 (2022-07-24)
+
+Refactor: types.
+
 # 0.35.6 (2022-07-13)
 
 Refactor: attach props to component.
