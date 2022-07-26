@@ -113,6 +113,10 @@ export default defineConfig<ThemeConfig>({
             icon: "lucide:layout",
             items: [
               {
+                text: "Grid",
+                link: "/en/grid",
+              },
+              {
                 text: "Divider",
                 link: "/en/divider",
               },

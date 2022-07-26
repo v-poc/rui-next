@@ -1,0 +1,14 @@
+// @import '../styles/mixins';
+
+@gridPrefixCls: r-grid;
+
+.@{gridPrefixCls} {
+  display: grid;
+  grid-gap: 10px;
+  grid-template-columns: repeat(var(--columns), minmax(0, 1fr));
+  align-items: stretch;
+  
+  &-item {
+    grid-column-end: span var(--item-span);
+  }
+}

@@ -13,6 +13,11 @@ export const canUseDOM = !!(
   window.document.createElement
 );
 
+// Get css length with unit
+export const getCSSLength = (v: string | number) => {
+  return typeof v === "number" ? `${v}px` : v;
+};
+
 // Attach props to component
 export function attachPropsToComp<
   C,
