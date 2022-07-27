@@ -1,6 +1,6 @@
 {
   "name": "rui-playground",
-  "version": "0.18.0",
+  "version": "0.18.1",
   "description": "Mobile web UI components based on React and Vite",
   "files": [
     "dist/style.css",

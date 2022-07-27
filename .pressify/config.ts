@@ -34,11 +34,11 @@ export default defineConfig<ThemeConfig>({
     docsRepo: "v-poc/rui-playground",
     docsBranch: "main",
     editLink: true,
-    // algolia: {
-    //   appId: 'P8DCJAPIC4',
-    //   apiKey: '1983eee4fd011adb67085f1f5c4ed255',
-    //   indexName: 'rui',
-    // },
+    algolia: {
+      appId: 'D64BBPKSIG',
+      apiKey: '9d34b6f14d6272405205d97816d7dd1b',
+      indexName: 'nikoni',
+    },
     themeConfigByPaths: {
       "/en": {
         locale: "en-US",
