@@ -147,6 +147,10 @@ export default defineConfig<ThemeConfig>({
                 link: "/en/watermark",
               },
               {
+                text: "List",
+                link: "/en/list",
+              },
+              {
                 text: "Steps",
                 link: "/en/steps",
               },

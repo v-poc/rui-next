@@ -1,0 +1,87 @@
+// @import '../styles/mixins';
+
+@listPrefixCls: r-list;
+
+.@{listPrefixCls} {
+  background-color: #ffffff;
+  overflow: hidden;
+  font-size: 17px;
+
+  &-inner {
+    margin-bottom: -1px;
+  }
+
+  &-default {
+    border: solid 1px #eee;
+    border-right: none;
+    border-left: none;
+  }
+
+  &-card {
+    margin: 12px;
+    border-radius: 8px;
+  }
+}
+
+.@{listPrefixCls}-item {
+  display: block;
+  padding-left: 12px;
+
+  &-content {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 12px 12px 12px 0;
+    border-bottom: solid 1px #eee;
+
+    &-prefix {
+      width: auto;
+      flex: none;
+      padding-right: 12px;
+    }
+
+    &-main {
+      flex: auto;
+
+      &-title,
+      &-desc {
+        color: #999;
+        font-size: 15px;
+      }
+    }
+
+    &-extra {
+      flex: none;
+      padding-left: 12px;
+    }
+
+    &-arrow {
+      flex: none;
+      display: flex;
+      align-items: center;
+      padding-left: 12px;
+      color: #999;
+      font-size: 16px;
+    }
+  }
+
+  &-disabled {
+    && > .@{listPrefixCls}-item-content > * {
+      cursor: not-allowed;
+      opacity: .6;
+      pointer-events: none;
+    }
+  }
+}
+
+a.@{listPrefixCls}-item {
+  &:active {
+    background-color: #eee;
+  }
+
+  &.@{listPrefixCls}-item-disabled {
+    &:active {
+      background-color: unset;
+    }
+  }
+}

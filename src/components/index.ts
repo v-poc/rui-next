@@ -23,6 +23,8 @@ export { default as Card } from "./card/index";
 export { default as Icon } from "./icon/index";
 // Grid
 export { default as Grid } from "./grid/index";
+// List
+export { default as List } from "./list/index";
 
 
 /**
