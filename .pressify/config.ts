@@ -195,11 +195,11 @@ export default defineConfig<ThemeConfig>({
             icon: "lucide:slack",
             items: [
               {
-                text: "One Piece",
+                text: "OnePiece",
                 link: "/en/one-piece",
               },
               {
-                text: "Like Button",
+                text: "LikeButton",
                 link: "/en/like-button",
               },
               {
