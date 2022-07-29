@@ -25,6 +25,8 @@ export { default as Icon } from "./icon/index";
 export { default as Grid } from "./grid/index";
 // List
 export { default as List } from "./list/index";
+// Rate
+export { default as Rate } from "./rate/index";
 
 
 /**

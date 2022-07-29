@@ -157,6 +157,16 @@ export default defineConfig<ThemeConfig>({
             ],
           },
           {
+            text: "Data-Entry",
+            icon: "lucide:component",
+            items: [
+              {
+                text: "Rate",
+                link: "/en/rate",
+              },
+            ],
+          },
+          {
             text: "Feedback",
             icon: "lucide:trello",
             items: [
