@@ -1,6 +1,8 @@
 /**
  * Components
  */
+// Flex
+export { default as Flex } from "./flex/index";
 // AutoJustifyContent
 export { default as AutoJustifyContent } from "./auto-justify-content/index";
 // ActivityIndicator

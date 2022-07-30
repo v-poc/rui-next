@@ -113,6 +113,10 @@ export default defineConfig<ThemeConfig>({
             icon: "lucide:layout",
             items: [
               {
+                text: "Flex",
+                link: "/en/flex",
+              },
+              {
                 text: "Grid",
                 link: "/en/grid",
               },
