@@ -27,6 +27,8 @@ export { default as Grid } from "./grid/index";
 export { default as List } from "./list/index";
 // Rate
 export { default as Rate } from "./rate/index";
+// TextArea
+export { default as TextArea } from "./text-area/index";
 
 
 /**
