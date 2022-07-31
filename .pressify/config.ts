@@ -221,6 +221,10 @@ export default defineConfig<ThemeConfig>({
             icon: "lucide:slack",
             items: [
               {
+                text: "PageIndicator",
+                link: "/en/page-indicator"
+              },
+              {
                 text: "OnePiece",
                 link: "/en/one-piece",
               },

@@ -1,0 +1,36 @@
+@import '../styles/themes/default';
+// @import '../styles/mixins';
+
+@pageIndicatorPrefixCls: r-page-indicator;
+
+.@{pageIndicatorPrefixCls} {
+  display: flex;
+  width: fit-content;
+
+  &-item {
+    display: block;
+    margin-right: 3px;
+    width: 3px;
+    height: 3px;
+    border-radius: 1px;
+    background-color: rgba(0, 0, 0, .2);
+
+    &:last-child {
+      margin-right: 0;
+    }
+
+    &-active {
+      width: 12px;
+      border-radius: 1px;
+      background-color: @brand-primary;
+    }
+  }
+
+  &-color-white {
+    .@{pageIndicatorPrefixCls}-item {
+      &-active {
+        background-color: white;
+      }
+    }
+  }
+}
