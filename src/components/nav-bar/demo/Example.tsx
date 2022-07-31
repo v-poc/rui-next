@@ -1,5 +1,6 @@
 import React from "react";
 import { NavBar, Icon, Divider } from "../../index";
+import "./index.less";
 
 // Example FC
 const Example = () => {
