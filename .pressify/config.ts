@@ -113,6 +113,10 @@ export default defineConfig<ThemeConfig>({
             icon: "lucide:layout",
             items: [
               {
+                text: "NavBar",
+                link: "/en/nav-bar",
+              },
+              {
                 text: "Flex",
                 link: "/en/flex",
               },

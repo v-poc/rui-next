@@ -23,6 +23,8 @@ export { default as Steps } from "./steps/index";
 export { default as Card } from "./card/index";
 // Icon
 export { default as Icon } from "./icon/index";
+// NavBar
+export { default as NavBar } from "./nav-bar/index";
 // Grid
 export { default as Grid } from "./grid/index";
 // List
