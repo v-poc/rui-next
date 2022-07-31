@@ -47,7 +47,7 @@ export default defineConfig<ThemeConfig>({
           {
             text: "Documentation",
             items: [
-              { text: "Tutorial", link: "https://nikoni.top/rui-next/" },
+              { text: "Tutorial", link: "https://nikoni.top/rui-next/en/getting-started" },
               { text: "Examples", link: "https://nikoni.top/rui-next/" },
             ],
           },
