@@ -173,6 +173,10 @@ export default defineConfig<ThemeConfig>({
                 link: "/en/rate",
               },
               {
+                text: "Input",
+                link: "/en/input",
+              },
+              {
                 text: "TextArea",
                 link: "/en/text-area",
               },

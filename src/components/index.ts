@@ -29,6 +29,8 @@ export { default as NavBar } from "./nav-bar/index";
 export { default as Grid } from "./grid/index";
 // List
 export { default as List } from "./list/index";
+// Input
+export { default as Input } from "./input/index";
 // Rate
 export { default as Rate } from "./rate/index";
 // TextArea

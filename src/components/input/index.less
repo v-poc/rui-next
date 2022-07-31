@@ -1,0 +1,102 @@
+// @import '../styles/mixins';
+// @import '../styles/themes/default';
+
+@inputPrefixCls: r-input;
+
+.@{inputPrefixCls} {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  width: 100%;
+  max-width: 100%;
+  max-height: 100%;
+  min-height: 24px;
+  background-color: transparent;
+
+  &-disabled {
+    opacity: .4;
+    cursor: not-allowed;
+  }
+
+  &-element {
+    flex: auto;
+    display: inline-block;
+    box-sizing: border-box;
+    width: 100%;
+    max-width: 100%;
+    max-height: 100%;
+    margin: 0;
+    padding: 0;
+    color: #333;
+    font-size: 17px;
+    line-height: 1.5;
+    background: transparent;
+    border: 0;
+    outline: none;
+    appearance: none;
+    min-height: 1.5em;
+    text-align: left;
+
+    &::placeholder {
+      color: #ccc;
+      font-family: inherit;
+    }
+
+    &:-webkit-autofill {
+      background-color: transparent;
+    }
+
+    &:read-only {
+      cursor: default;
+    }
+
+    &:invalid {
+      box-shadow: none;
+    }
+
+    &::-ms-clear {
+      display: none;
+    }
+
+    &::-webkit-search-cancel-button {
+      display: none;
+    }
+
+    &::-webkit-search-decoration {
+      display: none;
+    }
+
+    // for ios
+    &[type='date'],
+    &[type='time'],
+    &[type='datetime-local'] {
+      min-height: 1.5em;
+    }
+
+    // for safari
+    &[type='search'] {
+      -webkit-appearance: none;
+    }
+
+    &[readonly] {
+      pointer-events: none;
+    }
+  }
+
+  &-clear {
+    flex: none;
+    margin-left: 8px;
+    padding: 4px;
+    color: #ccc;
+    cursor: pointer;
+
+    &:active {
+      color: #999;
+    }
+  
+    .r-icon {
+      display: block;
+      font-size: 15px;
+    }
+  }
+}

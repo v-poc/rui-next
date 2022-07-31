@@ -18,6 +18,21 @@ export const getCSSLength = (v: string | number) => {
   return typeof v === "number" ? `${v}px` : v;
 };
 
+// Get bound
+export const getBound = (pos: number, min: number | undefined, max: number | undefined) => {
+  let res = pos;
+
+  if (min !== undefined) {
+    res = Math.max(pos, min);
+  }
+
+  if (max !== undefined) {
+    res = Math.min(res, max);
+  }
+  
+  return res;
+};
+
 // Attach props to component
 export function attachPropsToComp<
   C,
