@@ -27,12 +27,14 @@ export { default as Icon } from "./icon/index";
 export { default as NavBar } from "./nav-bar/index";
 // Grid
 export { default as Grid } from "./grid/index";
+// Rate
+export { default as Rate } from "./rate/index";
+// NoticeBar
+export { default as NoticeBar } from "./notice-bar/index";
 // List
 export { default as List } from "./list/index";
 // Input
 export { default as Input } from "./input/index";
-// Rate
-export { default as Rate } from "./rate/index";
 // TextArea
 export { default as TextArea } from "./text-area/index";
 // Slider

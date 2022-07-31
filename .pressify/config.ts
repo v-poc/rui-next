@@ -155,6 +155,10 @@ export default defineConfig<ThemeConfig>({
                 link: "/en/watermark",
               },
               {
+                text: "NoticeBar",
+                link: "/en/notice-bar",
+              },
+              {
                 text: "List",
                 link: "/en/list",
               },
