@@ -3,12 +3,12 @@
  */
 // Flex
 export { default as Flex } from "./flex/index";
+// WhiteSpace
+export { default as WhiteSpace } from "./white-space/index";
 // AutoJustifyContent
 export { default as AutoJustifyContent } from "./auto-justify-content/index";
 // ActivityIndicator
 export { default as ActivityIndicator } from "./activity-indicator/index";
-// Divider
-export { default as Divider } from "./divider/index";
 // QRCode
 export { default as QRCode } from "./qr-code/index";
 // Badge
@@ -25,14 +25,18 @@ export { default as Card } from "./card/index";
 export { default as Icon } from "./icon/index";
 // NavBar
 export { default as NavBar } from "./nav-bar/index";
-// Grid
-export { default as Grid } from "./grid/index";
+// Switch
+export { default as Switch } from "./switch/index";
+// Divider
+export { default as Divider } from "./divider/index";
 // Rate
 export { default as Rate } from "./rate/index";
 // NoticeBar
 export { default as NoticeBar } from "./notice-bar/index";
 // List
 export { default as List } from "./list/index";
+// Grid
+export { default as Grid } from "./grid/index";
 // Input
 export { default as Input } from "./input/index";
 // TextArea

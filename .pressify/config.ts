@@ -117,12 +117,16 @@ export default defineConfig<ThemeConfig>({
                 link: "/en/nav-bar",
               },
               {
+                text: "Grid",
+                link: "/en/grid",
+              },
+              {
                 text: "Flex",
                 link: "/en/flex",
               },
               {
-                text: "Grid",
-                link: "/en/grid",
+                text: "WhiteSpace",
+                link: "/en/white-space",
               },
               {
                 text: "Divider",
@@ -172,6 +176,10 @@ export default defineConfig<ThemeConfig>({
             text: "Data-Entry",
             icon: "lucide:component",
             items: [
+              {
+                text: "Switch",
+                link: "/en/switch",
+              },
               {
                 text: "Rate",
                 link: "/en/rate",
