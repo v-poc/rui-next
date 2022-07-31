@@ -35,6 +35,9 @@ export { default as Input } from "./input/index";
 export { default as Rate } from "./rate/index";
 // TextArea
 export { default as TextArea } from "./text-area/index";
+// Slider
+export { default as Slider } from "./slider/index";
+
 
 
 /**

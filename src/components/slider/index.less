@@ -1,0 +1,119 @@
+// @import '../styles/mixins';
+// @import '../styles/themes/default';
+
+@sliderPrefixClass: r-slider;
+
+// Slider styles
+.@{sliderPrefixClass} {
+  padding: 4px 12px;
+  list-style: none;
+  user-select: none;
+
+  &-track-container {
+    padding: 8px 0;
+  }
+
+  &-track {
+    position: relative;
+    width: 100%;
+    height: 4px;
+    background-color: #F5F5F5;
+  }
+
+  &-fill {
+    position: absolute;
+    z-index: 1;
+    height: 4px;
+    background-color: #1677FF;
+  }
+
+  &-ticks {
+    position: absolute;
+    width: 100%;
+    height: 4px;
+    background: transparent;
+  }
+
+  &-tick {
+    position: absolute;
+    top: 50%;
+    width: 11px;
+    height: 11px;
+    margin-left: -5px;
+    background-color: #F5F5F5;
+    border-radius: 50%;
+    transform: translate(0, -50%);
+
+    &-active {
+      background-color: #1677FF;
+    }
+  }
+
+  &-thumb {
+    width: 22px;
+    height: 22px;
+    margin: 5px;
+    border-radius: 50%;
+    text-align: center;
+    line-height: 22px;
+    background: #FFF;
+    box-shadow: 0 3px 5px 0 rgba(0, 0, 0, 0.12),0 1.5px 3px -2px rgba(0, 0, 0, 0.25);
+
+    &:focus {
+      outline: none;
+    }
+  }
+
+  &-thumb-icon {
+    width: 10px;
+    height: 10px;
+    margin: 6px;
+    user-select: none;
+  }
+
+  &-thumb-container {
+    cursor: grab;
+    touch-action: none;
+    position: absolute;
+    z-index: 2;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  &-mark {
+    position: relative;
+    width: 100%;
+    overflow: visible;
+    font-size: 12px;
+    height: 12px;
+    margin-top: 4px;
+  }
+
+  &-mark-text {
+    position: absolute;
+    display: inline-block;
+    line-height: 16px;
+    color: #999;
+    text-align: center;
+    word-break: keep-all;
+    user-select: none;
+    transform: translateX(-50%);
+  }
+
+  &-disabled {
+    opacity: 0.4;
+
+    .@{sliderPrefixClass}-thumb {
+      cursor: not-allowed;
+    }
+
+    .@{sliderPrefixClass}-mark-text,
+    .@{sliderPrefixClass}-tick {
+      cursor: not-allowed;
+      box-shadow: none;
+    }
+  }
+}

@@ -47,8 +47,8 @@ export default defineConfig<ThemeConfig>({
           {
             text: "Documentation",
             items: [
-              { text: "Tutorial", link: "https://nikoni.top/rui-next/docs/" },
-              { text: "Examples", link: "https://nikoni.top/rui-next/docs/" },
+              { text: "Tutorial", link: "https://nikoni.top/rui-next/" },
+              { text: "Examples", link: "https://nikoni.top/rui-next/" },
             ],
           },
           {
@@ -180,6 +180,10 @@ export default defineConfig<ThemeConfig>({
                 text: "TextArea",
                 link: "/en/text-area",
               },
+              {
+                text: "Slider",
+                link: "/en/slider",
+              },
             ],
           },
           {
@@ -222,7 +226,7 @@ export default defineConfig<ThemeConfig>({
             items: [
               {
                 text: "PageIndicator",
-                link: "/en/page-indicator"
+                link: "/en/page-indicator",
               },
               {
                 text: "OnePiece",
@@ -234,7 +238,7 @@ export default defineConfig<ThemeConfig>({
               },
               {
                 text: "XButton",
-                link: "/en/x-button"
+                link: "/en/x-button",
               },
             ],
           },
