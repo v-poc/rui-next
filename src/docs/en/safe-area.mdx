@@ -1,0 +1,23 @@
+# SafeArea
+
+`SafeArea` is able to show content inset within the display's safe area so it is not obscured by the rounded corners, or the device's sensor housing (**experimental status**).
+
+For example, [the blue section is the top `SafeArea`](https://nikoni.top/images/rui-next/safearea-top.jpeg), and [the orange section is the bottom `SafeArea`](https://nikoni.top/images/rui-next/safearea-bottom.jpeg).
+
+> reference resource: [Designing Websites for iPhone X](https://webkit.org/blog/7929/designing-websites-for-iphone-x/)
+
+```jsx
+<SafeArea position="top" />
+```
+
+## Example
+
+Basic usage of SafeArea component.
+
+<Demo src="../../components/safe-area/demo/Example.tsx" />
+
+## API
+
+Properties | Description | Type | Default
+-----------|------------|------|--------
+| position | The position of the safe area | `"top" \| "bottom"` | - |

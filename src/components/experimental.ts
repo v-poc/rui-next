@@ -3,12 +3,16 @@
  */
 // PageIndicator
 export { default as PageIndicator } from "./page-indicator/index";
+// Chart
+export { default as Chart } from "./chart/index";
 // OnePiece
 export { default as OnePiece } from "./one-piece/index";
 // XButton
 export { default as XButton } from "./x-button/index";
 // LikeButton
 export { default as LikeButton } from "./like-button/index";
+// SafeArea
+export { default as SafeArea } from "./safe-area/index";
 
 
 

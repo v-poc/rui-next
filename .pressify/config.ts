@@ -245,6 +245,14 @@ export default defineConfig<ThemeConfig>({
                 link: "/en/page-indicator",
               },
               {
+                text: "SafeArea",
+                link: "/en/safe-area",
+              },
+              {
+                text: "Chart",
+                link: "/en/chart",
+              },
+              {
                 text: "OnePiece",
                 link: "/en/one-piece",
               },

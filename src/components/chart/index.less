@@ -1,0 +1,34 @@
+// @import '../styles/mixins';
+@import '../styles/themes/default';
+
+@chartPrefixClass: r-chart;
+
+.@{chartPrefixClass} {
+  line {
+    stroke: @chart-line-color;
+    stroke-width: 0.2;
+    stroke-linecap: square;
+  }
+
+  path {
+    stroke: @chart-path-color;
+    stroke-width: 0.2;
+    stroke-linecap: butt;
+  }
+
+  &-axis-y {
+    text {
+      fill: @chart-text-color;
+      font-size: @chart-value-size;
+      text-anchor: end;
+    }
+  }
+  
+  &-axis-x {
+    text {
+      fill: @chart-text-color;
+      font-size: @chart-label-size;
+      text-anchor: middle;
+    }
+  }
+}
