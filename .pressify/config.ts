@@ -185,6 +185,10 @@ export default defineConfig<ThemeConfig>({
                 link: "/en/rate",
               },
               {
+                text: "CheckList",
+                link: "/en/check-list",
+              },
+              {
                 text: "Input",
                 link: "/en/input",
               },

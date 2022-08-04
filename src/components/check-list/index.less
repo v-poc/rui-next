@@ -1,0 +1,15 @@
+// @import '../styles/mixins';
+@import '../styles/themes/default';
+
+@checkListPrefixCls: r-check-list;
+
+.@{checkListPrefixCls} {
+  &-item-extra {
+    font-size: 16px;
+    color: @brand-primary;
+  }
+
+  &-item-readonly {
+    cursor: unset;
+  }
+}

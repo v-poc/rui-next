@@ -37,6 +37,8 @@ export { default as NoticeBar } from "./notice-bar/index";
 export { default as List } from "./list/index";
 // Grid
 export { default as Grid } from "./grid/index";
+// CheckList
+export { default as CheckList } from "./check-list/index";
 // Input
 export { default as Input } from "./input/index";
 // TextArea
