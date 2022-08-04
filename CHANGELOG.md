@@ -1,3 +1,9 @@
+> Migration from [`vitepress-rc`](https://github.com/cvnine/vitepress-rc) to [`Pressify`](http://github.com/codpoe/pressify).
+
+# 0.35.10 (2022-08-04)
+
+Refactor: types.
+
 # 0.35.9 (2022-07-24)
 
 Refactor: types.
