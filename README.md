@@ -48,7 +48,7 @@ $ npm run build-docs
 
 ## Customize configuration
 
-About vite, please check Configuration Reference - [vite](https://vitejs.dev/config/).
+About vite and pressify, please check Configuration Reference - [vite](https://vitejs.dev/config/), [pressify](https://github.com/codpoe/pressify).
 
 ## License
 
