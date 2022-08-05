@@ -1,0 +1,45 @@
+@import '../styles/mixins';
+// @import '../styles/themes/default';
+
+@skeletonPrefixClass: r-skeleton;
+
+.@{skeletonPrefixClass} {
+  box-sizing: border-box;
+  display: flex;
+
+  &-avatar {
+    width: 80px;
+    height: 80px;
+    margin-right: 32px;
+    border-radius: 50%;
+    .placeHolder();
+
+    &.@{skeletonPrefixClass}-avatar-large {
+      width: 96px;
+      height: 96px;
+    }
+
+    &.@{skeletonPrefixClass}-avatar-small {
+      width: 64px;
+      height: 64px;
+    }
+  }
+
+  &-content {
+    flex: 1;
+  }
+
+  &-title,
+  &-row {
+    box-sizing: border-box;
+    height: 32px;
+    margin-bottom: 24px;
+    border: 0;
+    border-radius: 0;
+    .placeHolder();
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+}

@@ -1,0 +1,25 @@
+# Skeleton
+
+`Skeleton` screen, generally used to display the loading state of the general structure of the page before the data has been loaded
+
+```jsx
+<Skeleton title />
+```
+
+## Example
+
+Basic usage of Skeleton component.
+
+<Demo src="../../components/skeleton/demo/Example.tsx" />
+
+## API
+
+Properties | Description | Type | Default
+-----------|------------|------|--------
+| loading | Whether display the skeleton placeholders loading | `Boolean` | `true` |
+| avatar | Whether display avatar placeholders | `Boolean` | `false` |
+| avatarSize | The size of avatar placeholders, optional value: sm, md, lg | `String` | `md` |
+| title | Whether display the title placeholders | `Boolean` | `false` |
+| titleWidth | The width of title placeholders | `Number`\|`String` | `40%` |
+| row | The number of rows | `Number` | `3` |
+| rowWidth | The width of rows | `String`\|`Number`\|`Array<String\|Number>` | `100%` |

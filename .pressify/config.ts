@@ -214,6 +214,10 @@ export default defineConfig<ThemeConfig>({
                 text: "Progress",
                 link: "/en/progress",
               },
+              {
+                text: "Skeleton",
+                link: "/en/skeleton",
+              },
             ],
           },
           {

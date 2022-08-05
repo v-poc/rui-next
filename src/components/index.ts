@@ -27,6 +27,8 @@ export { default as Icon } from "./icon/index";
 export { default as NavBar } from "./nav-bar/index";
 // Switch
 export { default as Switch } from "./switch/index";
+// Skeleton
+export { default as Skeleton } from "./skeleton/index";
 // Divider
 export { default as Divider } from "./divider/index";
 // Rate
