@@ -230,6 +230,10 @@ export default defineConfig<ThemeConfig>({
                 text: "Skeleton",
                 link: "/en/skeleton",
               },
+              {
+                text: "Empty",
+                link: "/en/empty",
+              },
             ],
           },
           {

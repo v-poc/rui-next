@@ -32,7 +32,7 @@ const Example = () => {
         onButtonClick={handlePrimaryBtnClick}
 
       />
-
+      <br /><br />
       <Divider contentAlign="left">
         Result with icon
       </Divider>

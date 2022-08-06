@@ -15,8 +15,6 @@ export { default as QRCode } from "./qr-code/index";
 export { default as Badge } from "./badge/index";
 // Progress
 export { default as Progress } from "./progress/index";
-// Watermark
-export { default as Watermark } from "./watermark/index";
 // Steps
 export { default as Steps } from "./steps/index";
 // Card
@@ -39,6 +37,10 @@ export { default as Skeleton } from "./skeleton/index";
 export { default as Divider } from "./divider/index";
 // Rate
 export { default as Rate } from "./rate/index";
+// Watermark
+export { default as Watermark } from "./watermark/index";
+// Empty
+export { default as Empty } from "./empty/index";
 // NoticeBar
 export { default as NoticeBar } from "./notice-bar/index";
 // List
