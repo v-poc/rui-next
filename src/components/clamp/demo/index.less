@@ -1,0 +1,21 @@
+.clamp-example-wrapper {
+  .text {
+    .btn::before {
+      content: 'expand';
+    }
+  }
+
+  .exp:checked+.text {
+    .btn::before {
+      content: 'collapse';
+    }
+  }
+}
+
+.clamp-example-expand-only {
+  .exp:checked+.text {
+    .btn::before {
+      content: '';
+    }
+  }
+}

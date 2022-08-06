@@ -25,6 +25,8 @@ export { default as Card } from "./card/index";
 export { default as Icon } from "./icon/index";
 // NavBar
 export { default as NavBar } from "./nav-bar/index";
+// Tag
+export { default as Tag } from "./tag/index";
 // Switch
 export { default as Switch } from "./switch/index";
 // Skeleton

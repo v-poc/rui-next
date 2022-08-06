@@ -155,6 +155,10 @@ export default defineConfig<ThemeConfig>({
                 link: "/en/icon",
               },
               {
+                text: "Tag",
+                link: "/en/tag",
+              },
+              {
                 text: "Watermark",
                 link: "/en/watermark",
               },
@@ -255,6 +259,10 @@ export default defineConfig<ThemeConfig>({
               {
                 text: "Chart",
                 link: "/en/chart",
+              },
+              {
+                text: "Clamp",
+                link: "/en/clamp",
               },
               {
                 text: "OnePiece",
