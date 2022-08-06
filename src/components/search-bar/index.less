@@ -1,0 +1,63 @@
+// @import '../styles/mixins';
+// @import '../styles/themes/default';
+
+@searchBarPrefixCls: r-search-bar;
+
+.@{searchBarPrefixCls} {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 32px;
+
+  .@{searchBarPrefixCls}-input-box {
+    flex: auto;
+    background: #f5f5f5;
+    border-radius: 6px;
+    border: solid 1px transparent;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-left: 8px;
+
+    .@{searchBarPrefixCls}-input-box-icon {
+      flex: none;
+      color: #ccc;
+      font-size: 16px;
+    }
+
+    .@{searchBarPrefixCls}-input {
+      flex: auto;
+      padding: 4px 8px 4px 4px;
+      height: 30px;
+      box-sizing: border-box;
+
+      &.r-input {
+        font-size: 15px;
+      }
+
+      .r-input-element {
+        line-height: 19px;
+      }
+
+      &.@{searchBarPrefixCls}-input-without-icon {
+        padding-left: 8px;
+      }
+    }
+  }
+
+  &-suffix {
+    flex: none;
+    margin-left: 4px;
+  }
+
+  &-cancel-button.r-button {
+    padding: 0 12px;
+  }
+
+  &-active {
+    .@{searchBarPrefixCls}-input-box {
+      border-color: #1677FF;
+      background: #FFF;
+    }
+  }
+}

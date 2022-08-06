@@ -55,6 +55,8 @@ export { default as Input } from "./input/index";
 export { default as TextArea } from "./text-area/index";
 // Slider
 export { default as Slider } from "./slider/index";
+// SearchBar
+export { default as SearchBar } from "./search-bar/index";
 
 
 

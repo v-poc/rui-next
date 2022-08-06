@@ -1,0 +1,32 @@
+# SearchBar
+
+`SearchBar` usually locates above the app content area and provides search capabilities.
+
+```jsx
+<SearchBar placeholder="please input content" />
+```
+
+## Example
+
+Basic usage of SearchBar component.
+
+<Demo src="../../components/search-bar/demo/Example.tsx" />
+
+## API
+
+Properties | Description | Type | Default
+-----------|-------------|------|--------
+| value | The input value | `string` | - |
+| placeholder | The placeholder text | `string` | - |
+| maxLength | The maximum number of characters the user can input | `number` | - |
+| clearable | Whether to enable the clear icon, the input would be cleared after the clear icon is clicked | `boolean` | `true` |
+| showCancel | Whether to display the cancel button on the right side of the search input | `boolean \| ((focus: boolean, val: string) => boolean)` | `false` |
+| cancelText | The text of the cancel button | `string` | `'cancel'` |
+| icon | The icon node | `ReactNode` | `<Icon type="search" />` |
+| clearOnCancel | Whether to clear the input after the cancel button is clicked | `boolean` | `true` |
+| onSearch | Triggered when the enter key is input | `(val: string) => void` | - |
+| onChange | Triggered when the input content is changed | `(value: string) => void` | - |
+| onFocus | Triggered when the input get focus | `(e: React.FocusEvent<HTMLInputElement>) => void` | - |
+| onBlur | Triggered when the input lose focus | `(e: React.FocusEvent<HTMLInputElement>) => void` | - |
+| onClear | Triggered when the clear button is clicked | `() => void` | - |
+| onCancel | Triggered when the cancel button is clicked | `() => void` | - |

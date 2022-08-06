@@ -208,6 +208,10 @@ export default defineConfig<ThemeConfig>({
                 text: "Slider",
                 link: "/en/slider",
               },
+              {
+                text: "SearchBar",
+                link: "/en/search-bar",
+              },
             ],
           },
           {
