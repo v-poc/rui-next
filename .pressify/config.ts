@@ -181,6 +181,10 @@ export default defineConfig<ThemeConfig>({
             icon: "lucide:component",
             items: [
               {
+                text: "Button",
+                link: "/en/button"
+              },
+              {
                 text: "Switch",
                 link: "/en/switch",
               },
