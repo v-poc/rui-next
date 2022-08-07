@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from "react";
-import { ActivityIndicator, Divider } from "../../index";
+import { ActivityIndicator, Button, Divider } from "../../index";
 import "./index.less";
 
 // Example FC
 const Example = () => {
-  let closeTimer;
+  let closeTimer: any;
   const [animating, setAnimating] = useState(false);
 
   const wrapperStyle = {
@@ -74,11 +74,14 @@ const Example = () => {
       <Divider contentAlign="left">
         Toast mode of activity-indicator
       </Divider>
-      <button
+      <Button
+        type="primary"
+        size="small"
+        inline
         onClick={() => showToast()}
       >
-        [Click to show Toast]
-      </button>
+        Click to show Toast
+      </Button>
       <ActivityIndicator
         toast
         text="Loading..."

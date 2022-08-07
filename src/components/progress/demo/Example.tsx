@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Progress, Divider } from "../../index";
+import { Progress, Button, Divider } from "../../index";
 import "./index.less";
 
 // Example FC
@@ -36,7 +36,14 @@ const Example = () => {
         <div aria-hidden="true">{percent}%</div>
       </div>
       <br />
-      <button onClick={add}>[Click to add percent]</button>
+      <Button
+        type="primary"
+        size="small"
+        inline
+        onClick={add}
+      >
+        Click to add percent
+      </Button>
       <br />
       <br />
     </>

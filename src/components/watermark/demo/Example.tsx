@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Watermark } from "../../index";
+import { Watermark, Button } from "../../index";
 import "./index.less";
 
 type TxtType = {
@@ -34,17 +34,23 @@ const Example = () => {
 
   return (
     <div className="example-watermark-wrapper">
-      <button
+      <Button
+        type="primary"
+        size="small"
+        inline
         onClick={() => setProps(txtProps)}
       >
-        [Test Text Watermark]
-      </button>
+        Test Text Watermark
+      </Button>
       <br />
-      <button
+      <Button
+        type="primary"
+        size="small"
+        inline
         onClick={() => setProps(imgProps)}
       >
-        [Test Image Watermark]
-      </button>
+        Test Image Watermark
+      </Button>
       <br />
       <div className="watermark-wrapper">
         <Watermark

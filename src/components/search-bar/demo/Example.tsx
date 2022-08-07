@@ -70,6 +70,7 @@ const Example = () => {
       >
         Test to clear content
       </Button>
+      <br /><br />
     </>
   );
 };
