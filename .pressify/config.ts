@@ -259,6 +259,10 @@ export default defineConfig<ThemeConfig>({
                 link: "/en/use-network",
               },
               {
+                text: "useVisibilityChange",
+                link: "/en/use-visibilitychange",
+              },
+              {
                 text: "useLatest",
                 link: "/en/use-latest",
               },
