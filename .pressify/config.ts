@@ -266,6 +266,10 @@ export default defineConfig<ThemeConfig>({
                 text: "useLatest",
                 link: "/en/use-latest",
               },
+              {
+                text: "useMemoizedFn",
+                link: "/en/use-memoizedfn",
+              },
             ],
           },
           {

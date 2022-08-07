@@ -69,3 +69,5 @@ export { default as useNetwork } from "./hooks/useNetwork/index";
 export { default as useLatest } from "./hooks/useLatest/index";
 // useVisibilityChange
 export { default as useVisibilityChange } from "./hooks/useVisibilityChange/index";
+// useMemoizedFn
+export { default as useMemoizedFn } from "./hooks/useMemoizedFn/index";
