@@ -258,6 +258,10 @@ export default defineConfig<ThemeConfig>({
                 text: "useNetwork",
                 link: "/en/use-network",
               },
+              {
+                text: "useLatest",
+                link: "/en/use-latest",
+              },
             ],
           },
           {

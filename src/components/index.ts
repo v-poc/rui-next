@@ -65,3 +65,5 @@ export { default as SearchBar } from "./search-bar/index";
  */
 // useNetwork
 export { default as useNetwork } from "./hooks/useNetwork/index";
+// useLatest
+export { default as useLatest } from "./hooks/useLatest/index";
