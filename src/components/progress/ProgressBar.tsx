@@ -15,7 +15,7 @@ export type ProgressBarProps = {
 
 // ProgressBar FC
 const ProgressBar: React.FC<ProgressBarProps> = props => {
-  const barRef = useRef<any>();
+  const barRef = useRef<HTMLDivElement>(null);
   let noAppearTransition = false;
 
   const {

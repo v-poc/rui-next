@@ -7,7 +7,7 @@ const Example = () => {
   const [count, setCount] = useState(0);
   const [refCount, setRefCount] = useState(0);
   const countRef = useLatest(refCount);
-  const timerRef = useRef<any>();
+  const timerRef = useRef<ReturnType<typeof setInterval>>();
 
   const handleClick = () => {
     if (!isStart) {

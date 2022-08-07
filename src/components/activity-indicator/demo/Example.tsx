@@ -4,7 +4,7 @@ import "./index.less";
 
 // Example FC
 const Example = () => {
-  let closeTimer: any;
+  let closeTimer: ReturnType<typeof setTimeout>;
   const [animating, setAnimating] = useState(false);
 
   const wrapperStyle = {
