@@ -263,6 +263,10 @@ export default defineConfig<ThemeConfig>({
                 link: "/en/use-visibilitychange",
               },
               {
+                text: "useClickAway",
+                link: "/en/use-clickaway",
+              },
+              {
                 text: "useLatest",
                 link: "/en/use-latest",
               },

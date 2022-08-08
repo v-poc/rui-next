@@ -65,9 +65,11 @@ export { default as SearchBar } from "./search-bar/index";
  */
 // useNetwork
 export { default as useNetwork } from "./hooks/useNetwork/index";
-// useLatest
-export { default as useLatest } from "./hooks/useLatest/index";
 // useVisibilityChange
 export { default as useVisibilityChange } from "./hooks/useVisibilityChange/index";
+// useClickAway
+export { default as useClickAway } from "./hooks/useClickAway/index";
+// useLatest
+export { default as useLatest } from "./hooks/useLatest/index";
 // useMemoizedFn
 export { default as useMemoizedFn } from "./hooks/useMemoizedFn/index";
