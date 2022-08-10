@@ -267,6 +267,10 @@ export default defineConfig<ThemeConfig>({
                 link: "/en/use-clickaway",
               },
               {
+                text: "useLazyload",
+                link: "/en/use-lazyload",
+              },
+              {
                 text: "useLatest",
                 link: "/en/use-latest",
               },

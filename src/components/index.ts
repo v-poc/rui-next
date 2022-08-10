@@ -69,6 +69,8 @@ export { default as useNetwork } from "./hooks/useNetwork/index";
 export { default as useVisibilityChange } from "./hooks/useVisibilityChange/index";
 // useClickAway
 export { default as useClickAway } from "./hooks/useClickAway/index";
+// useLazyload
+export { default as useLazyload } from "./hooks/useLazyload/index";
 // useLatest
 export { default as useLatest } from "./hooks/useLatest/index";
 // useMemoizedFn

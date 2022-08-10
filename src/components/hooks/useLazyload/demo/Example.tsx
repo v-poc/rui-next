@@ -1,0 +1,42 @@
+import React, { useState } from "react";
+import { useLazyload, Button, Skeleton, Divider } from "../../../index";
+
+// Example FC
+const Example = () => {
+  const [showContent, setShowContent] = useState(false);
+  const [callbackRef, isLoaded] = useLazyload();
+
+  const startContentLoading = () => setShowContent(true);
+
+  return (
+    <>
+      <Divider contentAlign="left">
+        Skeleton Content loading image
+      </Divider>
+      <Button
+        type="primary"
+        size="small"
+        inline
+        round
+        disabled={showContent && !isLoaded}
+        onClick={startContentLoading}
+      >
+        Test Content loading
+      </Button>
+      {showContent && (<>
+        <Skeleton
+          title
+          titleWidth="80%"
+          row={4}
+          loading={!isLoaded}
+        />
+        <img
+          ref={callbackRef}
+          data-src="https://vitejs.dev/logo.svg"
+        />
+      </>)}
+    </>
+  );
+};
+
+export default Example;
