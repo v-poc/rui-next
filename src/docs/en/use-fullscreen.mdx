@@ -1,0 +1,38 @@
+# useFullscreen
+
+A Hook that is able to set dom element to be full-screen.
+
+```ts
+const [isFullscreen, { setFull, exitFull, toggleFull }] = useFullScreen(target, options?:Options);
+```
+
+## Example
+
+Basic usage of useFullscreen hook.
+
+<Demo src="../../components/hooks/useFullscreen/demo/Example.tsx" />
+
+## API
+
+### useFullscreen - Params
+
+| Property | Description               | Type                                                             | Default |
+| -------- | ------------------------- | ---------------------------------------------------------------- | ------- |
+| target   | DOM element or Ref Object | `HTMLElement` \| `() => HTMLElement` \| `React.MutableRefObject` | - |
+| options  | setting(optional)         | `Options`                                                        | - |
+
+### useFullscreen - Options
+
+| Property   | Description                        | Type         | Default |
+| ---------- | ---------------------------------- | ------------ | ------- |
+| onExitFull | listen for exit full screen events | `() => void` | - |
+| onFull     | listen for full screen events      | `() => void` | - |
+
+### useFullscreen - Result
+
+| Property     | Description        | Type         |
+| ------------ | ------------------ | ------------ |
+| isFullscreen | Whether it is the full screen state | `boolean` |
+| setFull      | set full screen    | `() => void` |
+| exitFull     | exit full screen   | `() => void` |
+| toggleFull   | toggle full screen | `() => void` |

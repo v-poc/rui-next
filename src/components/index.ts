@@ -65,6 +65,8 @@ export { default as SearchBar } from "./search-bar/index";
  */
 // useNetwork
 export { default as useNetwork } from "./hooks/useNetwork/index";
+// useFullscreen
+export { default as useFullscreen } from "./hooks/useFullscreen/index";
 // useVisibilityChange
 export { default as useVisibilityChange } from "./hooks/useVisibilityChange/index";
 // useClickAway

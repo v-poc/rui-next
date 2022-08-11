@@ -259,6 +259,10 @@ export default defineConfig<ThemeConfig>({
                 link: "/en/use-network",
               },
               {
+                text: "useFullscreen",
+                link: "/en/use-fullscreen",
+              },
+              {
                 text: "useVisibilityChange",
                 link: "/en/use-visibilitychange",
               },
