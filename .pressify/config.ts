@@ -54,7 +54,7 @@ export default defineConfig<ThemeConfig>({
           {
             text: "Playground",
             icon: "tabler:ghost",
-            link: "https://nikoni.top/rui-next/docs/playground.html",
+            link: "/en/playground",
           },
           {
             text: "Links",
@@ -80,11 +80,11 @@ export default defineConfig<ThemeConfig>({
                 icon: "tabler:bolt",
                 link: "https://vitejs.dev/",
               },
-              {
-                text: "RUI-next",
-                icon: "tabler:git-branch",
-                link: "https://github.com/v-poc/rui-next",
-              },
+              // {
+              //   text: "RUI-playground",
+              //   icon: "tabler:git-branch",
+              //   link: "https://github.com/v-poc/rui-playground",
+              // },
               {
                 text: "RUI-poc",
                 icon: "tabler:git-branch",
@@ -316,6 +316,10 @@ export default defineConfig<ThemeConfig>({
                 text: "XButton",
                 link: "/en/x-button",
               },
+              {
+                text: "Playground",
+                link: "/en/playground",
+              }
             ],
           },
         ],
