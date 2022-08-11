@@ -63,7 +63,7 @@ export default defineConfig<ThemeConfig>({
               {
                 text: "Changelog",
                 icon: "tabler:clipboard",
-                link: "https://github.com/v-poc/rui-next/blob/main/CHANGELOG.md",
+                link: "https://github.com/v-poc/rui-playground/blob/main/CHANGELOG.md",
               },
               {
                 text: "Organization",
