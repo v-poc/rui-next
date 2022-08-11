@@ -48,7 +48,8 @@ export default defineConfig<ThemeConfig>({
             text: "Documentation",
             items: [
               { text: "Tutorial", link: "https://nikoni.top/rui-next/en/getting-started" },
-              { text: "Examples", link: "https://nikoni.top/rui-next/" },
+              { text: "Examples-vite3", link: "https://nikoni.top/rui-next/" },
+              { text: "Examples-vite2", link: "https://nikoni.top/rui-next/docs/" },
             ],
           },
           {
@@ -80,13 +81,8 @@ export default defineConfig<ThemeConfig>({
                 icon: "tabler:bolt",
                 link: "https://vitejs.dev/",
               },
-              // {
-              //   text: "RUI-playground",
-              //   icon: "tabler:git-branch",
-              //   link: "https://github.com/v-poc/rui-playground",
-              // },
               {
-                text: "RUI-poc",
+                text: "RUI-poc-vite3",
                 icon: "tabler:git-branch",
                 link: "https://github.com/v-poc/rui-poc",
               },
