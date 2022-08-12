@@ -1,5 +1,6 @@
 import { defineConfig } from "pressify";
 import type { ThemeConfig } from "pressify/theme";
+import * as pkg  from "../package.json";
 
 export default defineConfig<ThemeConfig>({
   pages: "src/docs",
@@ -17,8 +18,8 @@ export default defineConfig<ThemeConfig>({
   themeConfig: {
     locale: "en-US",
     localeText: "English",
-    title: "RUI playground",
-    description: "The Vite based PoC playground.",
+    title: "RUI.next",
+    description: "Mobile web UI components based on React and Vite 3",
     banner: [
       "WIP!",
       [
@@ -61,6 +62,11 @@ export default defineConfig<ThemeConfig>({
             text: "Links",
             icon: "tabler:mood-smile",
             items: [
+              {
+                text: `Repo (v${pkg.version})`,
+                icon: "tabler:git-branch",
+                link: 'https://github.com/v-poc/rui-playground'
+              },
               {
                 text: "Changelog",
                 icon: "tabler:clipboard",
