@@ -5,6 +5,8 @@
 export { default as Flex } from "./flex/index";
 // WhiteSpace
 export { default as WhiteSpace } from "./white-space/index";
+// Space
+export { default as Space } from "./space/index";
 // AutoJustifyContent
 export { default as AutoJustifyContent } from "./auto-justify-content/index";
 // ActivityIndicator

@@ -138,6 +138,10 @@ export default defineConfig<ThemeConfig>({
                 text: "AutoJustifyContent",
                 link: "/en/auto-justify-content",
               },
+              {
+                text: "Space",
+                link: "/en/space",
+              },
             ],
           },
           {

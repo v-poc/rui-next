@@ -1,3 +1,7 @@
+# 0.37.0 (2022-08-14)
+
+Added `Space` demo.
+
 # 0.36.0 (2022-08-11)
 
 Refactor: migration from [`vitepress-rc`](https://github.com/cvnine/vitepress-rc) to [`Pressify`](http://github.com/codpoe/pressify).
