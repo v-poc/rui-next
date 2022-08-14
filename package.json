@@ -21,7 +21,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/v-poc/rui-next.git"
+    "url": "git+https://github.com/v-poc/rui-playground.git"
   },
   "keywords": [
     "vite",
@@ -45,9 +45,9 @@
   "author": "Niko Ni",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/v-poc/rui-next/issues"
+    "url": "https://github.com/v-poc/rui-playground/issues"
   },
-  "homepage": "https://github.com/v-poc/rui-next#readme",
+  "homepage": "https://github.com/v-poc/rui-playground#readme",
   "scripts": {
     "start": "pressify dev",
     "build-lib": "vite build --config vite.config.ts",
@@ -62,7 +62,7 @@
     "react-dom": "^18.2.0"
   },
   "devDependencies": {
-    "@types/node": "^18.7.2",
+    "@types/node": "^18.7.3",
     "@types/react": "^18.0.17",
     "@types/react-dom": "^18.0.6",
     "classnames": "^2.3.1",
