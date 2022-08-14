@@ -10,14 +10,14 @@ const SKELETON_WIDTH = {
 // SkeletonProps Type
 export type SkeletonProps = {
   prefixCls?: string;
-  loading: boolean;
+  loading?: boolean;
   avatar?: boolean;
   avatarSize?: string;
   children?: ReactNode;
   title?: boolean;
   titleWidth?: number | string;
   row?: number;
-  rowWidth: number | string | number[] | string[];
+  rowWidth?: number | string | number[] | string[];
 };
 
 // Skeleton FC
