@@ -32,7 +32,7 @@ const Example = () => (
       Icon Size
     </Divider>
     <div className="example-icon-wrapper">
-      {sizeList.map((size, i) => (
+      {sizeList.map((size: any, i: number) => (
         <div key={`sizeWrapper${i}`} className="item-wrapper">
           <Icon key={`size${i}`} type="search" color="orange" size={size} />
           <p key={`sizeText${i}`}>{size}</p>
