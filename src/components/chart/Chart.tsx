@@ -4,15 +4,15 @@ import useEventListener from '../hooks/useEventListener/index';
 // ChartProps type
 export type ChartProps = {
   prefixCls?: string;
-  labels: any[]; // The labels of X-Axis
-  datasets: any[]; // The chart data
-  size: number[] | string[]; // The size of chart
-  max: number; // The maximum in Y-Axis
-  min: number; // The minimum in Y-Axis
-  lines: number; // The number of lines in Y-Axis
-  step: number; // The decreasing step in Y-Axis
-  shift: number; // The shift in Y-Axis
-  format: (val: any) => any; // The labels formatting function in Y-Axis
+  labels?: any[]; // The labels of X-Axis
+  datasets?: any[]; // The chart data
+  size?: number[] | string[]; // The size of chart
+  max?: number; // The maximum in Y-Axis
+  min?: number; // The minimum in Y-Axis
+  lines?: number; // The number of lines in Y-Axis
+  step?: number; // The decreasing step in Y-Axis
+  shift?: number; // The shift in Y-Axis
+  format?: (val: any) => any; // The labels formatting function in Y-Axis
 };
 
 // Chart FC
