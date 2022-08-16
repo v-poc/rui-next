@@ -29,7 +29,7 @@
     "react-hooks",
     "vitepress",
     "react-components",
-    "react-vitepress",
+    "react-pressify",
     "react-hooks-components",
     "react-hooks-vitepress",
     "rui",
@@ -37,8 +37,8 @@
     "react-hooks-ui",
     "react-vite",
     "react-vite-ui",
-    "react-vite-vitepress",
-    "react-vite-vitepress-ui",
+    "react-vite-ts",
+    "react-vite-ts-ui",
     "vite3",
     "react18-vite3-ui"
   ],
@@ -62,7 +62,7 @@
     "react-dom": "^18.2.0"
   },
   "devDependencies": {
-    "@types/node": "^18.7.3",
+    "@types/node": "^18.7.6",
     "@types/react": "^18.0.17",
     "@types/react-dom": "^18.0.6",
     "classnames": "^2.3.1",
@@ -70,6 +70,6 @@
     "pressify": "^1.0.2",
     "typescript": "^4.7.4",
     "v-qr-code-next": "^0.1.11",
-    "vite": "^3.0.7"
+    "vite": "^3.0.8"
   }
 }
