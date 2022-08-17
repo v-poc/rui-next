@@ -48,8 +48,8 @@ export default defineConfig<ThemeConfig>({
           {
             text: "Documentation",
             items: [
-              { text: "Tutorial", link: "https://nikoni.top/rui-next/en/getting-started" },
-              { text: "Examples-vite3", link: "https://nikoni.top/rui-next/" },
+              { text: "Tutorial", link: "/en/getting-started" },
+              { text: "Examples-vite3", link: "/" },
               { text: "Examples-vite2", link: "https://nikoni.top/rui-next/docs/" },
             ],
           },
@@ -92,6 +92,14 @@ export default defineConfig<ThemeConfig>({
                 icon: "tabler:git-branch",
                 link: "https://github.com/v-poc/rui-poc",
               },
+            ],
+          },
+          {
+            text: " ",
+            icon: "lucide:languages",
+            items: [
+              { text: "English", link: "/" },
+              { text: "简体中文", link: "/zh" },
             ],
           },
           {
