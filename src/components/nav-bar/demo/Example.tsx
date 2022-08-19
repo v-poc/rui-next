@@ -1,5 +1,5 @@
 import React from "react";
-import { NavBar, Icon, Divider } from "../../index";
+import { NavBar, Icon, Divider } from "rui-next";
 import "./index.less";
 
 // Example FC

@@ -1,5 +1,5 @@
 import React from "react";
-import { Slider, Divider } from "../../index";
+import { Slider, Divider } from "rui-next";
 import { logInfo } from "../../experimental";
 
 const marksSample = {0: "0", 25: "25%", 50: "50%", 75: "75%", 100: "100%"};

@@ -1,5 +1,5 @@
 import React from "react";
-import { Rate, Icon, Divider } from "../../index";
+import { Rate, Icon, Divider } from "rui-next";
 import { logInfo } from "../../experimental";
 
 // Example FC
@@ -9,7 +9,7 @@ const Example = () => (
       Basic Rate with Callback function (`RUI-log` in Console log)
     </Divider>
     <Rate
-      onChange={(v) => logInfo(`rate-content: ${v}`)}
+      onChange={(v: number) => logInfo(`rate-content: ${v}`)}
     />
     <Divider contentAlign="left">
       Readonly mode
@@ -42,7 +42,7 @@ const Example = () => (
       character="加"
       activeColor="#36C"
       size={48}
-      onChange={(v) => logInfo(`rate-content: ${v}`)}
+      onChange={(v: number) => logInfo(`rate-content: ${v}`)}
     />
   </>
 );

@@ -1,5 +1,5 @@
 import React from "react";
-import { Divider } from "../../index";
+import { Divider } from "rui-next";
 import { SafeArea } from "../../experimental";
 
 // Example FC

@@ -1,5 +1,5 @@
 import React from "react";
-import { Steps, Divider } from "../../index";
+import { Steps, Divider } from "rui-next";
 
 // Example FC
 const Example = () => (

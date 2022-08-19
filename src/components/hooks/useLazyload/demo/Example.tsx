@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { useLazyload, Button, Skeleton, Divider } from "../../../index";
+import { useLazyload, Button, Skeleton, Divider } from "rui-next";
 
 // Example FC
 const Example = () => {

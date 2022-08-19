@@ -1,5 +1,5 @@
 import React from "react";
-import { WhiteSpace, Divider } from "../../index";
+import { WhiteSpace, Divider } from "rui-next";
 import "./index.less";
 
 // PlaceHolder FC

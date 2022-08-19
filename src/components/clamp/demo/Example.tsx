@@ -1,5 +1,5 @@
 import React from "react";
-import { Divider } from "../../index";
+import { Divider } from "rui-next";
 import { Clamp } from "../../experimental";
 import "./index.less";
 

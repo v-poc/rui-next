@@ -1,5 +1,5 @@
 import React from "react";
-import { Badge, Divider } from "../../index";
+import { Badge, Divider } from "rui-next";
 import "./index.less";
 
 // Example FC

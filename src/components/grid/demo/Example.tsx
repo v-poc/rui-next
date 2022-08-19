@@ -1,5 +1,5 @@
 import React from "react";
-import { Grid, Divider } from "../../index";
+import { Grid, Divider } from "rui-next";
 import "./index.less";
 
 // PlaceHolder FC

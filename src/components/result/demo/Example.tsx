@@ -1,5 +1,5 @@
 import React from "react";
-import { useNetwork, Result, Icon, Divider } from "../../index";
+import { useNetwork, Result, Icon, Divider } from "rui-next";
 
 // Example FC
 const Example = () => {

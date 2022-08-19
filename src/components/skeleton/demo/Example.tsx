@@ -1,5 +1,5 @@
 import React from "react";
-import { Skeleton, Divider } from "../../index";
+import { Skeleton, Divider } from "rui-next";
 
 // Example FC
 const Example = () => (

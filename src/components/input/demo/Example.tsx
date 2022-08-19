@@ -1,5 +1,5 @@
 import React from "react";
-import { Input, List, Divider } from "../../index";
+import { Input, List, Divider } from "rui-next";
 import "./index.less";
 
 // Example FC

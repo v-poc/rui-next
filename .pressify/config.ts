@@ -6,6 +6,11 @@ export default defineConfig<ThemeConfig>({
   pages: "src/docs",
   vite: {
     base: "/rui-next/",
+    resolve: {
+      alias: [
+        { find: "rui-next", replacement: "/src/components/index.ts"},
+      ],
+    },
     css: {
       preprocessorOptions: {
         less: {

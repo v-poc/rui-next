@@ -1,5 +1,5 @@
 import React from "react";
-import { AutoJustifyContent, Divider } from "../../index";
+import { AutoJustifyContent, Divider } from "rui-next";
 
 // Example FC
 const Example = () => (

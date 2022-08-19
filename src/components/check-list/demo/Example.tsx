@@ -1,5 +1,5 @@
 import React from "react";
-import { CheckList, Divider } from "../../index";
+import { CheckList, Divider } from "rui-next";
 import { logInfo } from "../../experimental";
 import "./index.less";
 

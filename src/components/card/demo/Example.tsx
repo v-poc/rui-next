@@ -1,5 +1,5 @@
 import React from "react";
-import { Card, Divider } from "../../index";
+import { Card, Divider } from "rui-next";
 import { OnePiece } from "../../experimental";
 import "./index.less";
 

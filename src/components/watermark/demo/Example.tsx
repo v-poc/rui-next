@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Watermark, Button } from "../../index";
+import { Watermark, Button } from "rui-next";
 import "./index.less";
 
 type TxtType = {
