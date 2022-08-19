@@ -1,4 +1,5 @@
-import React, { ReactNode } from 'react';
+import React from 'react';
+import type { CSSProperties, ReactNode } from "react";
 import classnames from 'classnames';
 
 // FlexProps Type
@@ -6,7 +7,7 @@ export type FlexProps = {
   prefixCls?: string;
   className?: string;
   children?: ReactNode;
-  style?: React.CSSProperties;
+  style?: CSSProperties;
   alignContent?: 'start' | 'end' | 'center' | 'between' | 'around' | 'stretch';
   role?: string;
   direction?: 'row' | 'row-reverse' | 'column' | 'column-reverse';

@@ -1,4 +1,5 @@
-import React, { CSSProperties, ReactNode } from "react";
+import React from "react";
+import type { CSSProperties, ReactNode } from "react";
 
 type styleProps = CSSProperties & {
   "--item-span"?: string;

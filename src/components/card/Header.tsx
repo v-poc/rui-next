@@ -1,4 +1,5 @@
-import React, { ReactNode, CSSProperties } from "react";
+import React from "react";
+import type { CSSProperties, ReactNode } from "react";
 import classnames from "classnames";
 
 // CardHeaderProps Type

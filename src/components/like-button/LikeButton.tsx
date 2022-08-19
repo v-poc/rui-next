@@ -1,4 +1,5 @@
-import React, { CSSProperties, useState } from "react";
+import React, { useState } from "react";
+import type { CSSProperties } from "react";
 import classnames from "classnames";
 
 type styleProps = CSSProperties & {

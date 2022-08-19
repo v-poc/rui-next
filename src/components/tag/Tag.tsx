@@ -1,4 +1,5 @@
-import React, { CSSProperties, ReactNode, useCallback, useEffect, useState } from "react";
+import React, { useCallback, useEffect, useState } from "react";
+import type { CSSProperties, ReactNode } from "react";
 import classnames from "classnames";
 import Icon from "../icon/index";
 import TouchFeedback from "../utils/TouchFeedback";

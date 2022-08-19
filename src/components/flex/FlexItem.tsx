@@ -1,4 +1,5 @@
-import React, { ReactNode } from 'react';
+import React from 'react';
+import type { CSSProperties, ReactNode } from "react";
 import classnames from 'classnames';
 
 // FlexItemProps Type
@@ -6,7 +7,7 @@ export type FlexItemProps = {
   prefixCls?: string;
   className?: string;
   children?: ReactNode;
-  style?: React.CSSProperties;
+  style?: CSSProperties;
   disabled?: boolean;
 };
 
