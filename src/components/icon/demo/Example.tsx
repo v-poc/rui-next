@@ -8,7 +8,7 @@ const defaultList = [
   "up", "down", "left", "right",
   "search", "ellipsis", "ellipsis-circle",
   "loading", "exclamation-circle", "info-circle", "question-circle",
-  "voice", "minus", "plus" 
+  "voice", "minus", "plus", "star", "empty",
 ];
 
 const sizeList = ["xxs", "xs", "sm", "md", "lg"];
