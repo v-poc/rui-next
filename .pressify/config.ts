@@ -336,6 +336,10 @@ export default defineConfig<ThemeConfig>({
                 link: "/en/x-button",
               },
               {
+                text: "CubeAnim",
+                link: "/en/cube-anim",
+              },
+              {
                 text: "Playground",
                 link: "/en/playground",
               }
