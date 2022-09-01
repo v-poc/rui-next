@@ -1,5 +1,6 @@
 /* eslint-disable no-console */
-import React, { MutableRefObject } from "react";
+import React from "react";
+import type { DependencyList, MutableRefObject } from "react";
 
 // Log info
 export const logInfo = (content: any, type = "info"): void => {
@@ -131,4 +132,25 @@ export function attachPropsToComp<
     }
   }
   return ret;
+};
+
+// Sleep util function
+export const sleep = (time: number) => new Promise((resolve) => setTimeout(resolve, time));
+
+// Check if same deps
+export function checkIfSameDeps (
+  oldDeps: DependencyList,
+  deps: DependencyList
+): boolean {
+  if (oldDeps === deps) {
+    return true;
+  }
+
+  for (let i = 0; i < oldDeps.length; i++) {
+    if (!Object.is(oldDeps[i], deps[i])) {
+      return false;
+    }
+  }
+  
+  return true;
 };

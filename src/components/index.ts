@@ -79,3 +79,5 @@ export { default as useLazyload } from "./hooks/useLazyload/index";
 export { default as useLatest } from "./hooks/useLatest/index";
 // useMemoizedFn
 export { default as useMemoizedFn } from "./hooks/useMemoizedFn/index";
+// useInViewport
+export { default as useInViewport } from "./hooks/useInViewport/index";

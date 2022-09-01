@@ -1,3 +1,7 @@
+# 0.38.0 (2022-09-01)
+
+Added `useInViewport` hook.
+
 # 0.37.2 (2022-08-30)
 
 Added `CubeAnim` demo (`experimental`).

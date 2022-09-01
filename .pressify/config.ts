@@ -301,6 +301,10 @@ export default defineConfig<ThemeConfig>({
                 text: "useMemoizedFn",
                 link: "/en/use-memoizedfn",
               },
+              {
+                text: "useInViewport",
+                link: "/en/use-in-viewport",
+              },
             ],
           },
           {
