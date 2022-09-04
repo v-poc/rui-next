@@ -10,15 +10,17 @@ actions:
 features:
   - title: ⚡️ Vite3-Powered
     details: Vite is a front-end development build tool based on the ES Module and is known for its speed.
-  - title: 📘 MDX
-    details: We can write JSX directly in the markdown file, or even import components.
-  - title: ✨ Tailwind CSS
-    details: We can tweak the style in the document using the classes provided by Tailwind CSS.
-  - title: Plenty of unplugin-icons
-    details: It is very simple to use a huge amount of icons (lucide/openmoji/tabler) in the document on demand.
-  - title: Theme
-    details: Perform the content rendering with the theme plugin.
-  - title: Maintain less dependencies
+  # - title: 📘 MDX
+  #   details: We can write JSX directly in the markdown file, or even import components.
+  # - title: ✨ Tailwind CSS
+  #   details: We can tweak the style in the document using the classes provided by Tailwind CSS.
+  # - title: Plenty of unplugin-icons
+  #   details: It is very simple to use a huge amount of icons (lucide/openmoji/tabler) in the document on demand.
+  # - title: Theme
+  #   details: Perform the content rendering with the theme plugin.
+  - title: ✨ Customizable
+    details: We can flexibly create our own themes based on CSS variables.
+  - title: 📘 Maintain less dependencies
     details: There are very little dependencies to maintain.
 footer: Copyright © 2021-present Niko Ni. Built with Vite & React.
 ---
@@ -30,7 +32,10 @@ import IconLightning from "~icons/carbon/lightning";
 ### Like VitePress, easy to use
 
 ```shell
-# install in your project
+# install in your project (npm)
+npm i -D rui-next@latest
+
+# install in your project (yarn)
 yarn add -D rui-next@latest
 
 # get reference from docs & demos

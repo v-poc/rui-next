@@ -25,7 +25,7 @@ const Example = () => {
         Observe the visible area ratio of element target
       </Divider>
       <Button
-        type="primary"
+        type="default"
         inline
         size="small"
         onClick={() => setHeight("500px")}
