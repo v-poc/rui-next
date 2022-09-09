@@ -129,6 +129,7 @@ const Example = () => {
       />
       {params.value && (
         <QRCode
+          className="qrcode-example-wrapper"
           value={params.value}
           num={params.num}
           level={params.level}
