@@ -2,7 +2,7 @@ import React from "react";
 import type { CSSProperties, ReactNode } from "react";
 import { getCSSLength } from '../utils/index';
 
-type styleProps = CSSProperties & {
+type StyleProps = CSSProperties & {
   "--columns"?: string;
 };
 
@@ -23,7 +23,7 @@ const Grid: React.FC<GridProps> = (props) => {
     children,
   } = props;
 
-  const wrapStyle: styleProps = {
+  const wrapStyle: StyleProps = {
     "--columns": columns.toString(),
   };
 

@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import type { CSSProperties } from "react";
 import classnames from "classnames";
 
-type styleProps = CSSProperties & {
+type StyleProps = CSSProperties & {
   "--delay"?: number;
   "--heart-color"?: string;
   // "transform"?: string;
@@ -36,7 +36,7 @@ export const LikeButton: React.FC<LikeButtonProps> = props => {
 
   const [isAddCls, setIsAddCls] = useState(false);
 
-  const btnStyle: styleProps = {
+  const btnStyle: StyleProps = {
     "--delay": delay,
     "--heart-color": heartColor,
   };
@@ -58,7 +58,7 @@ export const LikeButton: React.FC<LikeButtonProps> = props => {
     }, delay);
   };
 
-  const particleStyle: styleProps = {
+  const particleStyle: StyleProps = {
     "--line-count": lineColors.length,
   };
 

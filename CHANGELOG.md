@@ -1,3 +1,7 @@
+# 0.39.0 (2022-09-11)
+
+Added `Image` demo.
+
 # 0.38.0 (2022-09-01)
 
 Added `useInViewport` hook.

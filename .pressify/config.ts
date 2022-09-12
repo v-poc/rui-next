@@ -193,6 +193,10 @@ export default defineConfig<ThemeConfig>({
                 text: "Steps",
                 link: "/en/steps",
               },
+              {
+                text: "Image",
+                link: "/en/image",
+              },
             ],
           },
           {

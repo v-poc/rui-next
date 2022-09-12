@@ -2,7 +2,7 @@ import React from "react";
 import type { CSSProperties, ReactNode } from "react";
 import classNames from "classnames";
 
-type styleProps = CSSProperties & {
+type StyleProps = CSSProperties & {
   "--gap"?: string;
 };
 
@@ -45,7 +45,7 @@ export const Space: React.FC<SpaceProps> = props => {
     },
   );
 
-  const wrapStyle: styleProps = {
+  const wrapStyle: StyleProps = {
     "--gap": `${gap}px`,
   };
 

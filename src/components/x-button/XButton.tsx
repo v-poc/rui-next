@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import type { CSSProperties } from "react";
 import classnames from "classnames";
 
-type styleProps = CSSProperties & {
+type StyleProps = CSSProperties & {
   "--scale"?: number;
   // "transform"?: string;
 };
@@ -28,7 +28,7 @@ export const XButton: React.FC<XButtonProps> = (props) => {
 
   const [isAddCls, setIsAddCls] = useState(false);
 
-  const btnStyle: styleProps = {
+  const btnStyle: StyleProps = {
     "--scale": scale,
   };
 

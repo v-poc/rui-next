@@ -1,7 +1,7 @@
 import React from "react";
 import type { CSSProperties, ReactNode } from "react";
 
-type styleProps = CSSProperties & {
+type StyleProps = CSSProperties & {
   "--item-span"?: string;
 };
 
@@ -22,7 +22,7 @@ const GridItem: React.FC<GridItemProps> = (props) => {
     children,
   } = props;
 
-  const itemStyle: styleProps = {
+  const itemStyle: StyleProps = {
     "--item-span": span?.toString(),
   };
 
