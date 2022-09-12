@@ -2,48 +2,30 @@ import React, { Fragment } from "react";
 import { Image, Divider } from "rui-next";
 import "./index.less";
 
-const IMG_SRC = "https://res.vmallres.com/cmscdn/CN/2022-09/58ecf55a84bd4290b45dc978fcbf9357.png";
+const IMG_SRC = "https://nikoni.top/images/rui-next/big-picture.jpg";
 
 // Example FC
 const Example = () => (
   <div className="image-example-wrapper">
     <Divider contentAlign="left">
-      Image lazy load
+      Image lazy load (big picture - 2.6M)
     </Divider>
     <Image
       lazy
-      src="https://vitejs.dev/logo.svg"
-      width={180}
-      height={180}
+      src={IMG_SRC}
+      width={320}
+      height={320}
       style={{ margin: 0 }}
     />
 
     <Divider contentAlign="left">
-      Image load failed
+      Image load failed (display fallback broken image)
     </Divider>
     <Image
       src="/NOTHINGBUT404"
-      width={80}
-      height={80}
+      width={120}
+      height={120}
     />
-
-    {["contain", "cover", "fill", "none", "scale-down"].map((fillMode: string) => (
-      <Fragment key={`${fillMode}fragment`}>
-        <Divider
-          key={`${fillMode}divider`}
-          contentAlign="left"
-        >
-          Image fill mode - {fillMode}
-        </Divider>
-        <Image
-          key={`${fillMode}img`}
-          src={IMG_SRC}
-          width={100}
-          height={100}
-          fit={fillMode}
-        />
-      </Fragment>
-    ))}
   </div>
 );
 
