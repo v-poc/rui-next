@@ -1,3 +1,8 @@
+# 0.40.0 (2022-09-12)
+
+- Added `Avatar` demo.
+- Moved `useLazyload` hook into `experimental` category.
+
 # 0.39.0 (2022-09-11)
 
 Added `Image` demo.

@@ -61,6 +61,8 @@ export { default as Slider } from "./slider/index";
 export { default as SearchBar } from "./search-bar/index";
 // Image
 export { default as Image } from "./image/index";
+// Avatar
+export { default as Avatar } from "./avatar/index";
 
 
 
@@ -75,8 +77,6 @@ export { default as useFullscreen } from "./hooks/useFullscreen/index";
 export { default as useVisibilityChange } from "./hooks/useVisibilityChange/index";
 // useClickAway
 export { default as useClickAway } from "./hooks/useClickAway/index";
-// useLazyload
-export { default as useLazyload } from "./hooks/useLazyload/index";
 // useLatest
 export { default as useLatest } from "./hooks/useLatest/index";
 // useMemoizedFn

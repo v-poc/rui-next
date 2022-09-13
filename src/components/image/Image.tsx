@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import type { ReactNode, CSSProperties, ImgHTMLAttributes, MouseEvent, SyntheticEvent } from "react";
+import classnames from "classnames";
 import useIsomorphicLayoutEffect from "../hooks/useIsomorphicLayoutEffect/index";
 import { Lazyload } from "../utils/Lazyload";
 import { getCSSLength } from "../utils/index";
@@ -45,6 +46,8 @@ type NativeProps = Pick<
 
 export type ImageProps = {
   prefixCls?: string;
+  className?: string;
+  style?: CSSProperties;
   alt?: string;
   draggable?: boolean;
   fallback?: ReactNode;
@@ -63,6 +66,8 @@ export type ImageProps = {
 export const Image: React.FC<ImageProps> = ((props) => {
   const {
     prefixCls,
+    className,
+    style,
     alt,
     crossOrigin,
     decoding,
@@ -110,7 +115,7 @@ export const Image: React.FC<ImageProps> = ((props) => {
     setIsFailed(false);
   }, [src]);
 
-  const wrapStyle: StyleProps = {};
+  const wrapStyle: StyleProps = style || {};
   if (width) {
     wrapStyle["--width"] = getCSSLength(width);
     wrapStyle["width"] = getCSSLength(width);
@@ -122,7 +127,7 @@ export const Image: React.FC<ImageProps> = ((props) => {
 
   return (
     <div
-      className={prefixCls}
+      className={classnames(prefixCls, className)}
       style={wrapStyle}
       onClick={onContainerClick}
     >

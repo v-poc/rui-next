@@ -197,6 +197,10 @@ export default defineConfig<ThemeConfig>({
                 text: "Image",
                 link: "/en/image",
               },
+              {
+                text: "Avatar",
+                link: "/en/avatar",
+              },
             ],
           },
           {
@@ -294,10 +298,6 @@ export default defineConfig<ThemeConfig>({
                 link: "/en/use-clickaway",
               },
               {
-                text: "useLazyload",
-                link: "/en/use-lazyload",
-              },
-              {
                 text: "useLatest",
                 link: "/en/use-latest",
               },
@@ -315,6 +315,10 @@ export default defineConfig<ThemeConfig>({
             text: "Experimental",
             icon: "lucide:slack",
             items: [
+              {
+                text: "useLazyload",
+                link: "/en/use-lazyload",
+              },
               {
                 text: "PageIndicator",
                 link: "/en/page-indicator",
