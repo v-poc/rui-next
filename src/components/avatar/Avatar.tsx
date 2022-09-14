@@ -41,12 +41,14 @@ const FallbackImage = () => (
 );
 
 type StyleProps = CSSProperties & {
+  "--border-radius"?: string;
   "--size"?: string;
 };
 
 // AvatarProps type
 export type AvatarProps = {
   prefixCls?: string;
+  shape?: "square" | "circle";
   size?: number;
 } & Pick<
   ImageProps,
@@ -67,6 +69,7 @@ export const Avatar: React.FC<AvatarProps> = (props) => {
     fallback,
     fit,
     lazy,
+    shape,
     size,
     src,
     onClick,
@@ -76,6 +79,9 @@ export const Avatar: React.FC<AvatarProps> = (props) => {
   const wrapStyle: StyleProps = {};
   if (size) {
     wrapStyle["--size"] = getCSSLength(size);
+  }
+  if (shape === "circle") {
+    wrapStyle["--border-radius"] = "50%";
   }
 
   return (
@@ -98,4 +104,5 @@ Avatar.defaultProps = {
   prefixCls: "r-avatar",
   fallback: <FallbackImage />,
   fit: "cover",
+  shape: "square",
 };

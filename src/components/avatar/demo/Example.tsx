@@ -27,6 +27,23 @@ const arrUsers = [
 const Example = () => (
   <div className="avatar-example-wrapper">
     <Divider contentAlign="left">
+      Avatar shape
+    </Divider>
+    <Space wrap>
+      <Avatar
+        src={arrUsers[0].avatar}
+        shape="circle"
+      />
+      <Avatar
+        src={arrUsers[1].avatar}
+      />
+      <Avatar
+        src={arrUsers[2].avatar}
+        shape="circle"
+      />
+    </Space>
+
+    <Divider contentAlign="left">
       Customize avatar size
     </Divider>
     <Space wrap>

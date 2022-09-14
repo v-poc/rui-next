@@ -5,7 +5,8 @@
 
 .@{avatarPrefixClass} {
   --size: var(--r-avatar-size, 44px);
-  border-radius: 4px;
+  --border-radius: var(--r-avatar-border-radius, 4px);
+  border-radius: var(--border-radius);
 
   &.r-image {
     --width: var(--size);
