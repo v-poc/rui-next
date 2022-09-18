@@ -115,7 +115,7 @@ export const Image: React.FC<ImageProps> = ((props) => {
     setIsFailed(false);
   }, [src]);
 
-  const wrapStyle: StyleProps = style || {};
+  const wrapStyle: StyleProps = style ? { ...style } : {};
   if (width) {
     wrapStyle["--width"] = getCSSLength(width);
     wrapStyle["width"] = getCSSLength(width);
