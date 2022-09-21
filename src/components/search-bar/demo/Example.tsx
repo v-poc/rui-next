@@ -13,7 +13,7 @@ const Example = () => {
   const searchBarRef = useRef<SearchBarRef>(null);
 
   return (
-    <>
+    <div className="search-bar-example-wrapper">
       <Divider contentAlign="left">
         Basic SearchBar with cancel button
       </Divider>
@@ -71,7 +71,7 @@ const Example = () => {
         Test to clear content
       </Button>
       <br /><br />
-    </>
+    </div>
   );
 };
 
