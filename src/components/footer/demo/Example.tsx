@@ -1,25 +1,25 @@
 import React from "react";
-import { Footer, Divider } from "rui-next";
+import { Footer, Divider, Icon } from "rui-next";
 
 // Example FC
 const Example = () => (
   <>
     <Divider contentAlign="left">
-      Footer combination
+      Footer content
     </Divider>
     <Footer
-      label="The extra information"
-      links={[
-        { text: "docs", url: "https://nikoni.top/rui-next/" },
-        { text: "demos", url: "https://nikoni.top/rui-next/" },
-        { text: "playground", url: "https://nikoni.top/rui-next/en/playground" },
-      ]}
-      content="@ 2022-present RUI.next (MIT License)."
-      chips={[
-        { content: "react-hooks" },
-        { content: "vite 3" },
-        { content: "typescript" },
-      ]}
+      content="Copyright @ 2021-present RUI.next (MIT License)."
+    />
+    
+    <Divider contentAlign="left">
+      Customize footer label
+    </Divider>
+    <Footer
+      label={<>
+        <Icon type="left" />
+        <Icon type="star" />
+        <Icon type="right" />
+      </>}
     />
   </>
 );
