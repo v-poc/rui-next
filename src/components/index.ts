@@ -63,6 +63,8 @@ export { default as SearchBar } from "./search-bar/index";
 export { default as Image } from "./image/index";
 // Avatar
 export { default as Avatar } from "./avatar/index";
+// Footer
+export { default as Footer } from "./footer/index";
 
 
 

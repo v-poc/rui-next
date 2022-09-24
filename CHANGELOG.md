@@ -1,3 +1,7 @@
+# 0.41.0 (2022-09-23)
+
+Added `Footer` demo.
+
 # 0.40.0 (2022-09-12)
 
 - Added `Avatar` demo.

@@ -201,6 +201,10 @@ export default defineConfig<ThemeConfig>({
                 text: "Avatar",
                 link: "/en/avatar",
               },
+              {
+                text: "Footer",
+                link: "/en/footer",
+              },
             ],
           },
           {
