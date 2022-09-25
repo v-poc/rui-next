@@ -10,6 +10,7 @@ import {
   Watermark,
   Button,
   Progress,
+  Footer,
 } from "../../index";
 import "./index.less";
 
@@ -166,7 +167,10 @@ const Example = () => {
   return (
     <>
       <div className="playground-watermark">
-        <Watermark content="RUI next" />
+        <Watermark
+          content="RUI next"
+          fontColor="rgba(0, 0, 0, .06)"
+        />
         <NoticeBar
           type="alert"
           content="This is the playground for RUI.next. Please scan the QR code to access the examples on mobile/tablet device."
@@ -189,6 +193,20 @@ const Example = () => {
           />
         </Flex>
         <Divider contentAlign="right">RUI Playground</Divider>
+        <Footer
+          label="Released under the MIT License"
+          links={[
+            { text: "docs", url: "https://nikoni.top/rui-next/" },
+            { text: "demos", url: "https://nikoni.top/rui-next/" },
+            { text: "playground", url: "https://nikoni.top/rui-next/en/playground" },
+          ]}
+          content="Copyright @ 2021-present RUI.next. Built with Vite & React."
+          chips={[
+            { content: "react-hooks" },
+            { content: "vite 3" },
+            { content: "typescript" },
+          ]}
+        />
       </div>
     </>
   );
