@@ -1,6 +1,6 @@
 /* eslint-disable no-console */
 import React from "react";
-import type { DependencyList, MutableRefObject } from "react";
+import type { DependencyList, MutableRefObject, ReactNode } from "react";
 
 // Log info
 export const logInfo = (content: any, type = "info"): void => {
@@ -153,4 +153,49 @@ export function checkIfSameDeps (
   }
   
   return true;
+};
+
+const REACT_ELEMENT_TYPE: symbol = Symbol.for("react.element");
+const REACT_FRAGMENT_TYPE: symbol = Symbol.for("react.fragment");
+
+function typeOf(object: any) {
+  if (typeof object === 'object' && object !== null) {
+    const $$typeof = object.$$typeof;
+    switch ($$typeof) {
+      case REACT_ELEMENT_TYPE:
+        const type = object.type;
+        switch (type) {
+          case REACT_FRAGMENT_TYPE:
+            return type;
+          default:
+            return $$typeof;
+        }
+    }
+  }
+
+  return undefined;
+}
+
+// Check if fragment
+export function isFragment(object: any): boolean {
+  return typeOf(object) === REACT_FRAGMENT_TYPE;
+};
+
+// Traverse ReactNode
+export function traverseNode(
+  children: ReactNode,
+  fn: (item: ReactNode, idx: number) => void
+) {
+  let i = 0;
+  function handle(target: ReactNode) {
+    React.Children.forEach(target, (child: any) => {
+      if (isFragment(child)) {
+        handle(child.props.children);
+      } else {
+        fn(child, i);
+        i += 1;
+      }
+    });
+  }
+  handle(children);
 };

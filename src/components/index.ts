@@ -65,6 +65,8 @@ export { default as Image } from "./image/index";
 export { default as Avatar } from "./avatar/index";
 // Footer
 export { default as Footer } from "./footer/index";
+// SideBar
+export { default as SideBar } from "./side-bar/index";
 
 
 

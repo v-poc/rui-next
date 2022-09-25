@@ -1,3 +1,7 @@
+# 0.42.0 (2022-09-24)
+
+Added `SideBar` demo.
+
 # 0.41.0 (2022-09-23)
 
 Added `Footer` demo.

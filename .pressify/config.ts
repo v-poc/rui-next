@@ -155,6 +155,10 @@ export default defineConfig<ThemeConfig>({
                 text: "Space",
                 link: "/en/space",
               },
+              {
+                text: "SideBar",
+                link: "/en/side-bar",
+              },
             ],
           },
           {
