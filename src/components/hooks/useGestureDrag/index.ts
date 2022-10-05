@@ -574,6 +574,8 @@ interface Engine<Key extends GestureKey> {
   restrictToAxis?(movement: Vector2): void;
 };
 
+type NonUndefined<T> = T extends undefined ? never : T
+
 /**
  * constants / utils
  */
@@ -1464,7 +1466,7 @@ abstract class Engine<Key extends GestureKey> {
   /**
    * Function ran at the start of the gesture.
    */
-  start(event: NonNullable<State[Key]>["event"]) {
+  start(event: NonUndefined<State[Key]>["event"]) {
     const state = this.state;
     const config = this.config;
     if (!state._active) {
@@ -1506,7 +1508,7 @@ abstract class Engine<Key extends GestureKey> {
    * Computes all sorts of state attributes, including kinematics.
    * @param event
    */
-  compute(event?: NonNullable<State[Key]>["event"]) {
+  compute(event?: NonUndefined<State[Key]>["event"]) {
     const { state, config, shared } = this
     state.args = this.args
 
