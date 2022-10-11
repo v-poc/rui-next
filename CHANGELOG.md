@@ -1,3 +1,7 @@
+# 0.42.1 (2022-10-11)
+
+Updated deps to pin `react-router-dom` to version `6.3.0`.
+
 # 0.42.0 (2022-09-24)
 
 Added `SideBar` demo.
