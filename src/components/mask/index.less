@@ -1,0 +1,28 @@
+// @import "../styles/mixins";
+// @import "../styles/themes/default";
+
+@maskPrefixClass: r-mask;
+
+.@{maskPrefixClass} {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  display: block;
+  width: 100%;
+  height: 100%;
+
+  &-aria-button {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+  }
+  
+  &-content {
+    z-index: 1;
+  }
+}

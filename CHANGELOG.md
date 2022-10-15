@@ -1,3 +1,7 @@
+# 0.43.0 (2022-10-14)
+
+Added `Mask` demo.
+
 # 0.42.1 (2022-10-11)
 
 Updated deps to pin `react-router-dom` to version `6.3.0`.

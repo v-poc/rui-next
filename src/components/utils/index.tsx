@@ -1,6 +1,8 @@
 /* eslint-disable no-console */
 import React from "react";
-import type { DependencyList, MutableRefObject, ReactNode } from "react";
+import { createPortal } from "react-dom";
+import type { DependencyList, MutableRefObject, ReactElement, ReactNode, ReactPortal } from "react";
+import useShouldRender from "../hooks/useShouldRender/index";
 
 // Log info
 export const logInfo = (content: any, type = "info"): void => {
@@ -199,3 +201,108 @@ export function traverseNode(
   }
   handle(children);
 };
+
+// with stopPropagation
+export type PropagationEvent = "click";
+
+const eventToPropRecord: Record<PropagationEvent, string> = {
+  "click": "onClick",
+};
+
+export function withStopPropagation(
+  events: PropagationEvent[],
+  element: ReactElement
+) {
+  const props: Record<string, any> = { ...element.props };
+  for (const key of events) {
+    const prop = eventToPropRecord[key];
+    props[prop] = function (e: Event) {
+      e.stopPropagation();
+      element.props[prop]?.(e);
+    };
+  }
+  return React.cloneElement(element, props);
+};
+
+// whether Should Render
+type ShouldRenderProps = {
+  active?: boolean;
+  forceRender?: boolean;
+  destroyOnClose?: boolean;
+  children: ReactElement;
+};
+
+export const ShouldRender: React.FC<ShouldRenderProps> = (props) => {
+  const { active, forceRender, destroyOnClose, children } = props;
+  const needRender = useShouldRender(active, forceRender, destroyOnClose);
+  return needRender ? children : null;
+};
+
+// render to container
+export type GetContainer = HTMLElement | (() => HTMLElement) | null | undefined;
+
+export function resolveContainer(
+  getContainer: GetContainer
+) {
+  const container =
+    typeof getContainer === "function" ? getContainer() : getContainer
+  return container || document.body
+};
+
+export function renderToContainer(
+  getContainer: GetContainer,
+  node: ReactElement
+) {
+  if (canUseDOM && getContainer) {
+    const container = resolveContainer(getContainer);
+    return createPortal(node, container) as ReactPortal;
+  }
+  return node
+};
+
+// get scroll parent
+type ScrollElement = HTMLElement | Window;
+
+export function getScrollParent(
+  el: Element,
+  root: ScrollElement | null | undefined = canUseDOM ? window : undefined
+): Window | Element | null | undefined {
+  let node = el;
+
+  while (node && node !== root && node.nodeType === 1) {
+    if (node === document.body) {
+      return root;
+    }
+
+    const { overflowY } = window.getComputedStyle(node);
+
+    if (
+      ["scroll", "auto", "overlay"].includes(overflowY) &&
+      node.scrollHeight > node.clientHeight
+    ) {
+      return node;
+    }
+
+    node = node.parentNode as Element;
+  }
+
+  return root;
+};
+
+// supports passive
+export let supportsPassive = false;
+
+if (canUseDOM) {
+  try {
+    const opts = {};
+    Object.defineProperty(opts, "passive", {
+      get() {
+        supportsPassive = true;
+      },
+    });
+
+    window.addEventListener("test-passive", null as any, opts);
+  } catch (e) {
+    // ignore
+  }
+}
