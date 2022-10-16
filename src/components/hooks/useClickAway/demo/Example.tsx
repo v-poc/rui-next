@@ -34,7 +34,6 @@ const Example = () => {
       <br /><br />
       <span id="btnB">
         <Button
-          type="primary"
           size="small"
           inline
           round

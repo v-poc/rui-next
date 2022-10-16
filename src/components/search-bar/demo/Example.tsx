@@ -51,7 +51,6 @@ const Example = () => {
         onSearch={(v: string) => handleLog("onSearch", `Search content: ${v}`)}
       />
       <Button
-        type="primary"
         className="search-bar-example-btn"
         inline
         round
@@ -61,7 +60,6 @@ const Example = () => {
         Test to get focus
       </Button>
       <Button
-        type="primary"
         className="search-bar-example-btn"
         inline
         round

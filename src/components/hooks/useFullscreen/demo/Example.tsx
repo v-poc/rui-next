@@ -35,7 +35,6 @@ const Example = () => {
         </div>
         <br />
         <Button
-          type="primary"
           inline
           size="small"
           onClick={setFull}
@@ -43,7 +42,6 @@ const Example = () => {
           Click to setFull
         </Button><br /><br />
         <Button
-          type="primary"
           inline
           size="small"
           onClick={exitFull}
@@ -51,7 +49,6 @@ const Example = () => {
           Click to exitFull
         </Button><br /><br />
         <Button
-          type="primary"
           inline
           size="small"
           onClick={toggleFull}
@@ -70,7 +67,6 @@ const Example = () => {
       />
       <br /><br />
       <Button
-        type="primary"
         inline
         size="small"
         onClick={setFullImage}

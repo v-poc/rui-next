@@ -15,7 +15,6 @@ const Example = () => {
         Skeleton Content loading image
       </Divider>
       <Button
-        type="primary"
         size="small"
         inline
         round

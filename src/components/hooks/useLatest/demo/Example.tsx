@@ -33,7 +33,6 @@ const Example = () => {
     </Divider>
     <br />
     <Button
-      type="primary"
       size="small"
       inline
       round

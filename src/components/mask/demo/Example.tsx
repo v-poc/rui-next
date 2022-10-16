@@ -4,19 +4,35 @@ import "./index.less";
 
 // Example FC
 const Example = () => {
+  const [bgVisible, setBgVisible] = useState(false);
   const [visible, setVisible] = useState(false);
 
   return (
     <>
       <Divider contentAlign="left">
-        Basic background mask (click screen to close mask)
+        Basic mask with default 55% opacity (click screen to close mask)
+      </Divider>
+      <Button
+        size="small"
+        inline
+        onClick={() => setBgVisible(true)}
+      >
+        Click to show background mask
+      </Button>
+      <Mask
+        visible={bgVisible}
+        onClickMask={() => setBgVisible(false)}
+      />
+
+      <Divider contentAlign="left">
+        Basic mask with content (click screen to close mask)
       </Divider>
       <Button
         size="small"
         inline
         onClick={() => setVisible(true)}
       >
-        Click to show background mask
+        Click to show mask with content
       </Button>
       <Mask
         visible={visible}

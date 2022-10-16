@@ -37,7 +37,6 @@ const Example = () => {
       </div>
       <br />
       <Button
-        type="primary"
         size="small"
         inline
         onClick={add}

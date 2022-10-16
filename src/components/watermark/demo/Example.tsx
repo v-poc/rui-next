@@ -35,7 +35,6 @@ const Example = () => {
   return (
     <div className="example-watermark-wrapper">
       <Button
-        type="primary"
         size="small"
         inline
         onClick={() => setProps(txtProps)}
@@ -44,7 +43,6 @@ const Example = () => {
       </Button>
       <br />
       <Button
-        type="primary"
         size="small"
         inline
         onClick={() => setProps(imgProps)}

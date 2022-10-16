@@ -41,7 +41,6 @@ const Example = () => {
     <p>Current ParentComponent - count: {count}</p>
     <br />
     <Button
-      type="primary"
       size="small"
       inline
       onClick={() => setCount((c) => c + 1)}

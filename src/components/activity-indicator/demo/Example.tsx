@@ -75,7 +75,6 @@ const Example = () => {
         Toast mode of activity-indicator
       </Divider>
       <Button
-        type="primary"
         size="small"
         inline
         onClick={() => showToast()}
