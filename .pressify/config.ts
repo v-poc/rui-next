@@ -277,6 +277,10 @@ export default defineConfig<ThemeConfig>({
                 text: "Mask",
                 link: "/en/mask",
               },
+              {
+                text: "Toast",
+                link: "/en/toast",
+              },
             ],
           },
           {

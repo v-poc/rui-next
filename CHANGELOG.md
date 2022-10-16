@@ -1,3 +1,7 @@
+# 0.44.0 (2022-10-15)
+
+Added `Toast` demo.
+
 # 0.43.0 (2022-10-14)
 
 Added `Mask` demo.

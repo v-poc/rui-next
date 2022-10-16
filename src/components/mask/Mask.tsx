@@ -1,5 +1,6 @@
 import React, { useMemo, useRef, useState } from "react";
 import type { CSSProperties, ReactNode } from "react";
+import classnames from "classnames";
 import { useSpring } from "../hooks/useSpring/index";
 import { animated } from "../utils/animated";
 import useUnmountedRef from "../hooks/useUnmountedRef/index";
@@ -16,6 +17,7 @@ const opacityData = {
 // MaskProps type
 export type MaskProps = {
   prefixCls?: string;
+  className?: string;
   children?: ReactNode;
   color?: "black" | "white";
   destroyOnClose?: boolean;
@@ -35,6 +37,7 @@ export type MaskProps = {
 export const Mask: React.FC<MaskProps> = (props) => {
   const {
     prefixCls,
+    className,
     children,
     color,
     destroyOnClose,
@@ -63,7 +66,7 @@ export const Mask: React.FC<MaskProps> = (props) => {
     return `rgba(${rgbVal}, ${opacityVal || 0})`;
   }, [color, opacity]);
 
-  const { opacity: opacityStyle } = useSpring({
+  const wrapStyle = useSpring({
     opacity: visible ? 1 : 0,
     config: {
       precision: 0.01,
@@ -82,16 +85,18 @@ export const Mask: React.FC<MaskProps> = (props) => {
     },
   });
 
+  const wrapCls = classnames(prefixCls, className);
+
   const renderNode = withStopPropagation(
     stopPropagation,
     (
       <animated.div
-        className={prefixCls}
+        className={wrapCls}
         ref={rootRef}
         style={{
           ...style,
           background,
-          opacityStyle,
+          opacity: wrapStyle.opacity,
           display: active ? undefined : "none",
         }}
         onClick={(e: React.MouseEvent<HTMLDivElement, MouseEvent>) => {

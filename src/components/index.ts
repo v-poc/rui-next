@@ -69,6 +69,8 @@ export { default as Footer } from "./footer/index";
 export { default as SideBar } from "./side-bar/index";
 // Mask
 export { default as Mask } from "./mask/index";
+// Toast
+export { default as Toast } from "./toast/index";
 
 
 

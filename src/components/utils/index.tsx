@@ -1,7 +1,9 @@
 /* eslint-disable no-console */
-import React from "react";
+import React, { useEffect, useImperativeHandle, useRef, useState } from "react";
 import { createPortal } from "react-dom";
+import { createRoot } from "react-dom/client";
 import type { DependencyList, MutableRefObject, ReactElement, ReactNode, ReactPortal } from "react";
+import type { Root } from "react-dom/client";
 import useShouldRender from "../hooks/useShouldRender/index";
 
 // Log info
@@ -306,3 +308,123 @@ if (canUseDOM) {
     // ignore
   }
 }
+
+// render util
+const MARK = "__r_root__";
+
+// Render
+type ContainerType = (Element | DocumentFragment) & {
+  [MARK]?: Root;
+};
+
+function concurrentRender(node: ReactElement, container: ContainerType) {
+  const root = container[MARK] || createRoot(container);
+  root.render(node);
+  container[MARK] = root;
+};
+
+export function render(node: ReactElement, container: ContainerType) {
+  if (createRoot as unknown) {
+    concurrentRender(node, container);
+    return;
+  }
+};
+
+// Unmount
+async function concurrentUnmount(container: ContainerType) {
+  // Delay to unmount to avoid React 18 sync warning
+  return Promise.resolve().then(() => {
+    container[MARK]?.unmount();
+    delete container[MARK];
+  });
+};
+
+export function reactUnmount(container: ContainerType) {
+  if (createRoot as unknown) {
+    return concurrentUnmount(container);
+  }
+};
+
+// render imperatively
+type ImperativeProps = {
+  visible?: boolean;
+  onClose?: () => void;
+  afterClose?: () => void;
+};
+
+export type ImperativeHandler = {
+  close: () => void;
+  replace: (element: ReactElement<ImperativeProps>) => void;
+};
+
+export function renderToBody(element: ReactElement) {
+  const container = document.createElement("div");
+  document.body.appendChild(container);
+
+  function unmount() {
+    const unmountResult = reactUnmount(container)
+    if (unmountResult && container.parentNode) {
+      container.parentNode.removeChild(container)
+    }
+  }
+
+  render(element, container);
+  return unmount;
+};
+
+export function renderImperatively(element: ReactElement<ImperativeProps>) {
+  const Wrapper = React.forwardRef<ImperativeHandler>((_, ref) => {
+    const [visible, setVisible] = useState(false);
+    const closedRef = useRef(false);
+    const [elementToRender, setElementToRender] = useState(element);
+    const keyRef = useRef(0);
+
+    useEffect(() => {
+      if (!closedRef.current) {
+        setVisible(true);
+      } else {
+        afterClose();
+      }
+    }, []);
+
+    function onClose() {
+      closedRef.current = true;
+      setVisible(false);
+      elementToRender.props.onClose?.();
+    }
+
+    function afterClose() {
+      unmount();
+      elementToRender.props.afterClose?.();
+    }
+
+    useImperativeHandle(ref, () => ({
+      close: onClose,
+      replace: element => {
+        keyRef.current++;
+        elementToRender.props.afterClose?.();
+        setElementToRender(element);
+      },
+    }));
+
+    return React.cloneElement(elementToRender, {
+      ...elementToRender.props,
+      key: keyRef.current,
+      visible,
+      onClose,
+      afterClose,
+    });
+  });
+
+  const wrapperRef = React.createRef<ImperativeHandler>();
+  const unmount = renderToBody(<Wrapper ref={wrapperRef} />);
+
+  return {
+    close: () => {
+      wrapperRef.current?.close();
+    },
+    replace: element => {
+      wrapperRef.current?.replace(element);
+    },
+  } as ImperativeHandler
+};
