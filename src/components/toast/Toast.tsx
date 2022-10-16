@@ -61,7 +61,7 @@ export const Toast: React.FC<ToastProps> = (props) => {
       case "success":
         res = (
           <Icon
-            type="check"
+            type="check-circle-o"
             className={`${prefixCls}-icon-success`}
           />
         );
@@ -69,7 +69,7 @@ export const Toast: React.FC<ToastProps> = (props) => {
       case "fail":
         res = (
           <Icon
-            type="cross"
+            type="cross-circle"
             className={`${prefixCls}-icon-fail`}
           />
         );
