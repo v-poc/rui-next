@@ -1,5 +1,5 @@
 import React, { Fragment, useEffect, useState } from "react";
-import useEventListener from '../hooks/useEventListener/index';
+import useEventListener from "../hooks/useEventListener/index";
 
 // ChartProps type
 export type ChartProps = {
@@ -34,8 +34,8 @@ export const Chart: React.FC<ChartProps> = (props) => {
   const getMax = () => {
     let max = Math.max.apply(
       Math,
-      datasets.map((data) => Math.max.apply(Math, data.values)),
-    )
+      datasets.map((data) => Math.max.apply(Math, data.values))
+    );
     let multiply = 1;
     while (max > 10) {
       multiply *= 10;
@@ -49,8 +49,8 @@ export const Chart: React.FC<ChartProps> = (props) => {
   const getMin = () => {
     let min = Math.min.apply(
       Math,
-      datasets.map((data) => Math.min.apply(Math, data.values)),
-    )
+      datasets.map((data) => Math.min.apply(Math, data.values))
+    );
     let multiply = 1;
     while (min > 10) {
       multiply *= 10;
@@ -75,7 +75,7 @@ export const Chart: React.FC<ChartProps> = (props) => {
   const getStopStyle = (color: string) => {
     return {
       stopColor: color,
-    }
+    };
   };
 
   // get offset
@@ -86,15 +86,12 @@ export const Chart: React.FC<ChartProps> = (props) => {
       bottom: 0.5 * unit,
       left: shift * unit,
       right: 0.2 * unit,
-    }
+    };
   };
 
   // get width
   const getWidth = () => {
-    if (
-      typeof size[0] === "string" &&
-      size[0].indexOf("rem") !== -1
-    ) {
+    if (typeof size[0] === "string" && size[0].indexOf("rem") !== -1) {
       return parseFloat(size[0]) * params.unit;
     } else {
       return parseFloat(size[0] as string);
@@ -103,10 +100,7 @@ export const Chart: React.FC<ChartProps> = (props) => {
 
   // get height
   const getHeight = () => {
-    if (
-      typeof size[1] === "string" &&
-      size[1].indexOf("rem") !== -1
-    ) {
+    if (typeof size[1] === "string" && size[1].indexOf("rem") !== -1) {
       return parseFloat(size[1]) * params.unit;
     } else {
       return parseFloat(size[1] as string);
@@ -132,7 +126,7 @@ export const Chart: React.FC<ChartProps> = (props) => {
       return {
         offset: index * deltaX,
         label,
-      }
+      };
     });
     return items;
   };
@@ -197,7 +191,11 @@ export const Chart: React.FC<ChartProps> = (props) => {
         ret.area = {
           value:
             `M0,${getInnerHeight()} ` +
-            points.map((point: { x?: number; y?: number; }) => `L${point.x},${point.y}`).join(" ") +
+            points
+              .map(
+                (point: { x?: number; y?: number }) => `L${point.x},${point.y}`
+              )
+              .join(" ") +
             ` L${points[points.length - 1].x},${getInnerHeight()}`,
           style: {
             fill: `url(#path-fill-gradient-${data.color})`,
@@ -208,7 +206,9 @@ export const Chart: React.FC<ChartProps> = (props) => {
 
       ret.value =
         `M0,${points.shift().y} ` +
-        points.map((point: { x?: number; y?: number; }) => `L${point.x},${point.y}`).join(" ");
+        points
+          .map((point: { x?: number; y?: number }) => `L${point.x},${point.y}`)
+          .join(" ");
       return ret;
     });
   };
@@ -225,7 +225,7 @@ export const Chart: React.FC<ChartProps> = (props) => {
   };
 
   // resize event
-  const handleResize = () => {    
+  const handleResize = () => {
     setParams({
       ...params,
       unit: parseFloat(
@@ -238,33 +238,22 @@ export const Chart: React.FC<ChartProps> = (props) => {
 
   // useEffect hook
   useEffect(() => {
-    if (document.readyState !== 'loading') {
+    if (document.readyState !== "loading") {
       handleResize();
     }
   }, []);
 
   // useEventListener hook
-  useEventListener(
-    "DOMContentLoaded",
-    handleResize,
-    {
-      target: () => document,
-    }
-  );
+  useEventListener("DOMContentLoaded", handleResize, {
+    target: () => document,
+  });
 
-  useEventListener(
-    "resize",
-    handleResize,
-    {
-      target: () => window,
-    }
-  );
+  useEventListener("resize", handleResize, {
+    target: () => window,
+  });
 
   return (
-    <svg
-      className={prefixCls}
-      viewBox={`0 0 ${getWidth()} ${getHeight()}`}
-    >
+    <svg className={prefixCls} viewBox={`0 0 ${getWidth()} ${getHeight()}`}>
       <defs>
         {getColors().map((color) => (
           <linearGradient
@@ -293,31 +282,21 @@ export const Chart: React.FC<ChartProps> = (props) => {
           </linearGradient>
         ))}
       </defs>
-      <g
-        transform={`translate(${getOffset().left}, ${getOffset().top})`}
-      >
+      <g transform={`translate(${getOffset().left}, ${getOffset().top})`}>
         <g className={`${prefixCls}-axis-y`}>
-          {yAxis().map((item: { offset?: number; label?: string; }, index: number) => (
-            <g
-              key={`y-axis-${index}`}
-              transform={`translate(0, ${item.offset})`}
-            >
-              <line
-                x1={0}
-                x2={getInnerWidth()}
-                y1={0}
-                y2={0}
-              />
-              <text
-                x={0}
-                y={0}
-                dx={"-0.6em"}
-                dy={0.5}
+          {yAxis().map(
+            (item: { offset?: number; label?: string }, index: number) => (
+              <g
+                key={`y-axis-${index}`}
+                transform={`translate(0, ${item.offset})`}
               >
-                { item.label }
-              </text>
-            </g>
-          ))}
+                <line x1={0} x2={getInnerWidth()} y1={0} y2={0} />
+                <text x={0} y={0} dx={"-0.6em"} dy={0.5}>
+                  {item.label}
+                </text>
+              </g>
+            )
+          )}
         </g>
         <g
           className={`${prefixCls}-axis-x`}
@@ -328,36 +307,19 @@ export const Chart: React.FC<ChartProps> = (props) => {
               key={`x-axis-${index}`}
               transform={`translate(${item.offset}, 0)`}
             >
-              <line
-                x1={0}
-                x2={0}
-                y1={0}
-                y2={2}
-              />
-              <text
-                x={0}
-                y={0}
-                dy={5}
-              >
-                { item.label }
+              <line x1={0} x2={0} y1={0} y2={2} />
+              <text x={0} y={0} dy={5}>
+                {item.label}
               </text>
             </g>
           ))}
         </g>
         <g>
           {getPaths().map((path, index) => (
-            <Fragment
-              key={`${path.area ? 'area' : 'line'}-${index}`}
-            >
-              <path
-                style={path.style}
-                d={path.value}
-              />
+            <Fragment key={`${path.area ? "area" : "line"}-${index}`}>
+              <path style={path.style} d={path.value} />
               {path.area && (
-                <path
-                  style={path.area.style}
-                  d={path.area.value}
-                />
+                <path style={path.area.style} d={path.area.value} />
               )}
             </Fragment>
           ))}

@@ -15,23 +15,14 @@ export type GridItemProps = {
 
 // GridItem FC
 const GridItem: React.FC<GridItemProps> = (props) => {
-  const {
-    prefixCls,
-    span,
-    onClick,
-    children,
-  } = props;
+  const { prefixCls, span, onClick, children } = props;
 
   const itemStyle: StyleProps = {
     "--item-span": span?.toString(),
   };
 
   return (
-    <div
-      className={`${prefixCls}-item`}
-      style={itemStyle}
-      onClick={onClick}
-    >
+    <div className={`${prefixCls}-item`} style={itemStyle} onClick={onClick}>
       {children}
     </div>
   );

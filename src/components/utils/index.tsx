@@ -2,14 +2,21 @@
 import React, { useEffect, useImperativeHandle, useRef, useState } from "react";
 import { createPortal } from "react-dom";
 import { createRoot } from "react-dom/client";
-import type { DependencyList, MutableRefObject, ReactElement, ReactNode, ReactPortal } from "react";
+import type {
+  DependencyList,
+  MutableRefObject,
+  ReactElement,
+  ReactNode,
+  ReactPortal,
+} from "react";
 import type { Root } from "react-dom/client";
 import useShouldRender from "../hooks/useShouldRender/index";
 
 // Log info
 export const logInfo = (content: any, type = "info"): void => {
   // @ts-ignore
-  console[type] && console[type]("[RUI-log] %c%s", "background: #69C;color: #FFF", content);
+  console[type] &&
+    console[type]("[RUI-log] %c%s", "background: #69C;color: #FFF", content);
 };
 
 // Check whether it is string
@@ -27,17 +34,17 @@ export const insertSpace = (child: any) => {
     return React.cloneElement(
       child,
       {},
-      child.props.children.split('').join(' '),
+      child.props.children.split("").join(" ")
     );
   }
-  
+
   if (isString(child)) {
     if (isDoubleByteChar(child)) {
-      child = child.split('').join(' ');
+      child = child.split("").join(" ");
     }
-    return (<span>{child}</span>);
+    return <span>{child}</span>;
   }
-  
+
   return child;
 };
 
@@ -53,7 +60,7 @@ export type BasicTarget<T = HTMLElement> =
 // Get target element
 export const getTargetElement = (
   target?: BasicTarget<TargetElement>,
-  defaultElement?: TargetElement,
+  defaultElement?: TargetElement
 ): TargetElement | null | undefined => {
   if (!target) {
     return defaultElement;
@@ -76,7 +83,7 @@ export const getTargetElement = (
 export const getDataAttr = (props: { [key: string]: any }) => {
   return Object.keys(props).reduce<{ [key: string]: string }>((prev, key) => {
     const prefix = key.substring(0, 5);
-    if (prefix === 'aria-' || prefix === 'data-' || key === 'role') {
+    if (prefix === "aria-" || prefix === "data-" || key === "role") {
       prev[key] = props[key];
     }
     return prev;
@@ -97,17 +104,24 @@ export const getCSSLength = (v: string | number) => {
 };
 
 // Sort value
-export const sortValue = (v: [number, number]): [number, number] => v.sort((a, b) => a - b);
+export const sortValue = (v: [number, number]): [number, number] =>
+  v.sort((a, b) => a - b);
 
 // Find the nearest item from the numbers array
 export const getNearest = (arr: number[], targetItem: number) => {
   return arr.reduce((prevItem, currItem) => {
-    return Math.abs(prevItem - targetItem) < Math.abs(currItem - targetItem) ? prevItem : currItem;
+    return Math.abs(prevItem - targetItem) < Math.abs(currItem - targetItem)
+      ? prevItem
+      : currItem;
   });
 };
 
 // Get bound
-export const getBound = (pos: number, min: number | undefined, max: number | undefined) => {
+export const getBound = (
+  pos: number,
+  min: number | undefined,
+  max: number | undefined
+) => {
   let res = pos;
 
   if (min !== undefined) {
@@ -117,15 +131,12 @@ export const getBound = (pos: number, min: number | undefined, max: number | und
   if (max !== undefined) {
     res = Math.min(res, max);
   }
-  
+
   return res;
 };
 
 // Attach props to component
-export function attachPropsToComp<
-  C,
-  P extends Record<string, any>
->(
+export function attachPropsToComp<C, P extends Record<string, any>>(
   comp: C,
   props: P
 ): C & P {
@@ -136,13 +147,14 @@ export function attachPropsToComp<
     }
   }
   return ret;
-};
+}
 
 // Sleep util function
-export const sleep = (time: number) => new Promise((resolve) => setTimeout(resolve, time));
+export const sleep = (time: number) =>
+  new Promise((resolve) => setTimeout(resolve, time));
 
 // Check if same deps
-export function checkIfSameDeps (
+export function checkIfSameDeps(
   oldDeps: DependencyList,
   deps: DependencyList
 ): boolean {
@@ -155,15 +167,15 @@ export function checkIfSameDeps (
       return false;
     }
   }
-  
+
   return true;
-};
+}
 
 const REACT_ELEMENT_TYPE: symbol = Symbol.for("react.element");
 const REACT_FRAGMENT_TYPE: symbol = Symbol.for("react.fragment");
 
 function typeOf(object: any) {
-  if (typeof object === 'object' && object !== null) {
+  if (typeof object === "object" && object !== null) {
     const $$typeof = object.$$typeof;
     switch ($$typeof) {
       case REACT_ELEMENT_TYPE:
@@ -183,7 +195,7 @@ function typeOf(object: any) {
 // Check if fragment
 export function isFragment(object: any): boolean {
   return typeOf(object) === REACT_FRAGMENT_TYPE;
-};
+}
 
 // Traverse ReactNode
 export function traverseNode(
@@ -202,13 +214,13 @@ export function traverseNode(
     });
   }
   handle(children);
-};
+}
 
 // with stopPropagation
 export type PropagationEvent = "click";
 
 const eventToPropRecord: Record<PropagationEvent, string> = {
-  "click": "onClick",
+  click: "onClick",
 };
 
 export function withStopPropagation(
@@ -224,7 +236,7 @@ export function withStopPropagation(
     };
   }
   return React.cloneElement(element, props);
-};
+}
 
 // whether Should Render
 type ShouldRenderProps = {
@@ -243,13 +255,11 @@ export const ShouldRender: React.FC<ShouldRenderProps> = (props) => {
 // render to container
 export type GetContainer = HTMLElement | (() => HTMLElement) | null | undefined;
 
-export function resolveContainer(
-  getContainer: GetContainer
-) {
+export function resolveContainer(getContainer: GetContainer) {
   const container =
-    typeof getContainer === "function" ? getContainer() : getContainer
-  return container || document.body
-};
+    typeof getContainer === "function" ? getContainer() : getContainer;
+  return container || document.body;
+}
 
 export function renderToContainer(
   getContainer: GetContainer,
@@ -259,8 +269,8 @@ export function renderToContainer(
     const container = resolveContainer(getContainer);
     return createPortal(node, container) as ReactPortal;
   }
-  return node
-};
+  return node;
+}
 
 // get scroll parent
 type ScrollElement = HTMLElement | Window;
@@ -289,7 +299,7 @@ export function getScrollParent(
   }
 
   return root;
-};
+}
 
 // supports passive
 export let supportsPassive = false;
@@ -321,14 +331,14 @@ function concurrentRender(node: ReactElement, container: ContainerType) {
   const root = container[MARK] || createRoot(container);
   root.render(node);
   container[MARK] = root;
-};
+}
 
 export function render(node: ReactElement, container: ContainerType) {
   if (createRoot as unknown) {
     concurrentRender(node, container);
     return;
   }
-};
+}
 
 // Unmount
 async function concurrentUnmount(container: ContainerType) {
@@ -337,13 +347,13 @@ async function concurrentUnmount(container: ContainerType) {
     container[MARK]?.unmount();
     delete container[MARK];
   });
-};
+}
 
 export function reactUnmount(container: ContainerType) {
   if (createRoot as unknown) {
     return concurrentUnmount(container);
   }
-};
+}
 
 // render imperatively
 type ImperativeProps = {
@@ -362,15 +372,15 @@ export function renderToBody(element: ReactElement) {
   document.body.appendChild(container);
 
   function unmount() {
-    const unmountResult = reactUnmount(container)
+    const unmountResult = reactUnmount(container);
     if (unmountResult && container.parentNode) {
-      container.parentNode.removeChild(container)
+      container.parentNode.removeChild(container);
     }
   }
 
   render(element, container);
   return unmount;
-};
+}
 
 export function renderImperatively(element: ReactElement<ImperativeProps>) {
   const Wrapper = React.forwardRef<ImperativeHandler>((_, ref) => {
@@ -400,7 +410,7 @@ export function renderImperatively(element: ReactElement<ImperativeProps>) {
 
     useImperativeHandle(ref, () => ({
       close: onClose,
-      replace: element => {
+      replace: (element) => {
         keyRef.current++;
         elementToRender.props.afterClose?.();
         setElementToRender(element);
@@ -423,8 +433,8 @@ export function renderImperatively(element: ReactElement<ImperativeProps>) {
     close: () => {
       wrapperRef.current?.close();
     },
-    replace: element => {
+    replace: (element) => {
       wrapperRef.current?.replace(element);
     },
-  } as ImperativeHandler
-};
+  } as ImperativeHandler;
+}

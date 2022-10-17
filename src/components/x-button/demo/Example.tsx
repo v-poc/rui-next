@@ -15,28 +15,12 @@ const Example = () => {
         Let your imagination run wild and be creative
       </Divider>
       <img src="https://nikoni.top/images/others/cg.jpg" />
-      <XButton
-        scale={0.6}
-        className="btn-lt"
-        callback={handleClick}
-      />
-      <XButton
-        scale={0.6}
-        className="btn-rt"
-        callback={handleClick}
-      />
+      <XButton scale={0.6} className="btn-lt" callback={handleClick} />
+      <XButton scale={0.6} className="btn-rt" callback={handleClick} />
 
-      <Divider contentAlign="left">
-        Slider with XButton
-      </Divider>
-      <Slider
-        defaultValue={50}
-        onChange={(v: any) => setScaleVal(v / 100)}
-      />
-      <XButton
-        scale={scaleVal}
-        callback={handleClick}
-      />
+      <Divider contentAlign="left">Slider with XButton</Divider>
+      <Slider defaultValue={50} onChange={(v: any) => setScaleVal(v / 100)} />
+      <XButton scale={scaleVal} callback={handleClick} />
     </div>
   );
 };

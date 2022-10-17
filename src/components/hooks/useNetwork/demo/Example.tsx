@@ -6,15 +6,15 @@ const Example = () => {
   const networkState = useNetwork();
   const isOnline = networkState.online;
 
-  const imgEl = isOnline
-    ? <Icon type="check-circle" size="lg" color="green" />
-    : <Icon type="exclamation-circle" size="lg" color="red" />;
+  const imgEl = isOnline ? (
+    <Icon type="check-circle" size="lg" color="green" />
+  ) : (
+    <Icon type="exclamation-circle" size="lg" color="red" />
+  );
 
   return (
     <>
-      <Divider
-        contentAlign="left"
-      >
+      <Divider contentAlign="left">
         Network state - {isOnline ? "online" : "offline"}
       </Divider>
       <Result

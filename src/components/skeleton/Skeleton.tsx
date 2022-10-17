@@ -35,28 +35,22 @@ const Skeleton: React.FC<SkeletonProps> = (props) => {
   } = props;
 
   // avatar css class
-  const avatarCls = classnames(
-    prefixCls,
-    "r-skeleton-avatar",
-    {
-      "r-skeleton-avatar-large": avatarSize === "lg",
-      "r-skeleton-avatar-small": avatarSize === "sm",
-    },
-  );
+  const avatarCls = classnames(prefixCls, "r-skeleton-avatar", {
+    "r-skeleton-avatar-large": avatarSize === "lg",
+    "r-skeleton-avatar-small": avatarSize === "sm",
+  });
 
   // title width style
   const titleWidthStyle = () => {
     return {
       width: getTitleWidth(),
-    }
+    };
   };
 
   // get title width
   const getTitleWidth = () => {
     if (titleWidth) {
-      return typeof titleWidth === 'number'
-        ? `${titleWidth}%`
-        : titleWidth
+      return typeof titleWidth === "number" ? `${titleWidth}%` : titleWidth;
     }
     return SKELETON_WIDTH.DEFAULT_TITLE;
   };
@@ -65,26 +59,21 @@ const Skeleton: React.FC<SkeletonProps> = (props) => {
   const getRowWidth = (index: number) => {
     if (rowWidth) {
       if (Array.isArray(rowWidth)) {
-        return typeof rowWidth[index] === 'number'
+        return typeof rowWidth[index] === "number"
           ? `${rowWidth[index]}%`
-          : rowWidth[index]
+          : rowWidth[index];
       } else {
-        return typeof rowWidth === 'number'
-          ? `${rowWidth}%`
-          : rowWidth
+        return typeof rowWidth === "number" ? `${rowWidth}%` : rowWidth;
       }
     }
     return SKELETON_WIDTH.DEFAULT_ROW;
   };
 
   // row width style
-  const rowWidthStyle = (index: number) => {    
+  const rowWidthStyle = (index: number) => {
     return {
-      width:
-        index === row
-          ? SKELETON_WIDTH.LAST_ROW
-          : getRowWidth(index - 1)
-    }
+      width: index === row ? SKELETON_WIDTH.LAST_ROW : getRowWidth(index - 1),
+    };
   };
 
   return loading ? (
@@ -92,12 +81,9 @@ const Skeleton: React.FC<SkeletonProps> = (props) => {
       {avatar && <div className={avatarCls}></div>}
       <div className={`${prefixCls}-content`}>
         {title && (
-          <h4
-            className={`${prefixCls}-title`}
-            style={titleWidthStyle()}
-          ></h4>
+          <h4 className={`${prefixCls}-title`} style={titleWidthStyle()}></h4>
         )}
-        {new Array(row).fill('').map((_, index) => (
+        {new Array(row).fill("").map((_, index) => (
           <div
             className={`${prefixCls}-row`}
             key={`row${index}`}

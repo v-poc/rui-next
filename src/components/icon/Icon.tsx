@@ -23,26 +23,17 @@ const Icon: React.FC<IconProps> = (props) => {
   // useEffect hook
   useEffect(() => loadSprite(), []);
 
-  const {
-    type,
-    prefixCls,
-    className,
-    size,
-    ...restProps
-  } = props;
+  const { type, prefixCls, className, size, ...restProps } = props;
 
   const wrapCls = classnames(
     prefixCls,
     className,
     `${prefixCls}-${type}`,
-    `${prefixCls}-${size}`,
+    `${prefixCls}-${size}`
   );
 
   return (
-    <svg
-      className={wrapCls}
-      {...restProps}
-    >
+    <svg className={wrapCls} {...restProps}>
       <use xlinkHref={`#${type}`} />
     </svg>
   );

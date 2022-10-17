@@ -1,5 +1,5 @@
-@import '../styles/mixins';
-@import '../styles/themes/default';
+@import "../styles/mixins";
+@import "../styles/themes/default";
 
 @buttonPrefixCls: r-button;
 
@@ -26,12 +26,12 @@
   color: @color-text-base;
   background-color: @fill-base;
 
-  .hairline('all', @border-color-base, @radius-md);
+  .hairline("all", @border-color-base, @radius-md);
 
   // Multiple buttons inline arranged, the last one border-right may not display
   &-borderfix {
     &:before {
-      transform: scale(0.49)!important;
+      transform: scale(0.49) !important;
     }
   }
 
@@ -46,7 +46,7 @@
   &-primary {
     color: @color-text-base-inverse;
     background-color: @primary-button-fill;
-    .hairline('all', @primary-button-fill, @radius-md);
+    .hairline("all", @primary-button-fill, @radius-md);
 
     &.@{buttonPrefixCls}-active {
       color: fade(@color-text-base-inverse, 30%);
@@ -61,16 +61,16 @@
   &-ghost {
     color: @ghost-button-color;
     background-color: transparent;
-    .hairline('all', @ghost-button-color, @radius-md);
+    .hairline("all", @ghost-button-color, @radius-md);
 
     &.@{buttonPrefixCls}-active {
       color: @ghost-button-fill-tap;
       background-color: transparent;
-      .hairline('all', @ghost-button-fill-tap, @radius-md);
+      .hairline("all", @ghost-button-fill-tap, @radius-md);
     }
     &.@{buttonPrefixCls}-disabled {
       color: fade(@color-text-base, 10%);
-      .hairline('all', fade(@color-text-base, 10%), @radius-md);
+      .hairline("all", fade(@color-text-base, 10%), @radius-md);
       opacity: 1; // override default opacity: 0.6
     }
   }

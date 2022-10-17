@@ -20,7 +20,7 @@ export type ProgressProps = {
 };
 
 // Progress FC
-const Progress: React.FC<ProgressProps> = props => {
+const Progress: React.FC<ProgressProps> = (props) => {
   const {
     prefixCls,
     className,

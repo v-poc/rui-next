@@ -13,7 +13,7 @@ export type DividerProps = {
 };
 
 // Divider FC
-export const Divider: React.FC<DividerProps> = props => {
+export const Divider: React.FC<DividerProps> = (props) => {
   const { prefixCls, className, children, contentAlign, style, vertical } =
     props;
 

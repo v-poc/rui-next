@@ -12,7 +12,14 @@ export type SpaceProps = {
   children?: ReactNode;
   gap?: number;
   align?: "start" | "center" | "end" | "baseline";
-  justify?: "start" | "center" | "end" | "between" | "around" | "evenly" | "stretch";
+  justify?:
+    | "start"
+    | "center"
+    | "end"
+    | "between"
+    | "around"
+    | "evenly"
+    | "stretch";
   block?: boolean;
   wrap?: boolean;
   vertical?: boolean; // vertical or horizontal
@@ -20,7 +27,7 @@ export type SpaceProps = {
 };
 
 // Space FC
-export const Space: React.FC<SpaceProps> = props => {
+export const Space: React.FC<SpaceProps> = (props) => {
   const {
     prefixCls,
     children,
@@ -33,36 +40,23 @@ export const Space: React.FC<SpaceProps> = props => {
     onClick,
   } = props;
 
-  const wrapCls = classNames(
-    prefixCls,
-    {
-      [`${prefixCls}-wrap`]: wrap,
-      [`${prefixCls}-block`]: block,
-      [`${prefixCls}-horizontal`]: !vertical,
-      [`${prefixCls}-vertical`]: vertical,
-      [`${prefixCls}-align-${align}`]: !!align,
-      [`${prefixCls}-justify-${justify}`]: !!justify,
-    },
-  );
+  const wrapCls = classNames(prefixCls, {
+    [`${prefixCls}-wrap`]: wrap,
+    [`${prefixCls}-block`]: block,
+    [`${prefixCls}-horizontal`]: !vertical,
+    [`${prefixCls}-vertical`]: vertical,
+    [`${prefixCls}-align-${align}`]: !!align,
+    [`${prefixCls}-justify-${justify}`]: !!justify,
+  });
 
   const wrapStyle: StyleProps = {
     "--gap": `${gap}px`,
   };
 
   return (
-    <div
-      className={wrapCls}
-      style={wrapStyle}
-      onClick={onClick}
-    >
+    <div className={wrapCls} style={wrapStyle} onClick={onClick}>
       {React.Children.map(children, (item: ReactNode) => {
-        return item && (
-          <div
-            className={`${prefixCls}-item`}
-          >
-            {item}
-          </div>
-        );
+        return item && <div className={`${prefixCls}-item`}>{item}</div>;
       })}
     </div>
   );

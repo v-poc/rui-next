@@ -1,6 +1,6 @@
 import React from "react";
-import { Toast } from "./Toast"
-import type { ToastProps} from "./Toast";
+import { Toast } from "./Toast";
+import type { ToastProps } from "./Toast";
 import { ImperativeHandler, renderImperatively } from "../utils/index";
 
 let currHandler: ImperativeHandler | null = null;
@@ -23,9 +23,7 @@ type ToastWrapperProps = ToastShowProps & {
 };
 
 // ToastWrapper FC
-const ToastWrapper = (props: ToastWrapperProps) => (
-  <Toast {...props} />
-);
+const ToastWrapper = (props: ToastWrapperProps) => <Toast {...props} />;
 
 export const show = (p: ToastShowProps | string) => {
   const opts = typeof p === "string" ? { content: p } : p;

@@ -6,7 +6,7 @@ import classnames from "classnames";
 export type WhiteSpaceProps = {
   prefixCls?: string;
   className?: string;
-  size?: 'xs' | 'sm' | 'md' | 'lg' | 'xl';
+  size?: "xs" | "sm" | "md" | "lg" | "xl";
   style?: CSSProperties;
   onClick?: React.MouseEventHandler<HTMLDivElement>;
   children?: ReactNode;
@@ -28,18 +28,10 @@ const WhiteSpace: React.FC<WhiteSpaceProps> = (props) => {
   const _cls = prefixCls || (vertical ? "r-whitespace" : "r-wingblank");
   const _size = size || (vertical ? "md" : "lg");
 
-  const wrapCls = classnames(
-    _cls,
-    `${_cls}-${_size}`,
-    className
-  );
+  const wrapCls = classnames(_cls, `${_cls}-${_size}`, className);
 
   return (
-    <div
-      className={wrapCls}
-      style={style}
-      onClick={onClick}
-    >
+    <div className={wrapCls} style={style} onClick={onClick}>
       {children}
     </div>
   );

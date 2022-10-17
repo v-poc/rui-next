@@ -45,13 +45,17 @@ const useTouch = () => {
 
   const move = ((e: TouchEvent) => {
     const touchItem = e.touches[0];
-    deltaXRef.current = touchItem.clientX < 0 ? 0 : touchItem.clientX - startXRef.current;
+    deltaXRef.current =
+      touchItem.clientX < 0 ? 0 : touchItem.clientX - startXRef.current;
     deltaYRef.current = touchItem.clientY - startYRef.current;
     offsetXRef.current = Math.abs(deltaXRef.current);
     offsetYRef.current = Math.abs(deltaYRef.current);
 
     if (!directionRef.current) {
-      directionRef.current = getDirection(offsetXRef.current, offsetYRef.current);
+      directionRef.current = getDirection(
+        offsetXRef.current,
+        offsetYRef.current
+      );
     }
   }) as EventListener;
 

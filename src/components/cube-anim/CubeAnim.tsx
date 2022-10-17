@@ -26,24 +26,12 @@ export const CubeAnim: React.FC<CubeAnimProps> = (props) => {
     <div className={`${prefixCls}-wrapper`}>
       <div className={prefixCls} style={cubeStyle}>
         <ul>
-          <li className="front">
-            {front}
-          </li>
-          <li className="back">
-            {back}
-          </li>
-          <li className="top">
-            {top}
-          </li>
-          <li className="bottom">
-            {bottom}
-          </li>
-          <li className="left">
-            {left}
-          </li>
-          <li className="right">
-            {right}
-          </li>
+          <li className="front">{front}</li>
+          <li className="back">{back}</li>
+          <li className="top">{top}</li>
+          <li className="bottom">{bottom}</li>
+          <li className="left">{left}</li>
+          <li className="right">{right}</li>
         </ul>
       </div>
     </div>

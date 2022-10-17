@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import type { CSSProperties } from "react";
 import classnames from "classnames";
-import { canUseDOM } from '../utils/index';
+import { canUseDOM } from "../utils/index";
 
 // WatermarkProps Type
 export type WatermarkProps = {
@@ -54,7 +54,7 @@ const Watermark: React.FC<WatermarkProps> = (props) => {
     if (!canUseDOM) {
       return;
     }
-    
+
     const canvas = document.createElement("canvas");
     const ctx = canvas.getContext("2d");
     if (!ctx) {
@@ -77,7 +77,9 @@ const Watermark: React.FC<WatermarkProps> = (props) => {
       ctx.textBaseline = "middle";
       ctx.textAlign = "center";
 
-      ctx.font = `${fontStyle} normal ${fontWeight} ${Number(fontSize) * ratio}px/${containerH}px ${fontFamily}`;
+      ctx.font = `${fontStyle} normal ${fontWeight} ${
+        Number(fontSize) * ratio
+      }px/${containerH}px ${fontFamily}`;
       ctx.fillStyle = fontColor;
 
       ctx.fillText(content, 0, 0);
@@ -96,7 +98,7 @@ const Watermark: React.FC<WatermarkProps> = (props) => {
           (-1 * imageW * ratio) / 2,
           (-1 * imageH * ratio) / 2,
           imageW * ratio,
-          imageH * ratio,
+          imageH * ratio
         );
         ctx.restore();
         setBase64DataURL(canvas.toDataURL());
@@ -119,10 +121,7 @@ const Watermark: React.FC<WatermarkProps> = (props) => {
     fontWeight,
   ]);
 
-  const wrapCls = classnames(
-    prefixCls,
-    className,
-  );
+  const wrapCls = classnames(prefixCls, className);
 
   return (
     <div

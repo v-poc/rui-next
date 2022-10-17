@@ -15,7 +15,10 @@ const useLockScroll = (
     touch.move(e);
 
     const directionStatus = touch.deltaY.current > 0 ? "10" : "01";
-    const el = getScrollParent(e.target as Element, rootRef.current) as HTMLElement;
+    const el = getScrollParent(
+      e.target as Element,
+      rootRef.current
+    ) as HTMLElement;
     if (!el) {
       return;
     }

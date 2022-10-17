@@ -15,11 +15,7 @@ export type CarouselCircleProps = {
 
 // CarouselCircle FC
 const CarouselCircle: React.FC<CarouselCircleProps> = (props) => {
-  const {
-    size = 0,
-    color,
-    prefixCls,
-  } = props;
+  const { size = 0, color, prefixCls } = props;
 
   const viewWidth = () => {
     const len = circleAnimateValues.length;
@@ -37,7 +33,8 @@ const CarouselCircle: React.FC<CarouselCircleProps> = (props) => {
 
   const opacityValues = (animateValues: number[]) => animateValues.join(";");
 
-  const sizeValues = (animateValues: number[]) => animateValues.map((val) => (val * size) / 2).join(";");
+  const sizeValues = (animateValues: number[]) =>
+    animateValues.map((val) => (val * size) / 2).join(";");
 
   return (
     <div className={prefixCls}>
@@ -52,8 +49,8 @@ const CarouselCircle: React.FC<CarouselCircleProps> = (props) => {
           <circle
             key={`carousel-circle-${index}`}
             cx={getCx(index)}
-            cy={size/2}
-            r={size/2}
+            cy={size / 2}
+            r={size / 2}
           >
             <animate
               attributeName="fill-opacity"

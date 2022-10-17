@@ -6,9 +6,11 @@ const Example = () => {
   const networkState = useNetwork();
   const isOnline = networkState.online;
 
-  const imgEl = isOnline
-    ? <Icon type="check-circle-o" size="lg" color="green" />
-    : <Icon type="exclamation-circle" size="lg" color="red" />;
+  const imgEl = isOnline ? (
+    <Icon type="check-circle-o" size="lg" color="green" />
+  ) : (
+    <Icon type="exclamation-circle" size="lg" color="red" />
+  );
 
   const handlePrimaryBtnClick = () => {
     location.href = "https://vitejs.dev/guide/";
@@ -20,9 +22,7 @@ const Example = () => {
 
   return (
     <>
-      <Divider contentAlign="left">
-        Result with image url
-      </Divider>
+      <Divider contentAlign="left">Result with image url</Divider>
       <Result
         imgUrl="https://vitejs.dev/logo.svg"
         title="Vite"
@@ -30,12 +30,10 @@ const Example = () => {
         buttonType="primary"
         buttonText="Get Started"
         onButtonClick={handlePrimaryBtnClick}
-
       />
-      <br /><br />
-      <Divider contentAlign="left">
-        Result with icon
-      </Divider>
+      <br />
+      <br />
+      <Divider contentAlign="left">Result with icon</Divider>
       <Result
         img={imgEl}
         title="Network state"

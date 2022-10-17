@@ -14,7 +14,10 @@ import Icon from "../icon/index";
 import { getBound } from "../utils/index";
 import usePropsValue from "../hooks/usePropsValue/index";
 
-type NativeInputProps = DetailedHTMLProps<InputHTMLAttributes<HTMLInputElement>, HTMLInputElement>;
+type NativeInputProps = DetailedHTMLProps<
+  InputHTMLAttributes<HTMLInputElement>,
+  HTMLInputElement
+>;
 
 type PickNativeInputProps = Pick<
   NativeInputProps,
@@ -43,7 +46,14 @@ export type InputProps = PickNativeInputProps & {
   clearable?: boolean;
   defaultValue?: string;
   disabled?: boolean;
-  enterKeyHint?: "done" | "enter" | "go" | "next" | "previous" | "search" | "send";
+  enterKeyHint?:
+    | "done"
+    | "enter"
+    | "go"
+    | "next"
+    | "previous"
+    | "search"
+    | "send";
   id?: string;
   min?: number;
   max?: number;
@@ -125,7 +135,7 @@ export const Input = forwardRef<InputRef, InputProps>((props, ref) => {
 
     return () => {
       nativeInputRef.current?.removeAttribute("enterkeyhint");
-    }
+    };
   }, [enterKeyHint]);
 
   // check value
@@ -163,18 +173,12 @@ export const Input = forwardRef<InputRef, InputProps>((props, ref) => {
     onFocus?.(e);
   };
 
-  const wrapCls = classnames(
-    prefixCls,
-    className,
-    {
-      [`${prefixCls}-disabled`]: disabled,
-    },
-  );
+  const wrapCls = classnames(prefixCls, className, {
+    [`${prefixCls}-disabled`]: disabled,
+  });
 
   return (
-    <div
-      className={wrapCls}
-    >
+    <div className={wrapCls}>
       <input
         ref={nativeInputRef}
         autoCapitalize={autoCapitalize}

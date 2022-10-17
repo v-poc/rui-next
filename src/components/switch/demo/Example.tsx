@@ -13,33 +13,16 @@ const Example = () => {
 
   return (
     <>
-      <Divider contentAlign="left">
-        Default switch (Style for iOS)
-      </Divider>
-      <Switch
-        checked={checked}
-        onChange={() => handleChange()}
-      />
+      <Divider contentAlign="left">Default switch (Style for iOS)</Divider>
+      <Switch checked={checked} onChange={() => handleChange()} />
 
-      <Divider contentAlign="left">
-        Disabled off
-      </Divider>
-      <Switch
-        checked={false}
-        disabled
-      />
+      <Divider contentAlign="left">Disabled off</Divider>
+      <Switch checked={false} disabled />
 
-      <Divider contentAlign="left">
-        Disabled on
-      </Divider>
-      <Switch
-        checked
-        disabled
-      />
+      <Divider contentAlign="left">Disabled on</Divider>
+      <Switch checked disabled />
 
-      <Divider contentAlign="left">
-        Style for android
-      </Divider>
+      <Divider contentAlign="left">Style for android</Divider>
       <Switch
         checked={checked}
         onChange={() => handleChange()}
@@ -47,7 +30,7 @@ const Example = () => {
         color="orange"
       />
     </>
-  )
+  );
 };
 
 export default Example;

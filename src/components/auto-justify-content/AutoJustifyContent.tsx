@@ -7,7 +7,9 @@ export type AutoJustifyContentProps = {
 };
 
 // AutoJustifyContent FC
-export const AutoJustifyContent: React.FC<AutoJustifyContentProps> = props => {
+export const AutoJustifyContent: React.FC<AutoJustifyContentProps> = (
+  props
+) => {
   const { prefixCls, children } = props;
 
   return (

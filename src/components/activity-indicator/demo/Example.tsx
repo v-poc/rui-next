@@ -23,42 +23,27 @@ const Example = () => {
 
   return (
     <>
-      <Divider contentAlign="left">
-        Carousel Circle loading style
-      </Divider>
+      <Divider contentAlign="left">Carousel Circle loading style</Divider>
       <div className="loading-example">
-        <ActivityIndicator
-          carousel="circle"
-          size={16}
-        />
+        <ActivityIndicator carousel="circle" size={16} />
       </div>
 
       <Divider contentAlign="left">
-        Carousel Rect loading style (auto adapt to the color/font-size of wrapper)
+        Carousel Rect loading style (auto adapt to the color/font-size of
+        wrapper)
       </Divider>
       <div className="loading-example" style={wrapperStyle}>
-        <ActivityIndicator
-          carousel="rect"
-          color="currentColor"
-        />
+        <ActivityIndicator carousel="rect" color="currentColor" />
       </div>
 
-      <Divider contentAlign="left">
-        Without text
-      </Divider>
+      <Divider contentAlign="left">Without text</Divider>
       <div className="loading-example">
-        <ActivityIndicator
-          animating
-        />
+        <ActivityIndicator animating />
       </div>
 
-      <Divider contentAlign="left">
-        With text
-      </Divider>
+      <Divider contentAlign="left">With text</Divider>
       <div className="loading-example">
-        <ActivityIndicator
-          text="Loading..."
-        />
+        <ActivityIndicator text="Loading..." />
       </div>
 
       <Divider contentAlign="left">
@@ -71,21 +56,11 @@ const Example = () => {
         </div>
       </div>
 
-      <Divider contentAlign="left">
-        Toast mode of activity-indicator
-      </Divider>
-      <Button
-        size="small"
-        inline
-        onClick={() => showToast()}
-      >
+      <Divider contentAlign="left">Toast mode of activity-indicator</Divider>
+      <Button size="small" inline onClick={() => showToast()}>
         Click to show Toast
       </Button>
-      <ActivityIndicator
-        toast
-        text="Loading..."
-        animating={animating}
-      />
+      <ActivityIndicator toast text="Loading..." animating={animating} />
     </>
   );
 };

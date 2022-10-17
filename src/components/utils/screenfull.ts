@@ -2,7 +2,7 @@
  * Inspired by screenfull.js | MIT License (https://github.com/sindresorhus/screenfull.js)
  */
 const doc: any =
-  typeof window !== 'undefined' && typeof window.document !== 'undefined'
+  typeof window !== "undefined" && typeof window.document !== "undefined"
     ? window.document
     : {};
 
@@ -12,46 +12,46 @@ const fn = (function () {
 
   const fnMap = [
     [
-      'requestFullscreen',
-      'exitFullscreen',
-      'fullscreenElement',
-      'fullscreenEnabled',
-      'fullscreenchange',
-      'fullscreenerror',
+      "requestFullscreen",
+      "exitFullscreen",
+      "fullscreenElement",
+      "fullscreenEnabled",
+      "fullscreenchange",
+      "fullscreenerror",
     ],
     // New WebKit
     [
-      'webkitRequestFullscreen',
-      'webkitExitFullscreen',
-      'webkitFullscreenElement',
-      'webkitFullscreenEnabled',
-      'webkitfullscreenchange',
-      'webkitfullscreenerror',
+      "webkitRequestFullscreen",
+      "webkitExitFullscreen",
+      "webkitFullscreenElement",
+      "webkitFullscreenEnabled",
+      "webkitfullscreenchange",
+      "webkitfullscreenerror",
     ],
     // Old WebKit
     [
-      'webkitRequestFullScreen',
-      'webkitCancelFullScreen',
-      'webkitCurrentFullScreenElement',
-      'webkitCancelFullScreen',
-      'webkitfullscreenchange',
-      'webkitfullscreenerror',
+      "webkitRequestFullScreen",
+      "webkitCancelFullScreen",
+      "webkitCurrentFullScreenElement",
+      "webkitCancelFullScreen",
+      "webkitfullscreenchange",
+      "webkitfullscreenerror",
     ],
     [
-      'mozRequestFullScreen',
-      'mozCancelFullScreen',
-      'mozFullScreenElement',
-      'mozFullScreenEnabled',
-      'mozfullscreenchange',
-      'mozfullscreenerror',
+      "mozRequestFullScreen",
+      "mozCancelFullScreen",
+      "mozFullScreenElement",
+      "mozFullScreenEnabled",
+      "mozfullscreenchange",
+      "mozfullscreenerror",
     ],
     [
-      'msRequestFullscreen',
-      'msExitFullscreen',
-      'msFullscreenElement',
-      'msFullscreenEnabled',
-      'MSFullscreenChange',
-      'MSFullscreenError',
+      "msRequestFullscreen",
+      "msExitFullscreen",
+      "msFullscreenElement",
+      "msFullscreenEnabled",
+      "MSFullscreenChange",
+      "MSFullscreenError",
     ],
   ];
 
@@ -89,14 +89,15 @@ export type ScreenfullType = {
 let screenfull: ScreenfullType = {
   request: function (element: any, options: any) {
     return new Promise(
-      function (resolve: (v?: unknown) => void, reject: (v?: unknown) => void) { // @ts-ignore
+      function (resolve: (v?: unknown) => void, reject: (v?: unknown) => void) {
+        // @ts-ignore
         const _ctx = this;
         const onFullScreenEntered = function () {
-          _ctx.off('change', onFullScreenEntered);
+          _ctx.off("change", onFullScreenEntered);
           resolve();
         }.bind(_ctx);
 
-        _ctx.on('change', onFullScreenEntered);
+        _ctx.on("change", onFullScreenEntered);
 
         element = element || doc.documentElement;
 
@@ -104,13 +105,14 @@ let screenfull: ScreenfullType = {
         if (returnPromise instanceof Promise) {
           returnPromise.then(onFullScreenEntered).catch(reject);
         }
-      }.bind(this),
+      }.bind(this)
     );
   },
 
   exit: function () {
     return new Promise(
-      function (resolve: (v?: unknown) => void, reject: (v?: unknown) => void) { // @ts-ignore
+      function (resolve: (v?: unknown) => void, reject: (v?: unknown) => void) {
+        // @ts-ignore
         const _ctx = this;
         if (!_ctx.isFullscreen) {
           resolve();
@@ -118,17 +120,17 @@ let screenfull: ScreenfullType = {
         }
 
         const onFullScreenExit = function () {
-          _ctx.off('change', onFullScreenExit);
+          _ctx.off("change", onFullScreenExit);
           resolve();
         }.bind(_ctx);
 
-        _ctx.on('change', onFullScreenExit);
+        _ctx.on("change", onFullScreenExit);
 
         const returnPromise = doc[fn.exitFullscreen]();
         if (returnPromise instanceof Promise) {
           returnPromise.then(onFullScreenExit).catch(reject);
         }
-      }.bind(this),
+      }.bind(this)
     );
   },
 
@@ -137,11 +139,11 @@ let screenfull: ScreenfullType = {
   },
 
   onchange: function (callback: (v?: unknown) => void) {
-    this.on?.('change', callback);
+    this.on?.("change", callback);
   },
 
   onerror: function (callback: (v?: unknown) => void) {
-    this.on?.('error', callback);
+    this.on?.("error", callback);
   },
 
   on: function (event: string, callback: (v?: unknown) => void) {

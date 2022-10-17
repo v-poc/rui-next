@@ -4,9 +4,7 @@ import { Toast, Button, Divider, Icon, Space } from "rui-next";
 // Example FC
 const Example = () => (
   <>
-    <Divider contentAlign="left">
-      Toast with icon display
-    </Divider>
+    <Divider contentAlign="left">Toast with icon display</Divider>
     <Space vertical>
       <Button
         size="small"
@@ -58,9 +56,7 @@ const Example = () => (
       </Button>
     </Space>
 
-    <Divider contentAlign="left">
-      Toast with position
-    </Divider>
+    <Divider contentAlign="left">Toast with position</Divider>
     <Space vertical>
       <Button
         size="small"
@@ -88,9 +84,7 @@ const Example = () => (
       </Button>
     </Space>
 
-    <Divider contentAlign="left">
-      Toast with mask not clickable
-    </Divider>
+    <Divider contentAlign="left">Toast with mask not clickable</Divider>
     <Button
       size="small"
       inline

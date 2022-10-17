@@ -16,18 +16,14 @@ const Example = () => {
 
   return (
     <>
-      <Divider contentAlign="left">
-        Empty without message
-      </Divider>
+      <Divider contentAlign="left">Empty without message</Divider>
       <Empty />
-      <br /><br />
-      <Divider contentAlign="left">
-        Empty with message
-      </Divider>
-      <Empty
-        message="No result"
-      />
-      <br /><br />
+      <br />
+      <br />
+      <Divider contentAlign="left">Empty with message</Divider>
+      <Empty message="No result" />
+      <br />
+      <br />
       <Divider contentAlign="left">
         Empty with customized style and image
       </Divider>
@@ -38,14 +34,12 @@ const Example = () => {
         }}
         message="Data Not Found"
       />
-      <br /><br />
+      <br />
+      <br />
       <Divider contentAlign="left">
         Empty with customized Icon (ReactNode)
       </Divider>
-      <Empty
-        img={imgEl}
-        message="Customize Description"
-      />
+      <Empty img={imgEl} message="Customize Description" />
     </>
   );
 };

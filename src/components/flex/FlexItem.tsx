@@ -1,6 +1,6 @@
-import React from 'react';
+import React from "react";
 import type { CSSProperties, ReactNode } from "react";
-import classnames from 'classnames';
+import classnames from "classnames";
 
 // FlexItemProps Type
 export type FlexItemProps = {
@@ -14,7 +14,7 @@ export type FlexItemProps = {
 // FlexItem FC
 const FlexItem: React.FC<FlexItemProps> = (props) => {
   const {
-    prefixCls = 'r-flexbox',
+    prefixCls = "r-flexbox",
     className,
     style,
     children,

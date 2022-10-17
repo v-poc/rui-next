@@ -5,7 +5,7 @@ import { BasicTarget, getTargetElement } from "../../utils/index";
 const useClickAway = (
   onClickAway: (event: MouseEvent | TouchEvent) => void,
   target: BasicTarget | BasicTarget[],
-  eventName: string = "click",
+  eventName: string = "click"
 ) => {
   const onClickAwayRef = useRef(onClickAway);
   onClickAwayRef.current = onClickAway;
@@ -24,13 +24,9 @@ const useClickAway = (
     onClickAwayRef.current(event);
   };
 
-  useEventListener(
-    eventName,
-    handler,
-    {
-      target: () => document,
-    }
-  );
+  useEventListener(eventName, handler, {
+    target: () => document,
+  });
 };
 
 export default useClickAway;

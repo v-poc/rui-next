@@ -10,10 +10,7 @@ const Example = () => (
       Card mode (the 2nd item is checked by default)
     </Divider>
     <div className="check-list-card-wrapper">
-      <CheckList
-        defaultValue={["1"]}
-        mode="card"
-      >
+      <CheckList defaultValue={["1"]} mode="card">
         {new Array(5).fill("").map((item, i) => {
           const isDisabled = i === 2;
           const isReadOnly = i === 3;
@@ -25,7 +22,8 @@ const Example = () => (
               readOnly={isReadOnly}
               onClick={() => logInfo(`Click item - Content ${i + 1}`)}
             >
-              {`Content ${i + 1}`}{isDisabled ? " (disabled)" : isReadOnly ? " (readonly)" : ""}
+              {`Content ${i + 1}`}
+              {isDisabled ? " (disabled)" : isReadOnly ? " (readonly)" : ""}
             </CheckList.Item>
           );
         })}

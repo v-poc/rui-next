@@ -17,7 +17,5 @@ export const Lazyload: React.FC<LazyloadProps> = (props) => {
     }
   }, [isInViewport]);
 
-  return (
-    <div ref={targetRef}></div>
-  );
+  return <div ref={targetRef}></div>;
 };

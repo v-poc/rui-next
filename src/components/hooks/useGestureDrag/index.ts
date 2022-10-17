@@ -6,7 +6,13 @@ import React from "react";
 /**
  * types / interfaces
  */
-type IngKey = "dragging" | "wheeling" | "moving" | "hovering" | "scrolling" | "pinching";
+type IngKey =
+  | "dragging"
+  | "wheeling"
+  | "moving"
+  | "hovering"
+  | "scrolling"
+  | "pinching";
 
 type Target = EventTarget | React.RefObject<EventTarget>;
 
@@ -48,114 +54,114 @@ type SharedGestureState = {
 };
 
 type CommonGestureState = {
-  _active: boolean
-  _blocked: boolean
-  _force: boolean
-  _step: [false | number, false | number]
-  _movementBound: [false | number, false | number]
-  _values: Vector2
-  _initial: Vector2
-  _movement: Vector2
-  _distance: Vector2
-  _direction: Vector2
-  _delta: Vector2
-  _bounds: [Vector2, Vector2]
+  _active: boolean;
+  _blocked: boolean;
+  _force: boolean;
+  _step: [false | number, false | number];
+  _movementBound: [false | number, false | number];
+  _values: Vector2;
+  _initial: Vector2;
+  _movement: Vector2;
+  _distance: Vector2;
+  _direction: Vector2;
+  _delta: Vector2;
+  _bounds: [Vector2, Vector2];
   /**
    * The event triggering the gesture.
    */
-  event: UIEvent
+  event: UIEvent;
   /**
    * The event target.
    */
-  target: EventTarget
+  target: EventTarget;
   /**
    * The event current target.
    */
-  currentTarget: EventTarget
+  currentTarget: EventTarget;
   /**
    * True when the gesture is intentional (passed the threshold).
    */
-  intentional: boolean
+  intentional: boolean;
   /**
    * Cumulative distance of the gesture. Deltas are summed with their absolute
    * values.
    */
-  distance: Vector2
+  distance: Vector2;
   /**
    * Displacement of the current gesture.
    */
-  movement: Vector2
+  movement: Vector2;
   /**
    * Difference between the current movement and the previous movement.
    */
-  delta: Vector2
+  delta: Vector2;
   /**
    * Cumulative displacements of all gestures (sum of all movements triggered
    * by the handler)
    */
-  offset: Vector2
+  offset: Vector2;
   /**
    * Offset when the gesture started.
    */
-  lastOffset: Vector2
+  lastOffset: Vector2;
   /**
    * Velocity vector.
    */
-  velocity: Vector2
+  velocity: Vector2;
   /**
    * Current raw values of the gesture. Can be coordinates or distance / angle
    * depending on the gesture.
    */
-  values: Vector2
+  values: Vector2;
   /**
    * Raw values when the gesture started.
    */
-  initial: Vector2
+  initial: Vector2;
   /**
    * Direction per axis. `-1` when going down, `1` when going up, `0` when still.
    */
-  direction: Vector2
+  direction: Vector2;
   /**
    * Bound overflow per axis. `-1` when overflowing bounds to the left/top, `1` when overflowing bounds to the right/bottom.
    */
-  overflow: Vector2
+  overflow: Vector2;
   /**
    * True when it's the first event of the active gesture.
    */
-  first: boolean
+  first: boolean;
   /**
    * True when it's the last event of the active gesture.
    */
-  last: boolean
+  last: boolean;
   /**
    * True when the gesture is active.
    */
-  active: boolean
+  active: boolean;
   /**
    * The timestamp (ms) of when the gesture started.
    */
-  startTime: number
+  startTime: number;
   /**
    * The timestamp (ms) of the current event.
    */
-  timeStamp: number
+  timeStamp: number;
   /**
    * Elapsed time (ms) of the current gesture.
    */
-  elapsedTime: number
+  elapsedTime: number;
   /**
    * Event type.
    */
-  type: string
+  type: string;
   /**
    * Value returned by your handler on its previous run.
    */
-  memo?: any
+  memo?: any;
   /**
    * The arguments passed to the bind function (only relevant in React when
    * using `<div {...bind(someArgument)} />`)
    */
-  args?: any
+  args?: any;
 };
 
 type CoordinatesState = CommonGestureState & {
@@ -205,7 +211,7 @@ interface PinchState extends CommonGestureState {
   canceled: boolean;
   // Function that can be called to cancel the pinch.
   cancel(): void;
-};
+}
 
 type EventTypes = {
   drag: PointerEvent | TouchEvent | MouseEvent | KeyboardEvent;
@@ -224,7 +230,7 @@ interface State {
   move?: CoordinatesState & { event: EventTypes["move"] };
   hover?: CoordinatesState & { event: EventTypes["hover"] };
   pinch?: PinchState & { event: EventTypes["pinch"] };
-};
+}
 
 type CoordinatesKey = Exclude<GestureKey, "pinch">;
 
@@ -238,7 +244,7 @@ type GenericOptions = {
   eventOptions?: AddEventListenerOptions;
   // When set to false none of the handlers will be fired.
   enabled?: boolean;
-  // Transform movement and offset values. Useful to map your 
+  // Transform movement and offset values. Useful to map your
   // screen coordinates to custom space coordinates such as a canvas.
   transform?: (v: Vector2) => Vector2;
 };
@@ -247,43 +253,44 @@ type GestureOptions<T extends GestureKey> = GenericOptions & {
   /**
    * Whether the gesture is enabled.
    */
-  enabled?: boolean
+  enabled?: boolean;
   /**
    * The position `offset` will start from.
    */
-  from?: Vector2 | ((state: NonNullable<State[T]>) => Vector2)
+  from?: Vector2 | ((state: NonNullable<State[T]>) => Vector2);
   /**
    * The handler will fire only when the gesture displacement is greater than the threshold.
    */
-  threshold?: number | Vector2
+  threshold?: number | Vector2;
   /**
    * The handler will preventDefault all events when `true`.
    */
-  preventDefault?: boolean
+  preventDefault?: boolean;
   /**
    * Forces the handler to fire even for non intentional displacement (ignores
    * the threshold). In that case, the intentional attribute from state will
    * remain false until the threshold is reached.
    */
-  triggerAllEvents?: boolean
+  triggerAllEvents?: boolean;
   /**
    * The elasticity coefficient of the gesture when going out of bounds. When
    * set to true, the elasticiy coefficient will be defaulted to 0.15
    */
-  rubberband?: boolean | number | Vector2
+  rubberband?: boolean | number | Vector2;
   /**
    * A function that you can use to transform movement and offset values. Useful
    * to map your screen coordinates to custom space coordinates such as a canvas.
    */
-  transform?: (v: Vector2) => Vector2
+  transform?: (v: Vector2) => Vector2;
 };
 
-type CoordinatesConfig<Key extends CoordinatesKey = CoordinatesKey> = GestureOptions<Key> & {
-  // The handler will only trigger if a movement is detected on the specified axis.
-  axis?: "x" | "y" | "lock";
-  // Limits the gesture `offset` to the specified bounds.
-  bounds?: Bounds | ((state: State[Key]) => Bounds);
-};
+type CoordinatesConfig<Key extends CoordinatesKey = CoordinatesKey> =
+  GestureOptions<Key> & {
+    // The handler will only trigger if a movement is detected on the specified axis.
+    axis?: "x" | "y" | "lock";
+    // Limits the gesture `offset` to the specified bounds.
+    bounds?: Bounds | ((state: State[Key]) => Bounds);
+  };
 
 type DragConfig = CoordinatesConfig<"drag"> & {
   // If true, the component won't trigger your drag logic if the user just clicked on the component.
@@ -325,7 +332,7 @@ type DragConfig = CoordinatesConfig<"drag"> & {
      * drag ends,
      */
     lock?: boolean;
-  }
+  };
   swipe?: {
     /**
      * The minimum velocity per axis (in pixels / ms) the drag gesture needs to
@@ -342,7 +349,7 @@ type DragConfig = CoordinatesConfig<"drag"> & {
      * to 250.
      */
     duration?: number;
-  }
+  };
   /**
    * If set, the drag will be triggered after the duration of the delay (in ms).
    * When set to true, delay is defaulted to 250ms.
@@ -375,24 +382,24 @@ type PinchConfig = GestureOptions<"pinch"> & {
     /**
      * If true, pinch will use touch events on touch-enabled devices.
      */
-    touch?: boolean
-  }
+    touch?: boolean;
+  };
   /**
    * Limits the scale `offset` to the specified bounds.
    */
-  scaleBounds?: PinchBounds | ((state: State["pinch"]) => PinchBounds)
+  scaleBounds?: PinchBounds | ((state: State["pinch"]) => PinchBounds);
   /**
    * Limits the angle `offset` to the specified bounds.
    */
-  angleBounds?: PinchBounds | ((state: State["pinch"]) => PinchBounds)
+  angleBounds?: PinchBounds | ((state: State["pinch"]) => PinchBounds);
   /**
    * Scales OR rotates when set to "lock".
    */
-  axis?: "lock" | undefined
+  axis?: "lock" | undefined;
   /**
    * Key that triggers scale when using the wheel. Defaults to `"ctrlKey"`.
    */
-  modifierKey?: ModifierKey
+  modifierKey?: ModifierKey;
 };
 
 type DragBounds = Bounds | HTMLElement | React.RefObject<HTMLElement>;
@@ -416,43 +423,49 @@ type PointerType = "mouse" | "touch" | "pen";
 
 type InternalHandlers = { [Key in GestureKey]?: Handler<Key, any> };
 
-type FullGestureState<Key extends GestureKey> = SharedGestureState & NonNullable<State[Key]>;
+type FullGestureState<Key extends GestureKey> = SharedGestureState &
+  NonNullable<State[Key]>;
 
 type Handler<Key extends GestureKey, EventType = EventTypes[Key]> = (
   state: Omit<FullGestureState<Key>, "event"> & { event: EventType }
 ) => any | void;
 
 // allows overriding the event type from the returned state in handlers
-type AnyHandlerEventTypes = Partial<{
-  drag: any;
-  wheel: any;
-  scroll: any;
-  move: any;
-  pinch: any;
-  hover: any;
-} & { [key in NativeHandlersKeys]: any }>;
+type AnyHandlerEventTypes = Partial<
+  {
+    drag: any;
+    wheel: any;
+    scroll: any;
+    move: any;
+    pinch: any;
+    hover: any;
+  } & { [key in NativeHandlersKeys]: any }
+>;
 
 // if no type is provided in the user generic for a given key
 // then return the default EventTypes that key
-type check<T extends AnyHandlerEventTypes, Key extends GestureKey> = undefined extends T[Key] ? EventTypes[Key] : T[Key];
+type check<
+  T extends AnyHandlerEventTypes,
+  Key extends GestureKey
+> = undefined extends T[Key] ? EventTypes[Key] : T[Key];
 
 type UserHandlers<T extends AnyHandlerEventTypes = EventTypes> = {
-  onDrag: Handler<"drag", check<T, "drag">>
-  onDragStart: Handler<"drag", check<T, "drag">>
-  onDragEnd: Handler<"drag", check<T, "drag">>
-  onPinch: Handler<"pinch", check<T, "pinch">>
-  onPinchStart: Handler<"pinch", check<T, "pinch">>
-  onPinchEnd: Handler<"pinch", check<T, "pinch">>
-  onWheel: Handler<"wheel", check<T, "wheel">>
-  onWheelStart: Handler<"wheel", check<T, "wheel">>
-  onWheelEnd: Handler<"wheel", check<T, "wheel">>
-  onMove: Handler<"move", check<T, "move">>
-  onMoveStart: Handler<"move", check<T, "move">>
-  onMoveEnd: Handler<"move", check<T, "move">>
-  onScroll: Handler<"scroll", check<T, "scroll">>
-  onScrollStart: Handler<"scroll", check<T, "scroll">>
-  onScrollEnd: Handler<"scroll", check<T, "scroll">>
-  onHover: Handler<"hover", check<T, "hover">>
+  onDrag: Handler<"drag", check<T, "drag">>;
+  onDragStart: Handler<"drag", check<T, "drag">>;
+  onDragEnd: Handler<"drag", check<T, "drag">>;
+  onPinch: Handler<"pinch", check<T, "pinch">>;
+  onPinchStart: Handler<"pinch", check<T, "pinch">>;
+  onPinchEnd: Handler<"pinch", check<T, "pinch">>;
+  onWheel: Handler<"wheel", check<T, "wheel">>;
+  onWheelStart: Handler<"wheel", check<T, "wheel">>;
+  onWheelEnd: Handler<"wheel", check<T, "wheel">>;
+  onMove: Handler<"move", check<T, "move">>;
+  onMoveStart: Handler<"move", check<T, "move">>;
+  onMoveEnd: Handler<"move", check<T, "move">>;
+  onScroll: Handler<"scroll", check<T, "scroll">>;
+  onScrollStart: Handler<"scroll", check<T, "scroll">>;
+  onScrollEnd: Handler<"scroll", check<T, "scroll">>;
+  onHover: Handler<"hover", check<T, "hover">>;
 };
 
 type ReactDOMAttributes = Omit<
@@ -462,69 +475,78 @@ type ReactDOMAttributes = Omit<
 
 type NativeHandlersKeys = keyof ReactDOMAttributes;
 
-type GetEventType<Key extends NativeHandlersKeys> = ReactDOMAttributes[Key] extends
-  | React.EventHandler<infer EventType>
-  | undefined
-  ? EventType
-  : UIEvent;
+type GetEventType<Key extends NativeHandlersKeys> =
+  ReactDOMAttributes[Key] extends
+    | React.EventHandler<infer EventType>
+    | undefined
+    ? EventType
+    : UIEvent;
 
 type NativeHandlers<T extends AnyHandlerEventTypes = {}> = {
   [key in NativeHandlersKeys]?: (
-    state: State["shared"] & { event: undefined extends T[key] ? GetEventType<key> : T[key]; args: any },
+    state: State["shared"] & {
+      event: undefined extends T[key] ? GetEventType<key> : T[key];
+      args: any;
+    },
     ...args: any
-  ) => void
+  ) => void;
 };
 
-type HookReturnType<Config extends GenericOptions> = Config["target"] extends object
-  ? void
-  : (...args: any[]) => ReactDOMAttributes;
+type HookReturnType<Config extends GenericOptions> =
+  Config["target"] extends object
+    ? void
+    : (...args: any[]) => ReactDOMAttributes;
 
 type GestureKey = Exclude<keyof State, "shared">;
 
 type InternalGestureOptions<Key extends GestureKey = GestureKey> = {
-  enabled: boolean
-  from: Vector2 | ((state: State[Key]) => Vector2)
-  threshold: Vector2
-  preventDefault: boolean
-  triggerAllEvents: boolean
-  rubberband: Vector2
-  bounds: [Vector2, Vector2] | ((state: State[Key]) => [Vector2, Vector2])
-  hasCustomTransform: boolean
-  transform: (v: Vector2) => Vector2
+  enabled: boolean;
+  from: Vector2 | ((state: State[Key]) => Vector2);
+  threshold: Vector2;
+  preventDefault: boolean;
+  triggerAllEvents: boolean;
+  rubberband: Vector2;
+  bounds: [Vector2, Vector2] | ((state: State[Key]) => [Vector2, Vector2]);
+  hasCustomTransform: boolean;
+  transform: (v: Vector2) => Vector2;
 };
 
-type InternalCoordinatesOptions<Key extends CoordinatesKey = CoordinatesKey> = InternalGestureOptions<Key> & {
-  axis?: "x" | "y"
-  lockDirection: boolean
-  axisThreshold: number
-};
+type InternalCoordinatesOptions<Key extends CoordinatesKey = CoordinatesKey> =
+  InternalGestureOptions<Key> & {
+    axis?: "x" | "y";
+    lockDirection: boolean;
+    axisThreshold: number;
+  };
 
-type InternalDragOptions = Omit<InternalCoordinatesOptions<"drag">, "axisThreshold"> & {
-  filterTaps: boolean
-  tapsThreshold: number
-  pointerButtons: number | number[]
-  pointerCapture: boolean
-  preventScrollDelay?: number
-  preventScrollAxis?: "x" | "y" | "xy"
-  pointerLock: boolean
-  device: "pointer" | "touch" | "mouse"
+type InternalDragOptions = Omit<
+  InternalCoordinatesOptions<"drag">,
+  "axisThreshold"
+> & {
+  filterTaps: boolean;
+  tapsThreshold: number;
+  pointerButtons: number | number[];
+  pointerCapture: boolean;
+  preventScrollDelay?: number;
+  preventScrollAxis?: "x" | "y" | "xy";
+  pointerLock: boolean;
+  device: "pointer" | "touch" | "mouse";
   swipe: {
-    velocity: Vector2
-    distance: Vector2
-    duration: number
-  }
-  delay: number
-  axisThreshold: Record<PointerType, number>
+    velocity: Vector2;
+    distance: Vector2;
+    duration: number;
+  };
+  delay: number;
+  axisThreshold: Record<PointerType, number>;
 };
 
 type ModifierKey = "ctrlKey" | "altKey" | "metaKey" | null;
 
 type InternalGenericOptions = {
-  target?: () => EventTarget
-  eventOptions: AddEventListenerOptions
-  window?: EventTarget
-  enabled: boolean
-  transform?: (v: Vector2) => Vector2
+  target?: () => EventTarget;
+  eventOptions: AddEventListenerOptions;
+  window?: EventTarget;
+  enabled: boolean;
+  transform?: (v: Vector2) => Vector2;
 };
 
 type InternalPinchOptions = InternalGestureOptions<"pinch"> & {
@@ -539,13 +561,13 @@ type MoveAndHoverMouseOnly = {
 };
 
 type InternalConfig = {
-  shared: InternalGenericOptions
-  drag?: InternalDragOptions
-  wheel?: InternalCoordinatesOptions<"wheel">
-  scroll?: InternalCoordinatesOptions<"scroll">
-  move?: InternalCoordinatesOptions<"move"> & MoveAndHoverMouseOnly
-  hover?: InternalCoordinatesOptions<"hover"> & MoveAndHoverMouseOnly
-  pinch?: InternalPinchOptions
+  shared: InternalGenericOptions;
+  drag?: InternalDragOptions;
+  wheel?: InternalCoordinatesOptions<"wheel">;
+  scroll?: InternalCoordinatesOptions<"scroll">;
+  move?: InternalCoordinatesOptions<"move"> & MoveAndHoverMouseOnly;
+  hover?: InternalCoordinatesOptions<"hover"> & MoveAndHoverMouseOnly;
+  pinch?: InternalPinchOptions;
 };
 
 type Resolver = (x: any, key: string, obj: any) => any;
@@ -572,9 +594,9 @@ interface Engine<Key extends GestureKey> {
   axisIntent?(event?: UIEvent): void;
   // Function to restrict to axis
   restrictToAxis?(movement: Vector2): void;
-};
+}
 
-type NonUndefined<T> = T extends undefined ? never : T
+type NonUndefined<T> = T extends undefined ? never : T;
 
 /**
  * constants / utils
@@ -585,7 +607,7 @@ const KEYS_DELTA_MAP = {
   ArrowUp: (factor = 1) => [0, -10 * factor],
   ArrowDown: (factor = 1) => [0, 10 * factor],
 };
- 
+
 const EVENT_TYPE_MAP: any = {
   pointer: { start: "down", change: "move", end: "up" },
   mouse: { start: "down", change: "move", end: "up" },
@@ -593,12 +615,16 @@ const EVENT_TYPE_MAP: any = {
   gesture: { start: "start", change: "change", end: "end" },
 };
 
-const DEFAULT_DRAG_AXIS_THRESHOLD: Record<PointerType, number> = { mouse: 0, touch: 0, pen: 8 };
+const DEFAULT_DRAG_AXIS_THRESHOLD: Record<PointerType, number> = {
+  mouse: 0,
+  touch: 0,
+  pen: 8,
+};
 
 const EngineMap = new Map<GestureKey, EngineClass<any>>();
 
 const ConfigResolverMap = new Map<GestureKey, ResolverMap>();
- 
+
 const sharedConfigResolver = {
   target(value: Target) {
     if (value) {
@@ -620,31 +646,37 @@ const sharedConfigResolver = {
   },
 };
 
-const isBrowser = typeof window !== "undefined" && window.document && window.document.createElement;
+const isBrowser =
+  typeof window !== "undefined" &&
+  window.document &&
+  window.document.createElement;
 
 function supportsTouchEvents(): boolean {
   return isBrowser && "ontouchstart" in window;
-};
+}
 
 function isTouchScreen(): boolean {
-  return supportsTouchEvents() || (isBrowser && window.navigator.maxTouchPoints > 1);
-};
+  return (
+    supportsTouchEvents() || (isBrowser && window.navigator.maxTouchPoints > 1)
+  );
+}
 
 function supportsPointerEvents(): boolean {
   return isBrowser && "onpointerdown" in window;
-};
+}
 
 function supportsPointerLock(): boolean {
   return isBrowser && "exitPointerLock" in window.document;
-};
+}
 
 function supportsGestureEvents(): boolean {
-  try { // @ts-ignore
+  try {
+    // @ts-ignore
     return "constructor" in GestureEvent;
   } catch (e) {
     return false;
   }
-};
+}
 
 const SUPPORT = {
   isBrowser,
@@ -673,14 +705,14 @@ const V = {
   subTo(v1: Vector2, v2: Vector2) {
     v1[0] -= v2[0];
     v1[1] -= v2[1];
-  }
+  },
 };
 
 function setupGesture(ctrl: Controller, gestureKey: GestureKey) {
   ctrl.gestures.add(gestureKey);
   ctrl.gestureEventStores[gestureKey] = new EventStore(ctrl);
   ctrl.gestureTimeoutStores[gestureKey] = new TimeoutStore();
-};
+}
 
 function resolveGestures(ctrl: Controller, internalHandlers: InternalHandlers) {
   // make sure hover handlers are added first to prevent bugs such as #322
@@ -692,29 +724,36 @@ function resolveGestures(ctrl: Controller, internalHandlers: InternalHandlers) {
   if (internalHandlers.move) setupGesture(ctrl, "move");
   if (internalHandlers.pinch) setupGesture(ctrl, "pinch");
   if (internalHandlers.hover) setupGesture(ctrl, "hover");
-};
+}
 
-const bindToProps = (props: any, eventOptions: AddEventListenerOptions, withPassiveOption: boolean) =>
-(
-  device: string,
-  action: string,
-  handler: (event: any) => void,
-  options: AddEventListenerOptions = {},
-  isNative = false
-) => {
-  const capture = options.capture ?? eventOptions.capture;
-  const passive = options.passive ?? eventOptions.passive;
-  // a native handler is already passed as a prop like "onMouseDown"
-  let handlerProp = isNative ? device : toHandlerProp(device, action, capture);
-  if (withPassiveOption && passive) handlerProp += "Passive";
-  props[handlerProp] = props[handlerProp] || [];
-  props[handlerProp].push(handler);
-};
+const bindToProps =
+  (
+    props: any,
+    eventOptions: AddEventListenerOptions,
+    withPassiveOption: boolean
+  ) =>
+  (
+    device: string,
+    action: string,
+    handler: (event: any) => void,
+    options: AddEventListenerOptions = {},
+    isNative = false
+  ) => {
+    const capture = options.capture ?? eventOptions.capture;
+    const passive = options.passive ?? eventOptions.passive;
+    // a native handler is already passed as a prop like "onMouseDown"
+    let handlerProp = isNative
+      ? device
+      : toHandlerProp(device, action, capture);
+    if (withPassiveOption && passive) handlerProp += "Passive";
+    props[handlerProp] = props[handlerProp] || [];
+    props[handlerProp].push(handler);
+  };
 
-function resolveWith<T extends { [k: string]: any }, V extends { [k: string]: any }>(
-  config: Partial<T> = {},
-  resolvers: ResolverMap
-): V {
+function resolveWith<
+  T extends { [k: string]: any },
+  V extends { [k: string]: any }
+>(config: Partial<T> = {}, resolvers: ResolverMap): V {
   const result: any = {};
 
   for (const [key, resolver] of Object.entries(resolvers)) {
@@ -738,49 +777,65 @@ function resolveWith<T extends { [k: string]: any }, V extends { [k: string]: an
   }
 
   return result;
-};
+}
 
-function parse(config: UserGestureConfig, gestureKey?: GestureKey): InternalConfig {
-  const { target, eventOptions, window, enabled, transform, ...rest } = config as any
+function parse(
+  config: UserGestureConfig,
+  gestureKey?: GestureKey
+): InternalConfig {
+  const { target, eventOptions, window, enabled, transform, ...rest } =
+    config as any;
 
   const _config: any = {
-    shared: resolveWith({ target, eventOptions, window, enabled, transform }, sharedConfigResolver)
-  }
+    shared: resolveWith(
+      { target, eventOptions, window, enabled, transform },
+      sharedConfigResolver
+    ),
+  };
 
   if (gestureKey) {
-    const resolver = ConfigResolverMap.get(gestureKey)!
-    _config[gestureKey] = resolveWith({ shared: _config.shared, ...rest }, resolver)
+    const resolver = ConfigResolverMap.get(gestureKey)!;
+    _config[gestureKey] = resolveWith(
+      { shared: _config.shared, ...rest },
+      resolver
+    );
   } else {
     for (const key in rest) {
-      const resolver = ConfigResolverMap.get(key as GestureKey)!
+      const resolver = ConfigResolverMap.get(key as GestureKey)!;
 
       if (resolver) {
-        _config[key] = resolveWith({ shared: _config.shared, ...rest[key] }, resolver) // @ts-ignore
+        _config[key] = resolveWith(
+          { shared: _config.shared, ...rest[key] },
+          resolver
+        ); // @ts-ignore
       } else if (import.meta.env.DEV) {
-        if (!["drag", "pinch", "scroll", "wheel", "move", "hover"].includes(key)) {
+        if (
+          !["drag", "pinch", "scroll", "wheel", "move", "hover"].includes(key)
+        ) {
           if (key === "domTarget") {
-            throw Error(`"domTarget" option has been renamed to "target".`)
+            throw Error(`"domTarget" option has been renamed to "target".`);
           }
           console.warn(
             `Unknown config key "${key}" was used. Please read the documentation for further information.`
-          )
+          );
         }
       }
     }
   }
-  return _config
-};
+  return _config;
+}
 
 function call<T>(v: T | ((...args: any[]) => T), ...args: any[]): T {
-  if (typeof v === "function") { // @ts-ignore
+  if (typeof v === "function") {
+    // @ts-ignore
     return v(...args);
   } else {
     return v;
   }
-};
+}
 
 function chain(...fns: Function[]): Function {
-  if (fns.length === 0) return function() {};
+  if (fns.length === 0) return function () {};
   if (fns.length === 1) return fns[0];
 
   return function (this: any) {
@@ -789,33 +844,48 @@ function chain(...fns: Function[]): Function {
       result = fn.apply(this, arguments) || result;
     }
     return result;
-  }
-};
+  };
+}
 
 function persistEvent(event: React.PointerEvent | PointerEvent) {
   "persist" in event && typeof event.persist === "function" && event.persist();
-};
+}
 
 function clamp(v: number, min: number, max: number) {
   return Math.max(min, Math.min(v, max));
-};
+}
 
 function rubberband(distance: number, dimension: number, constant: number) {
-  if (dimension === 0 || Math.abs(dimension) === Infinity) return Math.pow(distance, constant * 5);
+  if (dimension === 0 || Math.abs(dimension) === Infinity)
+    return Math.pow(distance, constant * 5);
   return (distance * dimension * constant) / (dimension + constant * distance);
-};
+}
 
-function rubberbandIfOutOfBounds(position: number, min: number, max: number, constant = 0.15) {
+function rubberbandIfOutOfBounds(
+  position: number,
+  min: number,
+  max: number,
+  constant = 0.15
+) {
   if (constant === 0) return clamp(position, min, max);
-  if (position < min) return -rubberband(min - position, max - min, constant) + min;
-  if (position > max) return +rubberband(position - max, max - min, constant) + max;
+  if (position < min)
+    return -rubberband(min - position, max - min, constant) + min;
+  if (position > max)
+    return +rubberband(position - max, max - min, constant) + max;
   return position;
-};
+}
 
-function computeRubberband(bounds: [Vector2, Vector2], [Vx, Vy]: Vector2, [Rx, Ry]: Vector2): Vector2 {
+function computeRubberband(
+  bounds: [Vector2, Vector2],
+  [Vx, Vy]: Vector2,
+  [Rx, Ry]: Vector2
+): Vector2 {
   const [[X0, X1], [Y0, Y1]] = bounds;
-  return [rubberbandIfOutOfBounds(Vx, X0, X1, Rx), rubberbandIfOutOfBounds(Vy, Y0, Y1, Ry)];
-};
+  return [
+    rubberbandIfOutOfBounds(Vx, X0, X1, Rx),
+    rubberbandIfOutOfBounds(Vy, Y0, Y1, Ry),
+  ];
+}
 
 function getEventDetails(event: any) {
   const payload: any = {};
@@ -827,7 +897,7 @@ function getEventDetails(event: any) {
     Object.assign(payload, { shiftKey, altKey, metaKey, ctrlKey });
   }
   return payload;
-};
+}
 
 function selectAxis([dx, dy]: Vector2, threshold: number) {
   const absDx = Math.abs(dx);
@@ -840,77 +910,93 @@ function selectAxis([dx, dy]: Vector2, threshold: number) {
     return "y";
   }
   return undefined;
-};
+}
 
 function capitalize(string: string) {
   if (!string) return "";
   return string[0].toUpperCase() + string.slice(1);
-};
+}
 
 function toHandlerProp(device: string, action = "", capture: boolean = false) {
   const deviceProps = EVENT_TYPE_MAP[device];
   const actionKey = deviceProps ? deviceProps[action] || action : action;
-  return "on" + capitalize(device) + capitalize(actionKey) + (capture ? "Capture" : "");
-};
+  return (
+    "on" +
+    capitalize(device) +
+    capitalize(actionKey) +
+    (capture ? "Capture" : "")
+  );
+}
 
 function parseProp(prop: string) {
   let eventKey = prop.substring(2).toLowerCase();
   const passive = !!~eventKey.indexOf("passive");
   if (passive) eventKey = eventKey.replace("passive", "");
 
-  const captureKey = ["gotpointercapture", "lostpointercapture"].includes(eventKey) ? "capturecapture" : "capture";
+  const captureKey = ["gotpointercapture", "lostpointercapture"].includes(
+    eventKey
+  )
+    ? "capturecapture"
+    : "capture";
   // capture = true
   const capture = !!~eventKey.indexOf(captureKey);
   // pointermovecapture => pointermove
   if (capture) eventKey = eventKey.replace("capture", "");
   return { device: eventKey, capture, passive };
-};
+}
 
 function toDomEventType(device: string, action = "") {
   const deviceProps = EVENT_TYPE_MAP[device];
   const actionKey = deviceProps ? deviceProps[action] || action : action;
   return device + actionKey;
-};
+}
 
 function isTouch(event: UIEvent) {
   return "touches" in event;
-};
+}
 
 function getPointerType(event: UIEvent): PointerType {
   if (isTouch(event)) return "touch";
-  if ("pointerType" in event) return (event as PointerEvent).pointerType as PointerType;
+  if ("pointerType" in event)
+    return (event as PointerEvent).pointerType as PointerType;
   return "mouse";
-};
+}
 
 function getTouchList(event: TouchEvent) {
-  return event.type === "touchend" || event.type === "touchcancel" ? event.changedTouches : event.targetTouches;
-};
+  return event.type === "touchend" || event.type === "touchcancel"
+    ? event.changedTouches
+    : event.targetTouches;
+}
 
 function getValueEvent<EventType extends TouchEvent | PointerEvent>(
   event: EventType
 ): EventType extends TouchEvent ? Touch : PointerEvent {
   return (isTouch(event) ? getTouchList(event as TouchEvent)[0] : event) as any;
-};
+}
 
 function getCurrentTargetTouchList(event: TouchEvent) {
   return Array.from(event.touches).filter(
-    (e) => e.target === event.currentTarget || (event.currentTarget as Node)?.contains?.(e.target as Node)
+    (e) =>
+      e.target === event.currentTarget ||
+      (event.currentTarget as Node)?.contains?.(e.target as Node)
   );
-};
+}
 
 function touchIds(event: TouchEvent) {
   return getCurrentTargetTouchList(event).map((touch) => touch.identifier);
-};
+}
 
 function pointerId(event: PointerEvent | TouchEvent) {
   const valueEvent = getValueEvent(event);
-  return isTouch(event) ? (valueEvent as Touch).identifier : (valueEvent as PointerEvent).pointerId;
-};
+  return isTouch(event)
+    ? (valueEvent as Touch).identifier
+    : (valueEvent as PointerEvent).pointerId;
+}
 
 function pointerValues(event: PointerEvent | TouchEvent): Vector2 {
   const valueEvent = getValueEvent(event);
   return [valueEvent.clientX, valueEvent.clientY];
-};
+}
 
 const identity = (v: Vector2) => v;
 
@@ -939,7 +1025,12 @@ const commonConfigResolver = {
     // eslint-disable-next-line eqeqeq
     if (value != null) return V.toVector(value);
   },
-  transform(this: InternalGestureOptions, value: any, _k: string, config: { shared: GenericOptions }) {
+  transform(
+    this: InternalGestureOptions,
+    value: any,
+    _k: string,
+    config: { shared: GenericOptions }
+  ) {
     const transform = value || config.shared.transform;
     this.hasCustomTransform = !!transform; // @ts-ignore
     if (import.meta.env.DEV) {
@@ -947,17 +1038,21 @@ const commonConfigResolver = {
       return (v: Vector2) => {
         const r = originalTransform(v);
         if (!isFinite(r[0]) || !isFinite(r[1])) {
-          console.warn(`config.transform() must produce a valid result, but it was: [${r[0]},${[1]}]`);
+          console.warn(
+            `config.transform() must produce a valid result, but it was: [${
+              r[0]
+            },${[1]}]`
+          );
         }
         return r;
-      }
+      };
     }
     return transform || identity;
   },
   threshold(value: any) {
     return V.toVector(value, 0);
-  }
-}
+  },
+};
 // @ts-ignore
 if (import.meta.env.DEV) {
   Object.assign(commonConfigResolver, {
@@ -980,7 +1075,7 @@ if (import.meta.env.DEV) {
         throw Error(`"initial" option has been renamed to "from".`);
       }
       return NaN;
-    }
+    },
   });
 }
 
@@ -1002,7 +1097,8 @@ const coordinatesConfigResolver = {
   bounds(
     value: DragBounds | ((state: State) => DragBounds) = {}
   ): (() => EventTarget | null) | HTMLElement | [Vector2, Vector2] {
-    if (typeof value === "function") { // @ts-ignore
+    if (typeof value === "function") {
+      // @ts-ignore
       return (state: State) => coordinatesConfigResolver.bounds(value(state));
     }
 
@@ -1014,13 +1110,18 @@ const coordinatesConfigResolver = {
       return value;
     }
 
-    const { left = -Infinity, right = Infinity, top = -Infinity, bottom = Infinity } = value as Bounds;
+    const {
+      left = -Infinity,
+      right = Infinity,
+      top = -Infinity,
+      bottom = Infinity,
+    } = value as Bounds;
 
     return [
       [left, right],
-      [top, bottom]
+      [top, bottom],
     ];
-  }
+  },
 };
 
 // drag config resolver
@@ -1039,7 +1140,12 @@ const dragConfigResolver = {
     if (SUPPORT.touch) return "touch";
     return "mouse";
   },
-  preventScrollAxis(this: InternalDragOptions, value: "x" | "y" | "xy", _k: string, { preventScroll }: DragConfig) {
+  preventScrollAxis(
+    this: InternalDragOptions,
+    value: "x" | "y" | "xy",
+    _k: string,
+    { preventScroll }: DragConfig
+  ) {
     this.preventScrollDelay =
       typeof preventScroll === "number"
         ? preventScroll
@@ -1049,7 +1155,12 @@ const dragConfigResolver = {
     if (!SUPPORT.touchscreen || preventScroll === false) return undefined;
     return value ? value : preventScroll !== undefined ? "y" : undefined;
   },
-  pointerCapture(this: InternalDragOptions, _v: any, _k: string, { pointer: { capture = true, buttons = 1 } = {} }) {
+  pointerCapture(
+    this: InternalDragOptions,
+    _v: any,
+    _k: string,
+    { pointer: { capture = true, buttons = 1 } = {} }
+  ) {
     this.pointerButtons = buttons;
     return !this.pointerLock && this.device === "pointer" && capture;
   },
@@ -1059,7 +1170,10 @@ const dragConfigResolver = {
     _k: string,
     { filterTaps = false, tapsThreshold = 3, axis = undefined }
   ) {
-    const threshold = V.toVector(value, filterTaps ? tapsThreshold : axis ? 1 : 0);
+    const threshold = V.toVector(
+      value,
+      filterTaps ? tapsThreshold : axis ? 1 : 0
+    );
     this.filterTaps = filterTaps;
     this.tapsThreshold = tapsThreshold;
     return threshold;
@@ -1071,7 +1185,7 @@ const dragConfigResolver = {
     return {
       velocity: this.transform(V.toVector(velocity)),
       distance: this.transform(V.toVector(distance)),
-      duration
+      duration,
     };
   },
   delay(value: number | boolean = 0) {
@@ -1087,8 +1201,8 @@ const dragConfigResolver = {
   axisThreshold(value: Record<PointerType, number>) {
     if (!value) return DEFAULT_DRAG_AXIS_THRESHOLD;
     return { ...DEFAULT_DRAG_AXIS_THRESHOLD, ...value };
-  }
-}
+  },
+};
 // @ts-ignore
 if (import.meta.env.DEV) {
   Object.assign(dragConfigResolver, {
@@ -1131,14 +1245,14 @@ if (import.meta.env.DEV) {
         );
       }
       return NaN;
-    }
-  })
-};
+    },
+  });
+}
 
 function registerAction(action: Action) {
   EngineMap.set(action.key, action.engine);
   ConfigResolverMap.set(action.key, action.resolver);
-};
+}
 
 /**
  * EventStore Class
@@ -1158,16 +1272,21 @@ class EventStore {
     options?: AddEventListenerOptions
   ) {
     const type = toDomEventType(device, action);
-    const eventOptions = { ...this._ctrl.config.shared.eventOptions, ...options };
+    const eventOptions = {
+      ...this._ctrl.config.shared.eventOptions,
+      ...options,
+    };
     element.addEventListener(type, handler, eventOptions);
-    this._listeners.push(() => element.removeEventListener(type, handler, eventOptions));
+    this._listeners.push(() =>
+      element.removeEventListener(type, handler, eventOptions)
+    );
   }
 
   clean() {
     this._listeners.forEach((remove) => remove());
     this._listeners = [];
   }
-};
+}
 
 /**
  * TimeoutStore Class
@@ -1194,7 +1313,7 @@ class TimeoutStore {
     this._timeouts.forEach((timeout) => void window.clearTimeout(timeout));
     this._timeouts.clear();
   }
-};
+}
 
 /**
  * Controller Class
@@ -1223,8 +1342,8 @@ class Controller {
       shiftKey: false,
       metaKey: false,
       ctrlKey: false,
-      altKey: false
-    }
+      altKey: false,
+    },
   } as State;
 
   constructor(handlers: InternalHandlers) {
@@ -1235,10 +1354,12 @@ class Controller {
    */
   setEventIds(event: TouchEvent | PointerEvent) {
     if (isTouch(event)) {
-      this.touchIds = new Set(touchIds(event as TouchEvent))
+      this.touchIds = new Set(touchIds(event as TouchEvent));
     } else if ("pointerId" in event) {
-      if (event.type === "pointerup" || event.type === "pointercancel") this.pointerIds.delete(event.pointerId)
-      else if (event.type === "pointerdown") this.pointerIds.add(event.pointerId)
+      if (event.type === "pointerup" || event.type === "pointercancel")
+        this.pointerIds.delete(event.pointerId);
+      else if (event.type === "pointerdown")
+        this.pointerIds.add(event.pointerId);
     }
   }
   /**
@@ -1259,43 +1380,43 @@ class Controller {
    * destroyed (in React, when the component is unmounted.)
    */
   clean() {
-    this._targetEventStore.clean()
+    this._targetEventStore.clean();
     for (const key of this.gestures) {
-      this.gestureEventStores[key]!.clean()
-      this.gestureTimeoutStores[key]!.clean()
+      this.gestureEventStores[key]!.clean();
+      this.gestureTimeoutStores[key]!.clean();
     }
   }
   /**
    * Executes side effects (attaching listeneds to a `config.target`). Ran on each render.
    */
   effect() {
-    if (this.config.shared.target) this.bind()
-    return () => this._targetEventStore.clean()
+    if (this.config.shared.target) this.bind();
+    return () => this._targetEventStore.clean();
   }
   /**
    * The bind function that can be returned by the gesture handler (a hook in React for example.)
    * @param args
    */
   bind(...args: any[]) {
-    const sharedConfig = this.config.shared
-    const eventOptions = sharedConfig.eventOptions
-    const props: any = {}
+    const sharedConfig = this.config.shared;
+    const eventOptions = sharedConfig.eventOptions;
+    const props: any = {};
 
-    let target
+    let target;
     if (sharedConfig.target) {
-      target = sharedConfig.target()
+      target = sharedConfig.target();
       // if target is undefined let's stop
-      if (!target) return
+      if (!target) return;
     }
 
-    const bindFunction = bindToProps(props, eventOptions, !!target)
+    const bindFunction = bindToProps(props, eventOptions, !!target);
 
     if (sharedConfig.enabled) {
       // Adding gesture handlers
       for (const gestureKey of this.gestures) {
         if (this.config[gestureKey]!.enabled) {
-          const Engine = EngineMap.get(gestureKey)! // @ts-ignore
-          new Engine(this, args, gestureKey).bind(bindFunction)
+          const Engine = EngineMap.get(gestureKey)!; // @ts-ignore
+          new Engine(this, args, gestureKey).bind(bindFunction);
         }
       }
 
@@ -1304,29 +1425,37 @@ class Controller {
         bindFunction(
           eventKey,
           "", // @ts-ignore
-          (event) => this.nativeHandlers[eventKey]({ ...this.state.shared, event, args }),
+          (event) =>
+            this.nativeHandlers[eventKey]({
+              ...this.state.shared,
+              event,
+              args,
+            }),
           undefined,
           true
-        )
+        );
       }
     }
 
     // If target isn't set, we return an object that contains gesture handlers
     // mapped to props handler event keys.
     for (const handlerProp in props) {
-      props[handlerProp] = chain(...props[handlerProp])
+      props[handlerProp] = chain(...props[handlerProp]);
     }
 
     // When target isn't specified then return hanlder props.
-    if (!target) return props
+    if (!target) return props;
 
     // When target is specified, then add listeners to the controller target store.
     for (const handlerProp in props) {
-      const { device, capture, passive } = parseProp(handlerProp)
-      this._targetEventStore.add(target, device, "", props[handlerProp], { capture, passive })
+      const { device, capture, passive } = parseProp(handlerProp);
+      this._targetEventStore.add(target, device, "", props[handlerProp], {
+        capture,
+        passive,
+      });
     }
   }
-};
+}
 
 /**
  * Engine Class
@@ -1441,7 +1570,12 @@ abstract class Engine<Key extends GestureKey> {
 
   reset() {
     const { state, shared, ingKey, args } = this;
-    shared[ingKey] = state._active = state.active = state._blocked = state._force = false;
+    shared[ingKey] =
+      state._active =
+      state.active =
+      state._blocked =
+      state._force =
+        false;
     state._step = [false, false];
     state.intentional = false;
     state._movement = [0, 0];
@@ -1509,95 +1643,103 @@ abstract class Engine<Key extends GestureKey> {
    * @param event
    */
   compute(event?: NonUndefined<State[Key]>["event"]) {
-    const { state, config, shared } = this
-    state.args = this.args
+    const { state, config, shared } = this;
+    state.args = this.args;
 
-    let dt = 0
+    let dt = 0;
 
     if (event) {
       // sets the shared state with event properties
-      state.event = event
+      state.event = event;
       // if config.preventDefault is true, then preventDefault
-      if (config.preventDefault && event.cancelable) state.event.preventDefault()
-      state.type = event.type
-      shared.touches = this.ctrl.pointerIds.size || this.ctrl.touchIds.size
-      shared.locked = !!document.pointerLockElement
-      Object.assign(shared, getEventDetails(event))
-      shared.down = shared.pressed = shared.buttons % 2 === 1 || shared.touches > 0
+      if (config.preventDefault && event.cancelable)
+        state.event.preventDefault();
+      state.type = event.type;
+      shared.touches = this.ctrl.pointerIds.size || this.ctrl.touchIds.size;
+      shared.locked = !!document.pointerLockElement;
+      Object.assign(shared, getEventDetails(event));
+      shared.down = shared.pressed =
+        shared.buttons % 2 === 1 || shared.touches > 0;
 
       // sets time stamps
-      dt = event.timeStamp - state.timeStamp
-      state.timeStamp = event.timeStamp
-      state.elapsedTime = state.timeStamp - state.startTime
+      dt = event.timeStamp - state.timeStamp;
+      state.timeStamp = event.timeStamp;
+      state.elapsedTime = state.timeStamp - state.startTime;
     }
 
     // only compute _distance if the state is active otherwise we might compute it
     // twice when the gesture ends because state._delta wouldn't have changed on the last frame.
     if (state._active) {
-      const _absoluteDelta = state._delta.map(Math.abs) as Vector2
-      V.addTo(state._distance, _absoluteDelta)
+      const _absoluteDelta = state._delta.map(Math.abs) as Vector2;
+      V.addTo(state._distance, _absoluteDelta);
     }
 
     // let's run intentionality check.
-    if (this.axisIntent) this.axisIntent(event)
+    if (this.axisIntent) this.axisIntent(event);
 
     // _movement is calculated by each gesture engine
-    const [_m0, _m1] = state._movement
-    const [t0, t1] = config.threshold
+    const [_m0, _m1] = state._movement;
+    const [t0, t1] = config.threshold;
 
-    const { _step, values } = state
+    const { _step, values } = state;
 
     if (config.hasCustomTransform) {
       // When the user is using a custom transform, we're using `_step` to store
       // the first value passing the threshold.
-      if (_step[0] === false) _step[0] = Math.abs(_m0) >= t0 && values[0]
-      if (_step[1] === false) _step[1] = Math.abs(_m1) >= t1 && values[1]
+      if (_step[0] === false) _step[0] = Math.abs(_m0) >= t0 && values[0];
+      if (_step[1] === false) _step[1] = Math.abs(_m1) >= t1 && values[1];
     } else {
       // `_step` will hold the threshold at which point the gesture was triggered.
       // The threshold is signed depending on which direction triggered it.
-      if (_step[0] === false) _step[0] = Math.abs(_m0) >= t0 && Math.sign(_m0) * t0
-      if (_step[1] === false) _step[1] = Math.abs(_m1) >= t1 && Math.sign(_m1) * t1
+      if (_step[0] === false)
+        _step[0] = Math.abs(_m0) >= t0 && Math.sign(_m0) * t0;
+      if (_step[1] === false)
+        _step[1] = Math.abs(_m1) >= t1 && Math.sign(_m1) * t1;
     } // @ts-ignore
-    state.intentional = _step[0] !== false || _step[1] !== false
+    state.intentional = _step[0] !== false || _step[1] !== false;
 
-    if (!state.intentional) return
+    if (!state.intentional) return;
 
-    const movement: Vector2 = [0, 0]
+    const movement: Vector2 = [0, 0];
 
     if (config.hasCustomTransform) {
-      const [v0, v1] = values // @ts-ignore
-      movement[0] = _step[0] !== false ? v0 - _step[0] : 0 // @ts-ignore
-      movement[1] = _step[1] !== false ? v1 - _step[1] : 0
-    } else { // @ts-ignore
-      movement[0] = _step[0] !== false ? _m0 - _step[0] : 0 // @ts-ignore
-      movement[1] = _step[1] !== false ? _m1 - _step[1] : 0
+      const [v0, v1] = values; // @ts-ignore
+      movement[0] = _step[0] !== false ? v0 - _step[0] : 0; // @ts-ignore
+      movement[1] = _step[1] !== false ? v1 - _step[1] : 0;
+    } else {
+      // @ts-ignore
+      movement[0] = _step[0] !== false ? _m0 - _step[0] : 0; // @ts-ignore
+      movement[1] = _step[1] !== false ? _m1 - _step[1] : 0;
     }
 
-    if (this.restrictToAxis && !state._blocked) this.restrictToAxis(movement)
+    if (this.restrictToAxis && !state._blocked) this.restrictToAxis(movement);
 
-    const previousOffset = state.offset
+    const previousOffset = state.offset;
 
-    const gestureIsActive = (state._active && !state._blocked) || state.active
+    const gestureIsActive = (state._active && !state._blocked) || state.active;
 
     if (gestureIsActive) {
-      state.first = state._active && !state.active
-      state.last = !state._active && state.active
-      state.active = shared[this.ingKey] = state._active
+      state.first = state._active && !state.active;
+      state.last = !state._active && state.active;
+      state.active = shared[this.ingKey] = state._active;
 
       if (event) {
         if (state.first) {
-          if ("bounds" in config) state._bounds = call(config.bounds, state)
-          if (this.setup) this.setup()
+          if ("bounds" in config) state._bounds = call(config.bounds, state);
+          if (this.setup) this.setup();
         }
 
-        state.movement = movement
-        this.computeOffset()
+        state.movement = movement;
+        this.computeOffset();
       }
     }
 
-    const [ox, oy] = state.offset
-    const [[x0, x1], [y0, y1]] = state._bounds
-    state.overflow = [ox < x0 ? -1 : ox > x1 ? 1 : 0, oy < y0 ? -1 : oy > y1 ? 1 : 0]
+    const [ox, oy] = state.offset;
+    const [[x0, x1], [y0, y1]] = state._bounds;
+    state.overflow = [
+      ox < x0 ? -1 : ox > x1 ? 1 : 0,
+      oy < y0 ? -1 : oy > y1 ? 1 : 0,
+    ];
 
     // _movementBound will store the latest _movement value
     // before it went off bounds.
@@ -1605,31 +1747,33 @@ abstract class Engine<Key extends GestureKey> {
       ? state._movementBound[0] === false
         ? state._movement[0]
         : state._movementBound[0]
-      : false
+      : false;
 
     state._movementBound[1] = state.overflow[1]
       ? state._movementBound[1] === false
         ? state._movement[1]
         : state._movementBound[1]
-      : false
+      : false;
     // @ts-ignore
-    const rubberband: Vector2 = state._active ? config.rubberband || [0, 0] : [0, 0]
-    state.offset = computeRubberband(state._bounds, state.offset, rubberband)
-    state.delta = V.sub(state.offset, previousOffset)
+    const rubberband: Vector2 = state._active
+      ? config.rubberband || [0, 0]
+      : [0, 0];
+    state.offset = computeRubberband(state._bounds, state.offset, rubberband);
+    state.delta = V.sub(state.offset, previousOffset);
 
-    this.computeMovement()
+    this.computeMovement();
     // before last kinematics delay is 32
     if (gestureIsActive && (!state.last || dt > 32)) {
-      state.delta = V.sub(state.offset, previousOffset)
-      const absoluteDelta = state.delta.map(Math.abs) as Vector2
+      state.delta = V.sub(state.offset, previousOffset);
+      const absoluteDelta = state.delta.map(Math.abs) as Vector2;
 
-      V.addTo(state.distance, absoluteDelta)
-      state.direction = state.delta.map(Math.sign) as Vector2
-      state._direction = state._delta.map(Math.sign) as Vector2
+      V.addTo(state.distance, absoluteDelta);
+      state.direction = state.delta.map(Math.sign) as Vector2;
+      state._direction = state._delta.map(Math.sign) as Vector2;
 
       if (!state.first && dt > 0) {
         // calculates kinematics unless the gesture starts or ends
-        state.velocity = [absoluteDelta[0] / dt, absoluteDelta[1] / dt]
+        state.velocity = [absoluteDelta[0] / dt, absoluteDelta[1] / dt];
       }
     }
   }
@@ -1645,9 +1789,18 @@ abstract class Engine<Key extends GestureKey> {
 
     // we don't trigger the handler if the gesture is blocked or non intentional,
     // unless the `_force` flag was set or the `triggerAllEvents` option was set to true in the config.
-    if ((state._blocked || !state.intentional) && !state._force && !config.triggerAllEvents) return;
+    if (
+      (state._blocked || !state.intentional) &&
+      !state._force &&
+      !config.triggerAllEvents
+    )
+      return;
     // @ts-ignore
-    const memo = this.handler({ ...shared, ...state, [this.aliasKey]: state.values });
+    const memo = this.handler({
+      ...shared,
+      ...state,
+      [this.aliasKey]: state.values,
+    });
 
     // Sets memo to the returned value of the handler (unless it's  undefined)
     if (memo !== undefined) state.memo = memo;
@@ -1659,12 +1812,14 @@ abstract class Engine<Key extends GestureKey> {
     this.eventStore.clean();
     this.timeoutStore.clean();
   }
-};
+}
 
 /**
  * CoordinatesEngine Class
  */
-abstract class CoordinatesEngine<Key extends CoordinatesKey> extends Engine<Key> {
+abstract class CoordinatesEngine<
+  Key extends CoordinatesKey
+> extends Engine<Key> {
   aliasKey = "xy";
 
   reset() {
@@ -1691,7 +1846,9 @@ abstract class CoordinatesEngine<Key extends CoordinatesKey> extends Engine<Key>
 
     if (!state.axis && event) {
       const threshold =
-        typeof config.axisThreshold === "object" ? config.axisThreshold[getPointerType(event)] : config.axisThreshold;
+        typeof config.axisThreshold === "object"
+          ? config.axisThreshold[getPointerType(event)]
+          : config.axisThreshold;
 
       state.axis = selectAxis(state._movement, threshold);
     }
@@ -1700,7 +1857,8 @@ abstract class CoordinatesEngine<Key extends CoordinatesKey> extends Engine<Key>
     // - config.lockDirection or config.axis was set but axis isn't detected yet
     // - config.axis was set but is different than detected axis
     state._blocked =
-      ((config.lockDirection || !!config.axis) && !state.axis) || (!!config.axis && config.axis !== state.axis);
+      ((config.lockDirection || !!config.axis) && !state.axis) ||
+      (!!config.axis && config.axis !== state.axis);
   }
 
   restrictToAxis(v: Vector2) {
@@ -1715,7 +1873,7 @@ abstract class CoordinatesEngine<Key extends CoordinatesKey> extends Engine<Key>
       }
     }
   }
-};
+}
 
 /**
  * DragEngine Class
@@ -1743,14 +1901,19 @@ class DragEngine extends CoordinatesEngine<"drag"> {
 
     if (state._bounds instanceof HTMLElement) {
       const boundRect = state._bounds.getBoundingClientRect();
-      const targetRect = (state.currentTarget as HTMLElement).getBoundingClientRect();
+      const targetRect = (
+        state.currentTarget as HTMLElement
+      ).getBoundingClientRect();
       const _bounds = {
         left: boundRect.left - targetRect.left + state.offset[0],
         right: boundRect.right - targetRect.right + state.offset[0],
         top: boundRect.top - targetRect.top + state.offset[1],
         bottom: boundRect.bottom - targetRect.bottom + state.offset[1],
-      }
-      state._bounds = coordinatesConfigResolver.bounds(_bounds) as [Vector2, Vector2];
+      };
+      state._bounds = coordinatesConfigResolver.bounds(_bounds) as [
+        Vector2,
+        Vector2
+      ];
     }
   }
 
@@ -1767,7 +1930,8 @@ class DragEngine extends CoordinatesEngine<"drag"> {
   }
 
   setActive() {
-    this.state._active = this.state._pointerActive || this.state._keyboardActive;
+    this.state._active =
+      this.state._pointerActive || this.state._keyboardActive;
   }
 
   // superseeds Engine clean function
@@ -1791,7 +1955,8 @@ class DragEngine extends CoordinatesEngine<"drag"> {
         : // If the user submits a number as pointer.buttons, refuse the drag if
           // config.pointerButtons is different than `-1` and if event.buttons
           // doesn't match the combination.
-          config.pointerButtons !== -1 && config.pointerButtons !== event.buttons)
+          config.pointerButtons !== -1 &&
+          config.pointerButtons !== event.buttons)
     )
       return;
 
@@ -1799,7 +1964,7 @@ class DragEngine extends CoordinatesEngine<"drag"> {
     // We need to capture all pointer ids so that we can keep track of them when
     // they're released off the target
     if (config.pointerCapture) {
-      ;(event.target as HTMLElement).setPointerCapture(event.pointerId);
+      (event.target as HTMLElement).setPointerCapture(event.pointerId);
     }
 
     if (state._pointerActive) return;
@@ -1847,7 +2012,8 @@ class DragEngine extends CoordinatesEngine<"drag"> {
 
     // if the event has the same timestamp as the previous event
     // note that checking type equality is ONLY for tests
-    if (state.type === event.type && event.timeStamp === state.timeStamp) return;
+    if (state.type === event.type && event.timeStamp === state.timeStamp)
+      return;
 
     const id = pointerId(event);
     if (state._pointerId !== undefined && id !== state._pointerId) return;
@@ -1874,7 +2040,10 @@ class DragEngine extends CoordinatesEngine<"drag"> {
 
     if (config.preventScrollAxis && !state._preventScroll) {
       if (state.axis) {
-        if (state.axis === config.preventScrollAxis || config.preventScrollAxis === "xy") {
+        if (
+          state.axis === config.preventScrollAxis ||
+          config.preventScrollAxis === "xy"
+        ) {
           state._active = false;
           this.clean();
           return;
@@ -1895,11 +2064,15 @@ class DragEngine extends CoordinatesEngine<"drag"> {
     this.ctrl.setEventIds(event);
     // We release the pointer id if it has pointer capture
     try {
-      if (this.config.pointerCapture && (event.target as HTMLElement).hasPointerCapture(event.pointerId)) {
+      if (
+        this.config.pointerCapture &&
+        (event.target as HTMLElement).hasPointerCapture(event.pointerId)
+      ) {
         // this shouldn't be necessary as it should be automatic when releasing the pointer
-        ;(event.target as HTMLElement).releasePointerCapture(event.pointerId);
+        (event.target as HTMLElement).releasePointerCapture(event.pointerId);
       }
-    } catch { // @ts-ignore
+    } catch {
+      // @ts-ignore
       if (import.meta.env.DEV) {
         console.warn(
           `If you see this message, it's likely that you're using an outdated version of "@react-three/fiber". \nPlease upgrade to the latest version.`
@@ -1955,7 +2128,10 @@ class DragEngine extends CoordinatesEngine<"drag"> {
       try {
         if (device === "pointer" && config.preventScrollDelay === undefined) {
           // @ts-ignore (warning for r3f)
-          const currentTarget = "uv" in event ? event.sourceEvent.currentTarget : event.currentTarget;
+          const currentTarget =
+            "uv" in event
+              ? event.sourceEvent.currentTarget
+              : event.currentTarget;
           const style = window.getComputedStyle(currentTarget);
           if (style.touchAction === "auto") {
             console.warn(
@@ -1970,18 +2146,36 @@ class DragEngine extends CoordinatesEngine<"drag"> {
     }
 
     if (config.pointerLock) {
-      ;(event.currentTarget as HTMLElement).requestPointerLock();
+      (event.currentTarget as HTMLElement).requestPointerLock();
     }
 
     if (!config.pointerCapture) {
-      this.eventStore.add(this.sharedConfig.window!, device, "change", this.pointerMove.bind(this));
-      this.eventStore.add(this.sharedConfig.window!, device, "end", this.pointerUp.bind(this));
-      this.eventStore.add(this.sharedConfig.window!, device, "cancel", this.pointerUp.bind(this));
+      this.eventStore.add(
+        this.sharedConfig.window!,
+        device,
+        "change",
+        this.pointerMove.bind(this)
+      );
+      this.eventStore.add(
+        this.sharedConfig.window!,
+        device,
+        "end",
+        this.pointerUp.bind(this)
+      );
+      this.eventStore.add(
+        this.sharedConfig.window!,
+        device,
+        "cancel",
+        this.pointerUp.bind(this)
+      );
     }
   }
 
   pointerClean() {
-    if (this.config.pointerLock && document.pointerLockElement === this.state.currentTarget) {
+    if (
+      this.config.pointerLock &&
+      document.pointerLockElement === this.state.currentTarget
+    ) {
       document.exitPointerLock();
     }
   }
@@ -1995,10 +2189,31 @@ class DragEngine extends CoordinatesEngine<"drag"> {
   setupScrollPrevention(event: PointerEvent) {
     persistEvent(event);
     // we add window listeners that will prevent the scroll when the user has started dragging
-    this.eventStore.add(this.sharedConfig.window!, "touch", "change", this.preventScroll.bind(this), { passive: false });
-    this.eventStore.add(this.sharedConfig.window!, "touch", "end", this.clean.bind(this));
-    this.eventStore.add(this.sharedConfig.window!, "touch", "cancel", this.clean.bind(this));
-    this.timeoutStore.add("startPointerDrag", this.startPointerDrag.bind(this), this.config.preventScrollDelay!, event);
+    this.eventStore.add(
+      this.sharedConfig.window!,
+      "touch",
+      "change",
+      this.preventScroll.bind(this),
+      { passive: false }
+    );
+    this.eventStore.add(
+      this.sharedConfig.window!,
+      "touch",
+      "end",
+      this.clean.bind(this)
+    );
+    this.eventStore.add(
+      this.sharedConfig.window!,
+      "touch",
+      "cancel",
+      this.clean.bind(this)
+    );
+    this.timeoutStore.add(
+      "startPointerDrag",
+      this.startPointerDrag.bind(this),
+      this.config.preventScrollDelay!,
+      event
+    );
   }
 
   setupDelayTrigger(event: PointerEvent) {
@@ -2007,14 +2222,15 @@ class DragEngine extends CoordinatesEngine<"drag"> {
       "dragDelay",
       () => {
         // forces drag to start no matter the threshold when delay is reached
-        this.state._step = [0, 0]
-        this.startPointerDrag(event)
+        this.state._step = [0, 0];
+        this.startPointerDrag(event);
       },
       this.config.delay
     );
   }
 
-  keyDown(event: KeyboardEvent) { // @ts-ignore
+  keyDown(event: KeyboardEvent) {
+    // @ts-ignore
     const deltaFn = KEYS_DELTA_MAP[event.key];
     if (deltaFn) {
       const state = this.state;
@@ -2056,10 +2272,13 @@ class DragEngine extends CoordinatesEngine<"drag"> {
     bindFunction("key", "up", this.keyUp.bind(this));
 
     if (this.config.filterTaps) {
-      bindFunction("click", "", this.pointerClick.bind(this), { capture: true, passive: false });
+      bindFunction("click", "", this.pointerClick.bind(this), {
+        capture: true,
+        passive: false,
+      });
     }
   }
-};
+}
 
 /**
  * utility hook called by all gesture hooks and that will be responsible for the internals.
@@ -2086,7 +2305,7 @@ function useRecognizers<Config extends GenericOptions>(
     return ctrl.bind.bind(ctrl) as any;
   }
   return undefined as any;
-};
+}
 
 /**
  * useGestureDrag hook
@@ -2096,7 +2315,7 @@ export function useGestureDrag<
   Config extends UserDragConfig = UserDragConfig
 >(
   handler: Handler<"drag", EventType>, // the function fired every time the drag gesture updates
-  config: Config | {} = {}, // the config object including generic options and drag options
+  config: Config | {} = {} // the config object including generic options and drag options
 ) {
   const dragAction: Action = {
     key: "drag",
@@ -2105,4 +2324,4 @@ export function useGestureDrag<
   };
   registerAction(dragAction);
   return useRecognizers({ drag: handler }, config, "drag");
-};
+}

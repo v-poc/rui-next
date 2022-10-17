@@ -12,43 +12,27 @@ export type PageIndicatorProps = {
 
 // PageIndicator FC
 const PageIndicator: React.FC<PageIndicatorProps> = (props) => {
-  const {
-    prefixCls,
-    className,
-    total,
-    current,
-    color,
-  } = props;
+  const { prefixCls, className, total, current, color } = props;
 
   const wrapCls = classnames(
     prefixCls,
     className,
-    `${prefixCls}-color-${color}`,
+    `${prefixCls}-color-${color}`
   );
 
   const itemCls = (index: number) => {
-    return classnames(
-      `${prefixCls}-item`,
-      {
-        [`${prefixCls}-item-active`]: current === index,
-      }
-    );
+    return classnames(`${prefixCls}-item`, {
+      [`${prefixCls}-item-active`]: current === index,
+    });
   };
 
-  const items: ReactElement[] = new Array(total).fill("").map((n, idx) => (
-    <div
-      key={`indicator${idx}`}
-      className={itemCls(idx)}
-    ></div>
-  ));
+  const items: ReactElement[] = new Array(total)
+    .fill("")
+    .map((n, idx) => (
+      <div key={`indicator${idx}`} className={itemCls(idx)}></div>
+    ));
 
-  return (
-    <div
-      className={wrapCls}
-    >
-      {items}
-    </div>
-  );
+  return <div className={wrapCls}>{items}</div>;
 };
 
 PageIndicator.defaultProps = {

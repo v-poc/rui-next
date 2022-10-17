@@ -1,12 +1,20 @@
 import React, { useState } from "react";
-import type { ReactNode, CSSProperties, ImgHTMLAttributes, MouseEvent, SyntheticEvent } from "react";
+import type {
+  ReactNode,
+  CSSProperties,
+  ImgHTMLAttributes,
+  MouseEvent,
+  SyntheticEvent,
+} from "react";
 import classnames from "classnames";
 import useIsomorphicLayoutEffect from "../hooks/useIsomorphicLayoutEffect/index";
 import { Lazyload } from "../utils/Lazyload";
 import { getCSSLength } from "../utils/index";
 import createUpdateEffect from "../utils/createUpdateEffect";
 
-const useIsomorphicLayoutEffectHook = createUpdateEffect(useIsomorphicLayoutEffect);
+const useIsomorphicLayoutEffectHook = createUpdateEffect(
+  useIsomorphicLayoutEffect
+);
 
 const DefaultImage = () => (
   <svg viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
@@ -63,7 +71,7 @@ export type ImageProps = {
   onLoad?: (e: SyntheticEvent<HTMLImageElement, Event>) => void;
 } & NativeProps;
 
-export const Image: React.FC<ImageProps> = ((props) => {
+export const Image: React.FC<ImageProps> = (props) => {
   const {
     prefixCls,
     className,
@@ -86,20 +94,19 @@ export const Image: React.FC<ImageProps> = ((props) => {
     onLoad,
   } = props;
 
-  let {
-    fallback,
-    placeholder,
-    src,
-    srcSet,
-  } = props;
+  let { fallback, placeholder, src, srcSet } = props;
   if (!fallback) {
     fallback = (
-      <div className={`${prefixCls}-tip`}><BrokenImage /></div>
+      <div className={`${prefixCls}-tip`}>
+        <BrokenImage />
+      </div>
     );
   }
   if (!placeholder) {
     placeholder = (
-      <div className={`${prefixCls}-tip`}><DefaultImage /></div>
+      <div className={`${prefixCls}-tip`}>
+        <DefaultImage />
+      </div>
     );
   }
 
@@ -131,12 +138,10 @@ export const Image: React.FC<ImageProps> = ((props) => {
       style={wrapStyle}
       onClick={onContainerClick}
     >
-      {lazy && !isInit && (
-        <Lazyload
-          onActive={() => setIsInit(true)}
-        />
-      )}
-      {isFailed ? fallback : (
+      {lazy && !isInit && <Lazyload onActive={() => setIsInit(true)} />}
+      {isFailed ? (
+        fallback
+      ) : (
         <>
           {!isLoaded && placeholder}
           <img
@@ -169,7 +174,7 @@ export const Image: React.FC<ImageProps> = ((props) => {
       )}
     </div>
   );
-});
+};
 
 Image.defaultProps = {
   prefixCls: "r-image",

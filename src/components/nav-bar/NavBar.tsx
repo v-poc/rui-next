@@ -27,38 +27,20 @@ const NavBar: React.FC<NavBarProps> = (props) => {
     ...restProps
   } = props;
 
-  const wrapCls = classnames(
-    prefixCls,
-    className,
-    `${prefixCls}-${mode}`
-  );
+  const wrapCls = classnames(prefixCls, className, `${prefixCls}-${mode}`);
 
   return (
-    <div
-      className={wrapCls}
-      {...restProps}
-    >
-      <div
-        className={`${prefixCls}-left`}
-        role="button"
-        onClick={onLeftClick}
-      >
+    <div className={wrapCls} {...restProps}>
+      <div className={`${prefixCls}-left`} role="button" onClick={onLeftClick}>
         {icon && (
-          <span
-            className={`${prefixCls}-left-icon`}
-            aria-hidden="true"
-          >
+          <span className={`${prefixCls}-left-icon`} aria-hidden="true">
             {icon}
           </span>
         )}
         {leftContent}
       </div>
-      <div className={`${prefixCls}-title`}>
-        {children}
-      </div>
-      <div className={`${prefixCls}-right`}>
-        {rightContent}
-      </div>
+      <div className={`${prefixCls}-title`}>{children}</div>
+      <div className={`${prefixCls}-right`}>{rightContent}</div>
     </div>
   );
 };

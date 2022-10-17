@@ -16,35 +16,35 @@ type Options<T extends Target = Target> = {
 function useEventListener<K extends keyof HTMLElementEventMap>(
   eventName: K,
   handler: (ev: HTMLElementEventMap[K]) => void,
-  options?: Options<HTMLElement>,
+  options?: Options<HTMLElement>
 ): void;
 
 // Element
 function useEventListener<K extends keyof ElementEventMap>(
   eventName: K,
   handler: (ev: ElementEventMap[K]) => void,
-  options?: Options<Element>,
+  options?: Options<Element>
 ): void;
 
 // Document
 function useEventListener<K extends keyof DocumentEventMap>(
   eventName: K,
   handler: (ev: DocumentEventMap[K]) => void,
-  options?: Options<Document>,
+  options?: Options<Document>
 ): void;
 
 // Window
 function useEventListener<K extends keyof WindowEventMap>(
   eventName: K,
   handler: (ev: WindowEventMap[K]) => void,
-  options?: Options<Window>,
+  options?: Options<Window>
 ): void;
 
 // normal
 function useEventListener(
   eventName: string,
   handler: Function,
-  options: Options,
+  options: Options
 ): void;
 
 // useEventListener hook
@@ -66,7 +66,7 @@ function useEventListener(
     }
 
     const eventListener = (
-      event: Event,
+      event: Event
     ): EventListenerOrEventListenerObject | AddEventListenerOptions => {
       return handlerRef.current && handlerRef.current(event);
     };

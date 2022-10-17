@@ -12,32 +12,18 @@ const Example = () => {
       <Divider contentAlign="left">
         Basic mask with default 55% opacity (click screen to close mask)
       </Divider>
-      <Button
-        size="small"
-        inline
-        onClick={() => setBgVisible(true)}
-      >
+      <Button size="small" inline onClick={() => setBgVisible(true)}>
         Click to show background mask
       </Button>
-      <Mask
-        visible={bgVisible}
-        onClickMask={() => setBgVisible(false)}
-      />
+      <Mask visible={bgVisible} onClickMask={() => setBgVisible(false)} />
 
       <Divider contentAlign="left">
         Basic mask with content (click screen to close mask)
       </Divider>
-      <Button
-        size="small"
-        inline
-        onClick={() => setVisible(true)}
-      >
+      <Button size="small" inline onClick={() => setVisible(true)}>
         Click to show mask with content
       </Button>
-      <Mask
-        visible={visible}
-        onClickMask={() => setVisible(false)}
-      >
+      <Mask visible={visible} onClickMask={() => setVisible(false)}>
         <div className="mask-example-content">
           <Avatar
             src="https://nikoni.top/images/others/img04.png"

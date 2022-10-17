@@ -60,19 +60,11 @@ export const Toast: React.FC<ToastProps> = (props) => {
     switch (icon) {
       case "success":
         res = (
-          <Icon
-            type="check-circle-o"
-            className={`${prefixCls}-icon-success`}
-          />
+          <Icon type="check-circle-o" className={`${prefixCls}-icon-success`} />
         );
         break;
       case "fail":
-        res = (
-          <Icon
-            type="cross-circle"
-            className={`${prefixCls}-icon-fail`}
-          />
-        );
+        res = <Icon type="cross-circle" className={`${prefixCls}-icon-fail`} />;
         break;
       case "loading":
         res = (
@@ -85,15 +77,12 @@ export const Toast: React.FC<ToastProps> = (props) => {
       default:
         res = icon;
         break;
-    };
+    }
 
     return res;
   }, [icon]);
 
-  const maskCls = classnames(
-    `${prefixCls}-mask`,
-    maskClassName
-  );
+  const maskCls = classnames(`${prefixCls}-mask`, maskClassName);
 
   const innerCls = classnames(
     `${prefixCls}-main`,
@@ -122,14 +111,8 @@ export const Toast: React.FC<ToastProps> = (props) => {
             top: topStyle,
           }}
         >
-          {iconNode && (
-            <div className={`${prefixCls}-icon`}>
-              {iconNode}
-            </div>
-          )}
-          <AutoJustifyContent>
-            {content}
-          </AutoJustifyContent>
+          {iconNode && <div className={`${prefixCls}-icon`}>{iconNode}</div>}
+          <AutoJustifyContent>{content}</AutoJustifyContent>
         </div>
       </div>
     </Mask>

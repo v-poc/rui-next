@@ -14,28 +14,16 @@ const Example = () => {
 
   return (
     <div className="search-bar-example-wrapper">
-      <Divider contentAlign="left">
-        Basic SearchBar with cancel button
-      </Divider>
-      <SearchBar
-        placeholder="Please input content"
-        showCancel
-      />
+      <Divider contentAlign="left">Basic SearchBar with cancel button</Divider>
+      <SearchBar placeholder="Please input content" showCancel />
 
       <Divider contentAlign="left">
         Basic SearchBar without cancel button
       </Divider>
-      <SearchBar
-        placeholder="Please input content"
-      />
+      <SearchBar placeholder="Please input content" />
 
-      <Divider contentAlign="left">
-        SearchBar always with cancel button
-      </Divider>
-      <SearchBar
-        placeholder="Please input content"
-        showCancel={() => true}
-      />
+      <Divider contentAlign="left">SearchBar always with cancel button</Divider>
+      <SearchBar placeholder="Please input content" showCancel={() => true} />
 
       <Divider contentAlign="left">
         SearchBar with events (refer `RUI-log` in Console log)
@@ -68,7 +56,8 @@ const Example = () => {
       >
         Test to clear content
       </Button>
-      <br /><br />
+      <br />
+      <br />
     </div>
   );
 };

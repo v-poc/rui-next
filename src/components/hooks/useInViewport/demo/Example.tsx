@@ -15,13 +15,11 @@ const Example = () => {
 
   const wrapStyle = {
     color: isInViewport ? "green" : "red",
-  }
+  };
 
   return (
     <>
-      <Divider
-        contentAlign="left"
-      >
+      <Divider contentAlign="left">
         Observe the visible area ratio of element target
       </Divider>
       <Button
@@ -32,34 +30,23 @@ const Example = () => {
       >
         Test scroll within viewport
       </Button>
-      <br /><br />
-      <div
-        ref={containerRef}
-        className="viewport-example-wrapper"
-      >
+      <br />
+      <br />
+      <div ref={containerRef} className="viewport-example-wrapper">
         The root container
         <div style={{ height }}>
-          <div
-            ref={targetRef}
-            className="viewport-example-target"
-          >
+          <div ref={targetRef} className="viewport-example-target">
             target element
           </div>
         </div>
       </div>
-      <Divider
-        contentAlign="left"
-      >
+      <Divider contentAlign="left">
         <div style={wrapStyle}>
           in viewport: {isInViewport ? "visible" : "hidden"}
         </div>
       </Divider>
-      <Divider
-        contentAlign="left"
-      >
-        <div style={wrapStyle}>
-          ratio: {ratio}
-        </div>
+      <Divider contentAlign="left">
+        <div style={wrapStyle}>ratio: {ratio}</div>
       </Divider>
     </>
   );

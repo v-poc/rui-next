@@ -19,7 +19,7 @@ const Example = () => {
   const delaySetDocVisibility = (v: DocumentVisibilityState) => {
     setTimeout(() => setDocVisibility(v), 800);
   };
-  
+
   // useVisibilityChange hook
   useVisibilityChange((v: boolean) => {
     logInfo(`visibilityChange - visible: ${v}`);
@@ -48,21 +48,23 @@ const Example = () => {
     delaySetDocVisibility("visible");
   }, []);
 
-  const imgEl = visible
-    ? <Icon type="check-circle" size="lg" color="green" />
-    : <Icon type="ellipsis-circle" size="lg" color="grey" />;
+  const imgEl = visible ? (
+    <Icon type="check-circle" size="lg" color="green" />
+  ) : (
+    <Icon type="ellipsis-circle" size="lg" color="grey" />
+  );
 
   return (
     <>
-      <Divider
-        contentAlign="left"
-      >
+      <Divider contentAlign="left">
         Visibility change detection (switch browser tab to have a look)
       </Divider>
       <Result
         img={imgEl}
         title="Document visibility"
-        message={`Detect visible result: ${visible ? "true" : "-"}, document visibility state: ${docVisibility}`}
+        message={`Detect visible result: ${
+          visible ? "true" : "-"
+        }, document visibility state: ${docVisibility}`}
       />
     </>
   );

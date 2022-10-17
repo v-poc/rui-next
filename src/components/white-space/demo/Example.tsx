@@ -3,10 +3,7 @@ import { WhiteSpace, Divider } from "rui-next";
 import "./index.less";
 
 // PlaceHolder FC
-const PlaceHolder = ({
-  className = "",
-  ...restProps
-}) => (
+const PlaceHolder = ({ className = "", ...restProps }) => (
   <div className={`${className} white-space-placeholder`} {...restProps}>
     Block
   </div>
@@ -15,9 +12,7 @@ const PlaceHolder = ({
 // Example FC
 const Example = () => (
   <>
-    <Divider contentAlign="left">
-      WhiteSpace vertical
-    </Divider>
+    <Divider contentAlign="left">WhiteSpace vertical</Divider>
     <WhiteSpace size="xs" />
     <PlaceHolder />
 
@@ -29,19 +24,23 @@ const Example = () => (
 
     <WhiteSpace size="lg" />
     <PlaceHolder />
-    
+
     <WhiteSpace size="xl" />
     <PlaceHolder />
 
     <br />
-    <Divider contentAlign="left">
-      WhiteSpace horizontal
-    </Divider>
-    <WhiteSpace vertical={false}><PlaceHolder /></WhiteSpace>
+    <Divider contentAlign="left">WhiteSpace horizontal</Divider>
+    <WhiteSpace vertical={false}>
+      <PlaceHolder />
+    </WhiteSpace>
     <br />
-    <WhiteSpace vertical={false} size="md"><PlaceHolder /></WhiteSpace>
+    <WhiteSpace vertical={false} size="md">
+      <PlaceHolder />
+    </WhiteSpace>
     <br />
-    <WhiteSpace vertical={false} size="sm"><PlaceHolder /></WhiteSpace>
+    <WhiteSpace vertical={false} size="sm">
+      <PlaceHolder />
+    </WhiteSpace>
   </>
 );
 

@@ -3,11 +3,8 @@ import { Grid, Divider } from "rui-next";
 import "./index.less";
 
 // PlaceHolder FC
-const PlaceHolder = ({
-  className = "",
-  ...restProps
-}) => (
-  <div className={`${className} placeholder`} {...restProps}>
+const PlaceHolder = ({ className = "", ...restProps }) => (
+  <div className={`${className} grid-example-placeholder`} {...restProps}>
     Block
   </div>
 );
@@ -15,15 +12,8 @@ const PlaceHolder = ({
 // Example FC
 const Example = () => (
   <>
-    <Divider
-      contentAlign="left"
-    >
-      Grid with item Span
-    </Divider>
-    <Grid
-      columns={3}
-      gap={3}
-    >
+    <Divider contentAlign="left">Grid with item Span</Divider>
+    <Grid columns={3} gap={3}>
       <Grid.Item span={3}>
         <PlaceHolder />
       </Grid.Item>

@@ -15,14 +15,10 @@ const Example = () => {
       </Divider>
       <Tag data-seed="seedId">DataSeed</Tag>
 
-      <Divider contentAlign="left">
-        Selected tag (Selectable type)
-      </Divider>
+      <Divider contentAlign="left">Selected tag (Selectable type)</Divider>
       <Tag selected>Selected</Tag>
 
-      <Divider contentAlign="left">
-        Disabled tag
-      </Divider>
+      <Divider contentAlign="left">Disabled tag</Divider>
       <Tag disabled>Disabled</Tag>
 
       <Divider contentAlign="left">
@@ -41,9 +37,7 @@ const Example = () => {
         Closable
       </Tag>
 
-      <Divider contentAlign="left">
-        Small tag (Readonly type)
-      </Divider>
+      <Divider contentAlign="left">Small tag (Readonly type)</Divider>
       <Tag small>Small size</Tag>
     </>
   );

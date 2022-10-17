@@ -11,7 +11,10 @@ import React, {
 import classnames from "classnames";
 import usePropsValue from "../hooks/usePropsValue/index";
 
-type NativeTextAreaProps = DetailedHTMLProps<TextareaHTMLAttributes<HTMLTextAreaElement>, HTMLTextAreaElement>;
+type NativeTextAreaProps = DetailedHTMLProps<
+  TextareaHTMLAttributes<HTMLTextAreaElement>,
+  HTMLTextAreaElement
+>;
 
 type PickNativeTextAreaProps = Pick<
   NativeTextAreaProps,
@@ -33,12 +36,9 @@ type AutoSizeType =
       maxRows?: number;
     };
 
-type ShowCountType = 
+type ShowCountType =
   | boolean
-  | ((
-      length: number,
-      maxLength?: number,
-    ) => ReactNode);
+  | ((length: number, maxLength?: number) => ReactNode);
 
 // TextAreaProps type
 export type TextAreaProps = PickNativeTextAreaProps & {
@@ -96,7 +96,7 @@ export const TextArea = forwardRef<TextAreaRef, TextAreaProps>((props, ref) => {
     ...props,
     value: value === null ? "" : value,
   });
-  
+
   const nativeTextAreaRef = useRef<HTMLTextAreaElement>(null);
   const compositionRef = useRef(false);
 
@@ -142,9 +142,7 @@ export const TextArea = forwardRef<TextAreaRef, TextAreaProps>((props, ref) => {
       res = showCount([...val].length, maxLength);
     } else if (showCount) {
       res = (
-        <div
-          className={`${prefixCls}-count`}
-        >
+        <div className={`${prefixCls}-count`}>
           {maxLength ? `${val.length}/${maxLength}` : val.length}
         </div>
       );
@@ -153,15 +151,10 @@ export const TextArea = forwardRef<TextAreaRef, TextAreaProps>((props, ref) => {
     return res;
   };
 
-  const wrapCls = classnames(
-    `${prefixCls}-wrapper`,
-    className,
-  );
+  const wrapCls = classnames(`${prefixCls}-wrapper`, className);
 
   return (
-    <div
-      className={wrapCls}
-    >
+    <div className={wrapCls}>
       <textarea
         ref={nativeTextAreaRef}
         autoComplete={autoComplete}

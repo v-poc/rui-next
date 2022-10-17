@@ -1,9 +1,9 @@
 // @import '../styles/mixins';
-@import '../styles/themes/default';
+@import "../styles/themes/default";
 
 @textAreaPrefixCls: r-text-area;
 
-.@{textAreaPrefixCls} { 
+.@{textAreaPrefixCls} {
   width: 100%;
   max-width: 100%;
   max-height: 100%;
@@ -28,35 +28,35 @@
     appearance: none;
     min-height: 1.5em;
     text-align: left;
-  
+
     &::placeholder {
-      color: #CCC;
+      color: #ccc;
       font-family: inherit;
     }
-  
+
     &:-webkit-autofill {
       background-color: transparent;
     }
-  
+
     &:disabled {
       color: #999;
       cursor: not-allowed;
       opacity: 1;
       -webkit-text-fill-color: #999;
     }
-  
+
     &:read-only {
       cursor: default;
     }
-  
+
     &:invalid {
       box-shadow: none;
     }
-  
+
     &::-ms-clear {
       display: none;
     }
-  
+
     &[readonly] {
       pointer-events: none;
     }

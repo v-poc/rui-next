@@ -24,20 +24,20 @@ import {
 
 function updateRef<T>(ref: Ref<T>, value: T) {
   if (ref) {
-    if (is.fun(ref)) ref(value)
-    else (ref as any).current = value
+    if (is.fun(ref)) ref(value);
+    else (ref as any).current = value;
   }
-  return value
-};
+  return value;
+}
 
 class PropsObserver {
   constructor(readonly update: () => void, readonly deps: Set<FluidValue>) {}
   eventObserved(event: FluidEvent) {
-    if (event.type == 'change') {
-      raf.write(this.update)
+    if (event.type == "change") {
+      raf.write(this.update);
     }
   }
-};
+}
 
 /** The transform-functions
  * (https://developer.mozilla.org/fr/docs/Web/CSS/transform-function)
@@ -49,7 +49,7 @@ const domTransforms = /^(matrix|translate|scale|rotate|skew)/;
 
 // These keys have "px" units by default
 const pxTransforms = /^(translate)/;
- 
+
 // These keys have "deg" units by default
 const degTransforms = /^(rotate|skew)/;
 
@@ -68,7 +68,7 @@ const addUnit = (value: Value, unit: string): string | 0 =>
  */
 const isValueIdentity = (value: OneOrMore<Value>, id: number): boolean =>
   is.arr(value)
-    ? value.every(v => isValueIdentity(v, id))
+    ? value.every((v) => isValueIdentity(v, id))
     : is.num(value)
     ? value === id
     : parseFloat(value) === id;
@@ -78,59 +78,59 @@ type Transforms = ((value: any) => [string, boolean])[];
 
 /** @internal */
 class FluidTransform extends FluidValue<string> {
-  protected _value: string | null = null
+  protected _value: string | null = null;
 
   constructor(readonly inputs: Inputs, readonly transforms: Transforms) {
-    super()
+    super();
   }
 
   get() {
-    return this._value || (this._value = this._get())
+    return this._value || (this._value = this._get());
   }
 
   protected _get() {
-    let transform = ''
-    let identity = true
+    let transform = "";
+    let identity = true;
     each(this.inputs, (input, i) => {
-      const arg1 = getFluidValue(input[0])
+      const arg1 = getFluidValue(input[0]);
       const [t, id] = this.transforms[i](
         is.arr(arg1) ? arg1 : input.map(getFluidValue)
-      )
-      transform += ' ' + t
-      identity = identity && id
-    })
-    return identity ? 'none' : transform
+      );
+      transform += " " + t;
+      identity = identity && id;
+    });
+    return identity ? "none" : transform;
   }
 
   // Start observing our inputs once we have an observer.
   protected observerAdded(count: number) {
     if (count == 1)
-      each(this.inputs, input =>
+      each(this.inputs, (input) =>
         each(
           input,
-          value => hasFluidValue(value) && addFluidObserver(value, this)
+          (value) => hasFluidValue(value) && addFluidObserver(value, this)
         )
-      )
+      );
   }
 
   // Stop observing our inputs once we have no observers.
   protected observerRemoved(count: number) {
     if (count == 0)
-      each(this.inputs, input =>
+      each(this.inputs, (input) =>
         each(
           input,
-          value => hasFluidValue(value) && removeFluidObserver(value, this)
+          (value) => hasFluidValue(value) && removeFluidObserver(value, this)
         )
-      )
+      );
   }
 
   eventObserved(event: FluidEvent) {
-    if (event.type == 'change') {
-      this._value = null
+    if (event.type == "change") {
+      this._value = null;
     }
-    callFluidObservers(this, event)
+    callFluidObservers(this, event);
   }
-};
+}
 
 /**
  * This AnimatedStyle will simplify animated components transforms by
@@ -143,60 +143,60 @@ export class AnimatedStyle extends AnimatedObject {
      * An array of arrays that contains the values (static or fluid)
      * used by each transform function.
      */
-    const inputs: Inputs = []
+    const inputs: Inputs = [];
     /**
      * An array of functions that take a list of values (static or fluid)
      * and returns (1) a CSS transform string and (2) a boolean that's true
      * when the transform has no effect (eg: an identity transform).
      */
-    const transforms: Transforms = []
+    const transforms: Transforms = [];
 
     // Combine x/y/z into translate3d
     if (x || y || z) {
-      inputs.push([x || 0, y || 0, z || 0])
+      inputs.push([x || 0, y || 0, z || 0]);
       transforms.push((xyz: Value[]) => [
         `translate3d(${xyz.map(v => addUnit(v, 'px')).join(',')})`, // prettier-ignore
         isValueIdentity(xyz, 0),
-      ])
+      ]);
     }
 
     // Pluck any other transform-related props
     eachProp(style, (value, key) => {
-      if (key === 'transform') {
-        inputs.push([value || ''])
-        transforms.push((transform: string) => [transform, transform === ''])
+      if (key === "transform") {
+        inputs.push([value || ""]);
+        transforms.push((transform: string) => [transform, transform === ""]);
       } else if (domTransforms.test(key)) {
-        delete style[key]
-        if (is.und(value)) return
+        delete style[key];
+        if (is.und(value)) return;
 
         const unit = pxTransforms.test(key)
-          ? 'px'
+          ? "px"
           : degTransforms.test(key)
-          ? 'deg'
-          : ''
+          ? "deg"
+          : "";
 
-        inputs.push(toArray(value))
+        inputs.push(toArray(value));
         transforms.push(
-          key === 'rotate3d'
+          key === "rotate3d"
             ? ([x, y, z, deg]: [number, number, number, Value]) => [
                 `rotate3d(${x},${y},${z},${addUnit(deg, unit)})`,
                 isValueIdentity(deg, 0),
               ]
             : (input: Value[]) => [
-                `${key}(${input.map(v => addUnit(v, unit)).join(',')})`,
-                isValueIdentity(input, key.startsWith('scale') ? 1 : 0),
+                `${key}(${input.map((v) => addUnit(v, unit)).join(",")})`,
+                isValueIdentity(input, key.startsWith("scale") ? 1 : 0),
               ]
-        )
+        );
       }
-    })
+    });
 
     if (inputs.length) {
-      style.transform = new FluidTransform(inputs, transforms)
+      style.transform = new FluidTransform(inputs, transforms);
     }
 
-    super(style)
+    super(style);
   }
-};
+}
 
 export const withAnimated = (Component: any, host: HostConfig) => {
   const hasInstance: boolean =
@@ -206,7 +206,7 @@ export const withAnimated = (Component: any, host: HostConfig) => {
     (Component.prototype && Component.prototype.isReactComponent);
 
   return forwardRef((givenProps: any, givenRef: Ref<any>) => {
-    const instanceRef = useRef<any>(null)
+    const instanceRef = useRef<any>(null);
 
     // The `hasInstance` value is constant, so we can safely avoid
     // the `useCallback` invocation when `hasInstance` is false.
@@ -214,61 +214,61 @@ export const withAnimated = (Component: any, host: HostConfig) => {
       hasInstance &&
       useCallback(
         (value: any) => {
-          instanceRef.current = updateRef(givenRef, value)
+          instanceRef.current = updateRef(givenRef, value);
         },
         [givenRef]
-      )
+      );
 
-    const [props, deps] = getAnimatedState(givenProps, host)
+    const [props, deps] = getAnimatedState(givenProps, host);
 
-    const forceUpdate = useForceUpdate()
+    const forceUpdate = useForceUpdate();
 
     const callback = () => {
-      const instance = instanceRef.current
+      const instance = instanceRef.current;
       if (hasInstance && !instance) {
         // Either this component was unmounted before changes could be
         // applied, or the wrapped component forgot to forward its ref.
-        return
+        return;
       }
 
       const didUpdate = instance
         ? host.applyAnimatedValues(instance, props.getValue(true))
-        : false
+        : false;
 
       // Re-render the component when native updates fail.
       if (didUpdate === false) {
-        forceUpdate()
+        forceUpdate();
       }
-    }
+    };
 
-    const observer = new PropsObserver(callback, deps)
+    const observer = new PropsObserver(callback, deps);
 
-    const observerRef = useRef<PropsObserver>()
+    const observerRef = useRef<PropsObserver>();
     useIsomorphicLayoutEffect(() => {
-      observerRef.current = observer
+      observerRef.current = observer;
 
       // Observe the latest dependencies.
-      each(deps, dep => addFluidObserver(dep, observer))
+      each(deps, (dep) => addFluidObserver(dep, observer));
 
       return () => {
         // Stop observing previous dependencies.
         if (observerRef.current) {
-          each(observerRef.current.deps, dep =>
+          each(observerRef.current.deps, (dep) =>
             removeFluidObserver(dep, observerRef.current!)
-          )
-          raf.cancel(observerRef.current.update)
+          );
+          raf.cancel(observerRef.current.update);
         }
-      }
-    })
+      };
+    });
 
-    useEffect(callback, [])
+    useEffect(callback, []);
     // Stop observing on unmount.
     useOnce(() => () => {
-      const observer = observerRef.current!
-      each(observer.deps, dep => removeFluidObserver(dep, observer))
-    })
+      const observer = observerRef.current!;
+      each(observer.deps, (dep) => removeFluidObserver(dep, observer));
+    });
 
-    const usedProps = host.getComponentProps(props.getValue())
+    const usedProps = host.getComponentProps(props.getValue());
     return <Component {...usedProps} ref={ref} />;
   });
 };

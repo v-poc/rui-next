@@ -14,21 +14,17 @@ type CornerProps = {
 const Corner: React.FC<CornerProps> = (props) => {
   const { className } = props;
   return (
-    <svg
-      className={className}
-      viewBox='0 0 30 30'
-    >
-      <g stroke='none' strokeWidth='1' fill='none' fillRule='evenodd'>
+    <svg className={className} viewBox="0 0 30 30">
+      <g stroke="none" strokeWidth="1" fill="none" fillRule="evenodd">
         <path
-          d='M30,0 C13.4314575,3.04359188e-15 -2.02906125e-15,13.4314575 0,30 L0,30 L0,0 Z'
-          fill='#FFF'
-          transform='translate(15.000000, 15.000000) scale(-1, -1) translate(-15.000000, -15.000000) '
+          d="M30,0 C13.4314575,3.04359188e-15 -2.02906125e-15,13.4314575 0,30 L0,30 L0,0 Z"
+          fill="#FFF"
+          transform="translate(15.000000, 15.000000) scale(-1, -1) translate(-15.000000, -15.000000) "
         />
       </g>
     </svg>
   );
 };
-
 
 // SideBarProps type
 export type SideBarProps = {
@@ -51,12 +47,12 @@ export const SideBar: React.FC<SideBarProps> = (props) => {
 
   const cornerTopCls = classnames(
     `${prefixCls}-item-corner`,
-    `${prefixCls}-item-corner-top`,
+    `${prefixCls}-item-corner-top`
   );
 
   const cornerBottomCls = classnames(
     `${prefixCls}-item-corner`,
-    `${prefixCls}-item-corner-bottom`,
+    `${prefixCls}-item-corner-bottom`
   );
 
   let firstActiveKey: string | null = "";
@@ -98,28 +94,24 @@ export const SideBar: React.FC<SideBarProps> = (props) => {
   };
 
   const itemCls = (item: any) => {
-    return classnames(
-      `${prefixCls}-item`,
-      {
-        [`${prefixCls}-item-active`]: item.key === currActiveKey,
-        [`${prefixCls}-item-disabled`]: item.props.disabled,
-      },
-    );
+    return classnames(`${prefixCls}-item`, {
+      [`${prefixCls}-item-active`]: item.key === currActiveKey,
+      [`${prefixCls}-item-disabled`]: item.props.disabled,
+    });
   };
 
-  const lastItemCls = classnames(
-    `${prefixCls}-extra-space`,
-    {
-      [`${prefixCls}-item-active-next-sibling`]: isActiveLastItem,
-    },
-  );
+  const lastItemCls = classnames(`${prefixCls}-extra-space`, {
+    [`${prefixCls}-item-active-next-sibling`]: isActiveLastItem,
+  });
 
   return (
     <div className={prefixCls}>
       <div className={`${prefixCls}-items`}>
         {items.map((item: any, i: number) => {
-          const isActiveNext = items[i - 1] && items[i - 1].key === currActiveKey;
-          const isActivePrev = items[i + 1] && items[i + 1].key === currActiveKey;
+          const isActiveNext =
+            items[i - 1] && items[i - 1].key === currActiveKey;
+          const isActivePrev =
+            items[i + 1] && items[i + 1].key === currActiveKey;
 
           return (
             <div
@@ -127,16 +119,8 @@ export const SideBar: React.FC<SideBarProps> = (props) => {
               className={itemCls(item)}
               onClick={() => onClickItem(item)}
             >
-              {isActiveNext && (
-                <Corner
-                  className={cornerTopCls}
-                />
-              )}
-              {isActivePrev && (
-                <Corner
-                  className={cornerBottomCls}
-                />
-              )}
+              {isActiveNext && <Corner className={cornerTopCls} />}
+              {isActivePrev && <Corner className={cornerBottomCls} />}
               {item.props.title && (
                 <div className={`${prefixCls}-item-title`}>
                   {item.key === currActiveKey && (
@@ -156,11 +140,7 @@ export const SideBar: React.FC<SideBarProps> = (props) => {
         })}
       </div>
       <div className={lastItemCls}>
-        {isActiveLastItem && (
-          <Corner
-            className={cornerTopCls}
-          />
-        )}
+        {isActiveLastItem && <Corner className={cornerTopCls} />}
       </div>
     </div>
   );

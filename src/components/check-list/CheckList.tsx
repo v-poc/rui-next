@@ -54,11 +54,7 @@ const CheckList: React.FC<CheckListProps> = (props) => {
         uncheck,
       }}
     >
-      <List
-        mode={mode}
-      >
-        {children}
-      </List>
+      <List mode={mode}>{children}</List>
     </CheckListContext.Provider>
   );
 };

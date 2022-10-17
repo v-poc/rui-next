@@ -46,9 +46,7 @@ const CheckListItem: React.FC<CheckListItemProps> = (props) => {
   });
 
   const renderExtra = (
-    <div
-      className={`${prefixCls}-item-extra`}
-    >
+    <div className={`${prefixCls}-item-extra`}>
       {isActive && ctx.activeIcon}
     </div>
   );

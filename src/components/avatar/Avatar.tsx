@@ -52,13 +52,7 @@ export type AvatarProps = {
   size?: number;
 } & Pick<
   ImageProps,
-  | "alt"
-  | "fallback"
-  | "fit"
-  | "lazy"
-  | "src"
-  | "onClick"
-  | "onError"
+  "alt" | "fallback" | "fit" | "lazy" | "src" | "onClick" | "onError"
 >;
 
 // Avatar FC

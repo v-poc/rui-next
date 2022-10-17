@@ -8,40 +8,26 @@ export type CarouselRectProps = {
 
 // CarouselRect FC
 const CarouselRect: React.FC<CarouselRectProps> = (props) => {
-  const {
-    color,
-    prefixCls,
-  } = props;
+  const { color, prefixCls } = props;
 
   return (
     <div
       className={prefixCls}
       style={{
-        color
+        color,
       }}
     >
       <svg
         height="1em"
         viewBox="0 0 100 40"
         style={{
-          verticalAlign: "-0.125em"
+          verticalAlign: "-0.125em",
         }}
       >
-        <g
-          stroke="none"
-          strokeWidth="1"
-          fill="none"
-          fillRule="evenodd"
-        >
-          <g
-            transform="translate(-100.000000, -71.000000)"
-          >
-            <g
-              transform="translate(95.000000, 71.000000)"
-            >
-              <g
-                transform="translate(5.000000, 0.000000)"
-              >
+        <g stroke="none" strokeWidth="1" fill="none" fillRule="evenodd">
+          <g transform="translate(-100.000000, -71.000000)">
+            <g transform="translate(95.000000, 71.000000)">
+              <g transform="translate(5.000000, 0.000000)">
                 {[0, 1, 2].map((item) => (
                   <rect
                     key={`rect${item}`}

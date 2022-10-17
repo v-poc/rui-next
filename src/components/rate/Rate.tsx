@@ -51,17 +51,10 @@ export const Rate: React.FC<RateProps> = (props) => {
       return;
     }
 
-    setVal(
-      allowClear && val === v
-        ? 0
-        : v
-    );
+    setVal(allowClear && val === v ? 0 : v);
   };
 
-  const renderStarItem = (
-    v: number,
-    isHalf: boolean
-  ) => {
+  const renderStarItem = (v: number, isHalf: boolean) => {
     const itemStyle: itemStyleType = {
       fontSize: `${size}px`,
       lineHeight: `${size}px`,
@@ -71,42 +64,27 @@ export const Rate: React.FC<RateProps> = (props) => {
       itemStyle["color"] = activeColor;
     }
 
-    const itemCls = classnames(
-      `${prefixCls}-star`,
-      {
-        [`${prefixCls}-star-active`]: v <= val,
-        [`${prefixCls}-star-half`]: isHalf,
-        [`${prefixCls}-star-readonly`]: readonly,
-      }
-    );
+    const itemCls = classnames(`${prefixCls}-star`, {
+      [`${prefixCls}-star-active`]: v <= val,
+      [`${prefixCls}-star-half`]: isHalf,
+      [`${prefixCls}-star-readonly`]: readonly,
+    });
 
     return (
-      <div
-        className={itemCls}
-        style={itemStyle}
-        onClick={() => handleClick(v)}
-      >
+      <div className={itemCls} style={itemStyle} onClick={() => handleClick(v)}>
         {character}
       </div>
     );
   };
 
-  const wrapCls = classnames(
-    prefixCls,
-    className,
-  );
+  const wrapCls = classnames(prefixCls, className);
 
   const boxCls = classnames(`${prefixCls}-box`);
 
   return (
-    <div
-      className={wrapCls}
-    >
+    <div className={wrapCls}>
       {starList.map((_, i) => (
-        <div
-          key={`starItem${i}`}
-          className={boxCls}
-        >
+        <div key={`starItem${i}`} className={boxCls}>
           {allowHalf && renderStarItem(i + 0.5, true)}
           {renderStarItem(i + 1, false)}
         </div>

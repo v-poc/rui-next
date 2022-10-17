@@ -18,14 +18,7 @@ export type MarksProps = {
 
 // Marks FC
 export const Marks: React.FC<MarksProps> = (props) => {
-  const {
-    prefixCls,
-    marks,
-    min,
-    max,
-    rangeLeft,
-    rangeRight,
-  } = props;
+  const { prefixCls, marks, min, max, rangeLeft, rangeRight } = props;
 
   const marksKeys = Object.keys(marks)
     .map(parseFloat)
@@ -34,34 +27,34 @@ export const Marks: React.FC<MarksProps> = (props) => {
 
   return (
     <div className={`${prefixCls}-mark`}>
-      {marksKeys.length > 0 && marksKeys.map((pItem: any) => {
-        const markPoint = marks[pItem];
+      {marksKeys.length > 0 &&
+        marksKeys.map((pItem: any) => {
+          const markPoint = marks[pItem];
 
-        const offset = `${100 * Math.abs(pItem - min) / (max - min)}%`;
-        const isActive = pItem <= rangeRight && pItem >= rangeLeft;
-        const itemCls = classnames(
-          `${prefixCls}-mark-text`,
-          {
+          const offset = `${(100 * Math.abs(pItem - min)) / (max - min)}%`;
+          const isActive = pItem <= rangeRight && pItem >= rangeLeft;
+          const itemCls = classnames(`${prefixCls}-mark-text`, {
             [`${prefixCls}-mark-text-active`]: isActive,
-          }
-        );
+          });
 
-        return (markPoint || markPoint === 0) && (
-          <span
-            key={`markPoint${pItem}`}
-            className={itemCls}
-            style={{
-              left: offset,
-            }}
-          >
-            {markPoint}
-          </span>
-        );
-      })}
+          return (
+            (markPoint || markPoint === 0) && (
+              <span
+                key={`markPoint${pItem}`}
+                className={itemCls}
+                style={{
+                  left: offset,
+                }}
+              >
+                {markPoint}
+              </span>
+            )
+          );
+        })}
     </div>
   );
 };
 
 Marks.defaultProps = {
-  prefixCls: 'r-slider',
+  prefixCls: "r-slider",
 };

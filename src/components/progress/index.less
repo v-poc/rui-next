@@ -1,5 +1,5 @@
-@import '../styles/mixins';
-@import '../styles/themes/default';
+@import "../styles/mixins";
+@import "../styles/themes/default";
 
 @progressPrefixClass: r-progress;
 
@@ -23,13 +23,13 @@
 
   &-bar {
     border: @border-width-lg solid @brand-primary;
-    transition: all .3s linear 0s;
+    transition: all 0.3s linear 0s;
   }
 
   /* ProgressCircle */
   &-circle {
     display: inline-block;
-  
+
     &-svg {
       width: 100%;
       height: 100%;
@@ -45,18 +45,18 @@
 
       > .@{progressPrefixClass}-circle-fill {
         transition: stroke-dashoffset 0.35s;
-        stroke: #2196F3;
+        stroke: #2196f3;
         stroke-linecap: round;
       }
     }
-  
+
     &-content {
       position: relative;
       margin: auto;
       width: 100%;
       height: 100%;
     }
-  
+
     &-info {
       position: absolute;
       width: 100%;
@@ -65,5 +65,5 @@
       text-align: center;
       transform: translate(-50%, -50%);
     }
-  }  
+  }
 }

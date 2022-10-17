@@ -9,21 +9,31 @@
   cursor: grab;
   position: relative;
   margin: 0 auto;
-  width: 150Px;
-  height: 150Px;
+  width: 150px;
+  height: 150px;
   background: #ffe0a9;
-  border-radius: 75Px;
+  border-radius: 75px;
   transform-origin: center center;
   transform: scaleY(0.95);
-  background-image: -webkit-gradient(radial, 50 50, 0, 50 30, 150, from(rgba(255, 255, 255, 0.5)), color-stop(70%, rgba(253, 212, 142, 1)), color-stop(95%, rgba(240, 188, 120, 1)), to(rgba(255, 255, 255, 0))),
+  background-image: -webkit-gradient(
+      radial,
+      50 50,
+      0,
+      50 30,
+      150,
+      from(rgba(255, 255, 255, 0.5)),
+      color-stop(70%, rgba(253, 212, 142, 1)),
+      color-stop(95%, rgba(240, 188, 120, 1)),
+      to(rgba(255, 255, 255, 0))
+    ),
     -webkit-gradient(radial, 20 20, 0, 80 80, 90, from(rgba(255, 255, 255, 0.5)), color-stop(50%, rgba(255, 255, 255, 1)), to(rgba(255, 255, 255, 0)));
-  box-shadow: 0 1Px 10Px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 1px 10px rgba(0, 0, 0, 0.1);
 
   &-star {
     display: block;
     position: absolute;
-    top: 3Px;
-    left: 11Px;
+    top: 3px;
+    left: 11px;
     z-index: 18;
     color: #c45c3c;
     transform: scale(0.35);
@@ -33,38 +43,38 @@
   &-chi {
     cursor: grabbing;
     position: absolute;
-    top: 50Px;
-    left: 55Px;
-    width: 40Px;
-    height: 40Px;
+    top: 50px;
+    left: 55px;
+    width: 40px;
+    height: 40px;
     z-index: 3;
     background: #fac3b4;
-    border-radius: 20Px;
-    box-shadow: 0 3Px 20Px #ed9c86;
+    border-radius: 20px;
+    box-shadow: 0 3px 20px #ed9c86;
     transform-origin: center center;
     transform: scaleY(0.92) scaleX(0.91);
-  
+
     &:before {
       position: absolute;
-      top: 11Px;
-      left: 13Px;
+      top: 11px;
+      left: 13px;
       content: "";
-      width: 16Px;
-      height: 16Px;
+      width: 16px;
+      height: 16px;
       background: #ffb7a4;
-      border-radius: 8Px;
-      box-shadow: 0 2Px 5Px #ec8d73;
+      border-radius: 8px;
+      box-shadow: 0 2px 5px #ec8d73;
     }
-  
+
     &:after {
       position: absolute;
-      top: 13Px;
-      left: 15Px;
+      top: 13px;
+      left: 15px;
       content: "";
-      width: 10Px;
-      height: 10Px;
-      border-radius: 5Px;
-      box-shadow: 0 0 5Px #fff;
+      width: 10px;
+      height: 10px;
+      border-radius: 5px;
+      box-shadow: 0 0 5px #fff;
     }
   }
 
@@ -125,33 +135,33 @@
     transform: translate(0, 0);
   }
   10% {
-    transform: translate(0, -35Px);
+    transform: translate(0, -35px);
   }
   20% {
-    transform: translate(0, 25Px);
+    transform: translate(0, 25px);
   }
   30% {
-    transform: translate(0, -22Px);
+    transform: translate(0, -22px);
   }
   40% {
-    transform: translate(0, 18Px);
+    transform: translate(0, 18px);
   }
   50% {
-    transform: translate(0, -15Px);
+    transform: translate(0, -15px);
   }
   60% {
-    transform: translate(0, 12Px);
+    transform: translate(0, 12px);
   }
   70% {
-    transform: translate(0, -9Px);
+    transform: translate(0, -9px);
   }
   80% {
-    transform: translate(0, 6Px);
+    transform: translate(0, 6px);
   }
   90% {
-    transform: translate(0, -3Px);
+    transform: translate(0, -3px);
   }
   100% {
-    transform: translate(0, 0Px);
+    transform: translate(0, 0px);
   }
 }

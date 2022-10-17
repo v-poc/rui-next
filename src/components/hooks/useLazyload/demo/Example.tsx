@@ -11,9 +11,7 @@ const Example = () => {
 
   return (
     <>
-      <Divider contentAlign="left">
-        Skeleton Content loading image
-      </Divider>
+      <Divider contentAlign="left">Skeleton Content loading image</Divider>
       <Button
         size="small"
         inline
@@ -23,18 +21,12 @@ const Example = () => {
       >
         Test Content loading
       </Button>
-      {showContent && (<>
-        <Skeleton
-          title
-          titleWidth="80%"
-          row={4}
-          loading={!isLoaded}
-        />
-        <img
-          ref={callbackRef}
-          data-src="https://vitejs.dev/logo.svg"
-        />
-      </>)}
+      {showContent && (
+        <>
+          <Skeleton title titleWidth="80%" row={4} loading={!isLoaded} />
+          <img ref={callbackRef} data-src="https://vitejs.dev/logo.svg" />
+        </>
+      )}
     </>
   );
 };

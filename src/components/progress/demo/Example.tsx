@@ -36,11 +36,7 @@ const Example = () => {
         <div aria-hidden="true">{percent}%</div>
       </div>
       <br />
-      <Button
-        size="small"
-        inline
-        onClick={add}
-      >
+      <Button size="small" inline onClick={add}>
         Click to add percent
       </Button>
       <br />

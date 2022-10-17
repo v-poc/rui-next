@@ -5,6 +5,6 @@ function useLatest<T>(val: T) {
   valRef.current = val;
 
   return valRef;
-};
+}
 
 export default useLatest;

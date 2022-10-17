@@ -23,7 +23,7 @@ export type LikeButtonProps = {
 };
 
 // LikeButton FC
-export const LikeButton: React.FC<LikeButtonProps> = props => {
+export const LikeButton: React.FC<LikeButtonProps> = (props) => {
   const {
     prefixCls,
     className,

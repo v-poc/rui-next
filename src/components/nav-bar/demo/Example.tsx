@@ -10,9 +10,7 @@ const Example = () => {
 
   return (
     <>
-      <Divider contentAlign="left">
-        Dark mode
-      </Divider>
+      <Divider contentAlign="left">Dark mode</Divider>
       <NavBar
         icon={<Icon type="left" />}
         onLeftClick={() => handleBtnClick()}
@@ -20,10 +18,9 @@ const Example = () => {
       >
         Dark mode title
       </NavBar>
-      <br /><br />
-      <Divider contentAlign="left">
-        Light mode
-      </Divider>
+      <br />
+      <br />
+      <Divider contentAlign="left">Light mode</Divider>
       <NavBar
         mode="light"
         className="nav-bar-bg-section"
@@ -31,7 +28,7 @@ const Example = () => {
         onLeftClick={() => handleBtnClick()}
         rightContent={[
           <Icon key="search" type="search" className="nav-bar-mr" />,
-          <Icon key="ellipsis" type="ellipsis" />
+          <Icon key="ellipsis" type="ellipsis" />,
         ]}
       >
         Light mode title

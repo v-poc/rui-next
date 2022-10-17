@@ -12,7 +12,7 @@ const useEffectWithTarget = (
   const fn = (
     effectFn: EffectCallback,
     deps: DependencyList,
-    target: TargetType,
+    target: TargetType
   ) => {
     const isInitRef = useRef<boolean>(false);
     const lastElementsRef = useRef<any[]>([]);
@@ -21,7 +21,9 @@ const useEffectWithTarget = (
 
     useEffectType(() => {
       const targets = Array.isArray(target) ? target : [target];
-      const elements = targets.map((item: TargetType) => getTargetElement(item));
+      const elements = targets.map((item: TargetType) =>
+        getTargetElement(item)
+      );
 
       if (!isInitRef.current) {
         isInitRef.current = true;

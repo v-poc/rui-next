@@ -34,7 +34,7 @@
     font-size: 200px;
     transition: all @duration @easing;
     outline: none;
-  
+
     &::before {
       position: absolute;
       left: 0;
@@ -47,7 +47,7 @@
       content: "";
       transition: inherit;
     }
-  
+
     &::after {
       position: absolute;
       left: 0;
@@ -59,19 +59,19 @@
       background-color: #fff;
       content: "";
     }
-  
+
     &:active {
       &::before {
         animation: depress-shadow @duration @easing both;
       }
     }
-  
+
     &:focus::after,
     &.focus-btn::after {
       animation: depress @duration @easing both;
     }
   }
-  
+
   &-wrapper {
     display: grid;
     justify-content: center;
@@ -81,14 +81,14 @@
       margin: auto;
     }
   }
-  
+
   &-ripple {
     overflow: hidden;
     position: relative;
     border-radius: 100%;
     width: 1em;
     height: 1em;
-  
+
     &::before {
       position: absolute;
       left: 0;
@@ -100,7 +100,7 @@
       content: "";
       transform: scale(0);
     }
-  
+
     .@{likeButtonPrefixClass}-btn:focus &,
     .@{likeButtonPrefixClass}-btn.focus-btn & {
       &::before {
@@ -108,37 +108,37 @@
       }
     }
   }
-  
+
   &-heart {
     display: block;
     width: 0.5em;
     height: 0.5em;
     transform-origin: center 80%;
-  
+
     path {
       transition: all @duration @easing;
       stroke: @heart-color;
       stroke-width: 2;
       fill: transparent;
-  
+
       .@{likeButtonPrefixClass}-btn:focus &,
       .@{likeButtonPrefixClass}-btn.focus-btn & {
         fill: @heart-color;
       }
     }
-  
+
     .@{likeButtonPrefixClass}-btn:focus &,
     .@{likeButtonPrefixClass}-btn.focus-btn & {
       animation: heart-bounce @duration @easing;
     }
   }
-  
+
   &-particle {
     position: relative;
     width: 1px;
     height: 1px;
   }
-  
+
   &-particle-item {
     --v: calc(var(--line-index) / var(--line-count) * 1turn);
     // @color-list: "#F66", "#66F", "#F90", "#09F", "#9C3", "#3C9";
@@ -150,19 +150,19 @@
     height: 0.1em;
     transform: translate(-50%, -50%) rotate(var(--v)) translateY(0) scaleY(0);
     transition: all @duration @easing;
-  
+
     // each(@color-list, {
     //   &:nth-child(@{index}) {
     //     background-color: color(@value);
     //   }
     // });
-  
+
     .@{likeButtonPrefixClass}-btn:focus &,
     .@{likeButtonPrefixClass}-btn.focus-btn & {
       animation: particle-out calc(@duration * 1.2ms) @easing forwards;
     }
   }
-  
+
   &-btn:focus,
   &-btn.focus-btn {
     cursor: normal;

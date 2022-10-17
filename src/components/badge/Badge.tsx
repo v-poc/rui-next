@@ -17,7 +17,7 @@ export type BadgeProps = {
 };
 
 // Badge FC
-export const Badge: React.FC<BadgeProps> = props => {
+export const Badge: React.FC<BadgeProps> = (props) => {
   const {
     className,
     prefixCls,

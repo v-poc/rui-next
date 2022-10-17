@@ -12,7 +12,7 @@ export type ProgressCircleProps = {
 };
 
 // ProgressCircle FC
-const ProgressCircle: React.FC<ProgressCircleProps> = props => {
+const ProgressCircle: React.FC<ProgressCircleProps> = (props) => {
   const {
     prefixCls,
     className,

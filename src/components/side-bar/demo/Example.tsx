@@ -22,9 +22,7 @@ const arrItems = [
 // Example FC
 const Example = () => (
   <>
-    <Divider contentAlign="left">
-      SideBar (badge and disabled state)
-    </Divider>
+    <Divider contentAlign="left">SideBar (badge and disabled state)</Divider>
     <div className="side-bar-example-wrapper">
       <div className="side-bar-example-inner">
         <SideBar>

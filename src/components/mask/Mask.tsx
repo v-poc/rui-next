@@ -5,13 +5,17 @@ import { useSpring } from "../hooks/useSpring/index";
 import { animated } from "../utils/animated";
 import useUnmountedRef from "../hooks/useUnmountedRef/index";
 import useLockScroll from "../hooks/useLockScroll/index";
-import { ShouldRender, renderToContainer, withStopPropagation } from "../utils/index";
+import {
+  ShouldRender,
+  renderToContainer,
+  withStopPropagation,
+} from "../utils/index";
 import type { GetContainer, PropagationEvent } from "../utils/index";
 
 const opacityData = {
-  "default": 0.55,
-  "thin": 0.35,
-  "thick": 0.75,
+  default: 0.55,
+  thin: 0.35,
+  thick: 0.75,
 };
 
 // MaskProps type
@@ -61,7 +65,8 @@ export const Mask: React.FC<MaskProps> = (props) => {
   useLockScroll(rootRef, visible && disableBodyScroll);
 
   const background = useMemo(() => {
-    const opacityVal = typeof opacity === "string" ? opacityData[opacity] : opacity;
+    const opacityVal =
+      typeof opacity === "string" ? opacityData[opacity] : opacity;
     const rgbVal = color === "white" ? "255, 255, 255" : "0, 0, 0";
     return `rgba(${rgbVal}, ${opacityVal || 0})`;
   }, [color, opacity]);
@@ -89,35 +94,31 @@ export const Mask: React.FC<MaskProps> = (props) => {
 
   const renderNode = withStopPropagation(
     stopPropagation,
-    (
-      <animated.div
-        className={wrapCls}
-        ref={rootRef}
-        style={{
-          ...style,
-          background,
-          opacity: wrapStyle.opacity,
-          display: active ? undefined : "none",
-        }}
-        onClick={(e: React.MouseEvent<HTMLDivElement, MouseEvent>) => {
-          if (e.target === e.currentTarget) {
-            onClickMask?.(e);
-          }
-        }}
-      >
-        {onClickMask && (
-          <div
-            className={`${prefixCls}-aria-button`}
-            role="button"
-            aria-label="Mask"
-            onClick={onClickMask}
-          ></div>
-        )}
-        <div className={`${prefixCls}-content`}>
-          {children}
-        </div>
-      </animated.div>
-    ),
+    <animated.div
+      className={wrapCls}
+      ref={rootRef}
+      style={{
+        ...style,
+        background,
+        opacity: wrapStyle.opacity,
+        display: active ? undefined : "none",
+      }}
+      onClick={(e: React.MouseEvent<HTMLDivElement, MouseEvent>) => {
+        if (e.target === e.currentTarget) {
+          onClickMask?.(e);
+        }
+      }}
+    >
+      {onClickMask && (
+        <div
+          className={`${prefixCls}-aria-button`}
+          role="button"
+          aria-label="Mask"
+          onClick={onClickMask}
+        ></div>
+      )}
+      <div className={`${prefixCls}-content`}>{children}</div>
+    </animated.div>
   );
 
   return (

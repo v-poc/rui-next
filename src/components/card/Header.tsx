@@ -25,27 +25,19 @@ const CardHeader: React.FC<CardHeaderProps> = (props) => {
     ...restProps
   } = props;
 
-  const wrapCls = classnames(
-    `${prefixCls}-header`,
-    className
-  );
+  const wrapCls = classnames(`${prefixCls}-header`, className);
 
   return (
-    <div
-      className={wrapCls}
-      {...restProps}
-    >
+    <div className={wrapCls} {...restProps}>
       <div className={`${prefixCls}-header-content`}>
-        {typeof thumb === 'string' ? (
+        {typeof thumb === "string" ? (
           <img src={thumb} style={thumbStyle} />
-        ) : thumb}
+        ) : (
+          thumb
+        )}
         {title}
       </div>
-      {extra && (
-        <div className={`${prefixCls}-header-extra`}>
-          {extra}
-        </div>
-      )}
+      {extra && <div className={`${prefixCls}-header-extra`}>{extra}</div>}
     </div>
   );
 };

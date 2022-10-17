@@ -54,20 +54,13 @@ const Switch: React.FC<SwitchProps> = (props) => {
     }
   };
 
-  const wrapCls = classnames(
-    prefixCls,
-    className,
-    {
-      [`${prefixCls}-android`]: platform === "android",
-    },
-  );
-  
-  const inputCls = classnames(
-    "checkbox",
-    {
-      [`checkbox-disabled`]: disabled,
-    },
-  );
+  const wrapCls = classnames(prefixCls, className, {
+    [`${prefixCls}-android`]: platform === "android",
+  });
+
+  const inputCls = classnames("checkbox", {
+    [`checkbox-disabled`]: disabled,
+  });
 
   const cssStyle = style || {};
   if (color && checked) {

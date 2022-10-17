@@ -1,5 +1,5 @@
-@import '../styles/mixins';
-@import '../styles/themes/default';
+@import "../styles/mixins";
+@import "../styles/themes/default";
 
 @switchPrefixCls: r-switch;
 
@@ -31,7 +31,7 @@
     transition: all 300ms;
 
     &:before {
-      content: ' ';
+      content: " ";
       position: absolute;
       left: @switch-border;
       top: @switch-border;
@@ -46,7 +46,7 @@
     }
 
     &:after {
-      content: ' ';
+      content: " ";
       width: @switch-height - 2 * @switch-border;
       height: @switch-height - 2 * @switch-border;
       border-radius: @switch-height - 2 * @switch-border;
@@ -58,8 +58,7 @@
 
       transform: translateX(0);
       transition: all 200ms;
-      box-shadow:
-        0 0 2 * @hd 0 rgba(0, 0, 0, 0.2),
+      box-shadow: 0 0 2 * @hd 0 rgba(0, 0, 0, 0.2),
         0 2 * @hd 11.5 * @hd 0 rgba(0, 0, 0, 0.08),
         -1 * @hd 2 * @hd 2 * @hd 0 rgba(0, 0, 0, 0.1);
     }
@@ -117,8 +116,8 @@
         height: 21 * @hd;
         border-radius: @radius-xs;
         box-shadow: none;
-        left: 1PX;
-        top: 1PX;
+        left: 1px;
+        top: 1px;
       }
     }
 

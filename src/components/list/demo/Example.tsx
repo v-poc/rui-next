@@ -6,47 +6,37 @@ import "./index.less";
 const arrUsers = [
   {
     index: 0,
-    avatar: 'https://nikoni.top/images/others/img01.png',
-    name: 'Sara Visto',
-    desc: 'Animi eius expedita',
+    avatar: "https://nikoni.top/images/others/img01.png",
+    name: "Sara Visto",
+    desc: "Animi eius expedita",
   },
   {
     index: 1,
-    avatar: 'https://nikoni.top/images/others/img02.png',
-    name: 'Edith Koen',
-    desc: 'Commodi earum exercitationem id numquam visto',
+    avatar: "https://nikoni.top/images/others/img02.png",
+    name: "Edith Koen",
+    desc: "Commodi earum exercitationem id numquam visto",
   },
   {
     index: 2,
-    avatar: 'https://nikoni.top/images/others/img12.png',
-    name: 'Marco Gregg',
-    desc: 'Ab animi cumque eveniet ex harum nam odio',
+    avatar: "https://nikoni.top/images/others/img12.png",
+    name: "Marco Gregg",
+    desc: "Ab animi cumque eveniet ex harum nam odio",
   },
 ];
 
 // Example FC
 const Example = () => (
   <>
-    <Divider contentAlign="left">
-      Default mode
-    </Divider>
+    <Divider contentAlign="left">Default mode</Divider>
     <List>
       {new Array(4).fill("").map((item, i) => (
-        <List.Item
-          key={`basic${i}`}
-        >
-          {`Content ${i + 1}`}
-        </List.Item>
+        <List.Item key={`basic${i}`}>{`Content ${i + 1}`}</List.Item>
       ))}
     </List>
 
-    <Divider contentAlign="left">
-      Card mode
-    </Divider>
+    <Divider contentAlign="left">Card mode</Divider>
     <div className="list-card-wrapper">
-      <List
-        mode="card"
-      >
+      <List mode="card">
         {new Array(3).fill("").map((item, i) => (
           <List.Item
             key={`card${i}`}
@@ -59,9 +49,7 @@ const Example = () => (
       </List>
     </div>
 
-    <Divider contentAlign="left">
-      With icon and disabled state
-    </Divider>
+    <Divider contentAlign="left">With icon and disabled state</Divider>
     <List>
       <List.Item
         prefix={<Icon type="voice" />}
@@ -69,17 +57,12 @@ const Example = () => (
       >
         Voice item
       </List.Item>
-      <List.Item
-        prefix={<Icon type="info-circle" />}
-        disabled
-      >
+      <List.Item prefix={<Icon type="info-circle" />} disabled>
         Info item
       </List.Item>
     </List>
 
-    <Divider contentAlign="left">
-      Users list
-    </Divider>
+    <Divider contentAlign="left">Users list</Divider>
     <List>
       {arrUsers.map((item, i) => {
         const { index, avatar, name, desc } = item;
@@ -93,7 +76,7 @@ const Example = () => (
           >
             {name}
           </List.Item>
-        )
+        );
       })}
     </List>
   </>

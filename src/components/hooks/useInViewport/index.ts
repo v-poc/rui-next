@@ -9,16 +9,13 @@ type OptionsType = {
   root?: BasicTarget<Element>;
 };
 
-const useInViewport = (
-  target: BasicTarget,
-  options?: OptionsType,
-) => {
+const useInViewport = (target: BasicTarget, options?: OptionsType) => {
   const [isInViewport, setIsInViewport] = useState(true);
   const [ratio, setRatio] = useState(1);
 
   useEffectWithTarget(
     () => {
-      const el = getTargetElement(target) as any;      
+      const el = getTargetElement(target) as any;
       if (!el) {
         return;
       }
@@ -33,7 +30,7 @@ const useInViewport = (
         {
           ...options,
           root: getTargetElement(options?.root) as any,
-        },
+        }
       );
 
       observerInstance.observe(el);
@@ -43,7 +40,7 @@ const useInViewport = (
       };
     },
     [],
-    target,
+    target
   );
 
   return [isInViewport, ratio] as const;

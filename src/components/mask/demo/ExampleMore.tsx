@@ -13,11 +13,7 @@ const Example = () => {
       <Divider contentAlign="left">
         Dark mask - `opacity: 35%` (click screen to close mask)
       </Divider>
-      <Button
-        size="small"
-        inline
-        onClick={() => setThinVisible(true)}
-      >
+      <Button size="small" inline onClick={() => setThinVisible(true)}>
         Click to show dark mask with thin opacity
       </Button>
       {thinVisible && (
@@ -27,15 +23,11 @@ const Example = () => {
           opacity="thin"
         />
       )}
-      
+
       <Divider contentAlign="left">
         Dark mask - `opacity: 75%` (click screen to close mask)
       </Divider>
-      <Button
-        size="small"
-        inline
-        onClick={() => setThickVisible(true)}
-      >
+      <Button size="small" inline onClick={() => setThickVisible(true)}>
         Click to show dark mask with thick opacity
       </Button>
       {thickVisible && (
@@ -49,11 +41,7 @@ const Example = () => {
       <Divider contentAlign="left">
         Dark mask - `opacity: 90%` (click screen to close mask)
       </Divider>
-      <Button
-        size="small"
-        inline
-        onClick={() => setCustomVisible(true)}
-      >
+      <Button size="small" inline onClick={() => setCustomVisible(true)}>
         Click to show dark mask with 90% opacity
       </Button>
       {customVisible && (
@@ -63,15 +51,11 @@ const Example = () => {
           opacity={0.9}
         />
       )}
-      
+
       <Divider contentAlign="left">
         White mask (click screen to close mask)
       </Divider>
-      <Button
-        size="small"
-        inline
-        onClick={() => setWhiteVisible(true)}
-      >
+      <Button size="small" inline onClick={() => setWhiteVisible(true)}>
         Click to show white mask
       </Button>
       {whiteVisible && (

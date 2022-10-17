@@ -25,36 +25,18 @@ export const Step: React.FC<StepProps> = (props) => {
   const wrapCls = classnames(
     prefixCls,
     className,
-    `${prefixCls}-status-${status}`,
+    `${prefixCls}-status-${status}`
   );
 
   return (
-    <div
-      className={wrapCls}
-    >
-      <div
-        className={`${prefixCls}-indicator`}
-      >
-        <div
-          className={`${prefixCls}-icon-container`}
-        >
-          {icon}
-        </div>
+    <div className={wrapCls}>
+      <div className={`${prefixCls}-indicator`}>
+        <div className={`${prefixCls}-icon-container`}>{icon}</div>
       </div>
-      <div
-        className={`${prefixCls}-content`}
-      >
-        <div
-          className={`${prefixCls}-title`}
-        >
-          {title}
-        </div>
+      <div className={`${prefixCls}-content`}>
+        <div className={`${prefixCls}-title`}>{title}</div>
         {description && (
-          <div
-            className={`${prefixCls}-description`}
-          >
-            {description}
-          </div>
+          <div className={`${prefixCls}-description`}>{description}</div>
         )}
       </div>
     </div>
@@ -62,5 +44,5 @@ export const Step: React.FC<StepProps> = (props) => {
 };
 
 Step.defaultProps = {
-  prefixCls: 'r-step',
+  prefixCls: "r-step",
 };

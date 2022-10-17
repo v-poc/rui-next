@@ -1,11 +1,11 @@
-@import '../styles/mixins';
-@import '../styles/themes/default';
+@import "../styles/mixins";
+@import "../styles/themes/default";
 
 @cardPrefixCls: r-card;
 
 .@{cardPrefixCls} {
   &:not(.@{cardPrefixCls}-full) {
-    .hairline('all', @border-color-base, @radius-md);
+    .hairline("all", @border-color-base, @radius-md);
   }
 
   min-height: 96 * @hd;
@@ -16,8 +16,8 @@
 
   &&-full {
     position: relative;
-    .hairline('top');
-    .hairline('bottom');
+    .hairline("top");
+    .hairline("bottom");
   }
 
   &-header {
@@ -48,7 +48,7 @@
 
   &-body {
     position: relative;
-    .hairline('top');
+    .hairline("top");
     padding: @v-spacing-lg @h-spacing-lg @v-spacing-sm;
     font-size: @font-size-subhead;
     color: @color-text-paragraph;

@@ -16,7 +16,8 @@ type ImgType = {
 
 // Example FC
 const Example = () => {
-  const defaultImage = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAIAAAC0Ujn1AAAACXBIWXMAAAsSAAALEgHS3X78AAABDklEQVR4nGP4dfz4OyOj12xsrxgY8KBbfBKB7U88+z4QRL4TP+Yu+Xz92R+GdwYG+A2FoKesHFmF+4kxGoKyF39meMXKSozRrxgYukN6iTfaZ8IHogyFoP1qjsQb7dlHitFP2Dh9u17SxOhXDAz5uTtoZfRU73paGb1Dx9uz7/2o0RQZ/R8bgJsI5yIbDRFEZiMDAkbDTSdoNFYRdHdhunTQG012WJNmNFYfUBogNHE11oCmidGYInCjMc0lOYVgtQ+Xe9Fkh3QZMvBGz3UuItJcko2uSF1FE6NfMjIFtT0mxWiimzinZAyIN9dnwgdiG2avGBime1YTb3T24s8MRDYnnzGzFuRsI8ZQeHMSAOD2kiUX84lOAAAAAElFTkSuQmCC";
+  const defaultImage =
+    "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAIAAAC0Ujn1AAAACXBIWXMAAAsSAAALEgHS3X78AAABDklEQVR4nGP4dfz4OyOj12xsrxgY8KBbfBKB7U88+z4QRL4TP+Yu+Xz92R+GdwYG+A2FoKesHFmF+4kxGoKyF39meMXKSozRrxgYukN6iTfaZ8IHogyFoP1qjsQb7dlHitFP2Dh9u17SxOhXDAz5uTtoZfRU73paGb1Dx9uz7/2o0RQZ/R8bgJsI5yIbDRFEZiMDAkbDTSdoNFYRdHdhunTQG012WJNmNFYfUBogNHE11oCmidGYInCjMc0lOYVgtQ+Xe9Fkh3QZMvBGz3UuItJcko2uSF1FE6NfMjIFtT0mxWiimzinZAyIN9dnwgdiG2avGBime1YTb3T24s8MRDYnnzGzFuRsI8ZQeHMSAOD2kiUX84lOAAAAAElFTkSuQmCC";
 
   const txtProps = {
     content: "RUI next",
@@ -33,30 +34,20 @@ const Example = () => {
   const [props, setProps] = useState<TxtType | ImgType>(txtProps);
 
   return (
-    <div className="example-watermark-wrapper">
-      <Button
-        size="small"
-        inline
-        onClick={() => setProps(txtProps)}
-      >
+    <div className="watermark-example-wrapper">
+      <Button size="small" inline onClick={() => setProps(txtProps)}>
         Test Text Watermark
       </Button>
       <br />
-      <Button
-        size="small"
-        inline
-        onClick={() => setProps(imgProps)}
-      >
+      <Button size="small" inline onClick={() => setProps(imgProps)}>
         Test Image Watermark
       </Button>
       <br />
       <div className="watermark-wrapper">
-        <Watermark
-          {...props}
-        />
+        <Watermark {...props} />
       </div>
     </div>
-  )
+  );
 };
 
 export default Example;

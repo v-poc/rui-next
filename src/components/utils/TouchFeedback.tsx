@@ -13,12 +13,7 @@ export type TouchFeedbackProps = {
 const TouchFeedback = (props: TouchFeedbackProps) => {
   const [active, setActive] = useState<boolean>(false);
 
-  const {
-    activeClassName,
-    activeStyle,
-    disabled,
-    children,
-  } = props;
+  const { activeClassName, activeStyle, disabled, children } = props;
 
   // useEffect hook
   useEffect(() => {
@@ -28,11 +23,7 @@ const TouchFeedback = (props: TouchFeedbackProps) => {
   }, [disabled, active]);
 
   // trigger event
-  const triggerEvent = (
-    type: string,
-    isActive: boolean,
-    ev: any
-  ) => {
+  const triggerEvent = (type: string, isActive: boolean, ev: any) => {
     const eventType = `on${type}`;
 
     if (children.props[eventType]) {
@@ -44,51 +35,56 @@ const TouchFeedback = (props: TouchFeedbackProps) => {
     }
   };
 
-  const onTouchStart = (e: React.TouchEvent) => triggerEvent('TouchStart', true, e); // onTouchStart
+  const onTouchStart = (e: React.TouchEvent) =>
+    triggerEvent("TouchStart", true, e); // onTouchStart
 
-  const onTouchMove = (e: React.TouchEvent) => triggerEvent('TouchMove', false, e); // onTouchMove
+  const onTouchMove = (e: React.TouchEvent) =>
+    triggerEvent("TouchMove", false, e); // onTouchMove
 
-  const onTouchEnd = (e: React.TouchEvent) => triggerEvent('TouchEnd', false, e); // onTouchEnd
+  const onTouchEnd = (e: React.TouchEvent) =>
+    triggerEvent("TouchEnd", false, e); // onTouchEnd
 
-  const onTouchCancel = (e: React.TouchEvent) => triggerEvent('TouchCancel', false, e); // onTouchCancel
+  const onTouchCancel = (e: React.TouchEvent) =>
+    triggerEvent("TouchCancel", false, e); // onTouchCancel
 
-  const onMouseDown = (e: React.MouseEvent) => triggerEvent('MouseDown', true, e); // onMouseDown
+  const onMouseDown = (e: React.MouseEvent) =>
+    triggerEvent("MouseDown", true, e); // onMouseDown
 
-  const onMouseUp = (e: React.MouseEvent) => triggerEvent('MouseUp', false, e); // onMouseUp
+  const onMouseUp = (e: React.MouseEvent) => triggerEvent("MouseUp", false, e); // onMouseUp
 
-  const onMouseLeave = (e: React.MouseEvent) => triggerEvent('MouseLeave', false, e); // onMouseLeave
+  const onMouseLeave = (e: React.MouseEvent) =>
+    triggerEvent("MouseLeave", false, e); // onMouseLeave
 
   // events
-  const events = disabled ? {} : {
-    onTouchStart,
-    onTouchMove,
-    onTouchEnd,
-    onTouchCancel,
-    onMouseDown,
-    onMouseUp,
-    onMouseLeave,
-  };
-  
+  const events = disabled
+    ? {}
+    : {
+        onTouchStart,
+        onTouchMove,
+        onTouchEnd,
+        onTouchCancel,
+        onMouseDown,
+        onMouseUp,
+        onMouseLeave,
+      };
+
   const child = React.Children.only(children);
-  
+
   if (!disabled && active) {
     let { style, className } = child.props;
-  
+
     if (activeStyle) {
-      style = {...style, ...activeStyle };
-      className = classnames(
-        className,
-        activeClassName
-      );
+      style = { ...style, ...activeStyle };
+      className = classnames(className, activeClassName);
     }
-  
+
     return cloneElement(child, {
       className,
       style,
       ...events,
     });
   }
-  
+
   return cloneElement(child, events);
 };
 

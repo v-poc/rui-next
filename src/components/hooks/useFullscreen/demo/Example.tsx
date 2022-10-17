@@ -11,66 +11,48 @@ const Example = () => {
   const [isFullscreen, { setFull, exitFull, toggleFull }] = useFullscreen(
     rootRef,
     {
-      onExitFull: () => logInfo('onExitFull'),
-      onFull: () => logInfo('onFull'),
-    },
+      onExitFull: () => logInfo("onExitFull"),
+      onFull: () => logInfo("onFull"),
+    }
   );
 
-  const [, { setFull: setFullImage }] = useFullscreen(
-    imgRef,
-    {
-      onExitFull: () => logInfo('image-onExitFull'),
-      onFull: () => logInfo('image-onFull'),
-    },
-  );
+  const [, { setFull: setFullImage }] = useFullscreen(imgRef, {
+    onExitFull: () => logInfo("image-onExitFull"),
+    onFull: () => logInfo("image-onFull"),
+  });
 
   return (
     <>
-      <Divider contentAlign="left">
-        Default usage
-      </Divider>
+      <Divider contentAlign="left">Default usage</Divider>
       <div ref={rootRef}>
-        <div style={{ color: isFullscreen ? 'white' : 'black' }}>
-          Fullscreen state: {isFullscreen ? 'Fullscreen' : 'Not Fullscreen'}
+        <div style={{ color: isFullscreen ? "white" : "black" }}>
+          Fullscreen state: {isFullscreen ? "Fullscreen" : "Not Fullscreen"}
         </div>
         <br />
-        <Button
-          inline
-          size="small"
-          onClick={setFull}
-        >
+        <Button inline size="small" onClick={setFull}>
           Click to setFull
-        </Button><br /><br />
-        <Button
-          inline
-          size="small"
-          onClick={exitFull}
-        >
+        </Button>
+        <br />
+        <br />
+        <Button inline size="small" onClick={exitFull}>
           Click to exitFull
-        </Button><br /><br />
-        <Button
-          inline
-          size="small"
-          onClick={toggleFull}
-        >
+        </Button>
+        <br />
+        <br />
+        <Button inline size="small" onClick={toggleFull}>
           Click to toggleFull
         </Button>
       </div>
 
-      <Divider contentAlign="left">
-        Image full-screen usage
-      </Divider>
+      <Divider contentAlign="left">Image full-screen usage</Divider>
       <img
         ref={imgRef}
         className="fullscreen-example-img"
         src="https://vitejs.dev/logo.svg"
       />
-      <br /><br />
-      <Button
-        inline
-        size="small"
-        onClick={setFullImage}
-      >
+      <br />
+      <br />
+      <Button inline size="small" onClick={setFullImage}>
         Click to setFull image
       </Button>
     </>

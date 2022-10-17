@@ -10,23 +10,13 @@ export type ListProps = {
 
 // List FC
 const List: React.FC<ListProps> = (props) => {
-  const {
-    prefixCls,
-    children,
-    mode,
-  } = props;
+  const { prefixCls, children, mode } = props;
 
   const wrapCls = classnames(prefixCls, `${prefixCls}-${mode}`);
 
   return (
-    <div
-      className={wrapCls}
-    >
-      <div
-        className={`${prefixCls}-inner`}
-      >
-        {children}
-      </div>
+    <div className={wrapCls}>
+      <div className={`${prefixCls}-inner`}>{children}</div>
     </div>
   );
 };

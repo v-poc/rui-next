@@ -69,17 +69,13 @@ const Tag: React.FC<TagProps> = (props) => {
     }
   }, [onClose, afterClose]);
 
-  const wrapCls = classnames(
-    className,
-    prefixCls,
-    {
-      [`${prefixCls}-normal`]: !disabled && (!isSelected || small || closable),
-      [`${prefixCls}-small`]: small,
-      [`${prefixCls}-active`]: !disabled && isSelected && !small && !closable,
-      [`${prefixCls}-disabled`]: disabled,
-      [`${prefixCls}-closable`]: closable,
-    }
-  );
+  const wrapCls = classnames(className, prefixCls, {
+    [`${prefixCls}-normal`]: !disabled && (!isSelected || small || closable),
+    [`${prefixCls}-small`]: small,
+    [`${prefixCls}-active`]: !disabled && isSelected && !small && !closable,
+    [`${prefixCls}-disabled`]: disabled,
+    [`${prefixCls}-closable`]: closable,
+  });
 
   if (closed) {
     return null;
@@ -92,9 +88,7 @@ const Tag: React.FC<TagProps> = (props) => {
       onClick={onClick}
       style={style}
     >
-      <div className={`${prefixCls}-text`}>
-        {children}
-      </div>
+      <div className={`${prefixCls}-text`}>{children}</div>
       {!disabled && closable && !small && (
         <TouchFeedback activeClassName={`${prefixCls}-close-active`}>
           <div
@@ -103,11 +97,7 @@ const Tag: React.FC<TagProps> = (props) => {
             onClick={onTagClose}
             aria-label="remove tag"
           >
-            <Icon
-              type="cross-circle"
-              size="xs"
-              aria-hidden="true"
-            />
+            <Icon type="cross-circle" size="xs" aria-hidden="true" />
           </div>
         </TouchFeedback>
       )}

@@ -47,72 +47,37 @@ const ListItem: React.FC<ListItemProps> = (props) => {
   };
 
   const renderContent = (
-    <div
-      className={`${prefixCls}-content`}
-    >
-      {prefix && (
-        <div
-          className={`${prefixCls}-content-prefix`}
-        >
-          {prefix}
-        </div>
-      )}
+    <div className={`${prefixCls}-content`}>
+      {prefix && <div className={`${prefixCls}-content-prefix`}>{prefix}</div>}
       <div className={`${prefixCls}-content-main`}>
         {title && (
-          <div
-            className={`${prefixCls}-content-main-title`}
-          >
-            {title}
-          </div>
+          <div className={`${prefixCls}-content-main-title`}>{title}</div>
         )}
         {children}
         {description && (
-          <div
-            className={`${prefixCls}-content-main-desc`}
-          >
-            {description}
-          </div>
+          <div className={`${prefixCls}-content-main-desc`}>{description}</div>
         )}
       </div>
-      {extra && (
-        <div
-          className={`${prefixCls}-content-extra`}
-        >
-          {extra}
-        </div>
-      )}
+      {extra && <div className={`${prefixCls}-content-extra`}>{extra}</div>}
       {vArrow && (
-        <div
-          className={`${prefixCls}-content-arrow`}
-        >
-          {vArrow === true
-            ? <Icon type="right" />
-            : vArrow}
+        <div className={`${prefixCls}-content-arrow`}>
+          {vArrow === true ? <Icon type="right" /> : vArrow}
         </div>
       )}
     </div>
   );
 
-  const wrapCls = classnames(
-    prefixCls,
-    {
-      [`${prefixCls}-plain-anchor`]: isClickable,
-      [`${prefixCls}-disabled`]: disabled,
-    },
-  );
+  const wrapCls = classnames(prefixCls, {
+    [`${prefixCls}-plain-anchor`]: isClickable,
+    [`${prefixCls}-disabled`]: disabled,
+  });
 
   return isClickable ? (
-    <a
-      className={wrapCls}
-      onClick={handleClick}
-    >
+    <a className={wrapCls} onClick={handleClick}>
       {renderContent}
     </a>
-  ): (
-    <div
-      className={wrapCls}
-      onClick={handleClick}
-    >
+  ) : (
+    <div className={wrapCls} onClick={handleClick}>
       {renderContent}
     </div>
   );

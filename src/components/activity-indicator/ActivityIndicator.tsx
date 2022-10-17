@@ -31,38 +31,22 @@ const ActivityIndicator: React.FC<ActivityIndicatorProps> = (props) => {
     color,
   } = props;
 
-  const wrapCls = classnames(
-    prefixCls,
-    className,
-    {
-      [`${prefixCls}-lg`]: sizeType === 'large',
-      [`${prefixCls}-sm`]: sizeType === 'small',
-      [`${prefixCls}-toast`]: !!toast,
-    }
-  );
+  const wrapCls = classnames(prefixCls, className, {
+    [`${prefixCls}-lg`]: sizeType === "large",
+    [`${prefixCls}-sm`]: sizeType === "small",
+    [`${prefixCls}-toast`]: !!toast,
+  });
 
-  const spinnerCls = classnames(
-    `${prefixCls}-spinner`,
-    {
-      [`${prefixCls}-spinner-lg`]: !!toast || sizeType === 'large',
-    }
-  );
+  const spinnerCls = classnames(`${prefixCls}-spinner`, {
+    [`${prefixCls}-spinner-lg`]: !!toast || sizeType === "large",
+  });
 
   if (carousel === "circle") {
-    return (
-      <CarouselCircle
-        size={size}
-        color={color}
-      />
-    );
+    return <CarouselCircle size={size} color={color} />;
   }
 
   if (carousel === "rect") {
-    return (
-      <CarouselRect
-        color={color}
-      />
-    );
+    return <CarouselRect color={color} />;
   }
 
   if (!animating) {
@@ -85,7 +69,7 @@ const ActivityIndicator: React.FC<ActivityIndicatorProps> = (props) => {
       </div>
     );
   }
-  
+
   return text ? (
     <div className={wrapCls}>
       <span className={spinnerCls} aria-hidden="true" />

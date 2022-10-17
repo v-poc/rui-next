@@ -52,7 +52,9 @@ export const NoticeBar: React.FC<NoticeBarProps> = (props) => {
     const timer = window.setTimeout(() => {
       const inner = innerRef.current;
       if (inner) {
-        inner.style.transitionDuration = `${Math.round(inner.offsetWidth / speed)}s`;
+        inner.style.transitionDuration = `${Math.round(
+          inner.offsetWidth / speed
+        )}s`;
         inner.style.transform = `translateX(-${inner.offsetWidth}px)`;
       }
     }, delay);
@@ -78,7 +80,9 @@ export const NoticeBar: React.FC<NoticeBarProps> = (props) => {
       }
 
       innerContent.style.transform = `translateX(${wrapperContent.offsetWidth}px)`;
-      innerContent.style.transitionDuration = `${Math.round((wrapperContent.offsetWidth + innerContent.offsetWidth) / speed)}s`;
+      innerContent.style.transitionDuration = `${Math.round(
+        (wrapperContent.offsetWidth + innerContent.offsetWidth) / speed
+      )}s`;
       innerContent.style.transform = `translateX(-${innerContent.offsetWidth}px)`;
     }
   }, [contentKey]);
@@ -88,24 +92,15 @@ export const NoticeBar: React.FC<NoticeBarProps> = (props) => {
     onClose?.();
   };
 
-  const wrapCls = classnames(
-    prefixCls,
-    className,
-    `${prefixCls}-${type}`,
-  );
+  const wrapCls = classnames(prefixCls, className, `${prefixCls}-${type}`);
 
   if (!visible) {
     return null;
   }
 
   return (
-    <div
-      className={wrapCls}
-    >
-      <span
-        key="cnt-left"
-        className={`${prefixCls}-left`}
-      >
+    <div className={wrapCls}>
+      <span key="cnt-left" className={`${prefixCls}-left`}>
         {icon ? icon : <Icon type="voice" />}
       </span>
       <span
@@ -123,17 +118,9 @@ export const NoticeBar: React.FC<NoticeBarProps> = (props) => {
         </span>
       </span>
       {(extra || closeable) && (
-        <span
-          key="cnt-right"
-          className={`${prefixCls}-right`}
-        >
+        <span key="cnt-right" className={`${prefixCls}-right`}>
           {extra}
-          {closeable && (
-            <Icon
-              type="cross"
-              onClick={() => handleClose()}
-            />
-          )}
+          {closeable && <Icon type="cross" onClick={() => handleClose()} />}
         </span>
       )}
     </div>

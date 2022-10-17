@@ -62,7 +62,10 @@ const TodoList = () => {
   };
 
   // mark task as completed
-  const completeTask = (e: React.ChangeEvent<HTMLInputElement>, index: number) => {
+  const completeTask = (
+    e: React.ChangeEvent<HTMLInputElement>,
+    index: number
+  ) => {
     const checkFlag = e && e.target && e.target.checked;
     const arr = [...tasks];
     arr[index].done = checkFlag;
@@ -70,7 +73,9 @@ const TodoList = () => {
   };
 
   // calc task progress percent
-  const taskProgress = tasks.length ? Math.round(100 * getCompletedCount() / tasks.length) : 0;
+  const taskProgress = tasks.length
+    ? Math.round((100 * getCompletedCount()) / tasks.length)
+    : 0;
 
   return (
     <div className="playground-todo-list">
@@ -92,11 +97,11 @@ const TodoList = () => {
             onClick={createTask}
           ></Button>
         </div>
-        <p className="tasks">Tasks: { tasks.length }</p>
+        <p className="tasks">Tasks: {tasks.length}</p>
       </div>
       <div className="main-bd">
-        <p className="remaining">Remaining: { getRemainingCount() }</p>
-        <p className="completed">Completed: { getCompletedCount() }</p>
+        <p className="remaining">Remaining: {getRemainingCount()}</p>
+        <p className="completed">Completed: {getCompletedCount()}</p>
         <div className="row-flex">
           <Progress
             mode="circle"
@@ -109,35 +114,28 @@ const TodoList = () => {
         </div>
       </div>
       {tasks.length > 0 ? (
-        <div
-          className="main-ft"
-        >
+        <div className="main-ft">
           {tasks.map((item: any, index: number) => (
-            <div
-              key={`row${index}`}
-              className="row"
-            >
+            <div key={`row${index}`} className="row">
               <input
                 key={`checkbox${index}`}
                 type="checkbox"
                 id={`checkbox${index}`}
                 checked={item.done}
-                onChange={(e: React.ChangeEvent<HTMLInputElement>) => completeTask(e, index)}
+                onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
+                  completeTask(e, index)
+                }
               />
               <label
                 key={`label${index}`}
-                className={`content${item.done ? " label-done": ""}`}
+                className={`content${item.done ? " label-done" : ""}`}
                 htmlFor={`checkbox${index}`}
               >
-                { item.text }
+                {item.text}
               </label>
               <div className="row-flex">
                 {item.done && (
-                  <Icon
-                    key={`checkIcon${index}`}
-                    type="check"
-                    color="#36C"
-                  />
+                  <Icon key={`checkIcon${index}`} type="check" color="#36C" />
                 )}
                 <Icon
                   key={`deleteIcon${index}`}
@@ -150,9 +148,7 @@ const TodoList = () => {
           ))}
         </div>
       ) : (
-        <Empty
-          message="No result"
-        />
+        <Empty message="No result" />
       )}
     </div>
   );
@@ -167,10 +163,7 @@ const Example = () => {
   return (
     <>
       <div className="playground-watermark">
-        <Watermark
-          content="RUI next"
-          fontColor="rgba(0, 0, 0, .06)"
-        />
+        <Watermark content="RUI next" fontColor="rgba(0, 0, 0, .06)" />
         <NoticeBar
           type="alert"
           content="This is the playground for RUI.next. Please scan the QR code to access the examples on mobile/tablet device."
@@ -183,14 +176,13 @@ const Example = () => {
           }
           closeable
         />
-        <Divider contentAlign="center">Todo List with animated progress</Divider>
+        <Divider contentAlign="center">
+          Todo List with animated progress
+        </Divider>
         <TodoList />
         <Divider contentAlign="left">QR Code</Divider>
         <Flex justify="center">
-          <QRCode
-            value="https://nikoni.top/rui-next/"
-            border
-          />
+          <QRCode value="https://nikoni.top/rui-next/" border />
         </Flex>
         <Divider contentAlign="right">RUI Playground</Divider>
         <Footer
@@ -198,7 +190,10 @@ const Example = () => {
           links={[
             { text: "docs", url: "https://nikoni.top/rui-next/" },
             { text: "demos", url: "https://nikoni.top/rui-next/" },
-            { text: "playground", url: "https://nikoni.top/rui-next/en/playground" },
+            {
+              text: "playground",
+              url: "https://nikoni.top/rui-next/en/playground",
+            },
           ]}
           content="Copyright @ 2021-present RUI.next. Built with Vite & React."
           chips={[

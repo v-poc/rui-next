@@ -34,11 +34,7 @@ export const Result: React.FC<ResultProps> = (props) => {
 
   let imgEl;
   if (img) {
-    imgEl = (
-      <div className={`${prefixCls}-pic`}>
-        {img}
-      </div>
-    );
+    imgEl = <div className={`${prefixCls}-pic`}>{img}</div>;
   } else if (imgUrl) {
     imgEl = (
       <div
@@ -48,36 +44,16 @@ export const Result: React.FC<ResultProps> = (props) => {
     );
   }
 
-  const wrapCls = classnames(
-    prefixCls,
-    className
-  );
+  const wrapCls = classnames(prefixCls, className);
 
   return (
-    <div
-      role="alert"
-      className={wrapCls}
-      style={style}
-    >
+    <div role="alert" className={wrapCls} style={style}>
       {imgEl}
-      {title && (
-        <div className={`${prefixCls}-title`}>
-          {title}
-        </div>
-      )}
-      {message && (
-        <div className={`${prefixCls}-message`}>
-          {message}
-        </div>
-      )}
+      {title && <div className={`${prefixCls}-title`}>{title}</div>}
+      {message && <div className={`${prefixCls}-message`}>{message}</div>}
       {buttonText && (
         <div className={`${prefixCls}-button`}>
-          <Button
-            type={buttonType}
-            size="small"
-            inline
-            onClick={onButtonClick}
-          >
+          <Button type={buttonType} size="small" inline onClick={onButtonClick}>
             {buttonText}
           </Button>
         </div>

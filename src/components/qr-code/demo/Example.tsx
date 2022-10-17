@@ -123,9 +123,9 @@ const Example = () => {
       <input
         type="text"
         placeholder="Please input content"
-        className="example-input"
+        className="qrcode-example-input"
         value={params.value}
-        onChange={e => handleInputContent(e)}
+        onChange={(e) => handleInputContent(e)}
       />
       {params.value && (
         <QRCode

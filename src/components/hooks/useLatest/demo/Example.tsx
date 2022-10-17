@@ -24,24 +24,20 @@ const Example = () => {
     }
   };
 
-  return (<>
-    <Divider contentAlign="left">
-      Count by useState: {count}
-    </Divider>
-    <Divider contentAlign="left">
-      Count by <strong>useLatest</strong>: {refCount}
-    </Divider>
-    <br />
-    <Button
-      size="small"
-      inline
-      round
-      onClick={handleClick}
-    >
-      {isStart ? "Stop" : "Start"} testing
-    </Button>
-    <br /><br />
-  </>);
+  return (
+    <>
+      <Divider contentAlign="left">Count by useState: {count}</Divider>
+      <Divider contentAlign="left">
+        Count by <strong>useLatest</strong>: {refCount}
+      </Divider>
+      <br />
+      <Button size="small" inline round onClick={handleClick}>
+        {isStart ? "Stop" : "Start"} testing
+      </Button>
+      <br />
+      <br />
+    </>
+  );
 };
 
 export default Example;

@@ -4,16 +4,12 @@ import useUpdate from "../useUpdate/index";
 
 type PropsType<T> = {
   defaultValue?: T; // default value (optional)
-  value?: T;        // value (optional)
+  value?: T; // value (optional)
   onChange?: (v: T) => void;
 };
 
 const usePropsValue = <T>(props: PropsType<T>) => {
-  const {
-    defaultValue,
-    value,
-    onChange,
-  } = props;
+  const { defaultValue, value, onChange } = props;
   // @ts-ignore
   const valRef = useRef<T>(value !== undefined ? value : defaultValue);
 

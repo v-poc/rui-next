@@ -9,27 +9,15 @@ export type CardBodyProps = React.HTMLProps<HTMLDivElement> & {
 
 // CardBody FC
 const CardBody: React.FC<CardBodyProps> = (props) => {
-  const {
-    prefixCls,
-    className,
-    ...restProps
-  } = props;
-  
-  const wrapCls = classnames(
-    `${prefixCls}-body`,
-    className
-  );
+  const { prefixCls, className, ...restProps } = props;
 
-  return (
-    <div
-      className={wrapCls}
-      {...restProps}
-    />
-  );
+  const wrapCls = classnames(`${prefixCls}-body`, className);
+
+  return <div className={wrapCls} {...restProps} />;
 };
 
 CardBody.defaultProps = {
-  prefixCls: 'r-card',
+  prefixCls: "r-card",
 };
 
 export default CardBody;

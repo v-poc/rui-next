@@ -18,13 +18,7 @@ export type XButtonProps = {
 
 // XButton FC
 export const XButton: React.FC<XButtonProps> = (props) => {
-  const {
-    prefixCls,
-    className,
-    delay,
-    scale = 1,
-    callback,
-  } = props;
+  const { prefixCls, className, delay, scale = 1, callback } = props;
 
   const [isAddCls, setIsAddCls] = useState(false);
 
@@ -36,13 +30,9 @@ export const XButton: React.FC<XButtonProps> = (props) => {
     btnStyle["transform"] = `scale(${scale})`;
   }
 
-  const cls = classnames(
-    prefixCls,
-    className,
-    {
-      "pururun": isAddCls,
-    },
-  );
+  const cls = classnames(prefixCls, className, {
+    pururun: isAddCls,
+  });
 
   const onClickButton = () => {
     setIsAddCls(true);
@@ -55,17 +45,11 @@ export const XButton: React.FC<XButtonProps> = (props) => {
   };
 
   return (
-    <div
-      className={cls}
-      style={btnStyle}
-    >
-      <div
-        className={`${prefixCls}-chi`}
-        onClick={onClickButton}
-      >
+    <div className={cls} style={btnStyle}>
+      <div className={`${prefixCls}-chi`} onClick={onClickButton}>
         <div className={`${prefixCls}-star`}>★</div>
       </div>
-    </div>  
+    </div>
   );
 };
 

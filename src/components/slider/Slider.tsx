@@ -81,7 +81,9 @@ export const Slider: React.FC<SliderProps> = (props) => {
 
   const pointsList = useMemo(() => {
     if (marks) {
-      return Object.keys(marks).map(parseFloat).sort((a, b) => a - b);
+      return Object.keys(marks)
+        .map(parseFloat)
+        .sort((a, b) => a - b);
     }
 
     const res: number[] = [];
@@ -101,7 +103,7 @@ export const Slider: React.FC<SliderProps> = (props) => {
     } else {
       const lenPerStep = 100 / ((max - min) / step);
       const steps = Math.round(newPos / lenPerStep);
-      val = steps * lenPerStep * (max - min) * 0.01 + min;  
+      val = steps * lenPerStep * (max - min) * 0.01 + min;
     }
 
     return val;
@@ -119,11 +121,17 @@ export const Slider: React.FC<SliderProps> = (props) => {
     }
 
     const offsetL = trackRef.current?.getBoundingClientRect().left;
-    const pos = (max - min) * (e.clientX - offsetL) / Math.ceil(trackRef.current.offsetWidth) + min;
+    const pos =
+      ((max - min) * (e.clientX - offsetL)) /
+        Math.ceil(trackRef.current.offsetWidth) +
+      min;
     const targetValue = getValueByPosition(pos);
     let nextSliderValue: [number, number] = [min, targetValue];
     if (range) {
-      if (Math.abs(targetValue - sliderValue[0]) > Math.abs(targetValue - sliderValue[1])) {
+      if (
+        Math.abs(targetValue - sliderValue[0]) >
+        Math.abs(targetValue - sliderValue[1])
+      ) {
         nextSliderValue = [sliderValue[0], targetValue];
       } else {
         nextSliderValue = [targetValue, sliderValue[1]];
@@ -134,17 +142,13 @@ export const Slider: React.FC<SliderProps> = (props) => {
     doAfterChange(nextSliderValue);
   };
 
-  const fillW = `${100 * (sliderValue[1] - sliderValue[0]) / (max - min)}%`;
+  const fillW = `${(100 * (sliderValue[1] - sliderValue[0])) / (max - min)}%`;
 
-  const fillL = `${100 * (sliderValue[0] - min) / (max - min)}%`;
+  const fillL = `${(100 * (sliderValue[0] - min)) / (max - min)}%`;
 
-  const wrapCls = classnames(
-    prefixCls,
-    className,
-    {
-      [`${prefixCls}-disabled`]: disabled,
-    }
-  );
+  const wrapCls = classnames(prefixCls, className, {
+    [`${prefixCls}-disabled`]: disabled,
+  });
 
   const renderThumb = (index: number) => (
     <Thumb
@@ -178,13 +182,8 @@ export const Slider: React.FC<SliderProps> = (props) => {
   );
 
   return (
-    <div
-      className={wrapCls}
-    >
-      <div
-        className={`${prefixCls}-track-container`}
-        onClick={onClickTrack}
-      >
+    <div className={wrapCls}>
+      <div className={`${prefixCls}-track-container`} onClick={onClickTrack}>
         <div
           ref={trackRef}
           className={`${prefixCls}-track`}
@@ -224,7 +223,7 @@ export const Slider: React.FC<SliderProps> = (props) => {
 };
 
 Slider.defaultProps = {
-  prefixCls: 'r-slider',
+  prefixCls: "r-slider",
   min: 0,
   max: 100,
   disabled: false,

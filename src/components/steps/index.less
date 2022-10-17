@@ -107,8 +107,8 @@
 
 // Step styles
 .@{stepPrefixClass} {
-  --line-to-next-color: #E5E5E5;
-  --icon-color: #E5E5E5;
+  --line-to-next-color: #e5e5e5;
+  --icon-color: #e5e5e5;
 
   .@{stepPrefixClass}-indicator {
     position: relative;
@@ -123,7 +123,7 @@
     .@{stepPrefixClass}-icon-container {
       position: absolute;
       z-index: 1;
-      background: #FFF;
+      background: #fff;
       color: var(--icon-color);
 
       > .r-icon {
@@ -139,11 +139,11 @@
   }
 
   &-status-finish {
-    --line-to-next-color: #1677FF;
+    --line-to-next-color: #1677ff;
   }
 
   &-status-wait {
-    --icon-color: #E5E5E5;
+    --icon-color: #e5e5e5;
 
     .r-step-title {
       color: #999;
@@ -151,34 +151,34 @@
   }
 
   &-status-process {
-    --icon-color: #1677FF;
+    --icon-color: #1677ff;
 
     .@{stepPrefixClass}-title {
-      color: #1677FF;
+      color: #1677ff;
     }
   }
 
   &-status-finish {
-    --icon-color: #1677FF;
+    --icon-color: #1677ff;
   }
 
   &-status-error {
-    --icon-color: #FF3141;
+    --icon-color: #ff3141;
 
     .@{stepPrefixClass}-title {
-      color: #FF3141;
+      color: #ff3141;
     }
   }
 
   &-icon-container {
     font-size: 18px;
   }
-  
+
   &-icon-dot {
     display: block;
     width: 8px;
     height: 8px;
     background: currentColor;
     border-radius: 4px;
-  }  
+  }
 }

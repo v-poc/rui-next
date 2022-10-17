@@ -1,37 +1,32 @@
 import { ReactElement } from "react";
 import { withAnimated, AnimatedStyle } from "./withAnimated";
-import {
-  is,
-  eachProp,
-  Lookup,
-  HostConfig,
-  AnimatedObject,
-} from "./shared";
+import { is, eachProp, Lookup, HostConfig, AnimatedObject } from "./shared";
 
 type LeafFunctionComponent<P> = {
-  (props: P): ReactElement | null
-  displayName?: string
+  (props: P): ReactElement | null;
+  displayName?: string;
 };
 
-type ElementType<P = any> =
-  | React.ElementType<P>
-  | LeafFunctionComponent<P>;
+type ElementType<P = any> = React.ElementType<P> | LeafFunctionComponent<P>;
 
 type AnimatableComponent = string | Exclude<ElementType, string>;
 
 const isCustomPropRE = /^--/;
 
-function dangerousStyleValue(name: string, value: string | number | boolean | null) {
-  if (value == null || typeof value === 'boolean' || value === '') return ''
+function dangerousStyleValue(
+  name: string,
+  value: string | number | boolean | null
+) {
+  if (value == null || typeof value === "boolean" || value === "") return "";
   if (
-    typeof value === 'number' &&
+    typeof value === "number" &&
     value !== 0 &&
     !isCustomPropRE.test(name) &&
     !(isUnitlessNumber.hasOwnProperty(name) && isUnitlessNumber[name])
   )
-    return value + 'px'
+    return value + "px";
   // Presumes implicit 'px' suffix for unitless numbers
-  return ('' + value).trim()
+  return ("" + value).trim();
 }
 
 const attributeCache: Lookup<string> = {};
@@ -40,55 +35,55 @@ type Instance = HTMLDivElement & { style?: Lookup };
 
 function applyAnimatedValues(instance: Instance, props: Lookup) {
   if (!instance.nodeType || !instance.setAttribute) {
-    return false
+    return false;
   }
 
   const isFilterElement =
-    instance.nodeName === 'filter' ||
-    (instance.parentNode && instance.parentNode.nodeName === 'filter')
+    instance.nodeName === "filter" ||
+    (instance.parentNode && instance.parentNode.nodeName === "filter");
 
-  const { style, children, scrollTop, scrollLeft, ...attributes } = props!
+  const { style, children, scrollTop, scrollLeft, ...attributes } = props!;
 
-  const values = Object.values(attributes)
-  const names = Object.keys(attributes).map(name =>
+  const values = Object.values(attributes);
+  const names = Object.keys(attributes).map((name) =>
     isFilterElement || instance.hasAttribute(name)
       ? name
       : attributeCache[name] ||
         (attributeCache[name] = name.replace(
           /([A-Z])/g,
           // Attributes are written in dash case
-          n => '-' + n.toLowerCase()
+          (n) => "-" + n.toLowerCase()
         ))
-  )
+  );
 
   if (children !== void 0) {
-    instance.textContent = children
+    instance.textContent = children;
   }
 
   // Apply CSS styles
   for (let name in style) {
     if (style.hasOwnProperty(name)) {
-      const value = dangerousStyleValue(name, style[name])
+      const value = dangerousStyleValue(name, style[name]);
       if (isCustomPropRE.test(name)) {
-        instance.style.setProperty(name, value)
+        instance.style.setProperty(name, value);
       } else {
-        instance.style[name] = value
+        instance.style[name] = value;
       }
     }
   }
 
   // Apply DOM attributes
   names.forEach((name, i) => {
-    instance.setAttribute(name, values[i])
-  })
+    instance.setAttribute(name, values[i]);
+  });
 
   if (scrollTop !== void 0) {
-    instance.scrollTop = scrollTop
+    instance.scrollTop = scrollTop;
   }
   if (scrollLeft !== void 0) {
-    instance.scrollLeft = scrollLeft
+    instance.scrollLeft = scrollLeft;
   }
-};
+}
 
 let isUnitlessNumber: { [key: string]: true } = {
   animationIterationCount: true,
@@ -137,149 +132,149 @@ let isUnitlessNumber: { [key: string]: true } = {
 
 const prefixKey = (prefix: string, key: string) =>
   prefix + key.charAt(0).toUpperCase() + key.substring(1);
-const prefixes = ['Webkit', 'Ms', 'Moz', 'O'];
+const prefixes = ["Webkit", "Ms", "Moz", "O"];
 
 isUnitlessNumber = Object.keys(isUnitlessNumber).reduce((acc, prop) => {
-  prefixes.forEach(prefix => (acc[prefixKey(prefix, prop)] = acc[prop]))
-  return acc
+  prefixes.forEach((prefix) => (acc[prefixKey(prefix, prop)] = acc[prop]));
+  return acc;
 }, isUnitlessNumber);
 
 type Primitives = keyof JSX.IntrinsicElements;
 const primitives: Primitives[] = [
-  'a',
-  'abbr',
-  'address',
-  'area',
-  'article',
-  'aside',
-  'audio',
-  'b',
-  'base',
-  'bdi',
-  'bdo',
-  'big',
-  'blockquote',
-  'body',
-  'br',
-  'button',
-  'canvas',
-  'caption',
-  'cite',
-  'code',
-  'col',
-  'colgroup',
-  'data',
-  'datalist',
-  'dd',
-  'del',
-  'details',
-  'dfn',
-  'dialog',
-  'div',
-  'dl',
-  'dt',
-  'em',
-  'embed',
-  'fieldset',
-  'figcaption',
-  'figure',
-  'footer',
-  'form',
-  'h1',
-  'h2',
-  'h3',
-  'h4',
-  'h5',
-  'h6',
-  'head',
-  'header',
-  'hgroup',
-  'hr',
-  'html',
-  'i',
-  'iframe',
-  'img',
-  'input',
-  'ins',
-  'kbd',
-  'keygen',
-  'label',
-  'legend',
-  'li',
-  'link',
-  'main',
-  'map',
-  'mark',
-  'menu',
-  'menuitem',
-  'meta',
-  'meter',
-  'nav',
-  'noscript',
-  'object',
-  'ol',
-  'optgroup',
-  'option',
-  'output',
-  'p',
-  'param',
-  'picture',
-  'pre',
-  'progress',
-  'q',
-  'rp',
-  'rt',
-  'ruby',
-  's',
-  'samp',
-  'script',
-  'section',
-  'select',
-  'small',
-  'source',
-  'span',
-  'strong',
-  'style',
-  'sub',
-  'summary',
-  'sup',
-  'table',
-  'tbody',
-  'td',
-  'textarea',
-  'tfoot',
-  'th',
-  'thead',
-  'time',
-  'title',
-  'tr',
-  'track',
-  'u',
-  'ul',
-  'var',
-  'video',
-  'wbr',
+  "a",
+  "abbr",
+  "address",
+  "area",
+  "article",
+  "aside",
+  "audio",
+  "b",
+  "base",
+  "bdi",
+  "bdo",
+  "big",
+  "blockquote",
+  "body",
+  "br",
+  "button",
+  "canvas",
+  "caption",
+  "cite",
+  "code",
+  "col",
+  "colgroup",
+  "data",
+  "datalist",
+  "dd",
+  "del",
+  "details",
+  "dfn",
+  "dialog",
+  "div",
+  "dl",
+  "dt",
+  "em",
+  "embed",
+  "fieldset",
+  "figcaption",
+  "figure",
+  "footer",
+  "form",
+  "h1",
+  "h2",
+  "h3",
+  "h4",
+  "h5",
+  "h6",
+  "head",
+  "header",
+  "hgroup",
+  "hr",
+  "html",
+  "i",
+  "iframe",
+  "img",
+  "input",
+  "ins",
+  "kbd",
+  "keygen",
+  "label",
+  "legend",
+  "li",
+  "link",
+  "main",
+  "map",
+  "mark",
+  "menu",
+  "menuitem",
+  "meta",
+  "meter",
+  "nav",
+  "noscript",
+  "object",
+  "ol",
+  "optgroup",
+  "option",
+  "output",
+  "p",
+  "param",
+  "picture",
+  "pre",
+  "progress",
+  "q",
+  "rp",
+  "rt",
+  "ruby",
+  "s",
+  "samp",
+  "script",
+  "section",
+  "select",
+  "small",
+  "source",
+  "span",
+  "strong",
+  "style",
+  "sub",
+  "summary",
+  "sup",
+  "table",
+  "tbody",
+  "td",
+  "textarea",
+  "tfoot",
+  "th",
+  "thead",
+  "time",
+  "title",
+  "tr",
+  "track",
+  "u",
+  "ul",
+  "var",
+  "video",
+  "wbr",
   // SVG
-  'circle',
-  'clipPath',
-  'defs',
-  'ellipse',
-  'foreignObject',
-  'g',
-  'image',
-  'line',
-  'linearGradient',
-  'mask',
-  'path',
-  'pattern',
-  'polygon',
-  'polyline',
-  'radialGradient',
-  'rect',
-  'stop',
-  'svg',
-  'text',
-  'tspan',
+  "circle",
+  "clipPath",
+  "defs",
+  "ellipse",
+  "foreignObject",
+  "g",
+  "image",
+  "line",
+  "linearGradient",
+  "mask",
+  "path",
+  "pattern",
+  "polygon",
+  "polyline",
+  "radialGradient",
+  "rect",
+  "stop",
+  "svg",
+  "text",
+  "tspan",
 ];
 
 // A stub type that gets replaced by @react-spring/web and others.
@@ -289,49 +284,49 @@ type WithAnimated = {
 };
 
 // For storing the animated version on the original component
-const cacheKey = Symbol.for('AnimatedComponent');
+const cacheKey = Symbol.for("AnimatedComponent");
 
 const createHost = (
   components: AnimatableComponent[] | { [key: string]: AnimatableComponent },
   {
     applyAnimatedValues = () => false,
-    createAnimatedStyle = style => new AnimatedObject(style),
-    getComponentProps = props => props,
+    createAnimatedStyle = (style) => new AnimatedObject(style),
+    getComponentProps = (props) => props,
   }: Partial<HostConfig> = {}
 ) => {
   const hostConfig: HostConfig = {
     applyAnimatedValues,
     createAnimatedStyle,
     getComponentProps,
-  }
+  };
 
   const animated: WithAnimated = (Component: any) => {
-    const displayName = getDisplayName(Component) || 'Anonymous'
+    const displayName = getDisplayName(Component) || "Anonymous";
 
     if (is.str(Component)) {
       Component =
         animated[Component] ||
-        (animated[Component] = withAnimated(Component, hostConfig))
+        (animated[Component] = withAnimated(Component, hostConfig));
     } else {
       Component =
         Component[cacheKey] ||
-        (Component[cacheKey] = withAnimated(Component, hostConfig))
+        (Component[cacheKey] = withAnimated(Component, hostConfig));
     }
 
-    Component.displayName = `Animated(${displayName})`
-    return Component
-  }
+    Component.displayName = `Animated(${displayName})`;
+    return Component;
+  };
 
   eachProp(components, (Component, key) => {
     if (is.arr(components)) {
-      key = getDisplayName(Component)!
+      key = getDisplayName(Component)!;
     }
-    animated[key] = animated(Component)
-  })
+    animated[key] = animated(Component);
+  });
 
   return {
     animated,
-  }
+  };
 };
 
 const getDisplayName = (arg: AnimatableComponent) =>
@@ -343,7 +338,7 @@ const getDisplayName = (arg: AnimatableComponent) =>
 
 const host = createHost(primitives, {
   applyAnimatedValues,
-  createAnimatedStyle: style => new AnimatedStyle(style),
+  createAnimatedStyle: (style) => new AnimatedStyle(style),
   getComponentProps: ({ scrollTop, scrollLeft, ...props }) => props,
 });
 

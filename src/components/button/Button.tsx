@@ -45,21 +45,17 @@ const Button: React.FC<ButtonProps> = (props) => {
 
   const iconType: any = loading ? "loading" : icon;
 
-  const wrapCls = classnames(
-    prefixCls,
-    className,
-    {
-      [`${prefixCls}-primary`]: type === "primary",
-      [`${prefixCls}-ghost`]: type === "ghost",
-      [`${prefixCls}-warning`]: type === "warning",
-      [`${prefixCls}-small`]: size === "small",
-      [`${prefixCls}-inline`]: inline,
-      [`${prefixCls}-round`]: round,
-      [`${prefixCls}-disabled`]: disabled,
-      [`${prefixCls}-loading`]: loading,
-      [`${prefixCls}-icon`]: !!iconType,
-    }
-  );
+  const wrapCls = classnames(prefixCls, className, {
+    [`${prefixCls}-primary`]: type === "primary",
+    [`${prefixCls}-ghost`]: type === "ghost",
+    [`${prefixCls}-warning`]: type === "warning",
+    [`${prefixCls}-small`]: size === "small",
+    [`${prefixCls}-inline`]: inline,
+    [`${prefixCls}-round`]: round,
+    [`${prefixCls}-disabled`]: disabled,
+    [`${prefixCls}-loading`]: loading,
+    [`${prefixCls}-icon`]: !!iconType,
+  });
 
   const childrenEls = React.Children.map(children, insertSpace);
 
@@ -79,7 +75,7 @@ const Button: React.FC<ButtonProps> = (props) => {
     const cls = classnames(
       iconPrefixCls,
       `${prefixCls}-icon`,
-      size === "small" ? `${iconPrefixCls}-xxs` : `${iconPrefixCls}-md`,
+      size === "small" ? `${iconPrefixCls}-xxs` : `${iconPrefixCls}-md`
     );
 
     iconEl = React.cloneElement(iconType, {
@@ -89,7 +85,9 @@ const Button: React.FC<ButtonProps> = (props) => {
 
   return (
     <TouchFeedback
-      activeClassName={activeClassName || (activeStyle ? `${prefixCls}-active` : undefined)}
+      activeClassName={
+        activeClassName || (activeStyle ? `${prefixCls}-active` : undefined)
+      }
       disabled={disabled}
       activeStyle={activeStyle}
     >
