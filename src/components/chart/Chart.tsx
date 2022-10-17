@@ -18,14 +18,14 @@ export type ChartProps = {
 // Chart FC
 export const Chart: React.FC<ChartProps> = (props) => {
   const {
-    labels,
-    datasets,
-    size,
+    labels = [],
+    datasets = [],
+    size = [480, 320],
     max,
     min,
-    lines,
+    lines = 5,
     step,
-    shift,
+    shift = 0.6,
     format,
     prefixCls,
   } = props;
@@ -139,13 +139,13 @@ export const Chart: React.FC<ChartProps> = (props) => {
     for (let i = 0; i < lines; i++) {
       items.push({
         offset: i * deltaY,
-        label: format(params.max - i * params.step),
+        label: format?.(params.max - i * params.step),
       });
     }
 
     items.push({
       offset: getInnerHeight(),
-      label: format(params.min),
+      label: format?.(params.min),
     });
     return items;
   };

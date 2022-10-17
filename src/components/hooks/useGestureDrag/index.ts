@@ -1415,7 +1415,7 @@ class Controller {
       // Adding gesture handlers
       for (const gestureKey of this.gestures) {
         if (this.config[gestureKey]!.enabled) {
-          const Engine = EngineMap.get(gestureKey)!; // @ts-ignore
+          const Engine = EngineMap.get(gestureKey)!;
           new Engine(this, args, gestureKey).bind(bindFunction);
         }
       }
@@ -1424,13 +1424,15 @@ class Controller {
       for (const eventKey in this.nativeHandlers) {
         bindFunction(
           eventKey,
-          "", // @ts-ignore
-          (event) =>
+          "",
+          (event) => {
+            // @ts-ignore
             this.nativeHandlers[eventKey]({
               ...this.state.shared,
               event,
               args,
-            }),
+            });
+          },
           undefined,
           true
         );
@@ -2127,9 +2129,8 @@ class DragEngine extends CoordinatesEngine<"drag"> {
     if (import.meta.env.DEV) {
       try {
         if (device === "pointer" && config.preventScrollDelay === undefined) {
-          // @ts-ignore (warning for r3f)
           const currentTarget =
-            "uv" in event
+            "uv" in event // @ts-ignore (warning for r3f)
               ? event.sourceEvent.currentTarget
               : event.currentTarget;
           const style = window.getComputedStyle(currentTarget);

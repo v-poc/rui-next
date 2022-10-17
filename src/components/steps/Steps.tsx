@@ -42,6 +42,7 @@ export const Steps: React.FC<StepsProps> = (props) => {
         );
 
         return React.cloneElement(child, {
+          // @ts-ignore
           status,
           icon,
         });

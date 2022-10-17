@@ -42,7 +42,7 @@ export const Thumb: React.FC<ThumbProps> = (props) => {
   });
 
   const dragProps = useGestureDrag(
-    (_state) => {
+    (_state: any) => {
       if (disabled) {
         return;
       }
