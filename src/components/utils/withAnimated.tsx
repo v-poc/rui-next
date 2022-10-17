@@ -63,8 +63,8 @@ const addUnit = (value: Value, unit: string): string | 0 =>
  * Checks if the input value matches the identity value.
  *
  *     isValueIdentity(0, 0)              // => true
- *     isValueIdentity('0px', 0)          // => true
- *     isValueIdentity([0, '0px', 0], 0)  // => true
+ *     isValueIdentity("0px", 0)          // => true
+ *     isValueIdentity([0, "0px", 0], 0)  // => true
  */
 const isValueIdentity = (value: OneOrMore<Value>, id: number): boolean =>
   is.arr(value)
@@ -155,7 +155,7 @@ export class AnimatedStyle extends AnimatedObject {
     if (x || y || z) {
       inputs.push([x || 0, y || 0, z || 0]);
       transforms.push((xyz: Value[]) => [
-        `translate3d(${xyz.map(v => addUnit(v, 'px')).join(',')})`, // prettier-ignore
+        `translate3d(${xyz.map(v => addUnit(v, "px")).join(",")})`, // prettier-ignore
         isValueIdentity(xyz, 0),
       ]);
     }

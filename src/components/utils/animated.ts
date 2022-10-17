@@ -25,7 +25,7 @@ function dangerousStyleValue(
     !(isUnitlessNumber.hasOwnProperty(name) && isUnitlessNumber[name])
   )
     return value + "px";
-  // Presumes implicit 'px' suffix for unitless numbers
+  // Presumes implicit "px" suffix for unitless numbers
   return ("" + value).trim();
 }
 

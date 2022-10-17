@@ -15,7 +15,7 @@ import useShouldRender from "../hooks/useShouldRender/index";
 // Log info
 export const logInfo = (content: any, type = "info"): void => {
   // @ts-ignore
-  console[type] &&
+  console[type] && // @ts-ignore
     console[type]("[RUI-log] %c%s", "background: #69C;color: #FFF", content);
 };
 
