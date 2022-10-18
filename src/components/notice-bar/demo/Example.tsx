@@ -19,7 +19,7 @@ const Example = () => {
       <br />
       <NoticeBar type="info" content="Info type of NoticeBar" />
 
-      <Divider contentAlign="left">Customized NoticeBar</Divider>
+      <Divider contentAlign="left">Customize NoticeBar</Divider>
       <NoticeBar
         type="alert"
         content="NoticeBar react component is able to provide some notice information, this page is about the basic usage of NoticeBar component."

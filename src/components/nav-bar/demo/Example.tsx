@@ -5,7 +5,7 @@ import "./index.less";
 // Example FC
 const Example = () => {
   const handleBtnClick = () => {
-    location.href = "https://nikoni.top/rui-next/";
+    location.href = "/rui-next";
   };
 
   return (
@@ -13,7 +13,7 @@ const Example = () => {
       <Divider contentAlign="left">Dark mode</Divider>
       <NavBar
         icon={<Icon type="left" />}
-        onLeftClick={() => handleBtnClick()}
+        onLeftClick={handleBtnClick}
         rightContent={<Icon type="search" />}
       >
         Dark mode title
@@ -25,7 +25,7 @@ const Example = () => {
         mode="light"
         className="nav-bar-bg-section"
         leftContent="Back"
-        onLeftClick={() => handleBtnClick()}
+        onLeftClick={handleBtnClick}
         rightContent={[
           <Icon key="search" type="search" className="nav-bar-mr" />,
           <Icon key="ellipsis" type="ellipsis" />,

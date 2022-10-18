@@ -2,6 +2,7 @@
 import React, { useEffect, useImperativeHandle, useRef, useState } from "react";
 import { createPortal } from "react-dom";
 import { createRoot } from "react-dom/client";
+import { Toast } from "../index";
 import type {
   DependencyList,
   MutableRefObject,
@@ -14,6 +15,7 @@ import useShouldRender from "../hooks/useShouldRender/index";
 
 // Log info
 export const logInfo = (content: any, type = "info"): void => {
+  Toast.show(content);
   // @ts-ignore
   console[type] && // @ts-ignore
     console[type]("[RUI-log] %c%s", "background: #69C;color: #FFF", content);
