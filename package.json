@@ -1,6 +1,6 @@
 {
   "name": "rui-next",
-  "version": "0.44.1",
+  "version": "0.44.2",
   "description": "Mobile web UI components based on React and Vite 3",
   "files": [
     "dist/style.css",

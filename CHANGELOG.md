@@ -1,3 +1,7 @@
+# 0.44.2 (2022-10-17)
+
+Refactor: fully format codes.
+
 # 0.44.0 (2022-10-15)
 
 Added `Toast` demo.
