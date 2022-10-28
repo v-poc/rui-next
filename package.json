@@ -64,13 +64,13 @@
   "devDependencies": {
     "@types/node": "18.7.16",
     "@types/react": "18.0.20",
-    "@types/react-dom": "^18.0.7",
+    "@types/react-dom": "^18.0.8",
     "classnames": "^2.3.2",
     "less": "^4.1.3",
     "pressify": "^1.0.2",
     "react-router-dom": "6.3.0",
     "typescript": "^4.8.4",
     "v-qr-code-next": "^0.1.11",
-    "vite": "^3.2.0"
+    "vite": "^3.2.1"
   }
 }
