@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
-import { useVisibilityChange, Result, Icon, Divider } from "rui-next";
+import { Result, Icon, Divider } from "rui-next";
+import { useVisibilityChange } from "rui-hooks";
 import { canUseDOM, logInfo } from "../../../experimental";
 
 // Get visibility

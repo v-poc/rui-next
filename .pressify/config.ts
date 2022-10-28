@@ -1,15 +1,13 @@
 import { defineConfig } from "pressify";
 import type { ThemeConfig } from "pressify/theme";
-import * as pkg  from "../package.json";
+import * as pkg from "../package.json";
 
 export default defineConfig<ThemeConfig>({
   pages: "src/docs",
   vite: {
     base: "/rui-next/",
     resolve: {
-      alias: [
-        { find: "rui-next", replacement: "/src/components/index.ts"},
-      ],
+      alias: [{ find: "rui-next", replacement: "/src/components/index.ts" }],
     },
     css: {
       preprocessorOptions: {
@@ -55,7 +53,10 @@ export default defineConfig<ThemeConfig>({
             items: [
               { text: "Tutorial", link: "/en/getting-started" },
               { text: "Examples-vite3", link: "/" },
-              { text: "Examples-vite2", link: "https://nikoni.top/rui-next/docs/" },
+              {
+                text: "Examples-vite2",
+                link: "https://nikoni.top/rui-next/docs/",
+              },
             ],
           },
           {
@@ -70,7 +71,7 @@ export default defineConfig<ThemeConfig>({
               {
                 text: `Repo (v${pkg.version})`,
                 icon: "tabler:git-branch",
-                link: 'https://github.com/v-poc/rui-playground'
+                link: "https://github.com/v-poc/rui-playground",
               },
               {
                 text: "Changelog",
@@ -217,7 +218,7 @@ export default defineConfig<ThemeConfig>({
             items: [
               {
                 text: "Button",
-                link: "/en/button"
+                link: "/en/button",
               },
               {
                 text: "Switch",
@@ -331,10 +332,10 @@ export default defineConfig<ThemeConfig>({
             text: "Experimental",
             icon: "lucide:slack",
             items: [
-              {
-                text: "useLazyload",
-                link: "/en/use-lazyload",
-              },
+              // {
+              //   text: "useLazyload",
+              //   link: "/en/use-lazyload",
+              // },
               {
                 text: "PageIndicator",
                 link: "/en/page-indicator",
@@ -370,7 +371,7 @@ export default defineConfig<ThemeConfig>({
               {
                 text: "Playground",
                 link: "/en/playground",
-              }
+              },
             ],
           },
         ],

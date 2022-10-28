@@ -4,7 +4,7 @@ import { Thumb } from "./Thumb";
 import { Ticks } from "./Ticks";
 import { Marks, SliderMarks } from "./Marks";
 import { getNearest, sortValue } from "../utils/index";
-import usePropsValue from "../hooks/usePropsValue/index";
+import { usePropsValue } from "rui-hooks";
 
 // SliderValue type
 export type SliderValue = number | [number, number];

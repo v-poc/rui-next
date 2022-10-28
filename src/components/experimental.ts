@@ -19,12 +19,6 @@ export { default as SafeArea } from "./safe-area/index";
 export { default as CubeAnim } from "./cube-anim/index";
 
 /**
- * hooks
- */
-// useLazyload
-export { default as useLazyload } from "./hooks/useLazyload/index";
-
-/**
  * Utils
  */
 export { canUseDOM, logInfo } from "./utils/index";

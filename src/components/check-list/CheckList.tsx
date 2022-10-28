@@ -2,7 +2,7 @@ import React, { ReactNode } from "react";
 import Icon from "../icon/index";
 import List from "../list/index";
 import { CheckListContext } from "./CheckListContext";
-import usePropsValue from "../hooks/usePropsValue/index";
+import { usePropsValue } from "rui-hooks";
 
 // CheckListProps Type
 export type CheckListProps = {

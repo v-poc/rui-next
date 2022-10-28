@@ -1,10 +1,10 @@
 import React, { useMemo, useRef, useState } from "react";
 import type { CSSProperties, ReactNode } from "react";
 import classnames from "classnames";
-import { useSpring } from "../hooks/useSpring/index";
-import { animated } from "../utils/animated";
-import useUnmountedRef from "../hooks/useUnmountedRef/index";
-import useLockScroll from "../hooks/useLockScroll/index";
+import { useSpring } from "rui-hooks";
+import { animated } from "rui-hooks";
+import { useUnmountedRef } from "rui-hooks";
+import { useLockScroll } from "rui-hooks";
 import {
   ShouldRender,
   renderToContainer,

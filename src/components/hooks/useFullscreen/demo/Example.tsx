@@ -1,5 +1,6 @@
 import React, { useRef } from "react";
-import { useFullscreen, Button, Divider } from "rui-next";
+import { Button, Divider } from "rui-next";
+import { useFullscreen } from "rui-hooks";
 import { logInfo } from "../../../experimental";
 import "./index.less";
 

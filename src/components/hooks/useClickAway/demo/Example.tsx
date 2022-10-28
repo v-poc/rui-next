@@ -1,5 +1,6 @@
 import React, { useRef, useState } from "react";
-import { useClickAway, Button, Divider } from "rui-next";
+import { Button, Divider } from "rui-next";
+import { useClickAway } from "rui-hooks";
 import { logInfo, OnePiece } from "../../../experimental";
 import "./index.less";
 

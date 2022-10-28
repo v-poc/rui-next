@@ -11,7 +11,7 @@ import type {
   ReactPortal,
 } from "react";
 import type { Root } from "react-dom/client";
-import useShouldRender from "../hooks/useShouldRender/index";
+import { useShouldRender } from "rui-hooks";
 
 // Log info
 export const logInfo = (content: any, type = "info"): void => {

@@ -12,7 +12,7 @@ import React, {
 import classnames from "classnames";
 import Icon from "../icon/index";
 import { getBound } from "../utils/index";
-import usePropsValue from "../hooks/usePropsValue/index";
+import { usePropsValue } from "rui-hooks";
 
 type NativeInputProps = DetailedHTMLProps<
   InputHTMLAttributes<HTMLInputElement>,

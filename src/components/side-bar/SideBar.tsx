@@ -2,7 +2,7 @@ import React from "react";
 import type { ReactElement, ReactNode } from "react";
 import classnames from "classnames";
 import { Badge } from "../index";
-import usePropsValue from "../hooks/usePropsValue/index";
+import { usePropsValue } from "rui-hooks";
 import { traverseNode } from "../utils/index";
 
 // CornerProps type
