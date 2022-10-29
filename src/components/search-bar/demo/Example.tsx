@@ -41,7 +41,6 @@ const Example = () => {
       <Button
         className="search-bar-example-btn"
         inline
-        round
         size="small"
         onClick={() => searchBarRef.current?.focus()}
       >
@@ -50,7 +49,6 @@ const Example = () => {
       <Button
         className="search-bar-example-btn"
         inline
-        round
         size="small"
         onClick={() => searchBarRef.current?.clear()}
       >

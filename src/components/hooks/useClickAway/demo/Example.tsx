@@ -28,7 +28,7 @@ const Example = () => {
       <br />
       <br />
       <span id="btnB">
-        <Button size="small" inline round>
+        <Button size="small" inline>
           Test B button
         </Button>
       </span>

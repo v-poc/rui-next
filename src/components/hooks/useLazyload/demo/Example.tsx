@@ -15,7 +15,6 @@ const Example = () => {
       <Button
         size="small"
         inline
-        round
         disabled={showContent && !isLoaded}
         onClick={startContentLoading}
       >
