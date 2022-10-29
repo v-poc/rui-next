@@ -1,5 +1,5 @@
 import React, { useEffect, useRef } from "react";
-import { useInViewport } from "rui-hooks";
+import useInViewport from "../hooks/useInViewport/index";
 
 // LazyloadProps type
 type LazyloadProps = {

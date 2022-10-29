@@ -1,7 +1,3 @@
-# 0.44.4 (2022-10-28)
-
-Refactor: added `rui-hooks` package.
-
 # 0.44.2 (2022-10-17)
 
 Refactor: fully format codes.

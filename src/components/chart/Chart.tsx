@@ -1,5 +1,5 @@
 import React, { Fragment, useEffect, useState } from "react";
-import { useEventListener } from "rui-hooks";
+import useEventListener from "../hooks/useEventListener/index";
 
 // ChartProps type
 export type ChartProps = {

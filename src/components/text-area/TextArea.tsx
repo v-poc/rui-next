@@ -9,7 +9,7 @@ import React, {
   useRef,
 } from "react";
 import classnames from "classnames";
-import { usePropsValue } from "rui-hooks";
+import usePropsValue from "../hooks/usePropsValue/index";
 
 type NativeTextAreaProps = DetailedHTMLProps<
   TextareaHTMLAttributes<HTMLTextAreaElement>,

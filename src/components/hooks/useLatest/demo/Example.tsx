@@ -1,6 +1,5 @@
 import React, { useRef, useState } from "react";
-import { Button, Divider } from "rui-next";
-import { useLatest } from "rui-hooks";
+import { useLatest, Button, Divider } from "rui-next";
 
 // Example FC
 const Example = () => {

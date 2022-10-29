@@ -7,7 +7,7 @@ import type {
   SyntheticEvent,
 } from "react";
 import classnames from "classnames";
-import { useIsomorphicLayoutEffect } from "rui-hooks";
+import useIsomorphicLayoutEffect from "../hooks/useIsomorphicLayoutEffect/index";
 import { Lazyload } from "../utils/Lazyload";
 import { getCSSLength } from "../utils/index";
 import createUpdateEffect from "../utils/createUpdateEffect";

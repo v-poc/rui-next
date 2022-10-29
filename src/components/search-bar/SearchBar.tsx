@@ -9,7 +9,7 @@ import classnames from "classnames";
 import Button from "../button/index";
 import Icon from "../icon/index";
 import Input from "../input/index";
-import { usePropsValue } from "rui-hooks";
+import usePropsValue from "../hooks/usePropsValue/index";
 import type { InputProps, InputRef } from "../input/index";
 
 // SearchBarProps type

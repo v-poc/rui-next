@@ -1,6 +1,5 @@
 import React from "react";
-import { Result, Icon, Divider } from "rui-next";
-import { useNetwork } from "rui-hooks";
+import { useNetwork, Result, Icon, Divider } from "rui-next";
 
 // Example FC
 const Example = () => {

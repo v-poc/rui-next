@@ -1,6 +1,5 @@
 import React, { useCallback, useRef, useState } from "react";
-import { Button, Divider } from "rui-next";
-import { useMemoizedFn } from "rui-hooks";
+import { useMemoizedFn, Button, Divider } from "rui-next";
 
 type SubCompType = {
   logCount?: () => void;

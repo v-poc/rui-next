@@ -1,5 +1,5 @@
 import React, { ReactNode, useRef } from "react";
-import { useGestureDrag } from "rui-hooks";
+import { useGestureDrag } from "../hooks/useGestureDrag/index";
 
 const ThumbIcon = (
   <svg viewBox="0 0 20 20">

@@ -1,7 +1,7 @@
 import React from "react";
 import classnames from "classnames";
 import Icon from "../icon/index";
-import { usePropsValue } from "rui-hooks";
+import usePropsValue from "../hooks/usePropsValue/index";
 
 type itemStyleType = {
   fontSize?: string;
