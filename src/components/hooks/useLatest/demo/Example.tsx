@@ -31,7 +31,7 @@ const Example = () => {
         Count by <strong>useLatest</strong>: {refCount}
       </Divider>
       <br />
-      <Button size="small" inline round onClick={handleClick}>
+      <Button size="small" inline onClick={handleClick}>
         {isStart ? "Stop" : "Start"} testing
       </Button>
       <br />
