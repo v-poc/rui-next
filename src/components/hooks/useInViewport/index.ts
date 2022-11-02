@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import useEffectWithTarget from "../useEffectWithTarget/index";
-import { getTargetElement, sleep } from "../../utils/index";
+import { getTargetElement } from "../../utils/index";
 import type { BasicTarget } from "../../utils/index";
 
 type OptionsType = {

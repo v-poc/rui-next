@@ -151,10 +151,6 @@ export function attachPropsToComp<C, P extends Record<string, any>>(
   return ret;
 }
 
-// Sleep util function
-export const sleep = (time: number) =>
-  new Promise((resolve) => setTimeout(resolve, time));
-
 // Check if same deps
 export function checkIfSameDeps(
   oldDeps: DependencyList,
