@@ -1,8 +1,6 @@
 /**
  * experimental
  */
-// PageIndicator
-export { default as PageIndicator } from "./page-indicator/index";
 // Chart
 export { default as Chart } from "./chart/index";
 // Clamp

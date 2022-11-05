@@ -1,3 +1,7 @@
+# 0.45.0 (2022-11-04)
+
+Refactor: update `PageIndicator` component.
+
 # 0.44.2 (2022-10-17)
 
 Refactor: fully format codes.

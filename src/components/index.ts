@@ -71,6 +71,8 @@ export { default as SideBar } from "./side-bar/index";
 export { default as Mask } from "./mask/index";
 // Toast
 export { default as Toast } from "./toast/index";
+// PageIndicator
+export { default as PageIndicator } from "./page-indicator/index";
 
 /**
  * hooks

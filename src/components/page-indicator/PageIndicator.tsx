@@ -1,22 +1,27 @@
-import React, { ReactElement } from "react";
+import React from "react";
+import type { CSSProperties, ReactElement } from "react";
 import classnames from "classnames";
 
-// PageIndicatorProps Type
+// PageIndicatorProps type
 export type PageIndicatorProps = {
   prefixCls?: string;
   className?: string;
   total: number;
   current: number;
   color?: "primary" | "white";
+  style?: CSSProperties;
+  vertical?: boolean; // vertical or horizontal
 };
 
 // PageIndicator FC
 const PageIndicator: React.FC<PageIndicatorProps> = (props) => {
-  const { prefixCls, className, total, current, color } = props;
+  const { prefixCls, className, total, current, color, style, vertical } =
+    props;
 
   const wrapCls = classnames(
     prefixCls,
     className,
+    `${prefixCls}-${vertical ? "vertical" : "horizontal"}`,
     `${prefixCls}-color-${color}`
   );
 
@@ -32,12 +37,17 @@ const PageIndicator: React.FC<PageIndicatorProps> = (props) => {
       <div key={`indicator${idx}`} className={itemCls(idx)}></div>
     ));
 
-  return <div className={wrapCls}>{items}</div>;
+  return (
+    <div className={wrapCls} style={style}>
+      {items}
+    </div>
+  );
 };
 
 PageIndicator.defaultProps = {
   prefixCls: "r-page-indicator",
   color: "primary",
+  vertical: false,
 };
 
 export default PageIndicator;
