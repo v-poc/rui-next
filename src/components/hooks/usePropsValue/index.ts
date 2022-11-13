@@ -1,4 +1,4 @@
-import { useRef } from "react";
+import React, { useRef } from "react";
 import useMemoizedFn from "../useMemoizedFn/index";
 import useUpdate from "../useUpdate/index";
 
@@ -9,8 +9,7 @@ type PropsType<T> = {
 };
 
 const usePropsValue = <T>(props: PropsType<T>) => {
-  const { defaultValue, value, onChange } = props;
-  // @ts-ignore
+  const { defaultValue, value, onChange } = props; // @ts-ignore
   const valRef = useRef<T>(value !== undefined ? value : defaultValue);
 
   if (value !== undefined) {
@@ -19,14 +18,21 @@ const usePropsValue = <T>(props: PropsType<T>) => {
 
   const forceReRender = useUpdate();
 
-  const setValue: any = useMemoizedFn((val: T) => {
-    if (value === undefined) {
-      valRef.current = val;
-      forceReRender();
-    }
+  const setValue: any = useMemoizedFn(
+    (v: React.SetStateAction<T>, forceTrigger: boolean = false) => {
+      const nextVal =
+        typeof v === "function" ? (v as (prev: T) => T)(valRef.current) : v;
 
-    onChange?.(val);
-  });
+      if (!forceTrigger && nextVal === valRef.current) {
+        return;
+      }
+
+      valRef.current = nextVal;
+      forceReRender();
+
+      return onChange?.(nextVal);
+    }
+  );
 
   return [valRef.current, setValue] as const;
 };
