@@ -1,3 +1,7 @@
+# 0.45.1 (2022-12-09)
+
+Updated to switch to Vite 4.
+
 # 0.45.0 (2022-11-04)
 
 Refactor: update `PageIndicator` component.
