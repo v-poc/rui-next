@@ -39,8 +39,8 @@
     "react-vite-ui",
     "react-vite-ts",
     "react-vite-ts-ui",
-    "vite3",
-    "react18-vite3-ui"
+    "vite4",
+    "react18-vite4-ui"
   ],
   "author": "Niko Ni",
   "license": "MIT",
