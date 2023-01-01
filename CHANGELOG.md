@@ -1,3 +1,7 @@
+# 0.45.2 (2022-12-31)
+
+Refactor: update `Input` component.
+
 # 0.45.1 (2022-12-09)
 
 Updated to switch to Vite 4.
