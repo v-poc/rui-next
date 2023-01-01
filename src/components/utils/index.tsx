@@ -100,6 +100,18 @@ export const canUseDOM = !!(
   window.document.createElement
 );
 
+// Check if iOS
+export const isIOS = () => {
+  return canUseDOM
+    ? /ios|iphone|ipad|ipod/.test(navigator.userAgent.toLowerCase())
+    : false;
+};
+
+// Check if Android
+export const isAndroid = () => {
+  return canUseDOM ? /android/.test(navigator.userAgent.toLowerCase()) : false;
+};
+
 // Get css length with unit
 export const getCSSLength = (v: string | number) => {
   return typeof v === "number" ? `${v}px` : v;

@@ -1,23 +1,28 @@
 import React, {
   DetailedHTMLProps,
   InputHTMLAttributes,
+  CompositionEvent,
   FocusEvent,
   KeyboardEvent,
   forwardRef,
   useRef,
   useState,
   useImperativeHandle,
-  useLayoutEffect,
 } from "react";
 import classnames from "classnames";
 import Icon from "../icon/index";
-import { getBound } from "../utils/index";
+import { getBound, isIOS } from "../utils/index";
 import usePropsValue from "../hooks/usePropsValue/index";
+import useIsomorphicLayoutEffect from "../hooks/useIsomorphicLayoutEffect/index";
 
 type NativeInputProps = DetailedHTMLProps<
   InputHTMLAttributes<HTMLInputElement>,
   HTMLInputElement
 >;
+
+type AriaProps = {
+  role?: string; // only for internal usage
+};
 
 type PickNativeInputProps = Pick<
   NativeInputProps,
@@ -28,6 +33,7 @@ type PickNativeInputProps = Pick<
   | "inputMode"
   | "maxLength"
   | "minLength"
+  | "name"
   | "pattern"
   | "type"
   | "onBlur"
@@ -37,6 +43,7 @@ type PickNativeInputProps = Pick<
   | "onFocus"
   | "onKeyDown"
   | "onKeyUp"
+  | "step"
 >;
 
 // InputProps type
@@ -57,6 +64,7 @@ export type InputProps = PickNativeInputProps & {
   id?: string;
   min?: number;
   max?: number;
+  onlyShowClearWhenFocus?: boolean;
   placeholder?: string;
   readOnly?: boolean;
   value?: string;
@@ -64,7 +72,7 @@ export type InputProps = PickNativeInputProps & {
   onClear?: () => void;
   onEnterKeyPress?: (e: KeyboardEvent<HTMLInputElement>) => void;
   // onKeyDown?: (e: KeyboardEvent<HTMLInputElement>) => void;
-};
+} & AriaProps;
 
 // InputRef type
 export type InputRef = {
@@ -93,9 +101,13 @@ export const Input = forwardRef<InputRef, InputProps>((props, ref) => {
     min,
     maxLength,
     minLength,
+    name,
     pattern,
     placeholder,
+    onlyShowClearWhenFocus,
     readOnly,
+    role,
+    step,
     type,
     value,
     // onChange,
@@ -113,6 +125,7 @@ export const Input = forwardRef<InputRef, InputProps>((props, ref) => {
   const [val, setVal] = usePropsValue(props);
 
   const [isFocus, setIsFocus] = useState<boolean>(false);
+  const compositionStartRef = useRef<boolean>(false);
   const nativeInputRef = useRef<HTMLInputElement>(null);
 
   // useImperativeHandle hook
@@ -125,8 +138,8 @@ export const Input = forwardRef<InputRef, InputProps>((props, ref) => {
     },
   }));
 
-  // useLayoutEffect hook
-  useLayoutEffect(() => {
+  // useIsomorphicLayoutEffect hook
+  useIsomorphicLayoutEffect(() => {
     if (!enterKeyHint) {
       return;
     }
@@ -173,9 +186,29 @@ export const Input = forwardRef<InputRef, InputProps>((props, ref) => {
     onFocus?.(e);
   };
 
+  // handle composition start event
+  const handleCompositionStart = (e: CompositionEvent<HTMLInputElement>) => {
+    compositionStartRef.current = true;
+    onCompositionStart?.(e);
+  };
+
+  // handle composition end event
+  const handleCompositionEnd = (e: CompositionEvent<HTMLInputElement>) => {
+    compositionStartRef.current = false;
+    onCompositionEnd?.(e);
+  };
+
   const wrapCls = classnames(prefixCls, className, {
     [`${prefixCls}-disabled`]: disabled,
   });
+
+  const canShowClear = () => {
+    if (!clearable || !val || readOnly) {
+      return false;
+    }
+
+    return onlyShowClearWhenFocus ? isFocus : true;
+  };
 
   return (
     <div className={wrapCls}>
@@ -193,27 +226,35 @@ export const Input = forwardRef<InputRef, InputProps>((props, ref) => {
         min={min}
         maxLength={maxLength}
         minLength={minLength}
+        name={name}
         pattern={pattern}
         placeholder={placeholder}
         readOnly={readOnly}
+        role={role}
+        step={step}
         type={type}
         value={val}
         onChange={(e) => setVal(e.target?.value)}
         onClick={onClick}
-        onCompositionStart={onCompositionStart}
-        onCompositionEnd={onCompositionEnd}
+        onCompositionStart={handleCompositionStart}
+        onCompositionEnd={handleCompositionEnd}
         onBlur={handleBlur}
         onFocus={handleFocus}
         onKeyDown={handleKeyDown}
         onKeyUp={onKeyUp}
       />
-      {clearable && !!val && !readOnly && isFocus && (
+      {canShowClear() && (
         <div
           className={`${prefixCls}-clear`}
           onMouseDown={(e) => e.preventDefault()}
           onClick={() => {
             setVal("");
             onClear?.();
+
+            if (isIOS() && compositionStartRef.current) {
+              compositionStartRef.current = false;
+              nativeInputRef.current?.blur();
+            }
           }}
         >
           <Icon type="cross-circle-o" size="xxs" />
@@ -226,4 +267,5 @@ export const Input = forwardRef<InputRef, InputProps>((props, ref) => {
 Input.defaultProps = {
   prefixCls: "r-input",
   defaultValue: "",
+  onlyShowClearWhenFocus: true,
 };
