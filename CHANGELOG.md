@@ -1,3 +1,7 @@
+# 0.45.3 (2023-02-03)
+
+Updated `useMemoizedFn` demo.
+
 # 0.45.2 (2022-12-31)
 
 Refactor: update `Input` component.

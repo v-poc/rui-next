@@ -1,8 +1,8 @@
 # useMemoizedFn
 
-A hook that is able to persist functions. In theory, `useMemoizedFn` can be used to replace `useCallback`.
+A hook that is able to persist functions. In theory, `useMemoizedFn` could be used to replace `useCallback`.
 
-In some scenarios, we need to use `useCallback` to cache a function, but when deps (the second parameter) changes, the function will be regenerated, causing the function reference to change.
+In some scenarios, we need to use `useCallback` to cache a function, but when deps (the second parameter) changes, the function will be regenerated, thus causing the function reference to change.
 
 ```typescript
 // usage
@@ -18,7 +18,7 @@ const func = useCallback(() => {
 }, [count1]);
 ```
 
-By using `useMemoizedFn`, you can omit the second parameter deps, and ensure that the function reference never change.
+By using `useMemoizedFn`, you can omit the second parameter deps, and ensure that the function reference never changes.
 
 ```js
 const [count2, setCount2] = useState("");
@@ -41,12 +41,12 @@ Basic usage of useMemoizedFn hook.
 
 ### Params
 
-| Property | Description                       | Type                      | Default |
-|----------|-----------------------------------|---------------------------|---------|
-| fn       | Function that require persistence | `(...args: any[]) => any` | -       |
+| Property | Description                        | Type                      | Default |
+| -------- | ---------------------------------- | ------------------------- | ------- |
+| fn       | Function that requires persistence | `(...args: any[]) => any` | -       |
 
 ### Result
 
-| Property | Description                            | Type                      |
-|----------|----------------------------------------|---------------------------|
-| fn       | Function (the reference address never changes) | `(...args: any[]) => any` |
+| Property | Description                                     | Type                      |
+| -------- | ----------------------------------------------- | ------------------------- |
+| fn       | Function (the function reference never changes) | `(...args: any[]) => any` |

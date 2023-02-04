@@ -1,15 +1,21 @@
 import React, { useCallback, useRef, useState } from "react";
 import { useMemoizedFn, Button, Divider } from "rui-next";
+import { logInfo } from "../../../experimental";
 
 type SubCompType = {
+  flag: "useCallback" | "useMemoizedFn";
   logCount?: () => void;
 };
 
 // SubComponent
 const SubComp = React.memo<SubCompType>((props) => {
-  const { logCount } = props;
+  const { flag, logCount } = props;
   const countRenderRef = useRef(0);
   countRenderRef.current++;
+
+  if (countRenderRef.current > 1) {
+    logInfo(`${flag} cause SubComponent re-render: ${countRenderRef.current}`);
+  }
 
   return (
     <>
@@ -30,11 +36,11 @@ const Example = () => {
   const [count, setCount] = useState(0); // the count of ParentComponent
 
   const callbackFn = useCallback(() => {
-    console.log(`useCallback - current count is ${count}`);
+    logInfo(`useCallback - current count of ParentComponent is ${count}`);
   }, [count]);
 
   const memoizedFn = useMemoizedFn(() => {
-    console.log(`useMemoizedFn - current count is ${count}`);
+    logInfo(`useMemoizedFn - current count of ParentComponent is ${count}`);
   });
 
   return (
@@ -49,13 +55,13 @@ const Example = () => {
       <Divider>
         Pass prop to SubComponent by <strong>useCallback</strong>
       </Divider>
-      <SubComp logCount={callbackFn} />
+      <SubComp flag="useCallback" logCount={callbackFn} />
       <br />
       <br />
       <Divider>
         Pass prop to SubComponent by <strong>useMemoizedFn</strong>
       </Divider>
-      <SubComp logCount={memoizedFn} />
+      <SubComp flag="useMemoizedFn" logCount={memoizedFn} />
     </>
   );
 };
