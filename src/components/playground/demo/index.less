@@ -107,3 +107,35 @@
     }
   }
 }
+
+.playground-example-wrapper {
+  padding: 10px;
+  background-color: #eee;
+
+  .playground-example-inner {
+    height: 100%;
+    background-color: #fff;
+    display: flex;
+    justify-content: flex-start;
+    align-items: stretch;
+
+    .playground-example-side {
+      flex: none;
+    }
+
+    .playground-example-main {
+      flex: auto;
+    }
+
+    .playground-example-content {
+      height: 100%;
+      display: none;
+      justify-content: center;
+      align-items: center;
+
+      &.playground-example-active {
+        display: flex;
+      }
+    }
+  }
+}

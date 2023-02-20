@@ -28,8 +28,8 @@ export default defineConfig<ThemeConfig>({
       [
         "a",
         {
-          href: "https://patreon.com/nikoni",
-          target: "_blank",
+          href: "/rui-next/en/sponsor",
+          // target: "_blank",
           style: { marginLeft: "24px" },
         },
         "Sponsor this project",
@@ -97,6 +97,11 @@ export default defineConfig<ThemeConfig>({
                 text: "RUI-poc-vite4",
                 icon: "tabler:git-branch",
                 link: "https://github.com/v-poc/rui-poc",
+              },
+              {
+                text: "Sponsor",
+                icon: "tabler:mood-smile",
+                link: "/en/sponsor",
               },
             ],
           },
