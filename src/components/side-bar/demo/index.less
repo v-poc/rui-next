@@ -1,8 +1,31 @@
 .side-bar-example-wrapper {
   padding: 10px;
   background-color: #eee;
-}
 
-.side-bar-example-inner {
-  background-color: #fff;
+  .side-bar-example-inner {
+    height: 100%;
+    background-color: #fff;
+    display: flex;
+    justify-content: flex-start;
+    align-items: stretch;
+
+    .side-bar-example-side {
+      flex: none;
+    }
+
+    .side-bar-example-main {
+      flex: auto;
+    }
+
+    .side-bar-example-content {
+      height: 100%;
+      display: none;
+      justify-content: center;
+      align-items: center;
+
+      &.side-bar-example-active {
+        display: flex;
+      }
+    }
+  }
 }
