@@ -1,3 +1,7 @@
+# 0.46.0 (2023-02-20)
+
+Refactor: expose types.
+
 # 0.45.3 (2023-02-03)
 
 Updated `useMemoizedFn` demo.
