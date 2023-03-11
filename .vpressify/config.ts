@@ -1,5 +1,5 @@
-import { defineConfig } from "pressify";
-import type { ThemeConfig } from "pressify/theme";
+import { defineConfig } from "vpressify";
+import type { ThemeConfig } from "vpressify/theme";
 import * as pkg from "../package.json";
 
 export default defineConfig<ThemeConfig>({

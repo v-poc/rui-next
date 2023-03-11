@@ -1,3 +1,7 @@
+# 0.46.2 (2023-03-10)
+
+Refactor: switch to [vpressify](https://github.com/v-poc/vpressify).
+
 # 0.46.1 (2023-02-21)
 
 Refactor: expose types.

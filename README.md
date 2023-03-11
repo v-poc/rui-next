@@ -6,7 +6,7 @@
 
 ## Overview
 
-This is just one kind of playground to dev `react-hooks` based UI components based on `vitepress+vite`. Thanks to [`pressify`](https://github.com/codpoe/pressify) that could support `React docs+demos` well to run with `vitepress+vite`.
+This is just one kind of playground to dev `react-hooks` based UI components based on `vitepress+vite`. Thanks to [`vpressify`](https://github.com/v-poc/vpressify) that could support `React docs+demos` well to run with `vitepress+vite`.
 
 - 📦 **Out of the box** - focus on component development and documentation
 - 🧑‍💻 **Developer Friendly** - built-in syntax highlighting, embedding React components seamlessly
@@ -50,7 +50,7 @@ $ npm run build-docs
 
 ## Customize configuration
 
-About vite and pressify, please check Configuration Reference - [vite](https://vitejs.dev/config/), [pressify](https://github.com/codpoe/pressify).
+About vite, please check Configuration Reference - [vite](https://vitejs.dev/config/).
 
 ## License
 

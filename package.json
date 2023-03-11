@@ -1,6 +1,6 @@
 {
   "name": "rui-next",
-  "version": "0.46.1",
+  "version": "0.46.2",
   "description": "Mobile web UI components based on React and Vite 4",
   "files": [
     "dist/style.css",
@@ -29,7 +29,7 @@
     "react-hooks",
     "vitepress",
     "react-components",
-    "react-pressify",
+    "react-vite-pressify",
     "react-hooks-components",
     "react-hooks-vitepress",
     "rui",
@@ -49,10 +49,10 @@
   },
   "homepage": "https://github.com/v-poc/rui-playground#readme",
   "scripts": {
-    "start": "pressify dev",
+    "start": "vpressify dev",
     "build-lib": "vite build --config vite.config.ts",
-    "build-docs": "pressify build",
-    "preview": "pressify serve"
+    "build-docs": "vpressify build",
+    "preview": "vpressify serve"
   },
   "engines": {
     "node": "^14.18.0 || >=16.0.0"
@@ -67,8 +67,7 @@
     "@types/react-dom": "^18.0.11",
     "classnames": "^2.3.2",
     "less": "^4.1.3",
-    "pressify": "^1.0.2",
-    "react-router-dom": "6.3.0",
+    "vpressify": "^1.0.3",
     "typescript": "^4.9.5",
     "v-qr-code-next": "^0.1.15",
     "vite": "^4.1.4"
