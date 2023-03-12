@@ -1,4 +1,4 @@
-# 0.46.2 (2023-03-10)
+# 0.46.3 (2023-03-10)
 
 Refactor: switch to [vpressify](https://github.com/v-poc/vpressify).
 
