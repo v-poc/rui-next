@@ -1,3 +1,7 @@
+# 0.46.5 (2023-03-16)
+
+Updated to upgrade to `vite@4.2.0`.
+
 # 0.46.4 (2023-03-11)
 
 Updated deps.
