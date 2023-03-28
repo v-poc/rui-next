@@ -11,11 +11,13 @@ export type QRCodeProps = {
   level?: "L" | "M" | "Q" | "H"; // the error Correction Level
   mode?: "image" | "svg" | "table" | "dataurl";
   border?: boolean;
+  color?: string;
 };
 
 // QRCode FC
 export const QRCode: React.FC<QRCodeProps> = (props) => {
-  const { value, num, level, mode, border, prefixCls, className } = props;
+  const { value, num, level, mode, border, color, prefixCls, className } =
+    props;
 
   const qr = qrcode(
     num, // the type number
@@ -32,6 +34,10 @@ export const QRCode: React.FC<QRCodeProps> = (props) => {
     res = `<img src="${qr.createDataURL()}" />`;
   } else {
     res = qr.createImgTag();
+  }
+
+  if (color) {
+    res = qr.createSvgTag(0, border ? 8 : 0, "", "", color);
   }
 
   const content = { __html: res };

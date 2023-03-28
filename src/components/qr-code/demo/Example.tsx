@@ -82,7 +82,7 @@ const Example = () => {
       <h3>
         Please scan the QR code to access the examples on mobile/tablet device:
       </h3>
-      <QRCode value="https://nikoni.top/rui-next/" border />
+      <QRCode value="https://nikoni.top/rui-next/" border color="#36C" />
       <br />
       <Divider>Simple qr-code generator</Divider>
       TypeNumber:
