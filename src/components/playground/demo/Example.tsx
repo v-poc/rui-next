@@ -182,7 +182,7 @@ const Example = () => {
         <TodoList />
         <Divider contentAlign="left">QR Code</Divider>
         <Flex justify="center">
-          <QRCode value="https://nikoni.top/rui-next/" border />
+          <QRCode value="https://nikoni.top/rui-next/" border color="#21b8a3" />
         </Flex>
         <Divider contentAlign="right">RUI Playground</Divider>
         <Footer
