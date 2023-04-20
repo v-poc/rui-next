@@ -1,3 +1,7 @@
+# 0.46.9 (2023-04-20)
+
+Updated to upgrade to `vite@4.3.0` and `vpressify@1.0.15`.
+
 # 0.46.8 (2023-03-27)
 
 Updated `QRCode` demo.
