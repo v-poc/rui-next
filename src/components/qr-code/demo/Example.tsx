@@ -2,31 +2,32 @@ import React, { useRef, useState } from "react";
 import { QRCode, Divider } from "rui-next";
 import "./index.less";
 
-type RefType = any;
-
 type ParamsType = {
   value: string;
   num: number;
-  level: "L" | "M" | "Q" | "H";
-  mode: "image" | "table" | "svg" | "dataurl";
+  level: string; // "L" | "M" | "Q" | "H"
+  mode: string; // "image" | "table" | "svg" | "dataurl"
   border: boolean;
+  color: string;
 };
 
 // Example FC
 const Example = () => {
-  const selectModeRef = useRef<RefType>();
-  const selectWrapperRef = useRef<RefType>();
-  const selectTypeNumberRef = useRef<RefType>();
-  const selectLevelRef = useRef<RefType>();
+  const modeRef = useRef<HTMLSelectElement>(null);
+  const wrapperRef = useRef<HTMLSelectElement>(null);
+  const typeNumberRef = useRef<HTMLSelectElement>(null);
+  const levelRef = useRef<HTMLSelectElement>(null);
+  const colorRef = useRef<HTMLSelectElement>(null);
   const [params, setParams] = useState<ParamsType>({
     value: "",
     num: 8,
     level: "L",
     mode: "image",
     border: false,
+    color: "",
   });
 
-  const handleInputContent = (e: any) => {
+  const onInputContent = (e: any) => {
     let val = e.target.value.trim();
     let limitLen = params.num * 18;
     if (params.num === 2) {
@@ -41,8 +42,8 @@ const Example = () => {
     });
   };
 
-  const handleSelectTypeNumber = () => {
-    const valNum = parseInt(selectTypeNumberRef.current!.value, 10);
+  const onSelectTypeNumber = () => {
+    const valNum = parseInt(typeNumberRef.current!.value, 10);
     let val = params.value;
     let limitLen = valNum * 18;
     if (valNum === 2) {
@@ -58,23 +59,35 @@ const Example = () => {
     });
   };
 
-  const handleSelectLevel = () =>
+  const onSelectLevel = () =>
     setParams({
       ...params,
-      level: selectLevelRef.current!.value,
+      level: levelRef.current!.value,
     });
 
-  const handleSelectMode = () =>
+  const onSelectMode = () =>
     setParams({
       ...params,
-      mode: selectModeRef.current!.value,
+      mode: modeRef.current!.value,
     });
 
-  const handleSelectWrapper = () =>
+  const onSelectWrapper = () =>
     setParams({
       ...params,
-      border: selectWrapperRef.current!.value === "1",
+      border: wrapperRef.current!.value === "1",
     });
+
+  const onSelectColor = () => {
+    const val = colorRef.current!.value;
+    if (val) {
+      modeRef.current!.value = "svg";
+    }
+    setParams({
+      ...params,
+      color: val,
+      mode: modeRef.current!.value,
+    });
+  };
 
   return (
     <>
@@ -87,11 +100,11 @@ const Example = () => {
       <Divider>Simple qr-code generator</Divider>
       TypeNumber:
       <select
-        ref={selectTypeNumberRef}
+        ref={typeNumberRef}
         value={params.num}
-        onChange={() => handleSelectTypeNumber()}
+        onChange={onSelectTypeNumber}
       >
-        {new Array(40).fill("").map((item, i) => (
+        {new Array(40).fill("").map((_, i) => (
           <option key={`num${i}`} value={i + 1}>
             {i + 1}
           </option>
@@ -99,7 +112,7 @@ const Example = () => {
       </select>
       <br />
       ErrorCorrectionLevel:
-      <select ref={selectLevelRef} onChange={() => handleSelectLevel()}>
+      <select ref={levelRef} onChange={onSelectLevel}>
         <option value="L">L (7%)</option>
         <option value="M">M (15%)</option>
         <option value="Q">Q (25%)</option>
@@ -107,7 +120,7 @@ const Example = () => {
       </select>
       <br />
       Mode:
-      <select ref={selectModeRef} onChange={() => handleSelectMode()}>
+      <select ref={modeRef} onChange={onSelectMode}>
         <option value="image">Image</option>
         <option value="svg">SVG</option>
         <option value="table">Table</option>
@@ -115,9 +128,27 @@ const Example = () => {
       </select>
       <br />
       Wrapper:
-      <select ref={selectWrapperRef} onChange={() => handleSelectWrapper()}>
+      <select ref={wrapperRef} onChange={onSelectWrapper}>
         <option value="0">Without Border</option>
         <option value="1">With Border</option>
+      </select>
+      <br />
+      Color:
+      <select ref={colorRef} onChange={onSelectColor}>
+        <option value="">N/A</option>
+        <option value="#f44336">red</option>
+        <option value="#e91e63">pink</option>
+        <option value="#9c27b0">purple</option>
+        <option value="#3f51b5">indigo</option>
+        <option value="#2196f3">blue</option>
+        <option value="#00bcd4">cyan</option>
+        <option value="#009688">teal</option>
+        <option value="#4caf50">green</option>
+        <option value="#cddc39">lime</option>
+        <option value="#ffc107">amber</option>
+        <option value="#ff9800">orange</option>
+        <option value="#795548">brown</option>
+        <option value="#9e9e9e">grey</option>
       </select>
       <br />
       <input
@@ -125,7 +156,7 @@ const Example = () => {
         placeholder="Please input content"
         className="qrcode-example-input"
         value={params.value}
-        onChange={(e) => handleInputContent(e)}
+        onChange={(e) => onInputContent(e)}
       />
       {params.value && (
         <QRCode
@@ -135,6 +166,7 @@ const Example = () => {
           level={params.level}
           mode={params.mode}
           border={params.border}
+          color={params.color}
         />
       )}
     </>
