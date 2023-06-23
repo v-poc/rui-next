@@ -1,3 +1,7 @@
+# 0.46.18 (2023-06-22)
+
+Updated to switch packageManager to `pnpm`.
+
 # 0.46.17 (2023-06-10)
 
 Updated to upgrade to `vite@4.3.9` and `vpressify@1.0.25`.

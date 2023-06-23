@@ -24,28 +24,28 @@ Try [QR code playground](https://nikoni.top/rui-next/en/qr-code) to scan to acce
 
 ## Project setup
 
-Install dependencies
+Install dependencies (use package manager: [pnpm](https://pnpm.io/))
 
 ```bash
-$ npm i
+$ pnpm i
 ```
 
 Start the dev server for [`docs-dev`](http://127.0.0.1:5173/rui-next/)
 
 ```bash
-$ npm start
+$ pnpm start
 ```
 
 Build UI library
 
 ```bash
-$ npm run build-lib
+$ pnpm run build-lib
 ```
 
 Build documentation (docs+demos)
 
 ```bash
-$ npm run build-docs
+$ pnpm run build-docs
 ```
 
 ## Customize configuration
