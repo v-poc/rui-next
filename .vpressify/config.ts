@@ -29,7 +29,6 @@ export default defineConfig<ThemeConfig>({
         "a",
         {
           href: "/rui-next/en/sponsor",
-          // target: "_blank",
           style: { marginLeft: "24px" },
         },
         "Sponsor this project",
@@ -38,11 +37,11 @@ export default defineConfig<ThemeConfig>({
     docsRepo: "v-poc/rui-playground",
     docsBranch: "main",
     editLink: true,
-    // algolia: {
-    //   appId: 'D64BBPKSIG',
-    //   apiKey: '9d34b6f14d6272405205d97816d7dd1b',
-    //   indexName: 'nikoni',
-    // },
+    algolia: {
+      appId: "8UQ4X28Q0C",
+      apiKey: "d6558f3d635ab4c5950aef413d91762c",
+      indexName: "nikonitop",
+    },
     themeConfigByPaths: {
       "/en": {
         locale: "en-US",
