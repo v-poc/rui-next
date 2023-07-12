@@ -28,13 +28,13 @@ export default defineConfig<ThemeConfig>({
       [
         "a",
         {
-          href: "/rui-next/en/sponsor",
+          href: "/rui-next/en/sponsor/",
           style: { marginLeft: "24px" },
         },
         "Sponsor this project",
       ],
     ],
-    docsRepo: "v-poc/rui-playground",
+    docsRepo: "v-poc/rui-next",
     docsBranch: "main",
     editLink: true,
     algolia: {
@@ -50,7 +50,7 @@ export default defineConfig<ThemeConfig>({
           {
             text: "Documentation",
             items: [
-              { text: "Tutorial", link: "/en/getting-started" },
+              { text: "Tutorial", link: "/en/getting-started/" },
               { text: "Examples-vite4", link: "/" },
               {
                 text: "Examples-vite2",
@@ -61,7 +61,7 @@ export default defineConfig<ThemeConfig>({
           {
             text: "Playground",
             icon: "tabler:ghost",
-            link: "/en/playground",
+            link: "/en/playground/",
           },
           {
             text: "Links",
@@ -70,12 +70,12 @@ export default defineConfig<ThemeConfig>({
               {
                 text: `Repo (v${pkg.version})`,
                 icon: "tabler:git-branch",
-                link: "https://github.com/v-poc/rui-playground",
+                link: "https://github.com/v-poc/rui-next",
               },
               {
                 text: "Changelog",
                 icon: "tabler:clipboard",
-                link: "https://github.com/v-poc/rui-playground/blob/main/CHANGELOG.md",
+                link: "https://github.com/v-poc/rui-next/blob/main/CHANGELOG.md",
               },
               {
                 text: "Organization",
@@ -100,7 +100,7 @@ export default defineConfig<ThemeConfig>({
               {
                 text: "Sponsor",
                 icon: "tabler:mood-smile",
-                link: "/en/sponsor",
+                link: "/en/sponsor/",
               },
             ],
           },
@@ -114,7 +114,7 @@ export default defineConfig<ThemeConfig>({
           },
           {
             icon: "uiw/github",
-            link: "https://github.com/v-poc/rui-playground",
+            link: "https://github.com/v-poc/rui-next",
           },
         ],
         sidebar: [
@@ -126,7 +126,7 @@ export default defineConfig<ThemeConfig>({
           {
             text: "Getting Started",
             icon: "lucide:puzzle",
-            link: "/en/getting-started",
+            link: "/en/getting-started/",
           },
           {
             text: "Navigation-Layout",
@@ -134,35 +134,35 @@ export default defineConfig<ThemeConfig>({
             items: [
               {
                 text: "NavBar",
-                link: "/en/nav-bar",
+                link: "/en/nav-bar/",
               },
               {
                 text: "Grid",
-                link: "/en/grid",
+                link: "/en/grid/",
               },
               {
                 text: "Flex",
-                link: "/en/flex",
+                link: "/en/flex/",
               },
               {
                 text: "WhiteSpace",
-                link: "/en/white-space",
+                link: "/en/white-space/",
               },
               {
                 text: "Divider",
-                link: "/en/divider",
+                link: "/en/divider/",
               },
               {
                 text: "AutoJustifyContent",
-                link: "/en/auto-justify-content",
+                link: "/en/auto-justify-content/",
               },
               {
                 text: "Space",
-                link: "/en/space",
+                link: "/en/space/",
               },
               {
                 text: "SideBar",
-                link: "/en/side-bar",
+                link: "/en/side-bar/",
               },
             ],
           },
@@ -172,51 +172,51 @@ export default defineConfig<ThemeConfig>({
             items: [
               {
                 text: "Card",
-                link: "/en/card",
+                link: "/en/card/",
               },
               {
                 text: "Badge",
-                link: "/en/badge",
+                link: "/en/badge/",
               },
               {
                 text: "Icon",
-                link: "/en/icon",
+                link: "/en/icon/",
               },
               {
                 text: "Tag",
-                link: "/en/tag",
+                link: "/en/tag/",
               },
               {
                 text: "Watermark",
-                link: "/en/watermark",
+                link: "/en/watermark/",
               },
               {
                 text: "NoticeBar",
-                link: "/en/notice-bar",
+                link: "/en/notice-bar/",
               },
               {
                 text: "List",
-                link: "/en/list",
+                link: "/en/list/",
               },
               {
                 text: "Steps",
-                link: "/en/steps",
+                link: "/en/steps/",
               },
               {
                 text: "Image",
-                link: "/en/image",
+                link: "/en/image/",
               },
               {
                 text: "Avatar",
-                link: "/en/avatar",
+                link: "/en/avatar/",
               },
               {
                 text: "Footer",
-                link: "/en/footer",
+                link: "/en/footer/",
               },
               {
                 text: "PageIndicator",
-                link: "/en/page-indicator",
+                link: "/en/page-indicator/",
               },
             ],
           },
@@ -226,35 +226,35 @@ export default defineConfig<ThemeConfig>({
             items: [
               {
                 text: "Button",
-                link: "/en/button",
+                link: "/en/button/",
               },
               {
                 text: "Switch",
-                link: "/en/switch",
+                link: "/en/switch/",
               },
               {
                 text: "Rate",
-                link: "/en/rate",
+                link: "/en/rate/",
               },
               {
                 text: "CheckList",
-                link: "/en/check-list",
+                link: "/en/check-list/",
               },
               {
                 text: "Input",
-                link: "/en/input",
+                link: "/en/input/",
               },
               {
                 text: "TextArea",
-                link: "/en/text-area",
+                link: "/en/text-area/",
               },
               {
                 text: "Slider",
-                link: "/en/slider",
+                link: "/en/slider/",
               },
               {
                 text: "SearchBar",
-                link: "/en/search-bar",
+                link: "/en/search-bar/",
               },
             ],
           },
@@ -264,31 +264,31 @@ export default defineConfig<ThemeConfig>({
             items: [
               {
                 text: "ActivityIndicator",
-                link: "/en/activity-indicator",
+                link: "/en/activity-indicator/",
               },
               {
                 text: "Progress",
-                link: "/en/progress",
+                link: "/en/progress/",
               },
               {
                 text: "Result",
-                link: "/en/result",
+                link: "/en/result/",
               },
               {
                 text: "Skeleton",
-                link: "/en/skeleton",
+                link: "/en/skeleton/",
               },
               {
                 text: "Empty",
-                link: "/en/empty",
+                link: "/en/empty/",
               },
               {
                 text: "Mask",
-                link: "/en/mask",
+                link: "/en/mask/",
               },
               {
                 text: "Toast",
-                link: "/en/toast",
+                link: "/en/toast/",
               },
             ],
           },
@@ -298,11 +298,11 @@ export default defineConfig<ThemeConfig>({
             items: [
               {
                 text: "QRCode",
-                link: "/en/qr-code",
+                link: "/en/qr-code/",
               },
               {
                 text: "Playground",
-                link: "/en/playground",
+                link: "/en/playground/",
               },
             ],
           },
@@ -312,31 +312,31 @@ export default defineConfig<ThemeConfig>({
             items: [
               {
                 text: "useNetwork",
-                link: "/en/use-network",
+                link: "/en/use-network/",
               },
               {
                 text: "useFullscreen",
-                link: "/en/use-fullscreen",
+                link: "/en/use-fullscreen/",
               },
               {
                 text: "useVisibilityChange",
-                link: "/en/use-visibilitychange",
+                link: "/en/use-visibilitychange/",
               },
               {
                 text: "useClickAway",
-                link: "/en/use-clickaway",
+                link: "/en/use-clickaway/",
               },
               {
                 text: "useLatest",
-                link: "/en/use-latest",
+                link: "/en/use-latest/",
               },
               {
                 text: "useMemoizedFn",
-                link: "/en/use-memoizedfn",
+                link: "/en/use-memoizedfn/",
               },
               {
                 text: "useInViewport",
-                link: "/en/use-in-viewport",
+                link: "/en/use-in-viewport/",
               },
             ],
           },
@@ -346,35 +346,35 @@ export default defineConfig<ThemeConfig>({
             items: [
               {
                 text: "useLazyload",
-                link: "/en/use-lazyload",
+                link: "/en/use-lazyload/",
               },
               {
                 text: "SafeArea",
-                link: "/en/safe-area",
+                link: "/en/safe-area/",
               },
               {
                 text: "Chart",
-                link: "/en/chart",
+                link: "/en/chart/",
               },
               {
                 text: "Clamp",
-                link: "/en/clamp",
+                link: "/en/clamp/",
               },
               {
                 text: "OnePiece",
-                link: "/en/one-piece",
+                link: "/en/one-piece/",
               },
               {
                 text: "LikeButton",
-                link: "/en/like-button",
+                link: "/en/like-button/",
               },
               {
                 text: "XButton",
-                link: "/en/x-button",
+                link: "/en/x-button/",
               },
               {
                 text: "CubeAnim",
-                link: "/en/cube-anim",
+                link: "/en/cube-anim/",
               },
             ],
           },
