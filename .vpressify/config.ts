@@ -300,6 +300,10 @@ export default defineConfig<ThemeConfig>({
                 text: "QRCode",
                 link: "/en/qr-code",
               },
+              {
+                text: "Playground",
+                link: "/en/playground",
+              },
             ],
           },
           {
@@ -371,10 +375,6 @@ export default defineConfig<ThemeConfig>({
               {
                 text: "CubeAnim",
                 link: "/en/cube-anim",
-              },
-              {
-                text: "Playground",
-                link: "/en/playground",
               },
             ],
           },
