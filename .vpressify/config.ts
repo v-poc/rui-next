@@ -2,6 +2,11 @@ import { defineConfig } from "vpressify";
 import type { ThemeConfig } from "vpressify/theme";
 import * as pkg from "../package.json";
 
+const prefix =
+  typeof location !== "undefined" && /nikoni/.test(location.hostname)
+    ? "https://nikoni.top/rui-next"
+    : "";
+
 export default defineConfig<ThemeConfig>({
   pages: "src/docs",
   vite: {
@@ -50,7 +55,7 @@ export default defineConfig<ThemeConfig>({
           {
             text: "Documentation",
             items: [
-              { text: "Tutorial", link: "/en/getting-started/" },
+              { text: "Tutorial", link: `${prefix}/en/getting-started/` },
               { text: "Examples-vite4", link: "/" },
               {
                 text: "Examples-vite2",
@@ -61,7 +66,7 @@ export default defineConfig<ThemeConfig>({
           {
             text: "Playground",
             icon: "tabler:ghost",
-            link: "/en/playground/",
+            link: `${prefix}/en/playground/`,
           },
           {
             text: "Links",
@@ -100,7 +105,7 @@ export default defineConfig<ThemeConfig>({
               {
                 text: "Sponsor",
                 icon: "tabler:mood-smile",
-                link: "/en/sponsor/",
+                link: `${prefix}/en/sponsor/`,
               },
             ],
           },
@@ -126,7 +131,7 @@ export default defineConfig<ThemeConfig>({
           {
             text: "Getting Started",
             icon: "lucide:puzzle",
-            link: "/en/getting-started/",
+            link: `${prefix}/en/getting-started/`,
           },
           {
             text: "Navigation-Layout",
@@ -134,35 +139,35 @@ export default defineConfig<ThemeConfig>({
             items: [
               {
                 text: "NavBar",
-                link: "/en/nav-bar/",
+                link: `${prefix}/en/nav-bar/`,
               },
               {
                 text: "Grid",
-                link: "/en/grid/",
+                link: `${prefix}/en/grid/`,
               },
               {
                 text: "Flex",
-                link: "/en/flex/",
+                link: `${prefix}/en/flex/`,
               },
               {
                 text: "WhiteSpace",
-                link: "/en/white-space/",
+                link: `${prefix}/en/white-space/`,
               },
               {
                 text: "Divider",
-                link: "/en/divider/",
+                link: `${prefix}/en/divider/`,
               },
               {
                 text: "AutoJustifyContent",
-                link: "/en/auto-justify-content/",
+                link: `${prefix}/en/auto-justify-content/`,
               },
               {
                 text: "Space",
-                link: "/en/space/",
+                link: `${prefix}/en/space/`,
               },
               {
                 text: "SideBar",
-                link: "/en/side-bar/",
+                link: `${prefix}/en/side-bar/`,
               },
             ],
           },
@@ -172,51 +177,51 @@ export default defineConfig<ThemeConfig>({
             items: [
               {
                 text: "Card",
-                link: "/en/card/",
+                link: `${prefix}/en/card/`,
               },
               {
                 text: "Badge",
-                link: "/en/badge/",
+                link: `${prefix}/en/badge/`,
               },
               {
                 text: "Icon",
-                link: "/en/icon/",
+                link: `${prefix}/en/icon/`,
               },
               {
                 text: "Tag",
-                link: "/en/tag/",
+                link: `${prefix}/en/tag/`,
               },
               {
                 text: "Watermark",
-                link: "/en/watermark/",
+                link: `${prefix}/en/watermark/`,
               },
               {
                 text: "NoticeBar",
-                link: "/en/notice-bar/",
+                link: `${prefix}/en/notice-bar/`,
               },
               {
                 text: "List",
-                link: "/en/list/",
+                link: `${prefix}/en/list/`,
               },
               {
                 text: "Steps",
-                link: "/en/steps/",
+                link: `${prefix}/en/steps/`,
               },
               {
                 text: "Image",
-                link: "/en/image/",
+                link: `${prefix}/en/image/`,
               },
               {
                 text: "Avatar",
-                link: "/en/avatar/",
+                link: `${prefix}/en/avatar/`,
               },
               {
                 text: "Footer",
-                link: "/en/footer/",
+                link: `${prefix}/en/footer/`,
               },
               {
                 text: "PageIndicator",
-                link: "/en/page-indicator/",
+                link: `${prefix}/en/page-indicator/`,
               },
             ],
           },
@@ -226,35 +231,35 @@ export default defineConfig<ThemeConfig>({
             items: [
               {
                 text: "Button",
-                link: "/en/button/",
+                link: `${prefix}/en/button/`,
               },
               {
                 text: "Switch",
-                link: "/en/switch/",
+                link: `${prefix}/en/switch/`,
               },
               {
                 text: "Rate",
-                link: "/en/rate/",
+                link: `${prefix}/en/rate/`,
               },
               {
                 text: "CheckList",
-                link: "/en/check-list/",
+                link: `${prefix}/en/check-list/`,
               },
               {
                 text: "Input",
-                link: "/en/input/",
+                link: `${prefix}/en/input/`,
               },
               {
                 text: "TextArea",
-                link: "/en/text-area/",
+                link: `${prefix}/en/text-area/`,
               },
               {
                 text: "Slider",
-                link: "/en/slider/",
+                link: `${prefix}/en/slider/`,
               },
               {
                 text: "SearchBar",
-                link: "/en/search-bar/",
+                link: `${prefix}/en/search-bar/`,
               },
             ],
           },
@@ -264,31 +269,31 @@ export default defineConfig<ThemeConfig>({
             items: [
               {
                 text: "ActivityIndicator",
-                link: "/en/activity-indicator/",
+                link: `${prefix}/en/activity-indicator/`,
               },
               {
                 text: "Progress",
-                link: "/en/progress/",
+                link: `${prefix}/en/progress/`,
               },
               {
                 text: "Result",
-                link: "/en/result/",
+                link: `${prefix}/en/result/`,
               },
               {
                 text: "Skeleton",
-                link: "/en/skeleton/",
+                link: `${prefix}/en/skeleton/`,
               },
               {
                 text: "Empty",
-                link: "/en/empty/",
+                link: `${prefix}/en/empty/`,
               },
               {
                 text: "Mask",
-                link: "/en/mask/",
+                link: `${prefix}/en/mask/`,
               },
               {
                 text: "Toast",
-                link: "/en/toast/",
+                link: `${prefix}/en/toast/`,
               },
             ],
           },
@@ -298,11 +303,11 @@ export default defineConfig<ThemeConfig>({
             items: [
               {
                 text: "QRCode",
-                link: "/en/qr-code/",
+                link: `${prefix}/en/qr-code/`,
               },
               {
                 text: "Playground",
-                link: "/en/playground/",
+                link: `${prefix}/en/playground/`,
               },
             ],
           },
@@ -312,31 +317,31 @@ export default defineConfig<ThemeConfig>({
             items: [
               {
                 text: "useNetwork",
-                link: "/en/use-network/",
+                link: `${prefix}/en/use-network/`,
               },
               {
                 text: "useFullscreen",
-                link: "/en/use-fullscreen/",
+                link: `${prefix}/en/use-fullscreen/`,
               },
               {
                 text: "useVisibilityChange",
-                link: "/en/use-visibilitychange/",
+                link: `${prefix}/en/use-visibilitychange/`,
               },
               {
                 text: "useClickAway",
-                link: "/en/use-clickaway/",
+                link: `${prefix}/en/use-clickaway/`,
               },
               {
                 text: "useLatest",
-                link: "/en/use-latest/",
+                link: `${prefix}/en/use-latest/`,
               },
               {
                 text: "useMemoizedFn",
-                link: "/en/use-memoizedfn/",
+                link: `${prefix}/en/use-memoizedfn/`,
               },
               {
                 text: "useInViewport",
-                link: "/en/use-in-viewport/",
+                link: `${prefix}/en/use-in-viewport/`,
               },
             ],
           },
@@ -346,35 +351,35 @@ export default defineConfig<ThemeConfig>({
             items: [
               {
                 text: "useLazyload",
-                link: "/en/use-lazyload/",
+                link: `${prefix}/en/use-lazyload/`,
               },
               {
                 text: "SafeArea",
-                link: "/en/safe-area/",
+                link: `${prefix}/en/safe-area/`,
               },
               {
                 text: "Chart",
-                link: "/en/chart/",
+                link: `${prefix}/en/chart/`,
               },
               {
                 text: "Clamp",
-                link: "/en/clamp/",
+                link: `${prefix}/en/clamp/`,
               },
               {
                 text: "OnePiece",
-                link: "/en/one-piece/",
+                link: `${prefix}/en/one-piece/`,
               },
               {
                 text: "LikeButton",
-                link: "/en/like-button/",
+                link: `${prefix}/en/like-button/`,
               },
               {
                 text: "XButton",
-                link: "/en/x-button/",
+                link: `${prefix}/en/x-button/`,
               },
               {
                 text: "CubeAnim",
-                link: "/en/cube-anim/",
+                link: `${prefix}/en/cube-anim/`,
               },
             ],
           },
