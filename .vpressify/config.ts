@@ -39,7 +39,7 @@ export default defineConfig<ThemeConfig>({
     editLink: true,
     algolia: {
       appId: "8UQ4X28Q0C",
-      apiKey: "d6558f3d635ab4c5950aef413d91762c",
+      apiKey: "6861a087e7605ae972e4eefd88fc230c",
       indexName: "nikonitop",
     },
     themeConfigByPaths: {
