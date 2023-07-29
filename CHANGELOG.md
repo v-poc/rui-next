@@ -1,6 +1,6 @@
-# 0.46.22 (2023-07-18)
+# 0.46.23 (2023-07-28)
 
-Updated to upgrade to `vite@4.4.4` and `vpressify@1.0.37`.
+Updated to upgrade to `vite@4.4.7` and `vpressify@1.0.38`.
 
 # 0.46.18 (2023-06-22)
 
