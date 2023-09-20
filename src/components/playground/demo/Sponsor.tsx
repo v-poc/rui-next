@@ -12,6 +12,10 @@ const arrItems = [
     key: "alipay",
     title: "Alipay",
   },
+  {
+    key: "afdian",
+    title: "爱发电",
+  },
 ];
 
 // Example FC
@@ -47,6 +51,13 @@ const Example = () => {
             })}
           >
             <img src="https://nikoni.top/images/niko-reward-qrcode.png" />
+          </div>
+          <div
+            className={classnames("playground-example-content", {
+              "playground-example-active": activeKey === "afdian",
+            })}
+          >
+            <img src="https://nikoni.top/images/afdian-qrcode.jpeg" />
           </div>
         </div>
       </div>

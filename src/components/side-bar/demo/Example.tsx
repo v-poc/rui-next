@@ -13,6 +13,10 @@ const arrItems = [
     title: "Alipay",
   },
   {
+    key: "afdian",
+    title: "爱发电",
+  },
+  {
     key: "key3",
     title: "item3",
     disabled: true,
@@ -55,6 +59,13 @@ const Example = () => {
               })}
             >
               <img src="https://nikoni.top/images/niko-reward-qrcode.png" />
+            </div>
+            <div
+              className={classnames("playground-example-content", {
+                "playground-example-active": activeKey === "afdian",
+              })}
+            >
+              <img src="https://nikoni.top/images/afdian-qrcode.jpeg" />
             </div>
             <div className="side-bar-example-content">Three content</div>
           </div>
