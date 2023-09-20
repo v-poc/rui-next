@@ -61,8 +61,8 @@ const Example = () => {
               <img src="https://nikoni.top/images/niko-reward-qrcode.png" />
             </div>
             <div
-              className={classnames("playground-example-content", {
-                "playground-example-active": activeKey === "afdian",
+              className={classnames("side-bar-example-content", {
+                "side-bar-example-active": activeKey === "afdian",
               })}
             >
               <img src="https://nikoni.top/images/afdian-qrcode.jpeg" />
