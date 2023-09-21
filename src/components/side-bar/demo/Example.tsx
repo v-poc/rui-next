@@ -14,7 +14,7 @@ const arrItems = [
   },
   {
     key: "afdian",
-    title: "爱发电",
+    title: "Afdian",
   },
   {
     key: "key3",
