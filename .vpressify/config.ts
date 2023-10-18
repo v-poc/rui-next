@@ -56,7 +56,7 @@ export default defineConfig<ThemeConfig>({
             text: "Documentation",
             items: [
               { text: "Tutorial", link: `${prefix}/en/getting-started/` },
-              { text: "Examples-vite4", link: "/" },
+              { text: "Examples-vite5", link: "/" },
               {
                 text: "Examples-vite2",
                 link: "https://nikoni.top/rui-next/docs/",
@@ -98,7 +98,7 @@ export default defineConfig<ThemeConfig>({
                 link: "https://vitejs.dev/",
               },
               {
-                text: "RUI-poc-vite4",
+                text: "RUI-poc-vite5",
                 icon: "tabler:git-branch",
                 link: "https://github.com/v-poc/rui-poc",
               },

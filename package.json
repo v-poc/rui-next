@@ -1,6 +1,6 @@
 {
   "name": "rui-next",
-  "version": "0.46.23",
+  "version": "0.46.24",
   "description": "Mobile web UI components based on React and Vite 4",
   "files": [
     "dist/style.css",
@@ -39,8 +39,8 @@
     "react-vite-ui",
     "react-vite-ts",
     "react-vite-ts-ui",
-    "vite4",
-    "react18-vite4-ui"
+    "vite5",
+    "react18-vite5-ui"
   ],
   "author": "Niko Ni",
   "license": "MIT",
@@ -55,23 +55,23 @@
     "preview": "vpressify serve"
   },
   "engines": {
-    "node": "^14.18.0 || >=16.0.0",
+    "node": "^18.0.0 || >=20.0.0",
     "pnpm": ">= 7"
   },
-  "packageManager": "pnpm@8.7.6",
+  "packageManager": "pnpm@8.9.2",
   "dependencies": {
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "v-qr-code-next": "^0.2.5"
   },
   "devDependencies": {
-    "@types/node": "^20.6.3",
-    "@types/react": "^18.2.22",
-    "@types/react-dom": "^18.2.7",
+    "@types/node": "^20.8.7",
+    "@types/react": "^18.2.29",
+    "@types/react-dom": "^18.2.13",
     "classnames": "^2.3.2",
     "less": "^4.2.0",
-    "vpressify": "^1.0.39",
+    "vpressify": "^1.0.40",
     "typescript": "^5.2.2",
-    "vite": "^4.4.9"
+    "vite": "^5.0.0-beta.10"
   }
 }
