@@ -27,7 +27,7 @@ export default defineConfig<ThemeConfig>({
     locale: "en-US",
     localeText: "English",
     title: "RUI.next",
-    description: "Mobile web UI components based on React and Vite 4",
+    description: "Mobile web UI components based on React and Vite 5",
     banner: [
       "WIP!",
       [
