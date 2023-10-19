@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import classnames from "classnames";
-import { SideBar } from "rui-next";
+import { Avatar, List, SideBar } from "rui-next";
+import { logInfo } from "../../experimental";
 import "./index.less";
 
 const arrItems = [
@@ -51,6 +52,15 @@ const Example = () => {
             })}
           >
             <img src="https://nikoni.top/images/niko-reward-qrcode.png" />
+            <p>Sponsors</p>
+            <List>
+              <List.Item
+                prefix={<Avatar src="/" shape="circle" />}
+                onClick={() => logInfo("感谢打赏鼓励")}
+              >
+                打印复印、大, and others.
+              </List.Item>
+            </List>
           </div>
           <div
             className={classnames("playground-example-content", {
