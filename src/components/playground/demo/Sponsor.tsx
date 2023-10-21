@@ -58,7 +58,7 @@ const Example = () => {
                 prefix={<Avatar src="/" shape="circle" />}
                 onClick={() => logInfo("感谢打赏鼓励")}
               >
-                打印复印、大, and others.
+                小马、打印复印、大, and others.
               </List.Item>
             </List>
           </div>

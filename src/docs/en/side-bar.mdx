@@ -3,10 +3,14 @@
 `SideBar` is able to display the navigation bar vertically.
 
 ```jsx
-<SideBar><SideBar.Item key="k1" title="item one" /></SideBar>
+<SideBar>
+  <SideBar.Item key="k1" title="item one" />
+</SideBar>
 ```
 
 ## Example
+
+> Check the [Sponsor playground](/en/sponsor/) for sponsors list. :-)
 
 Basic usage of SideBar component.
 
@@ -16,17 +20,17 @@ Basic usage of SideBar component.
 
 ### SideBar
 
-| Properties | Description | Type | Default |
-|------------|-------------|------|---------|
-| activeKey        | The `key` of currently active `item` | `string \| null` | - |
-| defaultActiveKey | The initialized `key` of the selected `item`, if the `activeKey` is not set | `string \| null` | `key` of the 1st `item` |
-| onChange         | The callback when switching SideBar | `(key: string) => void` | - |
+| Properties       | Description                                                                 | Type                    | Default                 |
+| ---------------- | --------------------------------------------------------------------------- | ----------------------- | ----------------------- |
+| activeKey        | The `key` of currently active `item`                                        | `string \| null`        | -                       |
+| defaultActiveKey | The initialized `key` of the selected `item`, if the `activeKey` is not set | `string \| null`        | `key` of the 1st `item` |
+| onChange         | The callback when switching SideBar                                         | `(key: string) => void` | -                       |
 
 ### SideBar.Item
 
-| Properties | Description | Type | Default |
-|------------|-------------|------|---------|
-| badge    | The Badge of the item | `BadgeProps['text']` | - |
-| disabled | Whether the item is disabled | `boolean` | `false` |
-| key      | The active Key | `string` | - |
-| title    | The title of the item | `ReactNode` | - |
+| Properties | Description                  | Type                 | Default |
+| ---------- | ---------------------------- | -------------------- | ------- |
+| badge      | The Badge of the item        | `BadgeProps['text']` | -       |
+| disabled   | Whether the item is disabled | `boolean`            | `false` |
+| key        | The active Key               | `string`             | -       |
+| title      | The title of the item        | `ReactNode`          | -       |
