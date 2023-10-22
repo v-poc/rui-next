@@ -17,6 +17,40 @@ const sampleData = [
   },
 ];
 
+const sampleDisable = [
+  {
+    label: "Wechat",
+    value: "1",
+  },
+  {
+    label: "Alipay",
+    value: "2",
+  },
+  {
+    label: "Afdian",
+    value: "3",
+    disabled: true,
+  },
+];
+
+const customData = [
+  {
+    name: "Option 1",
+    code: "one",
+    closable: false,
+  },
+  {
+    name: "Option 2",
+    code: "two",
+    closable: false,
+  },
+  {
+    name: "Option 3",
+    code: "three",
+    closable: false,
+  },
+];
+
 const handleLog = (arr: any, ext: any) => {
   console.log(arr, ext);
   if (arr && arr.length) {
@@ -27,7 +61,7 @@ const handleLog = (arr: any, ext: any) => {
 // Example FC
 const Example = () => (
   <>
-    <Divider contentAlign="left">Basic Selector (single mode)</Divider>
+    <Divider contentAlign="left">Basic Selector with single mode</Divider>
     <Selector
       options={sampleData}
       defaultValue={["1"]}
@@ -37,7 +71,30 @@ const Example = () => (
     <Divider contentAlign="left">Selector with multiple mode</Divider>
     <Selector
       options={sampleData}
-      defaultValue={["1", "2"]}
+      defaultValue={["2", "3"]}
+      onChange={(arr: any, ext: any) => handleLog(arr, ext)}
+      multiple
+    />
+    <br />
+    <Divider contentAlign="left">Selector with disabled option</Divider>
+    <Selector
+      options={sampleDisable}
+      defaultValue={["2"]}
+      onChange={(arr: any, ext: any) => handleLog(arr, ext)}
+    />
+    <br />
+    <Divider contentAlign="left">Selector with disabled state</Divider>
+    <Selector options={sampleData} defaultValue={["1"]} disabled />
+    <br />
+    <Divider contentAlign="left">Selector with custom fieldName</Divider>
+    <Selector
+      options={customData}
+      fieldNames={{
+        label: "name",
+        value: "code",
+        disabled: "closable",
+      }}
+      defaultValue={["one", "two"]}
       onChange={(arr: any, ext: any) => handleLog(arr, ext)}
       multiple
     />
