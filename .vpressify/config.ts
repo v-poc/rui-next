@@ -256,6 +256,10 @@ export default defineConfig<ThemeConfig>({
                 text: "SearchBar",
                 link: "/en/search-bar/",
               },
+              {
+                text: "Selector",
+                link: "/en/selector/",
+              },
             ],
           },
           {

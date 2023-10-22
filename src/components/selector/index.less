@@ -1,0 +1,61 @@
+// @import "../styles/mixins";
+// @import "../styles/themes/default";
+
+@selectorPrefixCls: r-selector;
+
+.@{selectorPrefixCls} {
+  font-size: 15px;
+  line-height: 1.4;
+  overflow: hidden;
+
+  &-item {
+    position: relative;
+    padding: 8px 16px;
+    background-color: #f5f5f5;
+    border: none;
+    border-radius: 2px;
+    color: #333;
+    cursor: pointer;
+    display: inline-block;
+    text-align: center;
+    overflow: hidden;
+    vertical-align: top;
+
+    &-active,
+    &-multiple-active {
+      color: #1677ff;
+      background-color: #e7f1ff;
+      border: none;
+    }
+
+    &-description {
+      font-size: 13px;
+      color: #999;
+    }
+
+    .@{selectorPrefixCls}-check-mark-container {
+      position: absolute;
+      right: 0;
+      bottom: 0;
+      width: 0;
+      height: 0;
+      border-top: 8px solid transparent;
+      border-bottom: 8px solid #1677ff;
+      border-left: 10px solid transparent;
+      border-right: 10px solid #1677ff;
+
+      > svg {
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 8px;
+        height: 6px;
+      }
+    }
+
+    &-disabled {
+      cursor: not-allowed;
+      opacity: 0.4;
+    }
+  }
+}

@@ -109,6 +109,9 @@ export type { ToastShowProps } from "./toast/index";
 // PageIndicator
 export { default as PageIndicator } from "./page-indicator/index";
 export type { PageIndicatorProps } from "./page-indicator/index";
+// Selector
+export { default as Selector } from "./selector/index";
+export type { SelectorProps, SelectorOption } from "./selector/index";
 
 /**
  * hooks

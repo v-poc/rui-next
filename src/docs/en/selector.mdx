@@ -1,0 +1,29 @@
+# Selector
+
+`Selector` provides multiple options for user to choose from, typically used in filters and forms.
+
+```jsx
+<Selector options={["one", "two", "three"]} defaultValue={["one"]} />
+```
+
+## Example
+
+Basic usage of Selector component.
+
+<Demo src="../../components/selector/demo/Example.tsx" />
+
+## API
+
+| Properties   | Description                                        | Type                                                                 | Default                                                    |
+| ------------ | -------------------------------------------------- | -------------------------------------------------------------------- | ---------------------------------------------------------- |
+| columns      | Number of the displayed columns                    | `number`                                                             | -                                                          |
+| defaultValue | Selected value by default                          | `SelectorValue[]`                                                    | `[]`                                                       |
+| disabled     | Whether to all disable selecting                   | `boolean`                                                            | `false`                                                    |
+| fieldNames   | Custom field name for label and value and disabled | `{ label: string, value: string, disabled: string }`                 | `{ label: 'label', value: 'value', disabled: 'disabled' }` |
+| multiple     | Whether to allow multiple selections               | `boolean`                                                            | `false`                                                    |
+| onChange     | Triggered when the value is changed                | `(value: SelectorValue[], ext: { items: SelectorOption[] }) => void` | -                                                          |
+| options      | Optional selector                                  | `SelectorOption[]`                                                   | -                                                          |
+| showMark     | Whether to show the check mark                     | `boolean`                                                            | `true`                                                     |
+| value        | Selected value                                     | `SelectorValue[]`                                                    | -                                                          |
+
+> If using columns of the CSS Grid feature, the compatibility standard is iOS Safari >= `10.3` and Chrome >= `57`.

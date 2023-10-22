@@ -1,6 +1,10 @@
+# 0.47.0 (2023-10-21)
+
+Added `Selector` demo.
+
 # 0.46.24 (2023-10-18)
 
-Updated to upgrade to `vite@5.0.0-beta.10` and `vpressify@1.0.40`.
+Updated to upgrade to `vite@5.0.0-beta.10` and `vpressify@1.0.41`.
 
 # 0.46.18 (2023-06-22)
 
