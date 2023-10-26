@@ -1,3 +1,7 @@
+# 0.47.1 (2023-10-26)
+
+Updated vite config.
+
 # 0.47.0 (2023-10-21)
 
 Added `Selector` demo.
