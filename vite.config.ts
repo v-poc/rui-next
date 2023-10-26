@@ -10,13 +10,13 @@ export default {
     rollupOptions: {
       // make sure to externalize deps that shouldn't be bundled
       // into your library
-      external: ["react", "reactdom"],
+      external: ["react", "react-dom"],
       output: {
         // Provide global variables to use in the UMD build
         // for externalized deps
         globals: {
-          react: "React",
-          reactdom: "ReactDOM",
+          "react": "React",
+          "react-dom": "ReactDOM",
         },
       },
     },
