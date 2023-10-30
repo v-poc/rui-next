@@ -58,20 +58,20 @@
     "node": "^18.0.0 || >=20.0.0",
     "pnpm": ">= 7"
   },
-  "packageManager": "pnpm@8.9.2",
+  "packageManager": "pnpm@8.10.0",
   "dependencies": {
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "v-qr-code-next": "^0.2.5"
   },
   "devDependencies": {
-    "@types/node": "^20.8.7",
-    "@types/react": "^18.2.31",
+    "@types/node": "^20.8.9",
+    "@types/react": "^18.2.33",
     "@types/react-dom": "^18.2.14",
     "classnames": "^2.3.2",
     "less": "^4.2.0",
     "vpressify": "^1.0.41",
     "typescript": "^5.2.2",
-    "vite": "^5.0.0-beta.12"
+    "vite": "^5.0.0-beta.13"
   }
 }
