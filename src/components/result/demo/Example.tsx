@@ -1,5 +1,6 @@
 import React from "react";
-import { useNetwork, Result, Icon, Divider } from "rui-next";
+import { useNetwork, Result, Icon, Divider } from "../../index";
+import "./index.less";
 
 // Example FC
 const Example = () => {
@@ -21,7 +22,7 @@ const Example = () => {
   };
 
   return (
-    <>
+    <div className="example-result-container">
       <Divider contentAlign="left">Result with image url</Divider>
       <Result
         imgUrl="https://vitejs.dev/logo.svg"
@@ -42,7 +43,7 @@ const Example = () => {
         buttonText="Learn More"
         onButtonClick={handleGhostBtnClick}
       />
-    </>
+    </div>
   );
 };
 

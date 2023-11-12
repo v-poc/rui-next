@@ -1,0 +1,27 @@
+# useClickAway
+
+A hook that can manage click outside of target element(s).
+
+```ts pure
+type Target = HTMLElement | React.MutableRefObject | () => HTMLElement;
+
+useClickAway(
+  onClickAway: (event: MouseEvent | TouchEvent) => void,
+  target: Target | Target[],
+  eventName?: string,
+);
+```
+
+## Example
+
+Basic usage of useClickAway hook.
+
+<code src="./demo/Example.tsx" />
+
+## API
+
+| Property    | Description                        | Type                   | Default |
+| ----------- | ---------------------------------- | ---------------------- | ------- |
+| onClickAway | Trigger Function for ClickAway     | `(event) => void`      | -       |
+| target      | DOM elements or Ref, support array | `Target` \| `Target[]` | -       |
+| eventName   | The event to be listened, optional | `string`               | `click` |

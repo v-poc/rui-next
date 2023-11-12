@@ -1,5 +1,5 @@
 import React from "react";
-import { Divider, PageIndicator } from "rui-next";
+import { Divider, PageIndicator } from "../../index";
 import "./index.less";
 
 // Example FC

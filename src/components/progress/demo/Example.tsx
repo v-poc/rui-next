@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Progress, Button, Divider } from "rui-next";
+import { Progress, Button, Divider } from "../../index";
 import "./index.less";
 
 // Example FC

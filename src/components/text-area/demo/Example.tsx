@@ -1,5 +1,5 @@
 import React from "react";
-import { TextArea, Divider } from "rui-next";
+import { TextArea, Divider } from "../../index";
 
 // Example FC
 const Example = () => (

@@ -1,5 +1,5 @@
 import React, { useCallback, useRef, useState } from "react";
-import { useMemoizedFn, Button, Divider } from "rui-next";
+import { useMemoizedFn, Button, Divider } from "../../../index";
 import { logInfo } from "../../../experimental";
 
 type SubCompType = {

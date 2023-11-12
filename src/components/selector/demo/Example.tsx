@@ -1,5 +1,5 @@
 import React from "react";
-import { Selector, Divider } from "rui-next";
+import { Selector, Divider } from "../../index";
 import { logInfo } from "../../experimental";
 
 const sampleData = [

@@ -1,5 +1,5 @@
 import React from "react";
-import { Footer, Divider } from "rui-next";
+import { Footer, Divider } from "../../index";
 
 // Example FC
 const Example = () => (
@@ -12,7 +12,7 @@ const Example = () => (
         { text: "demos", url: "https://nikoni.top/rui-next/" },
         {
           text: "playground",
-          url: "https://nikoni.top/rui-next/en/playground",
+          url: "https://nikoni.top/rui-next/components/playground/playground",
         },
       ]}
       content="Copyright @ 2021-present RUI.next. Built with Vite & React."

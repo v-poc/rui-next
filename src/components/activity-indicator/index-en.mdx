@@ -1,0 +1,31 @@
+# ActivityIndicator
+
+`ActivityIndicator` indicates that a task is currently in progress.
+
+```jsx pure
+<ActivityIndicator />
+<ActivityIndicator color="blue" />
+<ActivityIndicator sizeType="large" />
+<ActivityIndicator text="Loading..." />
+<ActivityIndicator toast />
+<ActivityIndicator toast text="Loading..." />
+<ActivityIndicator carousel="circle" />
+<ActivityIndicator carousel="rect" />
+```
+
+## Example
+
+Basic usage of ActivityIndicator component.
+
+<code src="./demo/Example.tsx" />
+
+## API
+
+| Properties | Description                                                         | Type    | Default |
+| ---------- | ------------------------------------------------------------------- | ------- | ------- |
+| animating  | Whether to show the indicator (true by default) or hide it (false). | boolean | `true`  |
+| sizeType   | The size type of the indicator, optional value: `small`, `large`    | string  | `small` |
+| toast      | Whether to use toast style                                          | boolean | `false` |
+| carousel   | The carousel style, optional value: `circle`, `rect`                | string  | -       |
+| size       | The size for carousel-circle style                                  | number  | `30`    |
+| text       | The loading text behind the indicator                               | string  | -       |

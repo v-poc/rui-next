@@ -1,5 +1,5 @@
 import React from "react";
-import { Toast, Button, Divider, Icon, Space } from "rui-next";
+import { Toast, Button, Divider, Icon, Space } from "../../index";
 
 // Example FC
 const Example = () => (

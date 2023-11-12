@@ -1,5 +1,5 @@
 import React from "react";
-import { Icon, Divider } from "rui-next";
+import { Icon, Divider } from "../../index";
 import "./index.less";
 
 const defaultList = [

@@ -1,0 +1,59 @@
+# Getting Started
+
+## Overview
+
+Thanks to [`rspress`](https://github.com/web-infra-dev/rspress) that could support `React docs+demos` well.
+
+Compare to other tools:
+
+- [`dumi`](https://d.umijs.org/)
+  - it is coupled with `webpack` instead.
+- [`vuepress@next`](https://github.com/vuepress/vuepress-next) with `vite bundler`
+  - it seems not good enough to support `React docs+demos`.
+- [`vite-plugin-react-pages`](https://github.com/vitejs/vite-plugin-react-pages)
+  - for early version, it seems not able to show both demos and source codes in the `CodeBlock`.
+- [`vitepress-rc`](https://github.com/cvnine/vitepress-rc) / [`pressify`](https://github.com/Codpoe/pressify) / [`vpressify`](https://github.com/v-poc/vpressify)
+  - it lacks of regular maintenance.
+
+## Preview
+
+Try [QR code playground](/components/qr-code/index-en) to scan to access the examples on mobile/tablet device.
+
+## Project setup
+
+Install dependencies
+
+```bash
+$ pnpm i
+```
+
+Start the dev server for `docs-dev`
+
+```bash
+$ pnpm start
+```
+
+Build UI library
+
+```bash
+$ pnpm run build-lib
+```
+
+Build documentation (docs+demos)
+
+```bash
+$ pnpm run build-docs
+```
+
+## Sponsor
+
+> Check the [Sponsor playground](/components/playground/sponsor/) for sponsors list. :-)
+
+## License
+
+<img
+  src="https://nikoni.top/images/niko-mit-react.png"
+  alt="MIT License"
+  width="396"
+  height="250"
+/>

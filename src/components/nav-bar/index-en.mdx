@@ -1,0 +1,25 @@
+# NavBar
+
+`NavBar` locates above the app content area, below the system status bar, and provides navigation capabilities.
+
+```jsx pure
+<NavBar leftContent="Back" rightContent="Close">
+  Page title
+</NavBar>
+```
+
+## Example
+
+Basic usage of NavBar component.
+
+<code src="./demo/Example.tsx" />
+
+## API
+
+| Properties   | Description                                 | Type              | Default |
+| ------------ | ------------------------------------------- | ----------------- | ------- |
+| mode         | style mode, optional value: `dark`, `light` | string            | `dark`  |
+| icon         | appears on the leftmost icon placeholder    | `ReactNode`       | -       |
+| leftContent  | the left content                            | any               | -       |
+| rightContent | the right content                           | any               | -       |
+| onLeftClick  | the click callback on the left              | (e: Object): void | -       |

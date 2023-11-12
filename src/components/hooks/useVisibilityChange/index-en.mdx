@@ -1,0 +1,20 @@
+# useVisibilityChange
+
+A hook that can detect the change of document visibility state.
+
+```ts pure
+useVisibilityChange((visible) => {});
+```
+
+## Example
+
+Basic usage of useVisibilityChange hook.
+
+<code src="./demo/Example.tsx" />
+
+## API
+
+| Property | Description                                    | Type         |
+| -------- | ---------------------------------------------- | ------------ |
+| fn       | The callback function                          | `() => void` |
+| delay    | The delay time to invoke the callback function | `number`     |

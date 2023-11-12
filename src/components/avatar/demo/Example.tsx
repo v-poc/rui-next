@@ -1,5 +1,5 @@
 import React from "react";
-import { Avatar, Divider, Space } from "rui-next";
+import { Avatar, Divider, Space } from "../../index";
 import "./index.less";
 
 const arrUsers = [

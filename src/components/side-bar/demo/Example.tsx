@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import classnames from "classnames";
-import { SideBar, Divider } from "rui-next";
+import { SideBar, Divider } from "../../index";
 import "./index.less";
 
 const arrItems = [

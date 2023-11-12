@@ -1,5 +1,5 @@
 import React from "react";
-import { Footer, Divider, Icon } from "rui-next";
+import { Footer, Divider, Icon } from "../../index";
 
 // Example FC
 const Example = () => (

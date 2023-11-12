@@ -1,0 +1,28 @@
+# Rate
+
+`Rate` screen, generally used to do some rating by user.
+
+```jsx pure
+<Rate />
+```
+
+## Example
+
+Basic usage of Rate component.
+
+<code src="./demo/Example.tsx" />
+
+## API
+
+| Properties   | Description                                     | Type                    | Default                |
+| ------------ | ----------------------------------------------- | ----------------------- | ---------------------- |
+| allowClear   | Whether allow to clear once click again         | boolean                 | `true`                 |
+| allowHalf    | Whether allow to show half star                 | boolean                 | `false`                |
+| character    | Customized character                            | ReactNode               | `<Icon type="star" />` |
+| count        | The total count of star(s)                      | number                  | `5`                    |
+| defaultValue | The default value                               | number                  | `0`                    |
+| readonly     | The readonly mode                               | boolean                 | `false`                |
+| value        | The current value                               | number                  | -                      |
+| onChange     | The callback function when the star is selected | (value: number) => void | -                      |
+| activeColor  | The active color                                | string                  | `#FFD21E`              |
+| size         | The size of rate item                           | number                  | `24`                   |

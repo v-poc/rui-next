@@ -1,5 +1,5 @@
 import React, { useRef, useState } from "react";
-import { useInViewport, Button, Divider } from "rui-next";
+import { useInViewport, Button, Divider } from "../../../index";
 import "./index.less";
 
 // Example FC

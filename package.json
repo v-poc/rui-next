@@ -1,6 +1,6 @@
 {
   "name": "rui-next",
-  "version": "0.47.1",
+  "version": "0.48.0",
   "description": "Mobile web UI components based on React and Vite 5",
   "files": [
     "dist/style.css",
@@ -27,11 +27,11 @@
     "vite",
     "react",
     "react-hooks",
-    "vitepress",
+    "rspress",
     "react-components",
     "react-vite-pressify",
     "react-hooks-components",
-    "react-hooks-vitepress",
+    "react-hooks-rspress",
     "rui",
     "react-ui",
     "react-hooks-ui",
@@ -49,14 +49,14 @@
   },
   "homepage": "https://github.com/v-poc/rui-next#readme",
   "scripts": {
-    "start": "vpressify dev",
+    "start": "rspress dev --port 5173",
     "build-lib": "vite build --config vite.config.ts",
-    "build-docs": "vpressify build",
-    "preview": "vpressify serve"
+    "build-docs": "rspress build",
+    "preview": "rspress preview"
   },
   "engines": {
     "node": "^18.0.0 || >=20.0.0",
-    "pnpm": ">= 7"
+    "pnpm": ">= 8"
   },
   "packageManager": "pnpm@8.10.2",
   "dependencies": {
@@ -65,13 +65,14 @@
     "v-qr-code-next": "^0.2.5"
   },
   "devDependencies": {
-    "@types/node": "^20.8.10",
-    "@types/react": "^18.2.34",
-    "@types/react-dom": "^18.2.14",
+    "@rspress/plugin-preview": "^1.6.1",
+    "@types/node": "^20.9.0",
+    "@types/react": "^18.2.37",
+    "@types/react-dom": "^18.2.15",
     "classnames": "^2.3.2",
     "less": "^4.2.0",
-    "vpressify": "^1.0.42",
+    "rspress": "^1.6.1",
     "typescript": "^5.2.2",
-    "vite": "^5.0.0-beta.16"
+    "vite": "^5.0.0-beta.18"
   }
 }

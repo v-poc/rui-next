@@ -1,0 +1,25 @@
+# Tag
+
+`Tag` is the section for categorizing or markuping. There are two kinds of `Tag`, selectable and readonly type, the latter is a smaller tag without interactive behavior, which is typically used for display content.
+
+```jsx pure
+<Tag>display content</Tag>
+```
+
+## Example
+
+Basic usage of Tag component.
+
+<code src="./demo/Example.tsx" />
+
+## API
+
+| Properties | Description                                                              | Type                          | Default |
+| ---------- | ------------------------------------------------------------------------ | ----------------------------- | ------- |
+| small      | Whether to show a smaller size.                                          | `boolean`                     | `false` |
+| disabled   | Whether is disabled.                                                     | `boolean`                     | `false` |
+| closable   | Whether this tag could be closed (invalid in `small` or `disabled` mode) | `boolean`                     | `false` |
+| selected   | Whether is selected by default.                                          | `boolean`                     | `false` |
+| onChange   | The callback function that is triggered when the selected state changes. | `(selected: boolean) => void` | -       |
+| onClose    | The callback function that is triggered when the tag is closed.          | `() => void`                  | -       |
+| afterClose | The callback function that is triggered after close.                     | `() => void`                  | -       |

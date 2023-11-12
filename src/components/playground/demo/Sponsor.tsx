@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import classnames from "classnames";
-import { Avatar, List, SideBar } from "rui-next";
+import { Avatar, List, SideBar } from "../../index";
 import { logInfo } from "../../experimental";
 import "./index.less";
 

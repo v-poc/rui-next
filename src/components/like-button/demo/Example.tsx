@@ -1,5 +1,5 @@
 import React from "react";
-import { Divider } from "rui-next";
+import { Divider } from "../../index";
 import { LikeButton, logInfo } from "../../experimental";
 
 const handleClick = () => logInfo("So cool, nice feeling!");

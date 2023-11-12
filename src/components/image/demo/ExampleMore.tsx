@@ -1,5 +1,5 @@
 import React, { Fragment } from "react";
-import { Image, Divider } from "rui-next";
+import { Image, Divider } from "../../index";
 import "./index.less";
 
 const IMG_SRC = "https://nikoni.top/images/rui-next/big-picture.jpg";

@@ -1,5 +1,5 @@
 import React, { useRef, useState } from "react";
-import { QRCode, Divider } from "rui-next";
+import { QRCode, Divider } from "../../index";
 import "./index.less";
 
 type ParamsType = {

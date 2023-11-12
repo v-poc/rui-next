@@ -1,0 +1,42 @@
+# Footer
+
+`Footer` is able to display information at the bottom of the UI screen.
+
+```jsx pure
+<Footer content={SOME_INFO} />
+```
+
+## Example
+
+Group usage of Footer component.
+
+<code src="./demo/ExampleMore.tsx" />
+
+Basic usage as the following.
+
+<code src="./demo/Example.tsx" />
+
+## API
+
+| Properties  | Description                                                                                                                 | Type                                      | Default |
+| ----------- | --------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------- | ------- |
+| label       | The top content with a line divider                                                                                         | `string \| ReactNode`                     | -       |
+| links       | The links above content                                                                                                     | `LinkItem[]`                              | -       |
+| content     | The common content section                                                                                                  | `string \| ReactNode`                     | -       |
+| chips       | Chips, only one line of content is allowed. If the content exceeds the width, the content will be automatically intercepted | `ChipItem[]`                              | -       |
+| onClickChip | Click the bottom label to trigger, and it will only take effect when the chip type is link                                  | `(item: ChipItem, index: number) => void` | -       |
+| onClickLink | Clicking the link triggers an event that intercepts the href jump to the anchor                                             | `(item: LinkItem, index: number) => void` | -       |
+
+### ChipItem
+
+| Name    | Description                                                               | Type                    | Default |
+| ------- | ------------------------------------------------------------------------- | ----------------------- | ------- |
+| content | The chip content                                                          | `string` \| `ReactNode` | -       |
+| type    | The chip type, `plain` type is only for display, `link` type is clickable | `plain` \| `link`       | `plain` |
+
+### LinkItem
+
+| Name | Description       | Type     | Default |
+| ---- | ----------------- | -------- | ------- |
+| text | Thr text of links | `string` | -       |
+| url  | The url of links  | `string` | -       |

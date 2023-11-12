@@ -1,0 +1,37 @@
+# Input
+
+The `Input` component is layout-independent, that means it only includes the most basic input box part. If you want to add borders, titles, or some operation buttons with it, you can combine with the `List` or `Form` components.
+
+> In native `input`, `maxlength` only takes effect when `type` is `text`, `search`, `url`, `tel`, `email`, `password`.
+>
+> If you need to limit the number type to the input box, you can pass the `max/min` prop.
+>
+> In addition, the following native attributes are supported: `maxLength` `minLength` `max` `min` `autoComplete` `autoFocus` `enterKeyHint` `pattern` `inputMode` `type` `onFocus` `onBlur` `autoCapitalize` `autoCorrect` `onKeyDown` `onKeyUp` `onCompositionStart` `onCompositionEnd` `onClick`
+
+```jsx pure
+<Input placeholder="please input content" />
+```
+
+## Example
+
+Basic usage of Input component.
+
+<code src="./demo/Example.tsx" />
+
+## API
+
+| Properties             | Description                                                                                                                                                             | Type                                                 | Default |
+| ---------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------- | ------- |
+| id                     | The id of the input element, usually used with label                                                                                                                    | `string`                                             | -       |
+| value                  | The input value                                                                                                                                                         | `string`                                             | -       |
+| defaultValue           | The default value                                                                                                                                                       | `string`                                             | -       |
+| placeholder            | The prompt text                                                                                                                                                         | `string`                                             | -       |
+| disabled               | Whether it is disabled or not                                                                                                                                           | `boolean`                                            | `false` |
+| readOnly               | Whether it is readonly or not                                                                                                                                           | `boolean`                                            | `false` |
+| clearable              | Whether to enable the clear icon, the input box will be cleared after clicking the clear icon                                                                           | `boolean`                                            | `false` |
+| min                    | The minimum value, only valid when `type` is `number`                                                                                                                   | `number`                                             | -       |
+| max                    | The maximum value, only valid when `type` is `number`                                                                                                                   | `number`                                             | -       |
+| onlyShowClearWhenFocus | If `true`, the clear button will only be displayed when the input box is focused. If `false`, the clear button will still be displayed after the input box loses focus. | `boolean`                                            | `true`  |
+| onChange               | Triggered when the input content is changed                                                                                                                             | `(value: string) => void`                            | -       |
+| onClear                | Triggered after clicking the clear button                                                                                                                               | `() => void`                                         | -       |
+| onEnterKeyPress        | The callback when Enter key is pressed                                                                                                                                  | `(e: React.KeyboardEvent<HTMLInputElement>) => void` | -       |

@@ -1,0 +1,25 @@
+# Result
+
+`Result` contains feedback content like illustrations, icons and text.
+
+```jsx pure
+<Result title="page title" message="result page message" />
+```
+
+## Example
+
+Basic usage of Result component.
+
+<code src="./demo/Example.tsx" />
+
+## API
+
+| Properties    | Description                                                                                | Type              | Default |
+| ------------- | ------------------------------------------------------------------------------------------ | ----------------- | ------- |
+| imgUrl        | image url                                                                                  | string            | -       |
+| img           | image node (could be `<img src="" />` or `<Icon type="" />`), which will override `imgUrl` | `ReactNode`       | -       |
+| title         | title of result page                                                                       | `ReactNode`       | -       |
+| message       | message text of result page                                                                | `ReactNode`       | -       |
+| buttonType    | type of built-in button                                                                    | string            | -       |
+| buttonText    | text of built-in button                                                                    | string            | -       |
+| onButtonClick | callback of clicking built-in button                                                       | (e: Object): void | -       |

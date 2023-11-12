@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Switch, Divider } from "rui-next";
+import { Switch, Divider } from "../../index";
 import { logInfo } from "../../experimental";
 
 // Example FC

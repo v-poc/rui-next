@@ -1,0 +1,34 @@
+# Toast
+
+`Toast` represents lightweight feedback.
+
+> `Toast` only supports Imperative calls.
+
+```jsx pure
+Toast.show("some content");
+```
+
+## Example
+
+Basic usage of Toast component.
+
+<code src="./demo/Example.tsx" />
+
+Showcase more usage of Toast component.
+
+<code src="./demo/ExampleMore.tsx" />
+
+## API
+
+| Properties      | Description                                                        | Type                                                  | Default         |
+| --------------- | ------------------------------------------------------------------ | ----------------------------------------------------- | --------------- |
+| afterClose      | The callback after the Toast is completely closed                  | `() => void`                                          | -               |
+| content         | The Toast text content                                             | `React.ReactNode`                                     | -               |
+| duration        | Prompt duration, if it is `0`, it will not be closed automatically | `number`                                              | `2000`          |
+| getContainer    | The customized parent container of the light prompt                | `HTMLElement \| (() => HTMLElement) \| null`          | `document.body` |
+| icon            | The Toast icon                                                     | `'success' \| 'fail' \| 'loading' \| React.ReactNode` | -               |
+| maskClassName   | The Toast mask class name                                          | `string`                                              | -               |
+| maskClickable   | Whether allowed to click the background                            | `boolean`                                             | `true`          |
+| maskStyle       | The Toast mask style                                               | `React.CSSProperties`                                 | -               |
+| position        | Vertical display position                                          | `'top' \| 'bottom' \| 'center'`                       | `'center'`      |
+| stopPropagation | Stop the propagation of some events.                               | `PropagationEvent[]`                                  | `['click']`     |

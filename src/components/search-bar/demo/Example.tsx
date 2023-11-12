@@ -1,5 +1,5 @@
 import React, { useRef } from "react";
-import { Button, SearchBar, Divider } from "rui-next";
+import { Button, SearchBar, Divider } from "../../index";
 import { logInfo } from "../../experimental";
 import type { SearchBarRef } from "../index";
 import "./index.less";

@@ -1,0 +1,23 @@
+# LikeButton
+
+`LikeButton` UI display (**experimental status**).
+
+```jsx pure
+<LikeButton scale={0.5} />
+```
+
+## Example
+
+Basic usage of LikeButton component.
+
+<code src="./demo/Example.tsx" />
+
+## API
+
+| Properties | Description                              | Type         | Default                                            |
+| ---------- | ---------------------------------------- | ------------ | -------------------------------------------------- |
+| scale      | The scale number, optional               | `number`     | 1                                                  |
+| callback   | The callback function, optional          | `() => void` | -                                                  |
+| delay      | The delay to trigger callback, unit `ms` | `number`     | `500`                                              |
+| heartColor | The heart color                          | `string`     | `#F66`                                             |
+| lineColors | The line colors                          | `string[]`   | `["#F66", "#66F", "#F90", "#09F", "#9C3", "#3C9"]` |

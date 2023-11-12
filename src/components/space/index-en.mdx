@@ -1,0 +1,27 @@
+# Space
+
+`Space` is a wrap of item boxes.
+
+```jsx pure
+<Space>
+  <PlaceHolder />
+  <PlaceHolder />
+</Space>
+```
+
+## Example
+
+Basic usage of Space component.
+
+<code src="./demo/Example.tsx" />
+
+## API
+
+| Properties | Description                                                   | Type                                                                             | Default |
+| ---------- | ------------------------------------------------------------- | -------------------------------------------------------------------------------- | ------- |
+| align      | Align the items on the cross axis.                            | `'start' \| 'center' \| 'end' \| 'baseline'`                                     | -       |
+| block      | Should render as block element.                               | `boolean`                                                                        | `false` |
+| vertical   | Whether the direction mode is vertical.                       | `boolean`                                                                        | `false` |
+| justify    | Align the items on the main axis.                             | `'start' \| 'center' \| 'end' \| 'between' \| 'around' \| 'evenly' \| 'stretch'` | -       |
+| onClick    | The click event of the Space.                                 | `(event: React.MouseEvent<HTMLDivElement, MouseEvent>) => void`                  | -       |
+| wrap       | Should line break automatically, work only with `horizontal`. | `boolean`                                                                        | `false` |

@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Slider, Divider } from "rui-next";
+import { Slider, Divider } from "../../index";
 import { XButton, logInfo } from "../../experimental";
 import "./index.less";
 

@@ -1,5 +1,5 @@
 import React from "react";
-import { Rate, Icon, Divider } from "rui-next";
+import { Rate, Icon, Divider } from "../../index";
 import { logInfo } from "../../experimental";
 
 // Example FC

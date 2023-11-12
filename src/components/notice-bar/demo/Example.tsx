@@ -1,5 +1,5 @@
 import React from "react";
-import { NoticeBar, Icon, Divider } from "rui-next";
+import { NoticeBar, Icon, Divider } from "../../index";
 import "./index.less";
 
 // Example FC
