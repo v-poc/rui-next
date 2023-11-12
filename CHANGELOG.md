@@ -1,3 +1,7 @@
+# 0.48.0 (2023-11-11)
+
+Refactor: switch from `vpressify` to `respress`.
+
 # 0.47.1 (2023-10-26)
 
 Updated vite config.
