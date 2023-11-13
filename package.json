@@ -58,7 +58,7 @@
     "node": "^18.0.0 || >=20.0.0",
     "pnpm": ">= 8"
   },
-  "packageManager": "pnpm@8.10.2",
+  "packageManager": "pnpm@8.10.4",
   "dependencies": {
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
