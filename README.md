@@ -6,7 +6,7 @@
 
 ## Overview
 
-This is just one kind of playground to dev `react-hooks` based UI components based on `vitepress+vite`. Thanks to [`vpressify`](https://github.com/v-poc/vpressify) that could support `React docs+demos` well to run with `vitepress+vite`.
+This is just one kind of playground to dev `react-hooks` based UI components based on `rspress`. Thanks to [`rspress`](https://github.com/web-infra-dev/rspress) that could support `React docs+demos` well.
 
 - 📦 **Out of the box** - focus on component development and documentation
 - 🧑‍💻 **Developer Friendly** - built-in syntax highlighting, embedding React components seamlessly
