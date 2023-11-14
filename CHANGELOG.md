@@ -1,3 +1,7 @@
+# 0.48.1 (2023-11-14)
+
+Updated deps.
+
 # 0.48.0 (2023-11-11)
 
 Refactor: switch from `vpressify` to `respress`.
