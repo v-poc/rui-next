@@ -2,7 +2,7 @@
  * experimental
  */
 // Chart
-export { default as Chart } from "./chart/index";
+// export { default as Chart } from "./chart/index";
 // Clamp
 export { default as Clamp } from "./clamp/index";
 // OnePiece

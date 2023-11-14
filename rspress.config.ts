@@ -305,10 +305,10 @@ export default defineConfig({
               text: "SafeArea",
               link: "/components/safe-area/index-en",
             },
-            {
-              text: "Chart",
-              link: "/components/chart/index-en",
-            },
+            // {
+            //   text: "Chart",
+            //   link: "/components/chart/index-en",
+            // },
             {
               text: "Clamp",
               link: "/components/clamp/index-en",
