@@ -192,7 +192,7 @@ const Example = () => {
             { text: "demos", url: "https://nikoni.top/rui-next/" },
             {
               text: "playground",
-              url: "https://nikoni.top/rui-next/components/playground/playground",
+              url: "https://nikoni.top/rui-next/components/playground/playground.html",
             },
           ]}
           content="Copyright @ 2021-present RUI.next. Built with Vite & React."
