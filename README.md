@@ -14,7 +14,7 @@ This is just one kind of playground to dev `react-hooks` based UI components bas
 
 ## Preview
 
-Try [QR code playground](https://nikoni.top/rui-next/en/qr-code) to scan to access the examples on mobile/tablet device.
+Try [QR code playground](https://nikoni.top/rui-next/components/qr-code/index-en) to scan to access the examples on mobile/tablet device.
 
 > react-hooks `docs+demos` playground based on [vite](https://vitejs.dev/config/).
 
