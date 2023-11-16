@@ -1,6 +1,6 @@
 {
   "name": "rui-next",
-  "version": "0.48.1",
+  "version": "0.48.2",
   "description": "Mobile web UI components based on React and Vite 5",
   "files": [
     "dist/style.css",
@@ -62,7 +62,7 @@
   "dependencies": {
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "v-qr-code-next": "^0.2.5"
+    "v-qr-code-next": "^0.2.6"
   },
   "devDependencies": {
     "@rspress/plugin-preview": "^1.6.2",
@@ -73,6 +73,6 @@
     "less": "^4.2.0",
     "rspress": "^1.6.2",
     "typescript": "^5.2.2",
-    "vite": "^5.0.0-beta.19"
+    "vite": "^5.0.0"
   }
 }

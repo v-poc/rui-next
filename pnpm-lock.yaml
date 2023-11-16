@@ -12,13 +12,13 @@ dependencies:
     specifier: ^18.2.0
     version: 18.2.0(react@18.2.0)
   v-qr-code-next:
-    specifier: ^0.2.5
-    version: 0.2.5
+    specifier: ^0.2.6
+    version: 0.2.6
 
 devDependencies:
   '@rspress/plugin-preview':
     specifier: ^1.6.2
-    version: 1.6.2(@rspress/core@1.6.2)(react-router-dom@6.18.0)(react@18.2.0)(webpack@5.89.0)
+    version: 1.6.2(@rspress/core@1.6.2)(react-router-dom@6.19.0)(react@18.2.0)(webpack@5.89.0)
   '@types/node':
     specifier: ^20.9.0
     version: 20.9.0
@@ -41,8 +41,8 @@ devDependencies:
     specifier: ^5.2.2
     version: 5.2.2
   vite:
-    specifier: ^5.0.0-beta.19
-    version: 5.0.0-beta.19(@types/node@20.9.0)(less@4.2.0)
+    specifier: ^5.0.0
+    version: 5.0.0(@types/node@20.9.0)(less@4.2.0)
 
 packages:
 
@@ -1896,7 +1896,7 @@ packages:
       '@modern-js/types': 0.0.0-next-20231103131234
       '@modern-js/utils': 0.0.0-next-20231103131234
       '@swc/helpers': 0.5.1
-      axios: 1.6.1
+      axios: 1.6.2
       connect-history-api-fallback: 2.0.0
       http-compression: 1.0.6
       minimatch: 3.1.2
@@ -2000,8 +2000,8 @@ packages:
     resolution: {integrity: sha512-C16M+IYz0rgRhWZdCmK+h58JMv8vijAA61gmz2rspCSwKwzBebpdcsiUmwrtJRdphuY30i6BSLEOP8ppbNLyLg==}
     dev: true
 
-  /@remix-run/router@1.11.0:
-    resolution: {integrity: sha512-BHdhcWgeiudl91HvVa2wxqZjSHbheSgIiDvxrF1VjFzBzpTtuDPkOdOi3Iqvc08kXtFkLjhbS+ML9aM8mJS+wQ==}
+  /@remix-run/router@1.12.0:
+    resolution: {integrity: sha512-2hXv036Bux90e1GXTWSMfNzfDDK8LA8JYEWfyHxzvwdp6GyoWEovKc9cotb3KCKmkdwsIBuFGX7ScTWyiHv7Eg==}
     engines: {node: '>=14.0.0'}
     dev: true
 
@@ -2573,7 +2573,7 @@ packages:
       medium-zoom: 1.0.8
     dev: true
 
-  /@rspress/plugin-preview@1.6.2(@rspress/core@1.6.2)(react-router-dom@6.18.0)(react@18.2.0)(webpack@5.89.0):
+  /@rspress/plugin-preview@1.6.2(@rspress/core@1.6.2)(react-router-dom@6.19.0)(react@18.2.0)(webpack@5.89.0):
     resolution: {integrity: sha512-BiSCMwbTIxJXdtp+E7RGQJeJOiaoasg2fpBxcGC/vqbRphxaICGAZLYBKhmxh17ftihHFYZ0WokTvdszK5v+QA==}
     engines: {node: '>=14.17.6'}
     peerDependencies:
@@ -2589,7 +2589,7 @@ packages:
       lodash: 4.17.21
       qrcode.react: 3.1.0(react@18.2.0)
       react: 18.2.0
-      react-router-dom: 6.18.0(react-dom@18.2.0)(react@18.2.0)
+      react-router-dom: 6.19.0(react-dom@18.2.0)(react@18.2.0)
       remark-gfm: 3.0.1
       rspack-plugin-virtual-module: 0.1.12
     transitivePeerDependencies:
@@ -2612,7 +2612,7 @@ packages:
       react: 18.2.0
       react-dom: 18.2.0(react@18.2.0)
       react-helmet-async: 1.3.0(react-dom@18.2.0)(react@18.2.0)
-      react-router-dom: 6.18.0(react-dom@18.2.0)(react@18.2.0)
+      react-router-dom: 6.19.0(react-dom@18.2.0)(react@18.2.0)
     transitivePeerDependencies:
       - '@types/express'
       - bufferutil
@@ -3444,8 +3444,8 @@ packages:
       - supports-color
     dev: true
 
-  /axios@1.6.1:
-    resolution: {integrity: sha512-vfBmhDpKafglh0EldBEbVuoe7DyAavGSLWhuSm5ZSEKQnHhBf0xAAwybbNH1IkrJNGnS/VG4I5yxig1pCEXE4g==}
+  /axios@1.6.2:
+    resolution: {integrity: sha512-7i24Ri4pmDRfJTR7LDBhsOTtcm+9kjX5WiY1X3wIisx6G9So3pfMkEiU7emUBe46oceVImccTEM3k6C5dbVW8A==}
     dependencies:
       follow-redirects: 1.15.3
       form-data: 4.0.0
@@ -3576,7 +3576,7 @@ packages:
     hasBin: true
     dependencies:
       caniuse-lite: 1.0.30001562
-      electron-to-chromium: 1.4.582
+      electron-to-chromium: 1.4.585
       node-releases: 2.0.13
       update-browserslist-db: 1.0.13(browserslist@4.22.1)
     dev: true
@@ -4533,8 +4533,8 @@ packages:
     resolution: {integrity: sha512-WMwm9LhRUo+WUaRN+vRuETqG89IgZphVSNkdFgeb6sS/E4OrDIN7t48CAewSHXc6C8lefD8KKfr5vY61brQlow==}
     dev: true
 
-  /electron-to-chromium@1.4.582:
-    resolution: {integrity: sha512-89o0MGoocwYbzqUUjc+VNpeOFSOK9nIdC5wY4N+PVUarUK0MtjyTjks75AZS2bW4Kl8MdewdFsWaH0jLy+JNoA==}
+  /electron-to-chromium@1.4.585:
+    resolution: {integrity: sha512-B4yBlX0azdA3rVMxpYwLQfDpdwOgcnLCkpvSOd68iFmeedo+WYjaBJS3/W58LVD8CB2nf+o7C4K9xz1l09RkWg==}
     dev: true
 
   /emojis-list@3.0.0:
@@ -5220,7 +5220,7 @@ packages:
       array-union: 2.1.0
       dir-glob: 3.0.1
       fast-glob: 3.3.2
-      ignore: 5.2.4
+      ignore: 5.3.0
       merge2: 1.4.1
       slash: 3.0.0
     dev: true
@@ -5694,8 +5694,8 @@ packages:
     resolution: {integrity: sha512-gQQmIznCETPLEzfg1UH4Cs2oRq+HBPl8quroEUNXT8oybEG7/0lqI3dGgDSRry6B9HcCXw3PVkFFS0FF3CMddg==}
     dev: true
 
-  /ignore@5.2.4:
-    resolution: {integrity: sha512-MAb38BcSbH0eHNBxn7ql2NH/kX33OkB3lZ1BNdh7ENeRChHTYsTvWrMubiIAMNS2llXEEgZ1MUOBtXChP3kaFQ==}
+  /ignore@5.3.0:
+    resolution: {integrity: sha512-g7dmpshy+gD7mh88OC9NwSGTKoc3kyLAZQRU1mt53Aw/vnvfXnbC+F/7F7QoYVKbV+KNvJx8wArewKy1vXMtlg==}
     engines: {node: '>= 4'}
     dev: true
 
@@ -8183,26 +8183,26 @@ packages:
     engines: {node: '>=0.10.0'}
     dev: true
 
-  /react-router-dom@6.18.0(react-dom@18.2.0)(react@18.2.0):
-    resolution: {integrity: sha512-Ubrue4+Ercc/BoDkFQfc6og5zRQ4A8YxSO3Knsne+eRbZ+IepAsK249XBH/XaFuOYOYr3L3r13CXTLvYt5JDjw==}
+  /react-router-dom@6.19.0(react-dom@18.2.0)(react@18.2.0):
+    resolution: {integrity: sha512-N6dWlcgL2w0U5HZUUqU2wlmOrSb3ighJmtQ438SWbhB1yuLTXQ8yyTBMK3BSvVjp7gBtKurT554nCtMOgxCZmQ==}
     engines: {node: '>=14.0.0'}
     peerDependencies:
       react: '>=16.8'
       react-dom: '>=16.8'
     dependencies:
-      '@remix-run/router': 1.11.0
+      '@remix-run/router': 1.12.0
       react: 18.2.0
       react-dom: 18.2.0(react@18.2.0)
-      react-router: 6.18.0(react@18.2.0)
+      react-router: 6.19.0(react@18.2.0)
     dev: true
 
-  /react-router@6.18.0(react@18.2.0):
-    resolution: {integrity: sha512-vk2y7Dsy8wI02eRRaRmOs9g2o+aE72YCx5q9VasT1N9v+lrdB79tIqrjMfByHiY5+6aYkH2rUa5X839nwWGPDg==}
+  /react-router@6.19.0(react@18.2.0):
+    resolution: {integrity: sha512-0W63PKCZ7+OuQd7Tm+RbkI8kCLmn4GPjDbX61tWljPxWgqTKlEpeQUwPkT1DRjYhF8KSihK0hQpmhU4uxVMcdw==}
     engines: {node: '>=14.0.0'}
     peerDependencies:
       react: '>=16.8'
     dependencies:
-      '@remix-run/router': 1.11.0
+      '@remix-run/router': 1.12.0
       react: 18.2.0
     dev: true
 
@@ -9512,8 +9512,8 @@ packages:
       sade: 1.8.1
     dev: true
 
-  /v-qr-code-next@0.2.5:
-    resolution: {integrity: sha512-1DQxEgKUe0DljjUA/RAygvIgANwSKM+hqiClm+bIUIx0PQYAidDdFwNaaH/Y3eh8TVvsgK6bnNFa8o7NvLspjw==}
+  /v-qr-code-next@0.2.6:
+    resolution: {integrity: sha512-o6r3D6cUj9Iw0Ni2q2jnufDZofyK6rDuJg61XFMO9vRIXqkqUNsHRBnnKa9iR+hWyJfuDzTtRNU2Wtcbz4Rb5w==}
     dev: false
 
   /validate-npm-package-license@3.0.4:
@@ -9557,8 +9557,8 @@ packages:
       vfile-message: 3.1.4
     dev: true
 
-  /vite@5.0.0-beta.19(@types/node@20.9.0)(less@4.2.0):
-    resolution: {integrity: sha512-Huoj7XUlkhSLHhIOf4FgDrxmHJMKgfvG9ocB4kJmTKSeWfLgHIQ86xYC8+eA/RBxFo9zRQXX81VUgW8l7Wri3Q==}
+  /vite@5.0.0(@types/node@20.9.0)(less@4.2.0):
+    resolution: {integrity: sha512-ESJVM59mdyGpsiNAeHQOR/0fqNoOyWPYesFto8FFZugfmhdHx8Fzd8sF3Q/xkVhZsyOxHfdM7ieiVAorI9RjFw==}
     engines: {node: ^18.0.0 || >=20.0.0}
     hasBin: true
     peerDependencies:
