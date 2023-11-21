@@ -52,6 +52,8 @@ const Example = () => {
             })}
           >
             <img src="https://nikoni.top/images/niko-reward-qrcode.png" />
+            <br />
+            <br />
             <p>Sponsors</p>
             <List>
               <List.Item
