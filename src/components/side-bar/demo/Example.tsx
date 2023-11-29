@@ -17,6 +17,10 @@ const arrItems = [
     title: "Afdian",
   },
   {
+    key: "tiktok",
+    title: "Tiktok-CN",
+  },
+  {
     key: "key3",
     title: "item3",
     disabled: true,
@@ -67,7 +71,14 @@ const Example = () => {
             >
               <img src="https://nikoni.top/images/afdian-qrcode.jpeg" />
             </div>
-            <div className="side-bar-example-content">Three content</div>
+            <div
+              className={classnames("side-bar-example-content", {
+                "side-bar-example-active": activeKey === "tiktok",
+              })}
+            >
+              <img src="https://nikoni.top/images/tt-qrcode.png" />
+            </div>
+            <div className="side-bar-example-content">More content</div>
           </div>
         </div>
       </div>
