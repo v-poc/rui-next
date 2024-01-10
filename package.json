@@ -29,7 +29,6 @@
     "react-hooks",
     "rspress-react-ui",
     "react-components",
-    "react-vite-pressify",
     "react-hooks-components",
     "react-hooks-rspress",
     "rui",
@@ -65,14 +64,14 @@
     "v-qr-code-next": "^0.2.7"
   },
   "devDependencies": {
-    "@rspress/plugin-preview": "^1.9.2",
-    "@types/node": "^20.10.6",
-    "@types/react": "^18.2.46",
+    "@rspress/plugin-preview": "^1.9.3",
+    "@types/node": "^20.10.8",
+    "@types/react": "^18.2.47",
     "@types/react-dom": "^18.2.18",
     "classnames": "^2.5.1",
     "less": "^4.2.0",
-    "rspress": "^1.9.2",
+    "rspress": "^1.9.3",
     "typescript": "^5.3.3",
-    "vite": "^5.0.10"
+    "vite": "^5.0.11"
   }
 }
