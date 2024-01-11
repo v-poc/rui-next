@@ -57,7 +57,7 @@
     "node": "^18.0.0 || >=20.0.0",
     "pnpm": ">= 8"
   },
-  "packageManager": "pnpm@8.14.0",
+  "packageManager": "pnpm@8.14.1",
   "dependencies": {
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
@@ -65,7 +65,7 @@
   },
   "devDependencies": {
     "@rspress/plugin-preview": "^1.9.3",
-    "@types/node": "^20.10.8",
+    "@types/node": "^20.11.0",
     "@types/react": "^18.2.47",
     "@types/react-dom": "^18.2.18",
     "classnames": "^2.5.1",
