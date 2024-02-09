@@ -12,7 +12,7 @@ Updated to switch to [Vite 5.0](https://vitejs.dev/blog/announcing-vite5).
 
 # 0.48.0 (2023-11-11)
 
-Refactor: switch from `vpressify` to `respress`.
+Refactor: switch from `vpressify` to `rspress`.
 
 # 0.47.1 (2023-10-26)
 
