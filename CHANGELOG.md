@@ -1,3 +1,7 @@
+# 0.48.7 (2024-02-08)
+
+Updated to switch to [Vite 5.1](https://vitejs.dev/blog/announcing-vite5-1).
+
 # 0.48.6 (2023-12-14)
 
 Updated deps.
