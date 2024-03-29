@@ -57,21 +57,21 @@
     "node": "^18.0.0 || >=20.0.0",
     "pnpm": ">= 8"
   },
-  "packageManager": "pnpm@8.15.3",
+  "packageManager": "pnpm@8.15.5",
   "dependencies": {
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "v-qr-code-next": "^0.2.7"
   },
   "devDependencies": {
-    "@rspress/plugin-preview": "^1.12.2",
-    "@types/node": "^20.11.20",
-    "@types/react": "^18.2.58",
-    "@types/react-dom": "^18.2.19",
+    "@rspress/plugin-preview": "^1.16.2",
+    "@types/node": "^20.11.30",
+    "@types/react": "^18.2.73",
+    "@types/react-dom": "^18.2.23",
     "classnames": "^2.5.1",
     "less": "^4.2.0",
-    "rspress": "^1.12.2",
-    "typescript": "^5.3.3",
-    "vite": "^5.1.4"
+    "rspress": "^1.16.2",
+    "typescript": "^5.4.3",
+    "vite": "^5.2.7"
   }
 }
