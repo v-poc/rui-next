@@ -1,5 +1,25 @@
 // @import "../themes/default";
 
+.skeletonLoading() {
+  background: linear-gradient(
+    90deg,
+    rgba(190, 190, 190, 0.2) 25%,
+    rgba(129, 129, 129, 0.24) 37%,
+    rgba(190, 190, 190, 0.2) 63%
+  );
+  background-size: 400% 100%;
+  animation: skeletonLoadingAnim 1.4s ease infinite;
+}
+
+@keyframes skeletonLoadingAnim {
+  0% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0 50%;
+  }
+}
+
 .placeHolder() {
   animation-duration: 2s;
   animation-fill-mode: forwards;

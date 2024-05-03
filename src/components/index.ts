@@ -51,7 +51,7 @@ export { default as Switch } from "./switch/index";
 export type { SwitchProps } from "./switch/index";
 // Skeleton
 export { default as Skeleton } from "./skeleton/index";
-export type { SkeletonProps } from "./skeleton/index";
+export type { SkeletonProps, SkeletonTitleProps } from "./skeleton/index";
 // Divider
 export { default as Divider } from "./divider/index";
 export type { DividerProps } from "./divider/index";

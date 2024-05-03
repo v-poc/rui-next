@@ -3,7 +3,8 @@
 `Skeleton` screen, generally used to display the loading state of the general structure of the page before the data has been loaded
 
 ```jsx pure
-<Skeleton title />
+<Skeleton.Title />
+<Skeleton.Paragraph />
 ```
 
 ## Example
@@ -14,12 +15,15 @@ Basic usage of Skeleton component.
 
 ## API
 
+### Skeleton / Skeleton.Title
+
 | Properties | Description                                                 | Type                                        | Default |
 | ---------- | ----------------------------------------------------------- | ------------------------------------------- | ------- |
-| loading    | Whether display the skeleton placeholders loading           | `Boolean`                                   | `true`  |
-| avatar     | Whether display avatar placeholders                         | `Boolean`                                   | `false` |
-| avatarSize | The size of avatar placeholders, optional value: sm, md, lg | `String`                                    | `md`    |
-| title      | Whether display the title placeholders                      | `Boolean`                                   | `false` |
-| titleWidth | The width of title placeholders                             | `Number`\|`String`                          | `40%`   |
-| row        | The number of rows                                          | `Number`                                    | `3`     |
-| rowWidth   | The width of rows                                           | `String`\|`Number`\|`Array<String\|Number>` | `100%`  |
+| animated   | Whether display the skeleton placeholders loading           | `Boolean`                                   | `false` |
+
+### Skeleton.Paragraph
+
+| Properties | Description                                                 | Type                                        | Default |
+| ---------- | ----------------------------------------------------------- | ------------------------------------------- | ------- |
+| animated   | Whether display the skeleton placeholders loading           | `Boolean`                                   | `false` |
+| lineCount  | The number of paragraph lines                               | `number`                                    | `3`     |

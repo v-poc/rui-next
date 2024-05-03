@@ -1,3 +1,7 @@
+# 0.49.0 (2024-05-01)
+
+Refactor: `Skeleton` component and demo.
+
 # 0.48.7 (2024-02-08)
 
 Updated to switch to [Vite 5.1](https://vitejs.dev/blog/announcing-vite5-1).
