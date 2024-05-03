@@ -45,12 +45,12 @@ $ pnpm run build-lib
 [`Library Mode`](https://vitejs.dev/guide/build.html#library-mode) output info
 
 ```
-vite v5.1.4 building for production...
+vite v5.2.11 building for production...
 ✓ 176 modules transformed.
-dist/style.css         39.21 kB │ gzip:  7.68 kB
-dist/rui-next.es.js   237.05 kB │ gzip: 70.11 kB
-dist/rui-next.umd.js  157.01 kB │ gzip: 57.28 kB
-✓ built in 698ms
+dist/style.css         39.00 kB │ gzip:  7.69 kB
+dist/rui-next.es.js   236.97 kB │ gzip: 70.12 kB
+dist/rui-next.umd.js  157.06 kB │ gzip: 57.27 kB
+✓ built in 791ms
 ```
 
 Build documentation (docs+demos)
