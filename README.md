@@ -50,7 +50,7 @@ vite v5.2.11 building for production...
 dist/style.css         39.00 kB │ gzip:  7.69 kB
 dist/rui-next.es.js   236.97 kB │ gzip: 70.12 kB
 dist/rui-next.umd.js  157.06 kB │ gzip: 57.27 kB
-✓ built in 791ms
+✓ built in 705ms
 ```
 
 Build documentation (docs+demos)
