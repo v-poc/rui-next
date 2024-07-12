@@ -14,8 +14,14 @@ export type DividerProps = {
 
 // Divider FC
 export const Divider: React.FC<DividerProps> = (props) => {
-  const { prefixCls, className, children, contentAlign, style, vertical } =
-    props;
+  const {
+    prefixCls = "r-divider",
+    className,
+    children,
+    contentAlign = "center",
+    style,
+    vertical = false,
+  } = props;
 
   const wrapCls = classnames(
     prefixCls,
@@ -29,10 +35,4 @@ export const Divider: React.FC<DividerProps> = (props) => {
       {children && <div className={`${prefixCls}-content`}>{children}</div>}
     </div>
   );
-};
-
-Divider.defaultProps = {
-  prefixCls: "r-divider",
-  contentAlign: "center",
-  vertical: false,
 };

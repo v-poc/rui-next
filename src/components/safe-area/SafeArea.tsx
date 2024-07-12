@@ -10,7 +10,7 @@ export type SafeAreaProps = {
 
 // SafeArea FC
 export const SafeArea: React.FC<SafeAreaProps> = (props) => {
-  const { prefixCls, className, position } = props;
+  const { prefixCls = "r-safe-area", className, position } = props;
 
   const wrapCls = classnames(
     prefixCls,
@@ -19,8 +19,4 @@ export const SafeArea: React.FC<SafeAreaProps> = (props) => {
   );
 
   return <div className={wrapCls}></div>;
-};
-
-SafeArea.defaultProps = {
-  prefixCls: "r-safe-area",
 };

@@ -20,16 +20,16 @@ export type SwitchProps = {
 // Switch FC
 const Switch: React.FC<SwitchProps> = (props) => {
   const {
-    prefixCls,
-    name,
-    checked,
-    disabled,
+    prefixCls = "r-switch",
+    name = "",
+    checked = false,
+    disabled = false,
     className,
-    platform,
+    platform = "ios",
     color,
     style,
-    onChange,
-    onClick,
+    onChange = () => {},
+    onClick = () => {},
     ...restProps
   } = props;
 
@@ -87,16 +87,6 @@ const Switch: React.FC<SwitchProps> = (props) => {
       ></div>
     </label>
   );
-};
-
-Switch.defaultProps = {
-  prefixCls: "r-switch",
-  name: "",
-  checked: false,
-  disabled: false,
-  onChange: () => {},
-  platform: "ios",
-  onClick: () => {},
 };
 
 export default Switch;

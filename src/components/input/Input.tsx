@@ -85,14 +85,14 @@ export type InputRef = {
 // Input FC
 export const Input = forwardRef<InputRef, InputProps>((props, ref) => {
   const {
-    prefixCls,
+    prefixCls = "r-input",
     className,
     autoCapitalize,
     autoComplete,
     autoCorrect,
     autoFocus,
     clearable,
-    defaultValue,
+    defaultValue = "",
     disabled,
     enterKeyHint,
     id,
@@ -104,7 +104,7 @@ export const Input = forwardRef<InputRef, InputProps>((props, ref) => {
     name,
     pattern,
     placeholder,
-    onlyShowClearWhenFocus,
+    onlyShowClearWhenFocus = true,
     readOnly,
     role,
     step,
@@ -263,9 +263,3 @@ export const Input = forwardRef<InputRef, InputProps>((props, ref) => {
     </div>
   );
 });
-
-Input.defaultProps = {
-  prefixCls: "r-input",
-  defaultValue: "",
-  onlyShowClearWhenFocus: true,
-};

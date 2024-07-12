@@ -19,16 +19,16 @@ export type NoticeBarProps = {
 // NoticeBar FC
 export const NoticeBar: React.FC<NoticeBarProps> = (props) => {
   const {
-    prefixCls,
+    prefixCls = "r-notice-bar",
     className,
     closeable,
     content,
-    delay,
+    delay = 2000, // unit (ms)
     extra,
     icon,
     onClose,
-    speed = 0,
-    type,
+    speed = 50, // unit (px / s)
+    type = "default",
   } = props;
 
   const isMounted = useRef<boolean>(false); // Whether the component is mounted
@@ -125,11 +125,4 @@ export const NoticeBar: React.FC<NoticeBarProps> = (props) => {
       )}
     </div>
   );
-};
-
-NoticeBar.defaultProps = {
-  prefixCls: "r-notice-bar",
-  type: "default",
-  delay: 2000, // unit (ms)
-  speed: 50, // unit (px / s)
 };

@@ -28,18 +28,18 @@ export type RateProps = {
 // Rate FC
 export const Rate: React.FC<RateProps> = (props) => {
   const {
-    prefixCls,
+    prefixCls = "r-rate",
     className,
-    count,
-    allowHalf,
-    character,
-    readonly,
-    allowClear,
-    defaultValue,
+    count = 5,
+    allowHalf = false,
+    character = <Icon type="star" />,
+    readonly = false,
+    allowClear = true,
+    defaultValue = 0,
     value,
     onChange,
-    activeColor,
-    size,
+    activeColor = "#FFD21E",
+    size = 24,
   } = props;
 
   const [val, setVal] = usePropsValue(props);
@@ -91,16 +91,4 @@ export const Rate: React.FC<RateProps> = (props) => {
       ))}
     </div>
   );
-};
-
-Rate.defaultProps = {
-  prefixCls: "r-rate",
-  count: 5,
-  allowHalf: false,
-  character: <Icon type="star" />,
-  defaultValue: 0,
-  readonly: false,
-  allowClear: true,
-  activeColor: "#FFD21E",
-  size: 24,
 };

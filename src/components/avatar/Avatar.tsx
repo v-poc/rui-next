@@ -58,12 +58,12 @@ export type AvatarProps = {
 // Avatar FC
 export const Avatar: React.FC<AvatarProps> = (props) => {
   const {
-    prefixCls,
+    prefixCls = "r-avatar",
     alt,
-    fallback,
-    fit,
+    fallback = <FallbackImage />,
+    fit = "cover",
     lazy,
-    shape,
+    shape = "square",
     size,
     src,
     onClick,
@@ -92,11 +92,4 @@ export const Avatar: React.FC<AvatarProps> = (props) => {
       onError={onError}
     />
   );
-};
-
-Avatar.defaultProps = {
-  prefixCls: "r-avatar",
-  fallback: <FallbackImage />,
-  fit: "cover",
-  shape: "square",
 };

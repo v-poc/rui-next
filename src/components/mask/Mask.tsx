@@ -40,18 +40,18 @@ export type MaskProps = {
 // Mask FC
 export const Mask: React.FC<MaskProps> = (props) => {
   const {
-    prefixCls,
+    prefixCls = "r-mask",
     className,
     children,
-    color,
-    destroyOnClose,
-    disableBodyScroll,
-    forceRender,
-    getContainer,
-    opacity,
+    color = "black",
+    destroyOnClose = false,
+    disableBodyScroll = true,
+    forceRender = false,
+    getContainer = null,
+    opacity = "default",
     stopPropagation = ["click"],
     style,
-    visible,
+    visible = true,
     afterClose,
     afterShow,
     onClickMask,
@@ -130,16 +130,4 @@ export const Mask: React.FC<MaskProps> = (props) => {
       {renderToContainer(getContainer, renderNode)}
     </ShouldRender>
   );
-};
-
-Mask.defaultProps = {
-  prefixCls: "r-mask",
-  color: "black",
-  destroyOnClose: false,
-  disableBodyScroll: true,
-  forceRender: false,
-  getContainer: null,
-  opacity: "default",
-  stopPropagation: ["click"],
-  visible: true,
 };

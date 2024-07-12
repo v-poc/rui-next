@@ -20,7 +20,7 @@ export type ListItemProps = {
 // ListItem FC
 const ListItem: React.FC<ListItemProps> = (props) => {
   const {
-    prefixCls,
+    prefixCls = "r-list-item",
     className,
     arrow,
     children,
@@ -81,10 +81,6 @@ const ListItem: React.FC<ListItemProps> = (props) => {
       {renderContent}
     </div>
   );
-};
-
-ListItem.defaultProps = {
-  prefixCls: "r-list-item",
 };
 
 export default ListItem;

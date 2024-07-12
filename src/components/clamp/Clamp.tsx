@@ -11,7 +11,7 @@ export type ClampProps = {
 
 // Clamp FC
 const Clamp: React.FC<ClampProps> = (props) => {
-  const { maxLines, children, prefixCls, className } = props;
+  const { maxLines = 3, children, prefixCls = "r-clamp", className } = props;
 
   const checkboxId = `exp${(Math.random() + "").replace(".", "")}`;
 
@@ -26,11 +26,6 @@ const Clamp: React.FC<ClampProps> = (props) => {
       </div>
     </div>
   );
-};
-
-Clamp.defaultProps = {
-  maxLines: 3,
-  prefixCls: "r-clamp",
 };
 
 export default Clamp;

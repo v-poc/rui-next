@@ -73,16 +73,16 @@ export type ImageProps = {
 
 export const Image: React.FC<ImageProps> = (props) => {
   const {
-    prefixCls,
+    prefixCls = "r-image",
     className,
     style,
     alt,
     crossOrigin,
     decoding,
-    draggable,
-    fit,
+    draggable = false,
+    fit = "fill",
     height,
-    lazy,
+    lazy = false,
     loading,
     referrerPolicy,
     sizes,
@@ -174,11 +174,4 @@ export const Image: React.FC<ImageProps> = (props) => {
       )}
     </div>
   );
-};
-
-Image.defaultProps = {
-  prefixCls: "r-image",
-  draggable: false,
-  fit: "fill",
-  lazy: false,
 };

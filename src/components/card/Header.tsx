@@ -16,11 +16,11 @@ export type CardHeaderProps = {
 // CardHeader FC
 const CardHeader: React.FC<CardHeaderProps> = (props) => {
   const {
-    prefixCls,
+    prefixCls = "r-card",
     className,
     title,
     thumb,
-    thumbStyle,
+    thumbStyle = {},
     extra,
     ...restProps
   } = props;
@@ -40,11 +40,6 @@ const CardHeader: React.FC<CardHeaderProps> = (props) => {
       {extra && <div className={`${prefixCls}-header-extra`}>{extra}</div>}
     </div>
   );
-};
-
-CardHeader.defaultProps = {
-  prefixCls: "r-card",
-  thumbStyle: {},
 };
 
 export default CardHeader;

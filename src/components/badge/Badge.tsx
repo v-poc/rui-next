@@ -20,18 +20,18 @@ export type BadgeProps = {
 export const Badge: React.FC<BadgeProps> = (props) => {
   const {
     className,
-    prefixCls,
+    prefixCls = "r-badge",
     children,
     // text,
-    size,
+    size = "small",
     // overflowcount,
-    dot,
-    corner,
+    dot = false,
+    corner = false,
     hot,
     ...restProps
   } = props;
 
-  let { text, overflowcount } = props;
+  let { text, overflowcount = 99 } = props;
 
   overflowcount = overflowcount as number;
 
@@ -68,12 +68,4 @@ export const Badge: React.FC<BadgeProps> = (props) => {
       )}
     </span>
   );
-};
-
-Badge.defaultProps = {
-  prefixCls: "r-badge",
-  size: "small",
-  overflowcount: 99,
-  dot: false,
-  corner: false,
 };

@@ -30,18 +30,18 @@ export type SliderProps = {
 // Slider FC
 export const Slider: React.FC<SliderProps> = (props) => {
   const {
-    prefixCls,
+    prefixCls = "r-slider",
     className,
     defaultValue,
     value,
     min = 0,
-    max = 0,
-    disabled,
+    max = 100,
+    disabled = false,
     icon,
     marks,
-    ticks,
-    range,
-    step = 0,
+    ticks = false,
+    range = false,
+    step = 1,
     onChange,
     onAfterChange,
   } = props;
@@ -220,14 +220,4 @@ export const Slider: React.FC<SliderProps> = (props) => {
       )}
     </div>
   );
-};
-
-Slider.defaultProps = {
-  prefixCls: "r-slider",
-  min: 0,
-  max: 100,
-  disabled: false,
-  ticks: false,
-  range: false,
-  step: 1,
 };

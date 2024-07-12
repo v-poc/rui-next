@@ -13,18 +13,18 @@ export type CardProps = React.HTMLProps<HTMLDivElement> & {
 
 // Card FC
 const Card: React.FC<CardProps> = (props) => {
-  const { prefixCls, full, className, ...resetProps } = props;
+  const {
+    prefixCls = "r-card",
+    full = false,
+    className,
+    ...resetProps
+  } = props;
 
   const wrapCls = classnames(prefixCls, className, {
     [`${prefixCls}-full`]: full,
   });
 
   return <div className={wrapCls} {...resetProps} />;
-};
-
-Card.defaultProps = {
-  prefixCls: "r-card",
-  full: false,
 };
 
 // Card.Header = CardHeader;

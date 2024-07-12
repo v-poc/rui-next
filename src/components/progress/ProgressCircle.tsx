@@ -14,7 +14,7 @@ export type ProgressCircleProps = {
 // ProgressCircle FC
 const ProgressCircle: React.FC<ProgressCircleProps> = (props) => {
   const {
-    prefixCls,
+    prefixCls = "r-progress",
     className,
     percent = 0,
     children,
@@ -64,13 +64,6 @@ const ProgressCircle: React.FC<ProgressCircleProps> = (props) => {
       </div>
     </div>
   );
-};
-
-ProgressCircle.defaultProps = {
-  prefixCls: "r-progress",
-  percent: 0,
-  size: 50,
-  trackWidth: 3,
 };
 
 export default ProgressCircle;

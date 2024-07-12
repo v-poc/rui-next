@@ -16,12 +16,12 @@ export type NavBarProps = {
 // NavBar FC
 const NavBar: React.FC<NavBarProps> = (props) => {
   const {
-    mode,
+    mode = "dark",
     icon,
     leftContent,
     rightContent,
-    onLeftClick,
-    prefixCls,
+    onLeftClick = () => {},
+    prefixCls = "r-navbar",
     className,
     children,
     ...restProps
@@ -43,12 +43,6 @@ const NavBar: React.FC<NavBarProps> = (props) => {
       <div className={`${prefixCls}-right`}>{rightContent}</div>
     </div>
   );
-};
-
-NavBar.defaultProps = {
-  prefixCls: "r-navbar",
-  mode: "dark",
-  onLeftClick: () => {},
 };
 
 export default NavBar;

@@ -16,8 +16,16 @@ export type QRCodeProps = {
 
 // QRCode FC
 export const QRCode: React.FC<QRCodeProps> = (props) => {
-  const { value, num, level, mode, border, color, prefixCls, className } =
-    props;
+  const {
+    value,
+    num = 8,
+    level = "L",
+    mode = "image",
+    border = false,
+    color,
+    prefixCls = "r-qr-code",
+    className,
+  } = props;
 
   const qr = qrcode(
     num, // the type number
@@ -47,12 +55,4 @@ export const QRCode: React.FC<QRCodeProps> = (props) => {
   });
 
   return <div className={wrapCls} dangerouslySetInnerHTML={content} />;
-};
-
-QRCode.defaultProps = {
-  prefixCls: "r-qr-code",
-  num: 8,
-  level: "L",
-  mode: "image",
-  border: false,
 };

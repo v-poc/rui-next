@@ -39,15 +39,15 @@ export type SearchBarRef = InputRef;
 export const SearchBar = forwardRef<SearchBarRef, SearchBarProps>(
   (props, ref) => {
     const {
-      prefixCls,
-      cancelText,
-      clearable,
-      clearOnCancel,
-      defaultValue,
-      icon,
+      prefixCls = "r-search-bar",
+      cancelText = "cancel",
+      clearable = true,
+      clearOnCancel = true,
+      defaultValue = "",
+      icon = <Icon type="search" size="xs" />,
       maxLength,
       placeholder,
-      showCancel,
+      showCancel = false,
       value,
       onBlur,
       onClear,
@@ -149,13 +149,3 @@ export const SearchBar = forwardRef<SearchBarRef, SearchBarProps>(
     );
   }
 );
-
-SearchBar.defaultProps = {
-  prefixCls: "r-search-bar",
-  cancelText: "cancel",
-  clearable: true,
-  clearOnCancel: true,
-  defaultValue: "",
-  icon: <Icon type="search" size="xs" />,
-  showCancel: false,
-};

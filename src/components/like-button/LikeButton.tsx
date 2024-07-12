@@ -25,12 +25,12 @@ export type LikeButtonProps = {
 // LikeButton FC
 export const LikeButton: React.FC<LikeButtonProps> = (props) => {
   const {
-    prefixCls,
+    prefixCls = "r-btn-like",
     className,
-    delay,
+    delay = 500,
     scale = 1,
-    heartColor,
-    lineColors = [],
+    heartColor = "#F66",
+    lineColors = ["#F66", "#66F", "#F90", "#09F", "#9C3", "#3C9"],
     callback,
   } = props;
 
@@ -95,11 +95,4 @@ export const LikeButton: React.FC<LikeButtonProps> = (props) => {
       </div>
     </div>
   );
-};
-
-LikeButton.defaultProps = {
-  prefixCls: "r-btn-like",
-  delay: 500,
-  heartColor: "#F66",
-  lineColors: ["#F66", "#66F", "#F90", "#09F", "#9C3", "#3C9"],
 };

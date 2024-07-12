@@ -20,7 +20,7 @@ export type CheckListItemProps = {
 // CheckListItem FC
 const CheckListItem: React.FC<CheckListItemProps> = (props) => {
   const {
-    prefixCls,
+    prefixCls = "r-check-list",
     children,
     description,
     disabled,
@@ -82,10 +82,6 @@ const CheckListItem: React.FC<CheckListItemProps> = (props) => {
       {children}
     </List.Item>
   );
-};
-
-CheckListItem.defaultProps = {
-  prefixCls: "r-check-list",
 };
 
 export default CheckListItem;

@@ -21,13 +21,13 @@ const ProgressBar: React.FC<ProgressBarProps> = (props) => {
 
   const {
     className,
-    prefixCls,
-    position,
-    unfilled,
+    prefixCls = "r-progress",
+    position = "fixed",
+    unfilled = true,
     style = {},
     barStyle = {},
-    appearTransition,
-    percent,
+    appearTransition = false,
+    percent = 0,
   } = props;
 
   useEffect(() => {
@@ -75,14 +75,6 @@ const ProgressBar: React.FC<ProgressBarProps> = (props) => {
       />
     </div>
   );
-};
-
-ProgressBar.defaultProps = {
-  prefixCls: "r-progress",
-  percent: 0,
-  position: "fixed",
-  unfilled: true,
-  appearTransition: false,
 };
 
 export default ProgressBar;

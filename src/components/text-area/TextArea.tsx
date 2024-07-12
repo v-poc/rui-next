@@ -70,19 +70,19 @@ export type TextAreaRef = {
 // TextArea FC
 export const TextArea = forwardRef<TextAreaRef, TextAreaProps>((props, ref) => {
   const {
-    prefixCls,
+    prefixCls = "r-text-area",
     className,
     autoComplete,
     autoFocus,
-    autoSize,
-    defaultValue,
+    autoSize = false,
+    defaultValue = "",
     disabled,
     id,
     maxLength,
     placeholder,
     readOnly,
-    rows,
-    showCount,
+    rows = 2,
+    showCount = false,
     value,
     onBlur,
     onChange,
@@ -193,11 +193,3 @@ export const TextArea = forwardRef<TextAreaRef, TextAreaProps>((props, ref) => {
     </div>
   );
 });
-
-TextArea.defaultProps = {
-  prefixCls: "r-text-area",
-  autoSize: false,
-  defaultValue: "",
-  rows: 2,
-  showCount: false,
-};

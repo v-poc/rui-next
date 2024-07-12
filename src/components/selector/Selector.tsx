@@ -79,14 +79,14 @@ export type SelectorProps<V> = {
 // Selector FC
 export const Selector = <V extends SelectorValue>(props: SelectorProps<V>) => {
   const {
-    prefixCls,
+    prefixCls = "r-selector",
     columns,
-    defaultValue,
+    defaultValue = [],
     disabled,
     fieldNames,
-    multiple,
+    multiple = false,
     options,
-    showMark,
+    showMark = true,
     value,
     onChange,
   } = props;
@@ -164,11 +164,4 @@ export const Selector = <V extends SelectorValue>(props: SelectorProps<V>) => {
       )}
     </div>
   );
-};
-
-Selector.defaultProps = {
-  prefixCls: "r-selector",
-  defaultValue: [],
-  multiple: false,
-  showMark: true,
 };

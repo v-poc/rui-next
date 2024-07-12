@@ -13,7 +13,13 @@ export type StepsProps = {
 
 // Steps FC
 export const Steps: React.FC<StepsProps> = (props) => {
-  const { prefixCls, className, currentIndex = 0, vertical, children } = props;
+  const {
+    prefixCls = "r-steps",
+    className,
+    currentIndex = 0,
+    vertical = false,
+    children,
+  } = props;
 
   const wrapCls = classnames(
     prefixCls,
@@ -49,10 +55,4 @@ export const Steps: React.FC<StepsProps> = (props) => {
       })}
     </div>
   );
-};
-
-Steps.defaultProps = {
-  prefixCls: "r-steps",
-  currentIndex: 0,
-  vertical: false,
 };

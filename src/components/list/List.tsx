@@ -10,7 +10,7 @@ export type ListProps = {
 
 // List FC
 const List: React.FC<ListProps> = (props) => {
-  const { prefixCls, children, mode } = props;
+  const { prefixCls = "r-list", children, mode = "default" } = props;
 
   const wrapCls = classnames(prefixCls, `${prefixCls}-${mode}`);
 
@@ -19,11 +19,6 @@ const List: React.FC<ListProps> = (props) => {
       <div className={`${prefixCls}-inner`}>{children}</div>
     </div>
   );
-};
-
-List.defaultProps = {
-  prefixCls: "r-list",
-  mode: "default",
 };
 
 export default List;

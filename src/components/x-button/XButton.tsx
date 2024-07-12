@@ -18,7 +18,13 @@ export type XButtonProps = {
 
 // XButton FC
 export const XButton: React.FC<XButtonProps> = (props) => {
-  const { prefixCls, className, delay, scale = 1, callback } = props;
+  const {
+    prefixCls = "r-btn-op",
+    className,
+    delay = 2000,
+    scale = 1,
+    callback,
+  } = props;
 
   const [isAddCls, setIsAddCls] = useState(false);
 
@@ -51,9 +57,4 @@ export const XButton: React.FC<XButtonProps> = (props) => {
       </div>
     </div>
   );
-};
-
-XButton.defaultProps = {
-  prefixCls: "r-btn-op",
-  delay: 2000,
 };

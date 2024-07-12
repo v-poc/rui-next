@@ -31,8 +31,16 @@ export type ThumbProps = {
 
 // Thumb FC
 export const Thumb: React.FC<ThumbProps> = (props) => {
-  const { prefixCls, value, min, max, disabled, icon, trackRef, onDrag } =
-    props;
+  const {
+    prefixCls = "r-slider",
+    value,
+    min,
+    max,
+    disabled,
+    icon,
+    trackRef,
+    onDrag,
+  } = props;
 
   const valueRef = useRef(value);
 
@@ -81,8 +89,4 @@ export const Thumb: React.FC<ThumbProps> = (props) => {
       </div>
     </div>
   );
-};
-
-Thumb.defaultProps = {
-  prefixCls: "r-slider",
 };

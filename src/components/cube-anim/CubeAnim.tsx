@@ -15,7 +15,16 @@ export type CubeAnimProps = {
 
 // CubeAnim FC
 export const CubeAnim: React.FC<CubeAnimProps> = (props) => {
-  const { prefixCls, scale, front, back, top, bottom, left, right } = props;
+  const {
+    prefixCls = "r-cube",
+    scale = 1,
+    front = "Front",
+    back = "Back",
+    top = "Top",
+    bottom = "Bottom",
+    left = "Left",
+    right = "Right",
+  } = props;
 
   const cubeStyle: CSSProperties = {};
   if (scale !== 1) {
@@ -36,15 +45,4 @@ export const CubeAnim: React.FC<CubeAnimProps> = (props) => {
       </div>
     </div>
   );
-};
-
-CubeAnim.defaultProps = {
-  prefixCls: "r-cube",
-  scale: 1,
-  front: "Front",
-  back: "Back",
-  top: "Top",
-  bottom: "Bottom",
-  left: "Left",
-  right: "Right",
 };

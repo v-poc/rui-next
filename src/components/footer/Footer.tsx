@@ -28,8 +28,15 @@ export type FooterProps = {
 
 // Footer FC
 export const Footer: React.FC<FooterProps> = (props) => {
-  const { prefixCls, chips, content, label, links, onClickChip, onClickLink } =
-    props;
+  const {
+    prefixCls = "r-footer",
+    chips = [],
+    content = "",
+    label = "",
+    links = [],
+    onClickChip,
+    onClickLink,
+  } = props;
 
   const handleClickChip = (item: ChipItem, i: number) => {
     if (chips && chips.length > 0 && item.type?.toLowerCase() === "link") {
@@ -93,12 +100,4 @@ export const Footer: React.FC<FooterProps> = (props) => {
       )}
     </div>
   );
-};
-
-Footer.defaultProps = {
-  prefixCls: "r-footer",
-  chips: [],
-  content: "",
-  label: "",
-  links: [],
 };

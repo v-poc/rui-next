@@ -28,24 +28,24 @@ export type WatermarkProps = {
 // Watermark FC
 const Watermark: React.FC<WatermarkProps> = (props) => {
   const {
-    prefixCls,
+    prefixCls = "r-watermark",
     style,
     className,
-    gapX = 0,
-    gapY = 0,
-    zIndex,
-    width = 0,
-    height = 0,
-    rotate = 0,
+    gapX = 24,
+    gapY = 48,
+    zIndex = 1100,
+    width = 120,
+    height = 64,
+    rotate = -22,
     content,
     image,
-    imageW = 0,
-    imageH = 0,
+    imageW = 120,
+    imageH = 64,
     fontColor = "rgba(0, 0, 0, .15)",
-    fontFamily,
-    fontSize,
-    fontStyle,
-    fontWeight,
+    fontFamily = "sans-serif",
+    fontSize = 14,
+    fontStyle = "normal",
+    fontWeight = "normal",
   } = props;
 
   const [base64DataURL, setBase64DataURL] = useState("");
@@ -134,23 +134,6 @@ const Watermark: React.FC<WatermarkProps> = (props) => {
       }}
     ></div>
   );
-};
-
-Watermark.defaultProps = {
-  prefixCls: "r-watermark",
-  gapX: 24,
-  gapY: 48,
-  zIndex: 1100,
-  width: 120,
-  height: 64,
-  rotate: -22,
-  imageW: 120,
-  imageH: 64,
-  fontColor: "rgba(0, 0, 0, .15)",
-  fontFamily: "sans-serif",
-  fontSize: 14,
-  fontStyle: "normal",
-  fontWeight: "normal",
 };
 
 export default Watermark;

@@ -15,7 +15,11 @@ export type CarouselCircleProps = {
 
 // CarouselCircle FC
 const CarouselCircle: React.FC<CarouselCircleProps> = (props) => {
-  const { size = 0, color, prefixCls } = props;
+  const {
+    size = 30,
+    color = "#2F86F6",
+    prefixCls = "r-activity-indicator-carousel-circle",
+  } = props;
 
   const viewWidth = () => {
     const len = circleAnimateValues.length;
@@ -75,12 +79,6 @@ const CarouselCircle: React.FC<CarouselCircleProps> = (props) => {
       </svg>
     </div>
   );
-};
-
-CarouselCircle.defaultProps = {
-  prefixCls: "r-activity-indicator-carousel-circle",
-  size: 30,
-  color: "#2F86F6",
 };
 
 export default CarouselCircle;

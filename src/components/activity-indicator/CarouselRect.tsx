@@ -8,7 +8,10 @@ export type CarouselRectProps = {
 
 // CarouselRect FC
 const CarouselRect: React.FC<CarouselRectProps> = (props) => {
-  const { color, prefixCls } = props;
+  const {
+    color = "default",
+    prefixCls = "r-activity-indicator-carousel-rect",
+  } = props;
 
   return (
     <div
@@ -58,11 +61,6 @@ const CarouselRect: React.FC<CarouselRectProps> = (props) => {
       </svg>
     </div>
   );
-};
-
-CarouselRect.defaultProps = {
-  prefixCls: "r-activity-indicator-carousel-rect",
-  color: "default",
 };
 
 export default CarouselRect;

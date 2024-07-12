@@ -22,18 +22,18 @@ export type ProgressProps = {
 // Progress FC
 const Progress: React.FC<ProgressProps> = (props) => {
   const {
-    prefixCls,
+    prefixCls = "r-progress",
     className,
     style = {},
     barStyle = {},
-    percent,
-    position,
-    unfilled,
-    appearTransition,
+    percent = 0,
+    position = "fixed",
+    unfilled = true,
+    appearTransition = false,
     children,
-    size,
-    trackWidth,
-    mode,
+    size = 50,
+    trackWidth = 3,
+    mode = "bar",
   } = props;
 
   const barProps = {
@@ -61,17 +61,6 @@ const Progress: React.FC<ProgressProps> = (props) => {
   ) : (
     <ProgressBar {...barProps} />
   );
-};
-
-Progress.defaultProps = {
-  prefixCls: "r-progress",
-  percent: 0,
-  position: "fixed",
-  unfilled: true,
-  appearTransition: false,
-  size: 50,
-  trackWidth: 3,
-  mode: "bar",
 };
 
 export default Progress;

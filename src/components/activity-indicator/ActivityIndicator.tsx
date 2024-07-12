@@ -9,7 +9,6 @@ export type ActivityIndicatorProps = {
   className?: string;
   animating?: boolean;
   carousel?: "circle" | "rect";
-  panelColor?: string;
   toast?: boolean;
   sizeType?: "large" | "small";
   size?: number;
@@ -20,13 +19,13 @@ export type ActivityIndicatorProps = {
 // ActivityIndicator FC
 const ActivityIndicator: React.FC<ActivityIndicatorProps> = (props) => {
   const {
-    prefixCls,
+    prefixCls = "r-activity-indicator",
     className,
-    animating,
+    animating = true,
     carousel,
-    toast,
-    sizeType,
-    size,
+    toast = false,
+    sizeType = "small",
+    size = 30,
     text,
     color,
   } = props;
@@ -80,15 +79,6 @@ const ActivityIndicator: React.FC<ActivityIndicatorProps> = (props) => {
       <span className={spinnerCls} aria-label="loading" />
     </div>
   );
-};
-
-ActivityIndicator.defaultProps = {
-  prefixCls: "r-activity-indicator",
-  animating: true,
-  sizeType: "small",
-  size: 30,
-  panelColor: "rgba(34, 34, 34, .6)",
-  toast: false,
 };
 
 export default ActivityIndicator;

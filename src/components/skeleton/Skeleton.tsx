@@ -12,7 +12,7 @@ export type SkeletonProps = {
 
 // Skeleton FC
 export const Skeleton: React.FC<SkeletonProps> = (props) => {
-  const { prefixCls, animated, className } = props;
+  const { prefixCls = defaultPrefixCls, animated, className } = props;
 
   // container css class
   const wrapCls = classnames(prefixCls, className, {
@@ -20,10 +20,6 @@ export const Skeleton: React.FC<SkeletonProps> = (props) => {
   });
 
   return <div className={wrapCls}></div>;
-};
-
-Skeleton.defaultProps = {
-  prefixCls: defaultPrefixCls,
 };
 
 // SkeletonTitleProps type
@@ -34,15 +30,11 @@ export type SkeletonTitleProps = {
 
 // SkeletonTitle FC
 export const SkeletonTitle: React.FC<SkeletonTitleProps> = (props) => {
-  const { prefixCls, animated } = props;
+  const { prefixCls = defaultPrefixCls, animated } = props;
 
   return (
     <Skeleton animated={animated} className={`${prefixCls}-title`}></Skeleton>
   );
-};
-
-SkeletonTitle.defaultProps = {
-  prefixCls: defaultPrefixCls,
 };
 
 // SkeletonParagraphProps type
@@ -54,7 +46,7 @@ export type SkeletonParagraphProps = {
 
 // SkeletonParagraph FC
 export const SkeletonParagraph: React.FC<SkeletonParagraphProps> = (props) => {
-  const { prefixCls, animated, lineCount } = props;
+  const { prefixCls = defaultPrefixCls, animated, lineCount = 3 } = props;
   const arr = new Array(lineCount).fill("");
 
   return (
@@ -68,9 +60,4 @@ export const SkeletonParagraph: React.FC<SkeletonParagraphProps> = (props) => {
       ))}
     </div>
   );
-};
-
-SkeletonParagraph.defaultProps = {
-  prefixCls: defaultPrefixCls,
-  lineCount: 3,
 };

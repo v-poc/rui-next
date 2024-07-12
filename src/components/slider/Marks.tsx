@@ -18,7 +18,14 @@ export type MarksProps = {
 
 // Marks FC
 export const Marks: React.FC<MarksProps> = (props) => {
-  const { prefixCls, marks, min, max, rangeLeft, rangeRight } = props;
+  const {
+    prefixCls = "r-slider",
+    marks,
+    min,
+    max,
+    rangeLeft,
+    rangeRight,
+  } = props;
 
   const marksKeys = Object.keys(marks)
     .map(parseFloat)
@@ -53,8 +60,4 @@ export const Marks: React.FC<MarksProps> = (props) => {
         })}
     </div>
   );
-};
-
-Marks.defaultProps = {
-  prefixCls: "r-slider",
 };

@@ -15,7 +15,7 @@ export type GridItemProps = {
 
 // GridItem FC
 const GridItem: React.FC<GridItemProps> = (props) => {
-  const { prefixCls, span, onClick, children } = props;
+  const { prefixCls = "r-grid", span = 1, onClick, children } = props;
 
   const itemStyle: StyleProps = {
     "--item-span": span?.toString(),
@@ -26,11 +26,6 @@ const GridItem: React.FC<GridItemProps> = (props) => {
       {children}
     </div>
   );
-};
-
-GridItem.defaultProps = {
-  prefixCls: "r-grid",
-  span: 1,
 };
 
 export default GridItem;

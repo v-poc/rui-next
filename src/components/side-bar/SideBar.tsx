@@ -38,7 +38,7 @@ export type SideBarProps = {
 // SideBar FC
 export const SideBar: React.FC<SideBarProps> = (props) => {
   const {
-    prefixCls,
+    prefixCls = "r-side-bar",
     activeKey,
     children,
     defaultActiveKey,
@@ -144,8 +144,4 @@ export const SideBar: React.FC<SideBarProps> = (props) => {
       </div>
     </div>
   );
-};
-
-SideBar.defaultProps = {
-  prefixCls: "r-side-bar",
 };

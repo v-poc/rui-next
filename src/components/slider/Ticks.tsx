@@ -13,7 +13,14 @@ export type TicksProps = {
 
 // Ticks FC
 export const Ticks: React.FC<TicksProps> = (props) => {
-  const { prefixCls, min, max, points, rangeRight, rangeLeft } = props;
+  const {
+    prefixCls = "r-slider",
+    min,
+    max,
+    points,
+    rangeRight,
+    rangeLeft,
+  } = props;
 
   return (
     <div className={`${prefixCls}-ticks`}>
@@ -37,8 +44,4 @@ export const Ticks: React.FC<TicksProps> = (props) => {
         })}
     </div>
   );
-};
-
-Ticks.defaultProps = {
-  prefixCls: "r-slider",
 };

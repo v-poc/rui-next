@@ -23,11 +23,11 @@ const CheckList: React.FC<CheckListProps> = (props) => {
   const {
     // prefixCls,
     children,
-    mode,
-    activeIcon,
+    mode = "default",
+    activeIcon = <Icon type="check" size="xxs" />,
     disabled,
-    defaultValue,
-    multiple,
+    defaultValue = [],
+    multiple = false,
     readOnly,
     value = [],
     onChange,
@@ -57,14 +57,6 @@ const CheckList: React.FC<CheckListProps> = (props) => {
       <List mode={mode}>{children}</List>
     </CheckListContext.Provider>
   );
-};
-
-CheckList.defaultProps = {
-  // prefixCls: "r-check-list",
-  mode: "default",
-  activeIcon: <Icon type="check" size="xxs" />,
-  defaultValue: [],
-  multiple: false,
 };
 
 export default CheckList;

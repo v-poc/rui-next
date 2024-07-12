@@ -23,7 +23,13 @@ const Icon: React.FC<IconProps> = (props) => {
   // useEffect hook
   useEffect(() => loadSprite(), []);
 
-  const { type, prefixCls, className, size, ...restProps } = props;
+  const {
+    type,
+    prefixCls = "r-icon",
+    className,
+    size = "md",
+    ...restProps
+  } = props;
 
   const wrapCls = classnames(
     prefixCls,
@@ -37,11 +43,6 @@ const Icon: React.FC<IconProps> = (props) => {
       <use xlinkHref={`#${type}`} />
     </svg>
   );
-};
-
-Icon.defaultProps = {
-  prefixCls: "r-icon",
-  size: "md",
 };
 
 export default Icon;

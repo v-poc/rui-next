@@ -14,7 +14,7 @@ export type StepProps = {
 // Step FC
 export const Step: React.FC<StepProps> = (props) => {
   const {
-    prefixCls,
+    prefixCls = "r-step",
     className,
     description = "",
     icon,
@@ -41,8 +41,4 @@ export const Step: React.FC<StepProps> = (props) => {
       </div>
     </div>
   );
-};
-
-Step.defaultProps = {
-  prefixCls: "r-step",
 };

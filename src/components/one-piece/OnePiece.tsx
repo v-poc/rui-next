@@ -8,7 +8,7 @@ export type OnePieceProps = {
 
 // OnePiece FC
 export const OnePiece: React.FC<OnePieceProps> = (props) => {
-  const { prefixCls, scale = 1 } = props;
+  const { prefixCls = "r-op", scale = 1 } = props;
 
   return (
     <div className={`${prefixCls}-wrapper`}>
@@ -31,8 +31,4 @@ export const OnePiece: React.FC<OnePieceProps> = (props) => {
       </div>
     </div>
   );
-};
-
-OnePiece.defaultProps = {
-  prefixCls: "r-op",
 };

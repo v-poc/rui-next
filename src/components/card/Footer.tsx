@@ -11,7 +11,13 @@ export type CardFooterProps = {
 
 // CardFooter FC
 const CardFooter: React.FC<CardFooterProps> = (props) => {
-  const { prefixCls, content, className, extra, ...restProps } = props;
+  const {
+    prefixCls = "r-card",
+    content,
+    className,
+    extra,
+    ...restProps
+  } = props;
 
   const wrapCls = classnames(`${prefixCls}-footer`, className);
 
@@ -21,10 +27,6 @@ const CardFooter: React.FC<CardFooterProps> = (props) => {
       {extra && <div className={`${prefixCls}-footer-extra`}>{extra}</div>}
     </div>
   );
-};
-
-CardFooter.defaultProps = {
-  prefixCls: "r-card",
 };
 
 export default CardFooter;

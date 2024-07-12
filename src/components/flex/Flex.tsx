@@ -24,11 +24,11 @@ const Flex: React.FC<FlexProps> = (props) => {
     direction,
     wrap,
     justify,
-    align,
+    align = "center",
     alignContent,
     className,
     children,
-    prefixCls,
+    prefixCls = "r-flexbox",
     style,
     ...restProps
   } = props;
@@ -68,11 +68,6 @@ const Flex: React.FC<FlexProps> = (props) => {
       {children}
     </div>
   );
-};
-
-Flex.defaultProps = {
-  prefixCls: "r-flexbox",
-  align: "center",
 };
 
 export default Flex;

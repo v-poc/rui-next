@@ -28,15 +28,15 @@ export type ButtonProps = {
 const Button: React.FC<ButtonProps> = (props) => {
   const {
     type,
-    size,
-    inline,
-    round,
-    disabled,
+    size = "large",
+    inline = false,
+    round = false,
+    disabled = false,
     icon,
-    loading,
-    activeStyle,
+    loading = false,
+    activeStyle = {},
     activeClassName,
-    prefixCls,
+    prefixCls = "r-button",
     className,
     children,
     onClick,
@@ -103,16 +103,6 @@ const Button: React.FC<ButtonProps> = (props) => {
       </a>
     </TouchFeedback>
   );
-};
-
-Button.defaultProps = {
-  prefixCls: "r-button",
-  size: "large",
-  inline: false,
-  round: false,
-  disabled: false,
-  loading: false,
-  activeStyle: {},
 };
 
 export default Button;

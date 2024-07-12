@@ -24,16 +24,16 @@ export type ToastProps = {
 // Toast FC
 export const Toast: React.FC<ToastProps> = (props) => {
   const {
-    prefixCls,
+    prefixCls = "r-toast",
     content,
     // duration,
     getContainer,
     icon,
     maskClassName,
-    maskClickable,
+    maskClickable = true,
     maskStyle,
     position,
-    stopPropagation,
+    stopPropagation = ["click"],
     visible,
     afterClose,
   } = props;
@@ -117,10 +117,4 @@ export const Toast: React.FC<ToastProps> = (props) => {
       </div>
     </Mask>
   );
-};
-
-Toast.defaultProps = {
-  prefixCls: "r-toast",
-  maskClickable: true,
-  stopPropagation: ["click"],
 };

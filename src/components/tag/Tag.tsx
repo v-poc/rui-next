@@ -25,11 +25,11 @@ const Tag: React.FC<TagProps> = (props) => {
   const {
     children,
     className,
-    prefixCls,
-    disabled,
-    selected,
-    closable,
-    small,
+    prefixCls = "r-tag",
+    disabled = false,
+    selected = false,
+    closable = false,
+    small = false,
     style,
     onChange,
     onClose,
@@ -103,14 +103,6 @@ const Tag: React.FC<TagProps> = (props) => {
       )}
     </div>
   );
-};
-
-Tag.defaultProps = {
-  prefixCls: "r-tag",
-  disabled: false,
-  selected: false,
-  closable: false,
-  small: false,
 };
 
 export default Tag;

@@ -26,9 +26,9 @@ export const Result: React.FC<ResultProps> = (props) => {
     title,
     message,
     buttonText,
-    onButtonClick,
-    buttonType,
-    prefixCls,
+    onButtonClick = () => {},
+    buttonType = "primary",
+    prefixCls = "r-result",
     className,
   } = props;
 
@@ -60,10 +60,4 @@ export const Result: React.FC<ResultProps> = (props) => {
       )}
     </div>
   );
-};
-
-Result.defaultProps = {
-  prefixCls: "r-result",
-  buttonType: "primary",
-  onButtonClick: () => {},
 };

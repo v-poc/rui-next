@@ -13,7 +13,12 @@ export type EmptyProps = {
 
 // Empty FC
 const Empty: React.FC<EmptyProps> = (props) => {
-  const { prefixCls, img, imgStyle, message } = props;
+  const {
+    prefixCls = "r-empty",
+    img = <Icon type="empty" />,
+    imgStyle,
+    message,
+  } = props;
 
   let imgEl;
   if (typeof img === "string") {
@@ -23,11 +28,6 @@ const Empty: React.FC<EmptyProps> = (props) => {
   }
 
   return <Result className={prefixCls} img={imgEl} message={message} />;
-};
-
-Empty.defaultProps = {
-  prefixCls: "r-empty",
-  img: <Icon type="empty" />,
 };
 
 export default Empty;

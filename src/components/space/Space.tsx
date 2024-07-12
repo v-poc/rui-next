@@ -29,14 +29,14 @@ export type SpaceProps = {
 // Space FC
 export const Space: React.FC<SpaceProps> = (props) => {
   const {
-    prefixCls,
+    prefixCls = "r-space",
     children,
     gap = 8,
     align,
     justify,
     block,
     wrap,
-    vertical,
+    vertical = false,
     onClick,
   } = props;
 
@@ -60,9 +60,4 @@ export const Space: React.FC<SpaceProps> = (props) => {
       })}
     </div>
   );
-};
-
-Space.defaultProps = {
-  prefixCls: "r-space",
-  vertical: false,
 };

@@ -16,7 +16,7 @@ export type GridProps = {
 
 // Grid FC
 const Grid: React.FC<GridProps> = (props) => {
-  const { prefixCls, columns, gap, children } = props;
+  const { prefixCls = "r-grid", columns, gap = 0, children } = props;
 
   const wrapStyle: StyleProps = {
     "--columns": columns.toString(),
@@ -40,11 +40,6 @@ const Grid: React.FC<GridProps> = (props) => {
       {children}
     </div>
   );
-};
-
-Grid.defaultProps = {
-  prefixCls: "r-grid",
-  gap: 0,
 };
 
 export default Grid;

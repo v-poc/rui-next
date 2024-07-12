@@ -15,8 +15,15 @@ export type PageIndicatorProps = {
 
 // PageIndicator FC
 const PageIndicator: React.FC<PageIndicatorProps> = (props) => {
-  const { prefixCls, className, total, current, color, style, vertical } =
-    props;
+  const {
+    prefixCls = "r-page-indicator",
+    className,
+    total,
+    current,
+    color = "primary",
+    style,
+    vertical = false,
+  } = props;
 
   const wrapCls = classnames(
     prefixCls,
@@ -42,12 +49,6 @@ const PageIndicator: React.FC<PageIndicatorProps> = (props) => {
       {items}
     </div>
   );
-};
-
-PageIndicator.defaultProps = {
-  prefixCls: "r-page-indicator",
-  color: "primary",
-  vertical: false,
 };
 
 export default PageIndicator;

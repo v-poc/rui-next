@@ -13,7 +13,7 @@ export type TouchFeedbackProps = {
 const TouchFeedback = (props: TouchFeedbackProps) => {
   const [active, setActive] = useState<boolean>(false);
 
-  const { activeClassName, activeStyle, disabled, children } = props;
+  const { activeClassName, activeStyle, disabled = false, children } = props;
 
   // useEffect hook
   useEffect(() => {
@@ -86,10 +86,6 @@ const TouchFeedback = (props: TouchFeedbackProps) => {
   }
 
   return cloneElement(child, events);
-};
-
-TouchFeedback.defaultProps = {
-  disabled: false,
 };
 
 export default TouchFeedback;
