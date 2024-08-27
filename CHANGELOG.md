@@ -1,3 +1,7 @@
+# 0.49.1 (2024-08-26)
+
+Updated to adapt codebase for `rspress` build issue.
+
 # 0.49.0 (2024-05-01)
 
 Refactor: `Skeleton` component and demo.
