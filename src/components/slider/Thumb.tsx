@@ -90,3 +90,5 @@ export const Thumb: React.FC<ThumbProps> = (props) => {
     </div>
   );
 };
+
+export default Thumb;

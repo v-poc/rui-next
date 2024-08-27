@@ -26,3 +26,5 @@ export { default as useLazyload } from "./hooks/useLazyload/index";
  * Utils
  */
 export { canUseDOM, logInfo } from "./utils/index";
+
+export default {}; // for rspress build

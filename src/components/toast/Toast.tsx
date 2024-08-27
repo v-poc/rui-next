@@ -118,3 +118,5 @@ export const Toast: React.FC<ToastProps> = (props) => {
     </Mask>
   );
 };
+
+export default Toast;

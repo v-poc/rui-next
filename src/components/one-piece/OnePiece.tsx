@@ -32,3 +32,5 @@ export const OnePiece: React.FC<OnePieceProps> = (props) => {
     </div>
   );
 };
+
+export default OnePiece;

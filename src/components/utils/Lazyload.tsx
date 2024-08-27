@@ -19,3 +19,5 @@ export const Lazyload: React.FC<LazyloadProps> = (props) => {
 
   return <div ref={targetRef}></div>;
 };
+
+export default Lazyload;

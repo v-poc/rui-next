@@ -58,3 +58,5 @@ export const XButton: React.FC<XButtonProps> = (props) => {
     </div>
   );
 };
+
+export default XButton;

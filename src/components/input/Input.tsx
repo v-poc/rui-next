@@ -263,3 +263,5 @@ export const Input = forwardRef<InputRef, InputProps>((props, ref) => {
     </div>
   );
 });
+
+export default Input;

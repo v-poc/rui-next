@@ -12,3 +12,5 @@ export type SideBarItemProps = {
 
 // SideBarItem FC
 export const SideBarItem: React.FC<SideBarItemProps> = () => null;
+
+export default SideBarItem;

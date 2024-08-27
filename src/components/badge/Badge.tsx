@@ -69,3 +69,5 @@ export const Badge: React.FC<BadgeProps> = (props) => {
     </span>
   );
 };
+
+export default Badge;

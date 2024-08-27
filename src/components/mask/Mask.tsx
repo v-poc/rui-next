@@ -131,3 +131,5 @@ export const Mask: React.FC<MaskProps> = (props) => {
     </ShouldRender>
   );
 };
+
+export default Mask;

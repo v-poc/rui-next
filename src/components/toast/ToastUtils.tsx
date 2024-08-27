@@ -80,3 +80,5 @@ export const config = (
     defaultProps.position = v.position;
   }
 };
+
+export default {}; // for rspress build

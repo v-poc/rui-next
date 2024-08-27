@@ -221,3 +221,5 @@ export const Slider: React.FC<SliderProps> = (props) => {
     </div>
   );
 };
+
+export default Slider;

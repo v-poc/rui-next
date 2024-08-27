@@ -126,3 +126,5 @@ export const NoticeBar: React.FC<NoticeBarProps> = (props) => {
     </div>
   );
 };
+
+export default NoticeBar;

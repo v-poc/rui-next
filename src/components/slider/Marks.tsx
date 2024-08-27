@@ -61,3 +61,5 @@ export const Marks: React.FC<MarksProps> = (props) => {
     </div>
   );
 };
+
+export default Marks;

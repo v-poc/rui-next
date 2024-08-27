@@ -45,3 +45,5 @@ export const Ticks: React.FC<TicksProps> = (props) => {
     </div>
   );
 };
+
+export default Ticks;

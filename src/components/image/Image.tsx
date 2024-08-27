@@ -175,3 +175,5 @@ export const Image: React.FC<ImageProps> = (props) => {
     </div>
   );
 };
+
+export default Image;

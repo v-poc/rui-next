@@ -104,3 +104,5 @@ function makeContext<T>(target: any, init: T): React.Context<T> {
   target.Consumer._context = target;
   return target;
 }
+
+export default SpringContext;

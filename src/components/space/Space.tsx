@@ -61,3 +61,5 @@ export const Space: React.FC<SpaceProps> = (props) => {
     </div>
   );
 };
+
+export default Space;

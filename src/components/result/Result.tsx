@@ -61,3 +61,5 @@ export const Result: React.FC<ResultProps> = (props) => {
     </div>
   );
 };
+
+export default Result;

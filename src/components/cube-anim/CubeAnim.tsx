@@ -46,3 +46,5 @@ export const CubeAnim: React.FC<CubeAnimProps> = (props) => {
     </div>
   );
 };
+
+export default CubeAnim;

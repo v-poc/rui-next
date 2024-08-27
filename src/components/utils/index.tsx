@@ -448,3 +448,5 @@ export function renderImperatively(element: ReactElement<ImperativeProps>) {
     },
   } as ImperativeHandler;
 }
+
+export default {}; // for rspress build

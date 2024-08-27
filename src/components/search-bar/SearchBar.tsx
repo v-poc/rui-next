@@ -149,3 +149,5 @@ export const SearchBar = forwardRef<SearchBarRef, SearchBarProps>(
     );
   }
 );
+
+export default SearchBar;

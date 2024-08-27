@@ -3905,7 +3905,7 @@ function useSprings(
 
   // Update existing controllers when "deps" are changed.
   useMemo(() => {
-    declareUpdates(0, Math.min(prevLength, length));
+    declareUpdates(0, Math.min(prevLength, length)); //@ts-ignore
   }, deps);
 
   /** Fill the `updates` array with declarative updates for the given index range. */
@@ -4049,3 +4049,5 @@ export function useSpring(props: any, deps?: readonly any[]) {
   );
   return isFn || arguments.length == 2 ? [values, ref] : values;
 }
+
+export default useSpring;

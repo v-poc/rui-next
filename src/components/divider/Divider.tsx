@@ -36,3 +36,5 @@ export const Divider: React.FC<DividerProps> = (props) => {
     </div>
   );
 };
+
+export default Divider;

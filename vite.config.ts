@@ -18,6 +18,7 @@ export default {
           "react": "React",
           "react-dom": "ReactDOM",
         },
+        exports: "named",
       },
     },
   },

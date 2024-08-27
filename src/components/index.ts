@@ -130,3 +130,5 @@ export { default as useLatest } from "./hooks/useLatest/index";
 export { default as useMemoizedFn } from "./hooks/useMemoizedFn/index";
 // useInViewport
 export { default as useInViewport } from "./hooks/useInViewport/index";
+
+export default {}; // for rspress build

@@ -56,3 +56,5 @@ export const Steps: React.FC<StepsProps> = (props) => {
     </div>
   );
 };
+
+export default Steps;

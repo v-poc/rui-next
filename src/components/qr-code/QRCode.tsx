@@ -56,3 +56,5 @@ export const QRCode: React.FC<QRCodeProps> = (props) => {
 
   return <div className={wrapCls} dangerouslySetInnerHTML={content} />;
 };
+
+export default QRCode;

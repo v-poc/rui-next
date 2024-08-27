@@ -165,3 +165,5 @@ export const Selector = <V extends SelectorValue>(props: SelectorProps<V>) => {
     </div>
   );
 };
+
+export default Selector;

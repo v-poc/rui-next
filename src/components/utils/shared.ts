@@ -1129,3 +1129,5 @@ export function useForceUpdate() {
     }
   };
 }
+
+export default {}; // for rspress build

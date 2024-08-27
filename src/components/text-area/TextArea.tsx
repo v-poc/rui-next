@@ -193,3 +193,5 @@ export const TextArea = forwardRef<TextAreaRef, TextAreaProps>((props, ref) => {
     </div>
   );
 });
+
+export default TextArea;

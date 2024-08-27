@@ -2326,3 +2326,5 @@ export function useGestureDrag<
   registerAction(dragAction);
   return useRecognizers({ drag: handler }, config, "drag");
 }
+
+export default useGestureDrag;

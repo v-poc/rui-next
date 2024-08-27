@@ -18,3 +18,5 @@ export const AutoJustifyContent: React.FC<AutoJustifyContentProps> = (
     </div>
   );
 };
+
+export default AutoJustifyContent;

@@ -11,3 +11,5 @@ export type CheckListContextType = {
 } | null;
 
 export const CheckListContext = createContext<CheckListContextType>(null);
+
+export default CheckListContext;

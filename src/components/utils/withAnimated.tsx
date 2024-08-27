@@ -272,3 +272,5 @@ export const withAnimated = (Component: any, host: HostConfig) => {
     return <Component {...usedProps} ref={ref} />;
   });
 };
+
+export default withAnimated;

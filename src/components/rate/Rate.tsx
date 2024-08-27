@@ -92,3 +92,5 @@ export const Rate: React.FC<RateProps> = (props) => {
     </div>
   );
 };
+
+export default Rate;

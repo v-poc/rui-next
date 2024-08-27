@@ -20,3 +20,5 @@ export const SafeArea: React.FC<SafeAreaProps> = (props) => {
 
   return <div className={wrapCls}></div>;
 };
+
+export default SafeArea;

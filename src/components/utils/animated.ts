@@ -343,3 +343,5 @@ const host = createHost(primitives, {
 });
 
 export const animated = host.animated as WithAnimated;
+
+export default animated;

@@ -61,3 +61,5 @@ export const SkeletonParagraph: React.FC<SkeletonParagraphProps> = (props) => {
     </div>
   );
 };
+
+export default {}; // for rspress build
