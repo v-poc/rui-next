@@ -64,14 +64,14 @@
     "v-qr-code-next": "^0.2.7"
   },
   "devDependencies": {
-    "@rspress/plugin-preview": "^1.28.3",
-    "@types/node": "^22.5.1",
+    "@rspress/plugin-preview": "^1.29.0",
+    "@types/node": "^22.5.3",
     "@types/react": "^18.3.5",
     "@types/react-dom": "^18.3.0",
     "classnames": "^2.5.1",
     "less": "^4.2.0",
-    "rspress": "^1.28.3",
+    "rspress": "^1.29.0",
     "typescript": "^5.5.4",
-    "vite": "^5.4.2"
+    "vite": "^5.4.3"
   }
 }
