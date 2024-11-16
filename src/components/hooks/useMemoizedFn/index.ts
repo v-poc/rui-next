@@ -4,9 +4,9 @@ export type noop = (...args: any[]) => any;
 
 function useMemoizedFn<T extends noop>(fn: T) {
   if (typeof fn !== "function") {
-    console.warn(
-      `[useMemoizedFn] The param type: ${typeof fn} that is not a function.`
-    );
+    // console.warn(
+    //   `[useMemoizedFn] The param type: ${typeof fn} that is not a function.`
+    // );
     return;
   }
 

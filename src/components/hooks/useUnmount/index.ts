@@ -3,9 +3,9 @@ import useLatest from "../useLatest/index";
 
 const useUnmount = (fn: () => void) => {
   if (typeof fn !== "function") {
-    console.warn(
-      `[useUnmount] The param type: ${typeof fn} that is not a function.`
-    );
+    // console.warn(
+    //   `[useUnmount] The param type: ${typeof fn} that is not a function.`
+    // );
     return;
   }
 
