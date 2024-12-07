@@ -198,7 +198,7 @@ const Example = () => {
           content="Copyright @ 2021-present RUI.next. Built with Vite & React."
           chips={[
             { content: "react-hooks" },
-            { content: "vite 5" },
+            { content: "vite 6" },
             { content: "typescript" },
           ]}
         />

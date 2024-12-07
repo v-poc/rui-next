@@ -1,7 +1,7 @@
 {
   "name": "rui-next",
-  "version": "0.49.1",
-  "description": "Mobile web UI components based on React hooks and Vite 5",
+  "version": "0.49.2",
+  "description": "Mobile web UI components based on React hooks and Vite 6",
   "files": [
     "dist/style.css",
     "dist/rui-next.es.js",
@@ -38,8 +38,8 @@
     "react-vite-ui",
     "react-vite-ts",
     "react-vite-ts-ui",
-    "vite5",
-    "react18-vite5-ui"
+    "vite6",
+    "react-vite6-ui"
   ],
   "author": "Niko Ni",
   "license": "MIT",
@@ -57,21 +57,21 @@
     "node": "^18.0.0 || >=20.0.0",
     "pnpm": ">= 8"
   },
-  "packageManager": "pnpm@9.13.2",
+  "packageManager": "pnpm@9.15.0",
   "dependencies": {
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
     "v-qr-code-next": "^0.2.7"
   },
   "devDependencies": {
-    "@rspress/plugin-preview": "^1.37.0",
-    "@types/node": "^22.9.0",
+    "@rspress/plugin-preview": "^1.37.4",
+    "@types/node": "^22.10.1",
     "@types/react": "^18.3.12",
     "@types/react-dom": "^18.3.1",
     "classnames": "^2.5.1",
-    "less": "^4.2.0",
-    "rspress": "^1.37.0",
-    "typescript": "^5.6.3",
-    "vite": "^5.4.11"
+    "less": "^4.2.1",
+    "rspress": "^1.37.4",
+    "typescript": "^5.7.2",
+    "vite": "^6.0.3"
   }
 }
