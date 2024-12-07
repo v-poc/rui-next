@@ -1,3 +1,7 @@
+# 0.49.2 (2024-12-06)
+
+Updated to switch to [Vite 6.0](https://vite.dev/blog/announcing-vite6.html).
+
 # 0.49.1 (2024-08-26)
 
 Updated to adapt codebase for `rspress` build issue.
