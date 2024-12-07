@@ -1,4 +1,4 @@
-# 0.49.2 (2024-12-06)
+# 0.49.3 (2024-12-06)
 
 Updated to switch to [Vite 6.0](https://vite.dev/blog/announcing-vite6.html).
 
