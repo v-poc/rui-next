@@ -1,0 +1,37 @@
+[
+  {
+    "type": "custom-link",
+    "label": "ActivityIndicator",
+    "link": "/components/activity-indicator/index-en"
+  },
+  {
+    "type": "custom-link",
+    "label": "Progress",
+    "link": "/components/progress/index-en"
+  },
+  {
+    "type": "custom-link",
+    "label": "Result",
+    "link": "/components/result/index-en"
+  },
+  {
+    "type": "custom-link",
+    "label": "Skeleton",
+    "link": "/components/skeleton/index-en"
+  },
+  {
+    "type": "custom-link",
+    "label": "Empty",
+    "link": "/components/empty/index-en"
+  },
+  {
+    "type": "custom-link",
+    "label": "Mask",
+    "link": "/components/mask/index-en"
+  },
+  {
+    "type": "custom-link",
+    "label": "Toast",
+    "link": "/components/toast/index-en"
+  }
+]

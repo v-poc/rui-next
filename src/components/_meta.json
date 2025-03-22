@@ -6,8 +6,8 @@
   },
   {
     "type": "custom-link",
-    "label": "Getting Started",
-    "link": "/getting-started"
+    "label": "Getting-Started",
+    "link": "/components/getting-started"
   },
   {
     "type": "dir",
@@ -32,8 +32,29 @@
   },
   {
     "type": "dir",
+    "name": "Feedback",
+    "label": "Feedback",
+    "collapsible": true,
+    "collapsed": false
+  },
+  {
+    "type": "dir",
     "name": "Misc",
     "label": "Misc",
+    "collapsible": true,
+    "collapsed": false
+  },
+  {
+    "type": "dir",
+    "name": "React-Hooks",
+    "label": "React-Hooks",
+    "collapsible": true,
+    "collapsed": false
+  },
+  {
+    "type": "dir",
+    "name": "Experimental-Stage",
+    "label": "Experimental-Stage",
     "collapsible": true,
     "collapsed": false
   }

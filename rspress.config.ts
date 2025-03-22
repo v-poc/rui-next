@@ -1,5 +1,6 @@
 import * as path from "path";
 import { defineConfig } from "rspress/config";
+import { pluginLess } from "@rsbuild/plugin-less";
 import { pluginPreview } from "@rspress/plugin-preview";
 // import * as pkg from "./package.json";
 
@@ -13,6 +14,7 @@ export default defineConfig({
     mdxRs: false,
     defaultWrapCode: true,
   },
+  builderPlugins: [pluginLess()],
   plugins: [pluginPreview()],
   themeConfig: {
     socialLinks: [

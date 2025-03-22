@@ -2,7 +2,7 @@
   {
     "text": "Documentation",
     "items": [
-      { "text": "Tutorial", "link": "/getting-started" },
+      { "text": "Tutorial", "link": "/components/getting-started" },
       {
         "text": "Examples-vite2",
         "link": "https://nikoni.top/rui-next/docs/"

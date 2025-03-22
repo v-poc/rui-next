@@ -8,7 +8,7 @@ hero:
   actions:
     - theme: brand
       text: docs + demos
-      link: /getting-started
+      link: /components/getting-started
 features:
   - title: Vite6-Powered
     details: Feel the speed of Vite. Instant server start and lightning fast HMR that stays fast regardless of the app size.
