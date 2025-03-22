@@ -1,0 +1,42 @@
+[
+  {
+    "type": "custom-link",
+    "label": "NavBar",
+    "link": "/components/nav-bar/index-en"
+  },
+  {
+    "type": "custom-link",
+    "label": "Grid",
+    "link": "/components/grid/index-en"
+  },
+  {
+    "type": "custom-link",
+    "label": "Flex",
+    "link": "/components/flex/index-en"
+  },
+  {
+    "type": "custom-link",
+    "label": "WhiteSpace",
+    "link": "/components/white-space/index-en"
+  },
+  {
+    "type": "custom-link",
+    "label": "Divider",
+    "link": "/components/divider/index-en"
+  },
+  {
+    "type": "custom-link",
+    "label": "AutoJustifyContent",
+    "link": "/components/auto-justify-content/index-en"
+  },
+  {
+    "type": "custom-link",
+    "label": "Space",
+    "link": "/components/space/index-en"
+  },
+  {
+    "type": "custom-link",
+    "label": "SideBar",
+    "link": "/components/side-bar/index-en"
+  }
+]

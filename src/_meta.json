@@ -1,0 +1,49 @@
+[
+  {
+    "text": "Documentation",
+    "items": [
+      { "text": "Tutorial", "link": "/getting-started" },
+      {
+        "text": "Examples-vite2",
+        "link": "https://nikoni.top/rui-next/docs/"
+      }
+    ]
+  },
+  {
+    "text": "Playground",
+    "link": "/components/playground/playground"
+  },
+  {
+    "text": "links",
+    "items": [
+      {
+        "text": "Repo (latest)",
+        "link": "https://github.com/v-poc/rui-next"
+      },
+      {
+        "text": "Changelog",
+        "link": "https://github.com/v-poc/rui-next/blob/main/CHANGELOG.md"
+      },
+      {
+        "text": "Organization",
+        "link": "https://github.com/v-poc"
+      },
+      {
+        "text": "Team",
+        "link": "https://github.com/orgs/v-poc/people"
+      },
+      {
+        "text": "Vite",
+        "link": "https://vitejs.dev/"
+      },
+      {
+        "text": "RUI-poc-vite6",
+        "link": "https://github.com/v-poc/rui-poc"
+      },
+      {
+        "text": "Sponsor",
+        "link": "/components/playground/sponsor"
+      }
+    ]
+  }
+]

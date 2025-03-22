@@ -1,0 +1,12 @@
+[
+  {
+    "type": "custom-link",
+    "label": "QRCode",
+    "link": "/components/qr-code/index-en"
+  },
+  {
+    "type": "custom-link",
+    "label": "Playground",
+    "link": "/components/playground/playground"
+  }
+]

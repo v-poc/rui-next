@@ -1,0 +1,47 @@
+[
+  {
+    "type": "custom-link",
+    "label": "Button",
+    "link": "/components/button/index-en"
+  },
+  {
+    "type": "custom-link",
+    "label": "Switch",
+    "link": "/components/switch/index-en"
+  },
+  {
+    "type": "custom-link",
+    "label": "Rate",
+    "link": "/components/rate/index-en"
+  },
+  {
+    "type": "custom-link",
+    "label": "CheckList",
+    "link": "/components/check-list/index-en"
+  },
+  {
+    "type": "custom-link",
+    "label": "Input",
+    "link": "/components/input/index-en"
+  },
+  {
+    "type": "custom-link",
+    "label": "TextArea",
+    "link": "/components/text-area/index-en"
+  },
+  {
+    "type": "custom-link",
+    "label": "Slider",
+    "link": "/components/slider/index-en"
+  },
+  {
+    "type": "custom-link",
+    "label": "SearchBar",
+    "link": "/components/search-bar/index-en"
+  },
+  {
+    "type": "custom-link",
+    "label": "Selector",
+    "link": "/components/selector/index-en"
+  }
+]

@@ -1,0 +1,40 @@
+[
+  {
+    "type": "custom-link",
+    "label": "RUI",
+    "link": "/"
+  },
+  {
+    "type": "custom-link",
+    "label": "Getting Started",
+    "link": "/getting-started"
+  },
+  {
+    "type": "dir",
+    "name": "Navigation-Layout",
+    "label": "Navigation-Layout",
+    "collapsible": true,
+    "collapsed": false
+  },
+  {
+    "type": "dir",
+    "name": "Data-Display",
+    "label": "Data-Display",
+    "collapsible": true,
+    "collapsed": false
+  },
+  {
+    "type": "dir",
+    "name": "Data-Entry",
+    "label": "Data-Entry",
+    "collapsible": true,
+    "collapsed": false
+  },
+  {
+    "type": "dir",
+    "name": "Misc",
+    "label": "Misc",
+    "collapsible": true,
+    "collapsed": false
+  }
+]

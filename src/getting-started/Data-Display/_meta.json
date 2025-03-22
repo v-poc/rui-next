@@ -1,0 +1,62 @@
+[
+  {
+    "type": "custom-link",
+    "label": "Card",
+    "link": "/components/card/index-en"
+  },
+  {
+    "type": "custom-link",
+    "label": "Badge",
+    "link": "/components/badge/index-en"
+  },
+  {
+    "type": "custom-link",
+    "label": "Icon",
+    "link": "/components/icon/index-en"
+  },
+  {
+    "type": "custom-link",
+    "label": "Tag",
+    "link": "/components/tag/index-en"
+  },
+  {
+    "type": "custom-link",
+    "label": "Watermark",
+    "link": "/components/watermark/index-en"
+  },
+  {
+    "type": "custom-link",
+    "label": "NoticeBar",
+    "link": "/components/notice-bar/index-en"
+  },
+  {
+    "type": "custom-link",
+    "label": "List",
+    "link": "/components/list/index-en"
+  },
+  {
+    "type": "custom-link",
+    "label": "Steps",
+    "link": "/components/steps/index-en"
+  },
+  {
+    "type": "custom-link",
+    "label": "Image",
+    "link": "/components/image/index-en"
+  },
+  {
+    "type": "custom-link",
+    "label": "Avatar",
+    "link": "/components/avatar/index-en"
+  },
+  {
+    "type": "custom-link",
+    "label": "Footer",
+    "link": "/components/footer/index-en"
+  },
+  {
+    "type": "custom-link",
+    "label": "PageIndicator",
+    "link": "/components/page-indicator/index-en"
+  }
+]
