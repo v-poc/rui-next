@@ -336,7 +336,5 @@ export default defineConfig({
     //   ],
     // },
   },
-  ssg: {
-    fallback: "csr",
-  },
+  ssg: false,
 });
