@@ -57,7 +57,7 @@
     "node": "^18.0.0 || >=20.0.0",
     "pnpm": ">= 8"
   },
-  "packageManager": "pnpm@10.8.0",
+  "packageManager": "pnpm@10.8.1",
   "dependencies": {
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
@@ -65,14 +65,14 @@
   },
   "devDependencies": {
     "@rsbuild/plugin-less": "^1.2.2",
-    "@rspress/plugin-preview": "^2.0.0-alpha.10",
+    "@rspress/plugin-preview": "2.0.0-alpha.12",
     "@types/node": "^22.14.1",
     "@types/react": "^18.3.18",
     "@types/react-dom": "^18.3.5",
     "classnames": "^2.5.1",
     "less": "^4.3.0",
-    "rspress": "^2.0.0-alpha.10",
+    "rspress": "2.0.0-alpha.12",
     "typescript": "^5.8.3",
-    "vite": "^6.3.0-beta.2"
+    "vite": "^6.3.2"
   }
 }
