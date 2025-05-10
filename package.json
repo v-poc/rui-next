@@ -57,29 +57,22 @@
     "node": "^18.0.0 || >=20.0.0",
     "pnpm": ">= 8"
   },
-  "packageManager": "pnpm@10.9.0",
-  "pnpm": {
-    "peerDependencyRules": {
-      "allowedVersions": {
-        "react": "^19.0.0"
-      }
-    }
-  },
+  "packageManager": "pnpm@10.10.0",
   "dependencies": {
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
     "v-qr-code-next": "^0.2.7"
   },
   "devDependencies": {
-    "@rsbuild/plugin-less": "^1.2.2",
-    "@rspress/plugin-preview": "2.0.0-beta.2",
-    "@types/node": "^22.15.0",
+    "@rsbuild/plugin-less": "^1.2.4",
+    "@rspress/plugin-preview": "2.0.0-beta.4",
+    "@types/node": "^22.15.17",
     "@types/react": "^18.3.18",
     "@types/react-dom": "^18.3.5",
     "classnames": "^2.5.1",
     "less": "^4.3.0",
-    "rspress": "2.0.0-beta.2",
+    "rspress": "2.0.0-beta.4",
     "typescript": "^5.8.3",
-    "vite": "^6.3.3"
+    "vite": "^6.3.5"
   }
 }
