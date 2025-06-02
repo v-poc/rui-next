@@ -54,10 +54,10 @@
     "preview": "rspress preview"
   },
   "engines": {
-    "node": "^18.0.0 || >=20.0.0",
+    "node": "^18.0.0 || ^20.0.0 || >=22.0.0",
     "pnpm": ">= 8"
   },
-  "packageManager": "pnpm@10.10.0",
+  "packageManager": "pnpm@10.11.0",
   "dependencies": {
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
@@ -74,5 +74,8 @@
     "rspress": "2.0.0-beta.4",
     "typescript": "^5.8.3",
     "vite": "^6.3.5"
+  },
+  "overrides": {
+    "vite": "npm:rolldown-vite@latest"
   }
 }
