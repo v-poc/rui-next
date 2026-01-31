@@ -1,3 +1,7 @@
+# 0.49.4 (2025-01-30)
+
+Updated to switch to [Vite 8 Beta](https://vite.dev/blog/announcing-vite8-beta).
+
 # 0.49.3 (2024-12-06)
 
 Updated to switch to [Vite 6.0](https://vite.dev/blog/announcing-vite6.html).

@@ -2,7 +2,7 @@
 
 [![npm](https://img.shields.io/npm/v/rui-next)](https://www.npmjs.com/package/rui-next) <a href="https://nikoni.top/rui-next/" target="_blank"><img src="https://img.shields.io/static/v1?label=&message=docs%20%26%20demos&color=3366cc" alt="docs & demos" /></a> <img alt="react" src="https://badges.aleen42.com/src/react.svg" /> <img alt="vite" src="https://badges.aleen42.com/src/vitejs.svg" />
 
-> Yet another **lightweight** and **Vite-powered** Mobile web UI components based on **React hooks** and **Vite 6**.
+> Yet another **lightweight** and **Vite-powered** Mobile web UI components based on **React hooks** and **Vite 8**.
 
 ## Overview
 
@@ -45,12 +45,16 @@ $ pnpm run build-lib
 [`Library Mode`](https://vitejs.dev/guide/build.html#library-mode) output info
 
 ```
-vite v6.3.2 building for production...
-✓ 179 modules transformed.
-dist/rui-next.css      39.00 kB │ gzip:  7.69 kB
-dist/rui-next.es.js   230.74 kB │ gzip: 68.71 kB
-dist/rui-next.umd.js  151.87 kB │ gzip: 56.25 kB
-✓ built in 642ms
+vite v8.0.0-beta.11 building client environment for production...
+✓ 168 modules transformed.
+dist/rui-next.css      38.14 kB │ gzip:  7.49 kB
+dist/rui-next.es.js   217.87 kB │ gzip: 63.92 kB
+
+✓ 168 modules transformed.
+dist/rui-next.css      38.14 kB │ gzip:  7.49 kB
+dist/rui-next.umd.js  150.79 kB │ gzip: 55.00 kB
+
+✓ built in 794ms
 ```
 
 Build documentation (docs+demos)

@@ -8,7 +8,7 @@ export default defineConfig({
   root: path.join(__dirname, "src"),
   base: "/rui-next/",
   title: "RUI.next",
-  description: "Mobile web UI components based on React and Vite 6",
+  description: "Mobile web UI components based on React and Vite 8",
   outDir: "dist/docs",
   markdown: {
     mdxRs: false,
@@ -66,7 +66,7 @@ export default defineConfig({
     //         link: "https://vitejs.dev/",
     //       },
     //       {
-    //         text: "RUI-poc-vite6",
+    //         text: "RUI-poc-vite8",
     //         link: "https://github.com/v-poc/rui-poc",
     //       },
     //       {

@@ -64,7 +64,7 @@ const TodoList = () => {
   // mark task as completed
   const completeTask = (
     e: React.ChangeEvent<HTMLInputElement>,
-    index: number
+    index: number,
   ) => {
     const checkFlag = e && e.target && e.target.checked;
     const arr = [...tasks];
@@ -198,7 +198,7 @@ const Example = () => {
           content="Copyright @ 2021-present RUI.next. Built with Vite & React."
           chips={[
             { content: "react-hooks" },
-            { content: "vite 6" },
+            { content: "vite 8" },
             { content: "typescript" },
           ]}
         />
