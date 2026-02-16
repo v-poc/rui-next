@@ -1,3 +1,7 @@
+# 0.49.5 (2025-02-16)
+
+Updated to upgrade to `vite@8.0.0-beta.14`.
+
 # 0.49.4 (2025-01-30)
 
 Updated to switch to [Vite 8 Beta](https://vite.dev/blog/announcing-vite8-beta).
