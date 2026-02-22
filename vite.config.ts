@@ -7,7 +7,7 @@ export default {
       name: "RuiNext",
       fileName: (format: string) => `rui-next.${format}.js`,
     },
-    rollupOptions: {
+    rolldownOptions: {
       // make sure to externalize deps that shouldn't be bundled
       // into your library
       external: ["react", "react-dom"],
@@ -15,7 +15,7 @@ export default {
         // Provide global variables to use in the UMD build
         // for externalized deps
         globals: {
-          "react": "React",
+          react: "React",
           "react-dom": "ReactDOM",
         },
         exports: "named",

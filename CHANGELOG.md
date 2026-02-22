@@ -1,6 +1,6 @@
-# 0.49.5 (2025-02-16)
+# 0.49.6 (2025-02-22)
 
-Updated to upgrade to `vite@8.0.0-beta.14`.
+Updated to upgrade to `vite@8.0.0-beta.15`.
 
 # 0.49.4 (2025-01-30)
 
