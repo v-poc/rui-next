@@ -1,13 +1,14 @@
-import path from "path";
+import { dirname, resolve } from "node:path";
+import { defineConfig } from "vite";
 
-export default {
+export default defineConfig({
   build: {
     lib: {
-      entry: path.resolve(__dirname, "./src/components/index.ts"),
+      entry: resolve(import.meta.dirname, "./src/components/index.ts"),
       name: "RuiNext",
       fileName: (format: string) => `rui-next.${format}.js`,
     },
-    rolldownOptions: {
+    rollupOptions: {
       // make sure to externalize deps that shouldn't be bundled
       // into your library
       external: ["react", "react-dom"],
@@ -30,4 +31,4 @@ export default {
       },
     },
   },
-};
+});
