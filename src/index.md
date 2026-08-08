@@ -10,7 +10,7 @@ hero:
       text: docs + demos
       link: /components/getting-started
 features:
-  - title: Vite8-Powered
+  - title: Vite-Powered
     details: Feel the speed of Vite. Instant server start and lightning fast HMR that stays fast regardless of the app size.
     icon: ⚡️
   - title: Customizable

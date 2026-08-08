@@ -1,3 +1,7 @@
+# 0.49.12 (2026-08-08)
+
+Fix: pin vite version to v7.3.6 for library mode.
+
 # 0.49.6 (2025-02-22)
 
 Updated to upgrade to `vite@8.0.0-beta.15`.
