@@ -1,25 +1,33 @@
 import { dirname, resolve } from "node:path";
-import { defineConfig } from "vite";
+import { defineConfig, esmExternalRequirePlugin } from "vite";
+
+const external = [/^react$/, /^react-dom(?:\/client)?$/, /^react-dom\/(?!jsx)/, /^scheduler$/];
 
 export default defineConfig({
+  plugins: [esmExternalRequirePlugin({ external })],
   build: {
+    target: "es2020",
     lib: {
       entry: resolve(import.meta.dirname, "./src/components/index.ts"),
       name: "RuiNext",
+      formats: ["es", "umd"],
       fileName: (format: string) => `rui-next.${format}.js`,
+      cssFileName: "rui-next",
     },
-    rollupOptions: {
+    rolldownOptions: {
+      external,
+      preserveEntrySignatures: "strict",
       // make sure to externalize deps that shouldn't be bundled
       // into your library
-      external: ["react", "react-dom"],
       output: {
         // Provide global variables to use in the UMD build
         // for externalized deps
         globals: {
           react: "React",
           "react-dom": "ReactDOM",
+          "react-dom/client": "ReactDOM",
+          scheduler: "Scheduler",
         },
-        exports: "named",
       },
     },
   },
